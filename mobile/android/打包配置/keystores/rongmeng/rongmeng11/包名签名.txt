@@ -1,0 +1,17 @@
+应用包名： com.yymy.rmzdmq
+签名密码： android
+密钥别名： rm1.keystore
+签名MD5 ： 40DBE51C0B448E54ED99F61BC63222EB
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+打包工具根路径：
+	E:\工作资料\视频\无短信话费\pack_tool
+
+目录结构说明：
+	keystores：签名文件存放目录
+	payConfig.xls：计费配置。包括包名，计费配置名，签名文件路径等
+	template：项目模板文件
+		package_smali：用来自动生成包名对应目录下的smali的模板
+		其它目录：具体项目模板
+	makePackageFile.py：生成母包的脚本
+		运行该脚本，会执行：1.根据项目模板创建对应计费类型的母包路径；2.替换manifest中的包名，微信回调activity名称，替换计费类别名称；3.根据package_smali目录下的文件，生成包名目录下的smali文件；4.修改打包bat中的签名信息和输出路径信息。
+
+母包生成命令：
+	python makePackageFile.py -key rm10 -type wydp
+	说明：
+		用来生成“午夜大片”rm10计费母包。（rm10：计费类型：wydp：项目类型）
+		当不知道type名称的时候可以不带type参数，然后根据提示信息输入要生成的母包type
+		运行后程序会在当前路径的上一层目录（之前的母包路径），生成母包目录，后续打包流程不变
+
+注意事项
+	当接到新计费文件的时候：
+		1.在payConfig.xls中添加计费信息配置；
+		2.python makePackageFile.py -key rm10 -type sdk 生成计费测试包
+		3.python makePackageFile.py -key rm10 -type wydp 生成项目母包

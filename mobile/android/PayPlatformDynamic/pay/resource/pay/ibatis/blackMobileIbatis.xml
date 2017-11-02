@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="pay">
+    
+	<typeAlias alias="blackMobile" type="com.jxt.pay.pojo.BlackMobile"/>
+	
+   <insert id="BlackMobile.insert" parameterClass="blackMobile">
+		insert into BlackMobile (Mobile,Prefix,Version) 
+		values(#mobile#,#prefix#,#version#)
+		<selectKey keyProperty="Id" resultClass="java.lang.Long">
+		  select LAST_INSERT_ID() as Id
+		</selectKey>
+   </insert>
+	
+    <select id="BlackMobile.isBlack" parameterClass="java.lang.String" resultClass="java.lang.Integer">
+         select count(1) 
+         from BlackMobile 
+         where Mobile=#mobile#
+   </select>
+   	
+    <select id="BlackMobile.getAll" resultClass="blackMobile">
+         select * 
+         from BlackMobile
+   </select>
+</sqlMap>

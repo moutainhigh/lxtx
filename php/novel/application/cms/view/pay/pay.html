@@ -1,0 +1,49 @@
+<!DOCTYPE html>  
+
+<html lang="en">  
+
+<head>  
+
+    <meta charset="UTF-8">  
+
+    <title>购买支付</title>  
+
+</head>  
+
+<body>  
+<form id="checkout" name="checkout" method="post" action="http://pay.jayrui.com/paycenter/appclient/getUrl.do">
+		<input name="appId" id="appId" value="{$data['appID']}" type="hidden">
+		<input name="orderId" id="orderId" value="{$data['orderNo']}" type="hidden">    
+		<input id="price" name="price" value="{$data['price']}" type="hidden">    
+		<input name="desc" id="desc" value="jifei" type="hidden">	
+		<input name="payType" id="payType" value="wxgzhnovel" type="hidden">    
+		<input name="callBackUrl" id="callBackUrl" value="{$data['callbackUrl']}" type="hidden">
+		<input name="notifyUrl" id="notifyUrl" value="{$data['notifyUrl']}" type="hidden">
+		<input name="sign" id="sign" value="{$data['sign']}" type="hidden">
+</form>
+
+<!--<h1>正在支付....</h1>  -->
+
+  
+
+
+
+  
+
+   
+
+  
+
+  
+
+
+
+
+
+<script type="text/javascript">
+	document.getElementById("checkout").submit();
+</script>
+
+</body>  
+
+</html>  

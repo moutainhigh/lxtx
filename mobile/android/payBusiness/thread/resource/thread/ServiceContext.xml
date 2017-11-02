@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <bean id="notifyService" class="com.jxt.netpay.thread.NotifyService">
+  	    <property name="paymentLogHandler" ref="paymentLogHandler"/>
+  	</bean>
+  	
+    <bean id="notifyTimer" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="notifyService"/>
+		<property name="targetMethod" value="exec"/>
+	</bean>
+	
+    <bean id="notifyTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="notifyTimer"/>
+		<property name="cronExpression" value="0/30 * * * * ?"/>
+	</bean>
+	
+    <!-- 启动定时器 -->
+	<bean id="startJob" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="notifyTrigger"/> 
+			</list>
+		</property>
+	</bean>
+    
+    
+</beans>

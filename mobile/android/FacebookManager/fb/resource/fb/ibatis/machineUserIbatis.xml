@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="fb">
+   
+   <typeAlias alias="machineUser" type="com.lxtx.fb.pojo.MachineUser"/>
+   
+   <insert id="MachineUser.insert" parameterClass="machineUser">
+		insert into MachineUser (MachineId, Name, Status)
+       	values (#machineId#, #name#, #status#)
+       	<selectKey keyProperty="id" resultClass="long">
+			select LAST_INSERT_ID() as id
+		</selectKey>
+   </insert>
+   
+   <select id="MachineUser.listByMachine" parameterClass="int" resultClass="machineUser">
+       select * from MachineUser
+       where MachineId = #machineId#
+       order by id asc
+   </select>
+   
+   <delete id="MachineUser.deleteByMachine" parameterClass="int">
+       delete from MachineUser where MachineId = #machineId#
+   </delete>
+   
+   <delete id="MachineUser.deleteByPrimaryKey" parameterClass="long">
+       delete from MachineUser where Id = #id#
+   </delete>
+   
+   <update id="MachineUser.update" parameterClass="machineUser">
+       update MachineUser set MachineId = #machineId#, Name = #name#, Status = #status# where Id = #id#
+   </update>
+   
+   <update id="MachineUser.updateStatus" parameterClass="machineUser">
+       update MachineUser set Status = #status# where Id = #id#
+   </update>
+</sqlMap>

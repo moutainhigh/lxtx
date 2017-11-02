@@ -1,0 +1,7 @@
+包名 com.mxujhdue.jdeiop 
+md5:e9d85297e17e36adfd12f0eebdf8f406
+
+
+
+别名：1
+秘钥：123456

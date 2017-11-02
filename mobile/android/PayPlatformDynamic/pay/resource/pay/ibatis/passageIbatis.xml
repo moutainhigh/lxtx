@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="pay">
+
+   <typeAlias alias="passage" type="com.jxt.pay.pojo.Passage"/>
+   
+	<update id="Passage.update" parameterClass="passage">
+	  update Passage 
+	  set status = 0
+	  where Id = #id# and status = 1
+	</update>
+	
+</sqlMap>

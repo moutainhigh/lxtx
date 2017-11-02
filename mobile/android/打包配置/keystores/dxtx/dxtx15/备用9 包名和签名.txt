@@ -1,0 +1,7 @@
+包名 com.osiehjhfeih.shjfhei 
+md5:64857c8f427e3c4cc7e017f43886b7f1
+
+
+
+别名：1
+秘钥：123456

@@ -1,0 +1,59 @@
+.rollBox{
+PADDING-BOTTOM: 25px;
+WIDTH: 100%;
+FLOAT: left;
+}
+.rollBox .LeftBotton{
+height: 52px;
+width: 43px;
+background: transparent url("../images/job_mj_069.gif") no-repeat scroll 11px 0px;
+overflow: hidden;
+float: left;
+display: inline;
+margin: 77px 0px 0px;
+cursor: pointer;
+}
+.rollBox .RightBotton{
+height: 52px;
+width: 32px;
+background: transparent url("../images/job_mj_069.gif") no-repeat scroll -32px 0px;
+overflow: hidden;
+float: left;
+display: inline;
+margin: 77px 0px 0px;
+cursor: pointer;
+}
+.rollBox .Cont{
+MARGIN: 0px 9px;
+WIDTH: 720px;
+FLOAT: left;
+HEIGHT: 215px;
+OVERFLOW: hidden;
+}
+.rollBox .ScrCont{width:10000000px;}
+.rollBox .Cont .box{
+float: left;
+height: 205px;
+margin: 4px;
+text-align: center;
+width: 171px;
+}
+.rollBox .Cont .box .listimg{}
+.rollBox .Cont .box .listimg img{
+height: 100px;
+margin-top: 0px;
+width: 100px;
+}
+.rollBox .Cont .box .pname{ height:70px;}
+.rollBox .Cont .box .pname a{
+text-decoration: none;
+MARGIN: 2px 0px;
+DISPLAY: block;
+COLOR: #333333;
+}
+.rollBox .Cont .box .pname a:hover{
+text-decoration: none;
+}
+.rollBox .Cont a:link,.rollBox .Cont a:visited{color:#626466;text-decoration:none;}
+.rollBox .Cont a:hover{color:#f00;text-decoration:underline;}
+.rollBox #List1,.rollBox #List2{float:left;}

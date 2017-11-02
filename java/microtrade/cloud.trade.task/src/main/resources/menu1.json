@@ -1,0 +1,45 @@
+{
+    "button": [
+        {
+            "name": "开始赚钱",
+            "type": "view",
+            "key": "rselfmenu_0_0",
+            "url": "http://%s/yun/wx/redirect/%s/%s"
+        },
+        {
+            "name": "服务中心",
+            "sub_button": [
+                {
+                    "type": "view",
+                    "name": "常见问题",
+                    "key": "rselfmenu_1_0",
+              "url": "http://yun.jyqhs.com/yun/common_problem_x.html?t=0.141215"
+                },
+                {
+                    "type": "view",
+                    "name": "操作规则",
+                    "key": "rselfmenu_1_1",
+                    "url": "http://yun.jyqhs.com/yun/tran_rule_x.html?t=0.141215"
+                },
+                {
+                    "type": "view",
+                    "name": "产品种类",
+                    "key": "rselfmenu_1_2",
+                    "url": "http://yun.jyqhs.com/yun/tran_type_x.html?t=0.141215"
+                },
+                {
+                    "type": "view",
+                    "name": "新手指南",
+                    "key": "rselfmenu_1_3",
+                	"url": "http://yun.jyqhs.com/yun/newbie_guide_x.html?t=0.141215"
+                }
+            ]
+        },
+        {
+         	"name": "精彩推荐",
+            "type": "view",
+            "key": "rselfmenu_2_0",
+            "url": "http://rw.jywnk.com/app/index.php?i=7&c=entry&rid=P6IebIci9e&do=dwz&m=tiger_xiaofu"
+        }
+    ]
+}

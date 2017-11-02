@@ -1,0 +1,40 @@
+<ion-view view-title="充值" need-login hide-tabs="false">
+    <ion-nav-bar class="bar-positive bar-header-black" align-title="center">
+        <ion-nav-back-button>返回</ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+        <ion-refresher pulling-text="下拉刷新余额..." on-refresh="doRefresh()"></ion-refresher>
+        <ion-list>
+		<!--
+            <ion-item class="item-thumbnail-left">
+                <img ng-src="{{user.headImg}}" style="border-radius: 40px;">
+                <div style="padding-top: 18px;">
+                    <h2>{{user.nickName}}</h2>
+                    <p><img src="img/gold.png" width="15" height="15" ><span style="display: inline-block; margin-left: 5px; color: red;">{{user.money}}</span></p>
+                </div>
+            </ion-item>
+            <div class="list">
+                <ion-radio ng-model="payOrder.amount" ng-value="100" name="amount">
+                    ￥100
+                </ion-radio>
+                <ion-radio ng-model="payOrder.amount" ng-value="200" name="amount">
+                    ￥200
+                </ion-radio>
+                <ion-radio ng-model="payOrder.amount" ng-value="300" name="amount">
+                    ￥300
+                </ion-radio>
+                <label class="item item-input">
+                    <input ng-model="payOrder.amount" type="number" placeholder="其他金额">
+                </label>
+                <button class="button button-block button-positive button-green" ng-click="doRecharge()">
+                    充值
+                </button>
+            </div>
+-->
+            <span style="font-size:14px;color:#444">接口维护中..</span>
+            <!--<div>-->
+                <!--<img src="img/pay.png" width="200" height="200">-->
+            <!--</div>-->
+        </ion-list>
+    </ion-content>
+</ion-view>

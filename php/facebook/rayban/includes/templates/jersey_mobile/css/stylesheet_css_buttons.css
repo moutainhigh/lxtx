@@ -1,0 +1,119 @@
+/**
+ * CSS Buttons Stylesheet
+ *
+ * Thanks to paulm for much of the content of the CSS buttons code
+ *
+ * @package templateSystem
+ * @copyright Copyright 2009-2010 12leaves.com
+ * @copyright Copyright 2003-2005 Zen Cart Development Team
+ * @copyright Portions Copyright 2003 osCommerce
+ * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
+ * @version $Id: stylesheet_css_buttons.css 4567 2006-09-20 01:55:24Z birdbrain $
+ */
+
+/* css buttons */
+.buttonRow {
+	padding: 4px 0;
+}
+.buttonRow input {
+	border: none;
+	background: none ;
+}
+
+.buttonRow a, .navNextPrevWrapper a {
+	text-decoration: none;
+}
+.cssButton, .cssButtonHover {
+	
+}
+input.index-search-btn {
+    background: #c00 none repeat scroll 0 0;
+    border: 1px solid #c00;
+    color: #f2f2f2;
+    font-size: 1.25em !important;
+    font-weight: 400;
+    height: 40px !important;
+    padding: 0 !important;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 40px !important;
+}
+input.index-search-btn:hover {
+    background: #ee3d3d none repeat scroll 0 0;
+}
+.cssButton, .cssButtonHover {
+	
+	color: #ffffff;
+	
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1em;
+	text-align: center;
+	white-space: nowrap;
+	text-decoration: none !important;
+	font-weight: bold;
+	margin: 3px 0;
+	padding: 0.3em 1.2em;
+	cursor: pointer;
+}
+
+/* adding the styles below might be needed if the default button width is changed */
+/* .button_continue_shopping, .button_shipping_estimator {width: 150px;} */
+.small_delete, .button_prev, .button_next, .button_search  {/*width: 7em;*/}
+
+.button_sold_out_sm, .button_sold_out, .button_update_cart, .button_checkout, .button_login {/*width: 10em;*/}
+
+.button_shipping_estimator {
+	font-weight: normal;
+	display: block;
+	margin: 7px 0;
+	padding: 0 0.3em;
+	line-height: 20px;
+}
+.button_sold_out, .button_sold_out_sm {
+	background: none !important;
+	border: none !important;
+	cursor: default !important;
+	padding: 0 !important;
+	color: #444444;
+}
+.button_in_cart, .button_checkout,  .button_login, .button_continue_checkout, .button_confirm_order, .button_submit {
+	background-color: #c00;
+	border: 1px #bb5500 solid !important;
+	color: #ffffff;
+	font-weight: bold;
+	padding: 0.3em 1.5em;
+	width: auto !important;
+	box-shadow: 0 1px 2px #999999;
+	-webkit-appearance: none;
+}  
+.cssButtonHover {
+	background: #555555 !important;
+}
+.button_in_cartHover, .button_checkoutHover,  .button_loginHover, .button_continue_checkoutHover, .button_confirm_orderHover, .button_submitHover {
+	background-color: #ff6600 !important;
+	box-shadow: 0 0 0;
+}
+.button_in_cart {
+	background: #c00 none repeat scroll 0 0;
+    border: 1px solid #c00;
+    color: #f2f2f2;
+    font-size: 1.5em !important;
+    height: 80px !important;
+    width: 95% !important;
+}
+.button_return_to_product_list {
+ 	display: none;
+}
+.button_tell_a_friend {
+	width: 20px !important;
+	height: 20px;
+	background: #f7e39d url("../images/arrow.gif") no-repeat center center !important;
+	margin: 0;
+	padding: 0;
+	color: #f7e39d;
+}
+.button_submit {/*width: 18em;*/}
+.button_update_cart {color: red;}
+.button_update_cartHover {color: #003D00;}
+/*.innerbox#headernavcenter .boxtext .button_search {display:inline;}*/

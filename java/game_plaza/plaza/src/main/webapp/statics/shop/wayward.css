@@ -1,0 +1,1501 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*充值*/
+section .current{
+	line-height:70px;
+	font-size:30px;
+	color:#7f7f7f;
+	background:rgba(255,255,255,1);
+	text-indent:32px;
+	border-bottom:#ff5400 solid 3px;
+}
+section .amount{
+	overflow:hidden;
+}
+section .amount h3{
+	background:url(dian.png) no-repeat left 39px top 50%;
+	font-size:30px;
+	color:#7f7f7f;
+	font-weight:normal;
+	text-indent:51px;
+	line-height:66px;
+}
+section .amount .deposit{
+	background:rgba(255,255,255,1);
+	display:block;
+	padding:0 54px 0 42px;
+	border-bottom:1px solid #d9d9d9;
+	border-top:1px solid #d9d9d9;
+	position:relative;
+	line-height:74px;
+}
+section .amount .deposit input{
+	background:rgba(255,255,255,1);
+	width:100%;
+	font-size:30px;
+	border:none;
+	vertical-align:middle;
+	color:#ff5400;
+}
+section .amount .deposit input.cancel{
+	position:absolute;
+	top:50%;
+	-webkit-transform: translate(0,-50%);
+    -moz-transform: translate(0,-50%);
+    -ms-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+	right:12px;
+	width:28px;
+	height:30px;
+	background:url(cancel.png) no-repeat;
+}
+
+section .amount .price{
+	overflow:hidden;
+	margin:19px 0 22px 0;
+}
+section .amount .price a{
+	width:140px;
+	height:68px;
+	line-height:68px;
+	border-radius:10px;
+	float:left;
+	background:rgba(255,255,255,1);
+	text-align:center;
+	border:1px solid #d9d9d9;
+	font-size:30px;
+	color:#7f7f7f;
+	margin:0 1px 0 15px;
+}
+section .amount .price a.checked{
+	background:rgba(255,84,0,1);
+	color:#f6f6f6;
+}
+section .wealth h3{
+	background:url(dian.png) no-repeat left 22px top 50%;
+	font-size:30px;
+	color:#7f7f7f;
+	font-weight:normal;
+	text-indent:36px;
+	line-height:49px;
+}
+section .wealth a{
+	height:74px;
+	padding:0 41px 0 0;
+	display:block;
+	vertical-align:middle;
+	font-size:32px;
+	color:#000000;
+	line-height:74px;
+	background:rgba(255,255,255,1);
+	border-bottom:1px solid #d9d9d9;
+	border-top:1px solid #d9d9d9;
+	position:relative; 
+}
+section .wealth a img{
+	vertical-align:middle;
+	margin:0 5px 0 16px;
+}
+section .wealth a span{
+	position:absolute;
+	right:13px;
+}
+section .wealth p{
+	color:#adadad;
+	font-size:26px;
+	text-indent:32px;
+	line-height:50px;
+}
+
+/*提款*/
+section .balance{
+	background:#3f414a;
+	padding:22px 0 25px 0;
+	margin-bottom:36px;
+	border-bottom:1px solid #3f414a;
+}
+section .balance p{
+	font-size:36px;
+	color:#ff5400;
+	text-align:center;
+	line-height:41px;
+}
+section .balance p:first-child{
+	font-size:25px;
+	color:#afafaf;
+	line-height:38px;
+}
+section .identity{
+	background:rgba(255,255,255,1);
+	overflow:hidden;
+	margin-bottom:36px;
+	border-top:1px solid #d8d8d8;
+}
+
+section .identity input{
+	border:none;
+	font-size:26px;
+	color:#9f9f9f; 
+	font-size:26px;
+	color:#9f9f9f; 
+	width:570px;
+	padding:25px 18px 30px 52px;
+	border-bottom:1px solid #d8d8d8;
+}
+section .take{
+	margin:0 3px;
+	display:block;
+}
+section .take a{
+	width:296px;
+	float:left;
+	height:83px;
+	border-radius:10px;
+	text-align:center;
+	line-height:83px;
+	font-size:26px;
+	color:#ffffff;
+	margin:0 10px;
+	background:rgba(255,84,0,1);
+}
+
+/*个人信息*/
+section .personal{
+	width:100%;
+	margin:16px 0 0 0;
+}
+section .personal ul{
+	background:#3f414a;
+	border-top:1px solid #24262e;
+}
+section .personal ul li{
+	line-height:80px;
+	overflow:hidden;
+	border-bottom:1px solid #24262e;
+}
+section .personal ul li .call{
+	width:215px;
+	font-size:26px;
+	color:#f5ae25;
+	float:left;
+	text-indent:38px;
+}
+section .personal ul li input{
+	width:376px;
+	padding:0 45px 0 0;
+	vertical-align: middle;
+	font-size:28px;
+	color:#fff;
+	border:none;
+	background-color:#3f414a;
+}
+section .personal ul li .make{
+	width:350px; 
+	font-size:28px;
+	color:#cacaca;
+	float:left;
+}
+section .personal ul li .effect{
+	color:#2c2c2c;
+}
+section .personal ul li a img{
+	vertical-align:middle;
+}
+section .personal a.switch{
+	width:569px;
+	height:83px;
+	line-height:83px;
+	text-align:center;
+	display:block;
+	margin:22px auto 0;
+	font-size:30px;
+	color:#ffffff;
+	background:#ff9036;
+	border-radius:10px;
+}
+
+/*账户明细*/
+section .capital{
+	width:100%;
+	background:#3f414a;
+	border-bottom:2px solid #ffb136;
+	overflow:hidden;
+}
+section .capital a{
+	width:213.3px;
+	float:left;
+	text-align: center;
+	padding:31px 0 28px 0;
+}
+section .capital a:first-child span{
+	border-left:none;
+}
+section .capital a span{
+	border-left: 1px solid #2c2d34;
+	display:block;
+}
+section .capital a span h3{
+	font-size:25px;
+	font-weight:normal;
+	color:#afafaf;
+}
+section .capital a span p{
+	font-size:28px;
+	color:#ff5400;
+}
+section .etc{
+}
+section .etc hgroup{
+	text-align:center;
+	padding:349px 0 0 0;
+}
+
+section .etc hgroup h3{
+	line-height:60px;
+	font-size:36px;
+	color:#fda721;
+	font-weight:normal;
+}
+section .etc hgroup h4{
+	font-size:26px;
+	color:#9f9f9f;
+	font-weight:normal;
+	margin:auto;
+	line-height:53px;
+}
+section .etc a{
+	width:296px;
+	height:93px;
+	text-align:center;
+	display:block;
+	margin:38px auto 0;
+	line-height:93px;
+	font-size:30px;
+	color:#fff;
+	background:#ff9036;
+	border:solid #ff9036 2px;
+	border-radius:10px;
+}
+
+/*任务推荐＆商城*/
+section .back{
+	float:left;
+	width:100%;
+	overflow:hidden;
+}
+section .back .task{
+	background:url(07.png);
+	width:256px;
+	height:91px;
+	margin:-10px auto 0;
+}
+section .back .task h3{
+	font-weight:normal;
+	line-height:91px;
+	color:#fcf8de;
+	font-size:30px;
+	text-align:center;
+}
+section .back ul{
+	overflow:hidden;
+	margin:12px 0 0 0;
+}
+section .back ul li{
+	width:585px;
+	overflow:hidden;
+	margin:0 auto 11px;
+	border-radius:20px;
+/* 	background:#3f414a url(../img/important/back8.png) no-repeat ; */
+}
+section .back ul li .game{
+	margin:28px auto 28px 20px;
+	float:left;
+}
+section .back ul li hgroup{
+	margin:0 0 0 15px;
+	float:left;
+}
+section .back ul li hgroup h3{
+	font-size:24px;
+	color:#ffffff;
+	font-weight:normal;
+	line-height:32px;
+	margin:26px 0 0 0;
+}
+section .back ul li hgroup h4{
+	vertical-align:middle;
+	font-size:24px;
+	color:#d5d5d5;
+	font-weight:normal;
+	line-height:32px;
+	margin:0 0 33px 0;
+}
+section .back ul li hgroup p{
+	line-height:124px;
+	font-size:30px;
+	color:#ffffff;
+}
+
+section .back ul li hgroup h4 span{
+	color:#fdd31c;
+}
+section .back ul li hgroup h4 img{
+	vertical-align:middle;
+	margin:0 10px 0 0;
+}
+section .back ul li a{
+	background:url(bright.png);
+	width:115px;
+	height:47px;
+	text-align:center;
+	float:right;
+	margin:28px 17px 23px 0;
+	/*text-shadow:#fcbc15 1px 0 0,#fcbc15 0 1px 0,#fcbc15 -1px 0 0,#fcbc15 0 -1px 0;*/
+-webkit-text-shadow:#fcbc15 1px 0 0,#fcbc15 0 1px 0,#fcbc15 -1px 0 0,#fcbc15 0 -1px 0;
+-moz-text-shadow:#fcbc15 1px 0 0,#fcbc15 0 1px 0,#fcbc15 -1px 0 0,#fcbc15 0 -1px 0;
+}
+section .back ul li a.dark{
+	background:url(../img/important/dark.png);
+	text-shadow:#888888 1px 0 0,#888888 0 1px 0,#888888 -1px 0 0,#888888 0 -1px 0;
+-webkit-text-shadow:#888888 1px 0 0,#888888 0 1px 0,#888888 -1px 0 0,#888888 0 -1px 0;
+-moz-text-shadow:#888888 1px 0 0,#888888 0 1px 0,#888888 -1px 0 0,#888888 0 -1px 0;
+}
+/*前往*/
+section .back ul li a.goto{
+	background:url(goto.png);
+	/*text-shadow:#888888 1px 0 0,#888888 0 1px 0,#888888 -1px 0 0,#888888 0 -1px 0;
+	-webkit-text-shadow:#888888 1px 0 0,#888888 0 1px 0,#888888 -1px 0 0,#888888 0 -1px 0;
+	-moz-text-shadow:#888888 1px 0 0,#888888 0 1px 0,#888888 -1px 0 0,#888888 0 -1px 0;*/
+}
+section .back ul li a span{
+	font-size:24px;
+	color:#fdfbf9;
+	margin:6px 0 0 0;
+	display:block;
+}
+
+section .back .integral{
+	width:586px;
+	margin:9px auto 0;
+}
+section .back .integral h3{
+	font-size:30px;
+	color:#e4f2ff;
+	font-weight:normal;
+	line-height:55px;
+}
+section .back .integral .prompt{
+	width:586px;
+	height:46px;
+	line-height:46px;
+	background:#16171f;
+	border-radius:10px;
+	overflow:hidden;
+}
+section .back .integral .prompt span{
+	float:left;
+	margin:10px 0 10px 12px;
+	width:32px;
+	height:28px;
+}
+section .back .integral .prompt p{
+	float:right;
+	max-width:515px;
+	margin-right:22px;
+	font-size:24px;
+	color:#FFFFFF;
+}
+
+section .back ul.another li .game{
+	float:left;
+	width:120px;
+	text-align:center;
+	height:104px;
+	line-height:104px;
+	margin:0;
+}
+section .back ul.another li .game img{
+	vertical-align:middle;
+}
+section .back ul.another li hgroup{
+	margin:0 0 0 15px;
+	float:left;
+}
+section .back ul.another li hgroup h3{
+	font-size:30px;
+	line-height:36px;
+	color:#ffffff;
+	font-weight:normal;
+	margin:14px 0 0 0;
+}
+section .back ul.another li hgroup h4{
+	vertical-align:middle;
+	font-size:24px;
+	font-weight:normal;
+	line-height:32px;
+	margin:0 0 19px 0;
+	color:#fdd31c;
+	background:rgba(154,49,63,1);
+	padding:0 36px 0 4px;
+	border-radius:10px;
+}
+section .back ul.another li hgroup p{
+	line-height:102px;
+	font-size:30px;
+	color:#ffffff;
+}
+section .back ul li a{
+	/*margin:18px 17px 13px 0;*/
+}
+
+/*财富*/
+section .list{
+	overflow:hidden;
+}
+section .list .ranking{
+	margin:232px 0 0 0;
+	height:166px;
+	background:url(back4.png);
+	position:relative;
+}
+section .list .ranking .venosa{
+	position:absolute;
+	top:-5px;
+	left:50%;
+	-webkit-transform: translate(-50%,0);
+    -moz-transform: translate(-50%,0);
+    -ms-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+	background:url(08.png);
+	background-repeat: no-repeat;
+	width:189px;
+	height:65px;
+}
+section .list .ranking .venosa span{
+	display:block;
+	width:115px;
+	height:116px;
+	margin:-57px auto 0 auto;
+	background:rgba(168,57,72,1);
+	border-radius:10px;
+	-webkit-box-shadow:0 0 4px #3d0a00;  
+	-moz-box-shadow:0 0 4px #3d0a00;  
+	box-shadow:0 0 4px #3d0a00; 
+}
+section .list .ranking hgroup{
+	margin:35px 0 32px 0;
+}
+section .list .ranking hgroup h4{
+	font-size:24px;
+	color:#772910;
+	font-weight:normal;
+	line-height:45px;
+	vertical-align:middle;	
+}	
+section .list .ranking hgroup h4 img{
+	vertical-align:middle;
+	margin:0 0 0 9px;
+}
+section .list .ranking hgroup h3{
+	font-size:35px;
+	color:#ffffff;
+	font-weight:normal;
+	line-height:50px;
+}
+section .list .ranking .decision_left{
+	float:left;
+	margin-left:49px;
+}
+section .list .ranking .decision_right{
+	float:right;
+	margin-right:46px;
+}
+section .list .intelligent{
+	overflow:hidden;
+}
+section .list .intelligent ul{
+	background:#24262e;
+	padding:0 0 123px 0;
+}
+section .list .intelligent ul li{
+	overflow:hidden;
+	line-height:106px;
+	background:#3f414a;
+	border-bottom:1px solid #585b69;
+}
+section .list .intelligent ul li .level{
+	width:80px;
+	float:left;
+	text-align:center;
+	margin:0 16px 0 0;
+}
+section .list .intelligent ul li .user{
+	float:left;
+	width:280px;
+	margin:0 15px 0 0;
+}
+section .list .intelligent ul li .gold{
+	float:left;
+	width:90px;
+	margin:0 15px 0 0;
+}
+section .list .intelligent ul li .numerical{
+	float:left;
+	width:140px;
+	vertical-align:middle;
+}
+
+section .list .intelligent ul li.different{
+	line-height:51px;
+	background:url(back5.png) no-repeat;
+	border-bottom:none;
+}
+section .list .intelligent ul li.different .level p{
+	font-size:24px;
+	color:#d45a5a;
+}
+section .list .intelligent ul li.different .user p{
+	font-size:24px;
+	color:#d45a5a;
+}
+section .list .intelligent ul li.different .gold p{
+	font-size:24px;
+	color:#d45a5a;
+}
+section .list .intelligent ul li.different .numerical p{
+	font-size:24px;
+	color:#d45a5a;
+	float:right;
+	margin-right:40px;
+}
+section .list .intelligent ul li.different .numerical p img{
+	vertical-align:middle;
+	margin:0 2px 0 0;
+}
+
+/**/
+section .list .intelligent ul li .numerical1{
+	float:left;
+	width:190px;
+	vertical-align:middle;
+}
+section .list .intelligent ul li.different1{
+	line-height:51px;
+	background:url(back5.png) no-repeat;
+	border-bottom:none;
+}
+section .list .intelligent ul li.different1 .level p{
+	font-size:24px;
+	color:#ff9036;
+}
+section .list .intelligent ul li.different1 .user p{
+	font-size:24px;
+	color:#ff9036;
+}
+section .list .intelligent ul li.different1 .gold p{
+	font-size:24px;
+	color:#d45a5a;
+}
+section .list .intelligent ul li .numerical1 p{
+	font-size:24px;
+	color:#ffb136;
+	float:right;
+	margin-right:40px;
+}
+section .list .intelligent ul li .numerical1 p img{
+	vertical-align:middle;
+	margin:0 2px 0 0;
+}
+
+   /*金银铜*/
+section .list .intelligent ul li .level span.gold{
+	background:url(yellow.png) rgba(0,0,0,0);
+	width:56px;
+	height:60px;
+	display:block;
+	margin:0 auto;
+	text-indent:-999px;
+	margin-top:25px;
+	float:none;
+}
+section .list .intelligent ul li .level span.silver{
+	background:url(silver.png) rgba(0,0,0,0);
+	width:56px;
+	height:60px;
+	display:block;
+	margin:0 auto;
+	text-indent:-999px;
+	margin-top:25px;
+	float:none;
+}
+section .list .intelligent ul li .level span.copper{
+	background:url(copper.png) rgba(0,0,0,0);
+	width:56px;
+	height:60px;
+	display:block;
+	margin:0 auto;
+	text-indent:-999px;
+	margin-top:25px;
+	float:none;
+}
+section .list .intelligent ul li .level span{
+	width:40px;
+	height:40px;
+	background:#585b69;
+	border-radius:50%;
+	float:left;
+	margin:36px 0 0 40px;
+	line-height:40px;
+	font-size:26px;
+	color:#d3d3d3;
+}
+section .list .intelligent ul li .user p{
+	vertical-align:middle;
+	font-size:22px;
+	 color:#ffffff;
+}
+section .list .intelligent ul li .gold p{
+	vertical-align:middle;
+	font-size:22px;
+	 color:#ffdd94;
+}
+section .list .intelligent ul li .user p img{
+	vertical-align:middle;
+	margin-right:12px;
+}
+section .list .intelligent ul li .numerical p{
+	float:right;
+	font-size:22px;
+	color:#ffdd94;
+	margin-right:28px;
+}
+
+section .luck{
+	overflow:hidden;
+	position:relative;
+}
+section .luck_head{
+	position:absolute;
+	top:0;
+	left:0;
+	height:43px;
+	width:100%;
+	background:#ff9036;
+	z-index:99;
+}
+section .luck_head .luck_logo{
+	float:left;
+	margin:0 11px 0 13px;
+}
+section .luck_head .congratulations{
+	width:397px;
+	float:left;
+}
+section .luck_head .congratulations span{
+	width:328px;
+	float:left;
+}
+section .luck_head .congratulations span p{
+	float:right;
+	font-size:24px;
+	color:#f07524;
+	line-height:43px;
+}
+section .luck_head .congratulations .drop_down{
+	margin:12px 22px;
+	float:left;
+}
+section .rules{
+	z-index:9999;
+	position:absolute;
+	right:2px;
+	top:0;
+}
+
+
+section .luck_back{
+	background:url(back6.png) no-repeat;
+	padding:43px 0 0 0;
+}
+section .luck_back .abort{
+	margin:246px auto 0 auto;
+	width:409px;
+	height:50px;
+	padding:0 0 6px 0;
+	background:url(back7.png) no-repeat;
+	
+}
+section .luck_back .abort p{
+	text-align:center;
+	line-height:50px;
+	font-size:21px;
+	color:#782a10;
+}
+section .value{
+	background:#24262e;
+}
+section .value .value_box{
+	width:584px;
+	margin:0 auto;
+	overflow:hidden;
+}
+section .value .value_box .record{
+	overflow:hidden;
+}
+section .value .value_box .record .number{
+	float:left;
+	vertical-align:middle;
+	font-size:35px;
+	color:#f4f4da;
+	font-style:oblique;
+	line-height:44px;
+}
+section .value .value_box .record .number img{
+	vertical-align:middle;
+}
+section .value .value_box .record a{
+	font-size:24px;
+	color:#ff8f3f;
+	line-height:44px;
+	float:right;
+}
+section .value .value_box .record a span{
+	color:#747575;
+}
+section .value .value_box ul{
+	margin:12px 0 0 0;
+	width:610px;
+}
+section .value .value_box ul li{
+	width:281px;
+	height:287px;
+	float:left;
+	background:#3f414a;
+	border-radius:20px;
+	border:3px solid #585b69;
+	margin:0 18px 8px 0;
+}
+section .value .value_box ul li .envelope{
+	background:url(envelope.png) no-repeat;
+	height:165px;
+	width:258px;
+	margin:10px auto 0;
+}
+section .value .value_box ul li .envelope p{
+	vertical-align:middle;
+	line-height:42px;
+	text-align:center;
+	font-size:20px;
+	color:#bdbca7;
+}
+section .value .value_box ul li .envelope p img{
+	vertical-align:middle;
+	margin:0 5px;
+}
+section .value .value_box ul li .envelope span{
+	display:block;
+	text-align:center;
+}
+section .value .value_box ul li h3{
+	text-align:center;
+	line-height:45px;
+	font-size:24px;
+	color:#ffffff;
+	font-weight:normal;
+}
+section .value .value_box ul li h3 span{
+	color:#fea932;
+}
+/*section .value .value_box ul li a{*/
+	/*width:260px;*/
+	/*height:57px;*/
+	/*background:url(../img/important/bright2.png);*/
+	/*display:block;*/
+	/*margin:0 auto;*/
+	/*text-align:center;*/
+	/**/
+/*}*/
+section .value .value_box ul li a {
+	width: 230px;
+	height: 50px;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	background-color: #ffb136;
+	border-radius: 5px;
+}
+
+.jcbut{
+	width: 280px;
+	height: 60px;
+	display: block;
+	text-align: center;
+	background-color: #ffb136;
+	border-radius: 5px;
+	margin-top:70px;
+	color:#782a10;
+	font-size:27px;
+	font-weight: bold;
+	line-height: 55px;
+}
+
+section .value .value_box ul li a span{
+	font-size: 24px;
+    color: #782a10;
+    margin: 11px 0 0 0;
+    display: block;
+	float: left;
+    width: 100%;
+
+}
+
+section .luck .winner{
+	position:absolute;
+	width:100%;
+	height:100%;
+	display:none;
+	top:43px;
+	left:0;
+	-webkit-transition: height 0.5s;
+    -moz-transition: height 0.5s;
+    -ms-transition: height 0.5s;
+	background:rgba(0,0,0,0.9);
+}
+section .luck .winner ul{
+	overflow:hidden;
+	background:rgba(167,57,72,1);
+}
+section .luck .winner ul li{
+	border-top:2px solid #932a42;
+	overflow:hidden;
+}
+section .luck .winner ul li .sculpture{
+	width:49px;
+	height:53px;
+	float:left;
+	margin:30px 0 41px 32px;
+}
+section .luck .winner ul li hgroup{
+	float:left;
+	line-height:34px;
+	margin:25px 0 31px 18px;
+}
+section .luck .winner ul li hgroup h3{
+	font-size:25px;
+	color:#ebc8bb;
+	font-weight:normal;
+}
+section .luck .winner ul li hgroup h3 span{
+	color:#7f202d;
+	padding:0 0 0 10px;
+}
+section .luck .winner ul li hgroup h4{
+	font-size:25px;
+	color:#ff5b5b;
+	font-weight:normal;
+}
+section .luck .winner ul li .prize{
+	float:right;
+	margin:9px 76px 5px 0;
+}
+section .luck .winner .upper{
+	width:100%;
+	height:63px;
+	background:url(upper.png);
+}
+
+section .luck .notice{
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:0px;
+	display:none;
+	z-index:999;
+	left:0;
+	-webkit-transition: height 0.5s;
+    -moz-transition: height 0.5s;
+    -ms-transition: height 0.5s;
+	background:rgba(0,0,0,0.9);
+}
+section .luck .notice .notice_box{
+	background:#3f414a;
+	padding:55px 18px 33px 29px;
+}
+section .luck .notice .notice_box p{
+	line-height:36px;
+	font-size:24px;
+	color:#9e9e9f;
+	padding:0 0 0 11px;
+	background:url(dian2.png) no-repeat left 2px top 15px;
+}
+section .luck .rules2{
+	float:right;
+	margin:-4px 6px 0 0;
+}
+
+/*投标记录*/
+section .bid{
+	min-height:1008px;
+	background:rgba(76,44,41,1);
+	position:relative;
+}
+section .bid h3{
+	text-align:center;
+	background:rgba(52,24,24,1);
+	font-size:26px;
+	color:#835449;
+	line-height:76px;
+	font-weight:normal;
+}
+section .bid .bid_box{
+	padding:0 0 122px;
+}
+section .bid .bid_box a{
+	width:598px;
+	padding:30px 21px 32px;
+	display:block;
+	border-bottom:2px solid #633b34;
+}
+section .bid .bid_box a .nur{
+	font-size:30px;
+	color:#d5675b;
+}
+section .bid .bid_box a .nur .nur_r{
+	float:right;
+}
+section .bid .bid_box a .nur .else{
+	color:#fcac39;
+}
+section .bid .bid_box a .scale{
+	font-size:26px;
+	color:#835449;
+}
+section .bid .bid_box a .scale .else{
+	color:#836449;
+}
+section .bid .bid_back{
+	position:absolute;
+	width:606px;
+	height:68px;
+	line-height:68px;
+	text-align:center;
+	background:rgba(255,84,0,1);
+	color:#ffece8;
+	bottom:13px;
+	left:50%;
+	border-radius:10px;
+	font-size:26px;
+	-webkit-transform: translate(-50%,0);
+    -moz-transform: translate(-50%,0);
+    -ms-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+}
+
+.lilist{
+font-size:25px;
+padding-left:20px;
+color:#fff;
+}
+
+.msglist{
+font-size:25px;
+padding-left:20px;
+line-height:40px;
+padding:15px 0 15px 20px;
+}
+
+.login-input{
+	width: 569px;
+	height: 83px;
+	line-height: 83px;
+	text-align: center;
+	display: block;
+	margin: 22px auto 0;
+	font-size: 30px;
+	color: #ffffff;
+	background: #ff9036;
+	border-radius: 10px;
+	border: none;
+}
+
+/*发送验证码按钮*/
+.sendmsg{
+	width:180px;
+	color: #ffffff;
+	background: #ff9036;
+	border-radius: 8px;
+	padding:10px;
+	height: 53px;
+	font-size:25px;
+}
+
+.jclader{
+	color: #ffdd94;
+	font-size: 15px;
+	margin: 30px 20px 0 20px;
+	line-height: 35px;
+	overflow-y: auto;
+	max-height: 1000px;
+	background-color: #3f414a;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.tasktitle{
+	margin-top: 18px;
+	width: 100%;
+	text-align: center;
+}
+.tbtitle{
+	color: #ff9036;
+	font-size: 24px;
+	margin-top: 21px;
+	border-top: 1px solid #585b69;
+	height: 46px;
+	line-height: 46px;
+}
+.tbli{
+	height:93px;
+	background-color: #3f414a;
+	border-bottom: 2px solid #585b69;
+}
+section .award{
+	float:left;
+	width:100%;
+	overflow:hidden;
+}
+section .award .task{
+	background:url(07.png);
+	width:256px;
+	height:91px;
+	margin:-10px auto 0;
+}
+section .award .task h3{
+	font-weight:normal;
+	line-height:91px;
+	color:#fcf8de;
+	font-size:30px;
+	text-align:center;
+}
+section .award ul{
+	overflow:hidden;
+	margin:12px 0 0 0;
+}
+section .award ul li{
+	width:100%;
+	overflow:hidden;
+	margin:0 auto;
+	background:#3f414a;
+}
+section .award ul li .game{
+	margin:28px auto 28px 20px;
+	float:left;
+}
+section .award ul li hgroup{
+	margin:0 0 0 15px;
+	float:left;
+}
+section .award ul li hgroup h3{
+	font-size:24px;
+	color:#ffffff;
+	font-weight:normal;
+	line-height:32px;
+	margin:26px 0 0 0;
+}
+section .award ul li hgroup h4{
+	vertical-align:middle;
+	font-size:24px;
+	color:#d5d5d5;
+	font-weight:normal;
+	line-height:32px;
+	margin:0 0 33px 0;
+}
+section .award ul li hgroup p{
+	line-height:124px;
+	font-size:30px;
+	color:#ffffff;
+}
+
+section .award ul li hgroup h4 span{
+	color:#fdd31c;
+}
+section .award ul li hgroup h4 img{
+	vertical-align:middle;
+	margin:0 10px 0 0;
+}
+section .award ul li a{
+	background:url(bright.png);
+	width:115px;
+	height:47px;
+	text-align:center;
+	float:right;
+	margin:28px 17px 23px 0;
+	/*text-shadow:#fcbc15 1px 0 0,#fcbc15 0 1px 0,#fcbc15 -1px 0 0,#fcbc15 0 -1px 0;*/
+	-webkit-text-shadow:#fcbc15 1px 0 0,#fcbc15 0 1px 0,#fcbc15 -1px 0 0,#fcbc15 0 -1px 0;
+	-moz-text-shadow:#fcbc15 1px 0 0,#fcbc15 0 1px 0,#fcbc15 -1px 0 0,#fcbc15 0 -1px 0;
+}
+section .award ul li a.dark{
+	background:url(dark.png);
+	text-shadow:#888888 1px 0 0,#888888 0 1px 0,#888888 -1px 0 0,#888888 0 -1px 0;
+	-webkit-text-shadow:#888888 1px 0 0,#888888 0 1px 0,#888888 -1px 0 0,#888888 0 -1px 0;
+	-moz-text-shadow:#888888 1px 0 0,#888888 0 1px 0,#888888 -1px 0 0,#888888 0 -1px 0;
+}
+/*前往*/
+section .award ul li a.goto{
+	background:url(goto.png);
+	/*text-shadow:#888888 1px 0 0,#888888 0 1px 0,#888888 -1px 0 0,#888888 0 -1px 0;
+    -webkit-text-shadow:#888888 1px 0 0,#888888 0 1px 0,#888888 -1px 0 0,#888888 0 -1px 0;
+    -moz-text-shadow:#888888 1px 0 0,#888888 0 1px 0,#888888 -1px 0 0,#888888 0 -1px 0;*/
+}
+section .award ul li a span{
+	font-size:26px;
+	color:#fdfbf9;
+	margin:6px 0 0 0;
+	display:block;
+}
+
+section .award .integral{
+	width:586px;
+	margin:9px auto 0;
+}
+section .award .integral h3{
+	font-size:30px;
+	color:#e4f2ff;
+	font-weight:normal;
+	line-height:55px;
+}
+section .award .integral .prompt{
+	width:586px;
+	height:46px;
+	line-height:46px;
+	background:#16171f;
+	border-radius:10px;
+	overflow:hidden;
+}
+section .award .integral .prompt span{
+	float:left;
+	margin:10px 0 10px 12px;
+	width:32px;
+	height:28px;
+}
+section .award .integral .prompt p{
+	float:right;
+	max-width:515px;
+	margin-right:22px;
+	font-size:24px;
+	color:#FFFFFF;
+}
+
+section .award ul.another li .game{
+	float:left;
+	width:120px;
+	text-align:center;
+	height:104px;
+	line-height:104px;
+	margin:0;
+}
+section .award ul.another li .game img{
+	vertical-align:middle;
+}
+section .award ul.another li hgroup{
+	margin:0 0 0 15px;
+	float:left;
+}
+section .award ul.another li hgroup h3{
+	font-size:30px;
+	line-height:36px;
+	color:#ffffff;
+	font-weight:normal;
+	margin:14px 0 0 0;
+}
+section .award ul.another li hgroup h4{
+	vertical-align:middle;
+	font-size:24px;
+	font-weight:normal;
+	line-height:32px;
+	margin:0 0 19px 0;
+	color:#fdd31c;
+	background:rgba(154,49,63,1);
+	padding:0 36px 0 4px;
+	border-radius:10px;
+}
+section .award ul.another li hgroup p{
+	line-height:102px;
+	font-size:30px;
+	color:#ffffff;
+}
+section .award ul li a{
+	/*margin:18px 17px 13px 0;*/
+}
+
+.leiji{
+	font-size: 26px;
+	margin-left: 90px;
+	color: #FFFFFF;
+	height: 52px;
+	line-height: 52px;
+	float: left;
+	width:200px;
+}
+
+.leiji img{
+	margin-top: 10px;
+}
+
+.getawd{
+	font-size: 26px;
+	margin-left: 60px;
+	color: #ffb136;
+	height: 52px;
+	line-height: 52px;
+}
+
+
+.getawd img{
+	margin-top: 10px;
+}
+
+.awdfc{
+	color: #ffdd94;
+	font-size: 23px;
+}
+
+.awdimg{
+	position:relative;
+	top:10px;
+	width:37px;
+	height:55px;
+}
+
+.awdline{
+	float:left;
+	height:100%;
+	width:10px;
+	background-color: #ff5400;
+}
+
+/*成就*/
+section .award{
+    float:left;
+    width:100%;
+    overflow:hidden;
+}
+section .award .task{
+    background:url(07.png);
+    width:256px;
+    height:91px;
+    margin:-10px auto 0;
+}
+section .award .task h3{
+    font-weight:normal;
+    line-height:91px;
+    color:#fcf8de;
+    font-size:30px;
+    text-align:center;
+}
+section .award ul{
+    overflow:hidden;
+    margin:12px 0 0 0;
+}
+section .award ul li{
+    width:100%;
+    overflow:hidden;
+    margin:0 auto;
+    background:#3f414a;
+}
+section .award ul li .game{
+    margin:28px auto 28px 20px;
+    float:left;
+}
+section .award ul li hgroup{
+    margin:0 0 0 15px;
+    float:left;
+}
+section .award ul li hgroup h3{
+    font-size:24px;
+    color:#ffffff;
+    font-weight:normal;
+    line-height:32px;
+    margin:26px 0 0 0;
+}
+section .award ul li hgroup h4{
+    vertical-align:middle;
+    font-size:24px;
+    color:#d5d5d5;
+    font-weight:normal;
+    line-height:32px;
+    margin:0 0 33px 0;
+}
+section .award ul li hgroup p{
+    line-height:124px;
+    font-size:30px;
+    color:#ffffff;
+}
+
+section .award ul li hgroup h4 span{
+    color:#fdd31c;
+}
+section .award ul li hgroup h4 img{
+    vertical-align:middle;
+    margin:0 10px 0 0;
+}
+section .award ul li a{
+    background:url(bright.png);
+    width:115px;
+    height:47px;
+    text-align:center;
+    float:right;
+    margin:28px 17px 23px 0;
+    /*text-shadow:#fcbc15 1px 0 0,#fcbc15 0 1px 0,#fcbc15 -1px 0 0,#fcbc15 0 -1px 0;*/
+-webkit-text-shadow:#fcbc15 1px 0 0,#fcbc15 0 1px 0,#fcbc15 -1px 0 0,#fcbc15 0 -1px 0;
+-moz-text-shadow:#fcbc15 1px 0 0,#fcbc15 0 1px 0,#fcbc15 -1px 0 0,#fcbc15 0 -1px 0;
+}
+section .award ul li a.dark{
+    background:url(dark.png);
+    text-shadow:#888888 1px 0 0,#888888 0 1px 0,#888888 -1px 0 0,#888888 0 -1px 0;
+-webkit-text-shadow:#888888 1px 0 0,#888888 0 1px 0,#888888 -1px 0 0,#888888 0 -1px 0;
+-moz-text-shadow:#888888 1px 0 0,#888888 0 1px 0,#888888 -1px 0 0,#888888 0 -1px 0;
+}
+/*前往*/
+section .award ul li a.goto{
+    background:url(goto.png);
+    /*text-shadow:#888888 1px 0 0,#888888 0 1px 0,#888888 -1px 0 0,#888888 0 -1px 0;
+    -webkit-text-shadow:#888888 1px 0 0,#888888 0 1px 0,#888888 -1px 0 0,#888888 0 -1px 0;
+    -moz-text-shadow:#888888 1px 0 0,#888888 0 1px 0,#888888 -1px 0 0,#888888 0 -1px 0;*/
+}
+section .award ul li a span{
+    font-size:26px;
+    color:#fdfbf9;
+    margin:6px 0 0 0;
+    display:block;
+}
+
+section .award .integral{
+    width:586px;
+    margin:9px auto 0;
+}
+section .award .integral h3{
+    font-size:30px;
+    color:#e4f2ff;
+    font-weight:normal;
+    line-height:55px;
+}
+section .award .integral .prompt{
+    width:586px;
+    height:46px;
+    line-height:46px;
+    background:#16171f;
+    border-radius:10px;
+    overflow:hidden;
+}
+section .award .integral .prompt span{
+    float:left;
+    margin:10px 0 10px 12px;
+    width:32px;
+    height:28px;
+}
+section .award .integral .prompt p{
+    float:right;
+    max-width:515px;
+    margin-right:22px;
+    font-size:24px;
+    color:#FFFFFF;
+}
+
+section .award ul.another li .game{
+    float:left;
+    width:120px;
+    text-align:center;
+    height:104px;
+    line-height:104px;
+    margin:0;
+}
+section .award ul.another li .game img{
+    vertical-align:middle;
+}
+section .award ul.another li hgroup{
+    margin:0 0 0 15px;
+    float:left;
+}
+section .award ul.another li hgroup h3{
+    font-size:30px;
+    line-height:36px;
+    color:#ffffff;
+    font-weight:normal;
+    margin:14px 0 0 0;
+}
+section .award ul.another li hgroup h4{
+    vertical-align:middle;
+    font-size:24px;
+    font-weight:normal;
+    line-height:32px;
+    margin:0 0 19px 0;
+    color:#fdd31c;
+    background:rgba(154,49,63,1);
+    padding:0 36px 0 4px;
+    border-radius:10px;
+}
+section .award ul.another li hgroup p{
+    line-height:102px;
+    font-size:30px;
+    color:#ffffff;
+}
+section .award ul li a{
+    /*margin:18px 17px 13px 0;*/
+}
+
+.tbli{
+    height:93px;
+    background-color: #3f414a;
+    border-bottom: 2px solid #585b69;
+}
+
+.tbli .leiji{
+    margin-left: 70px;
+    margin-top: 20px;
+}
+
+.tbli .getawd{
+    margin-left: 360px;
+    margin-top: 20px;
+}
+
+.tbli .contentt{  
+    font-size: 26px;
+    height: 52px;
+    color: #FFFFFF;
+    position: absolute;
+}  
+.tbli .contentt span{  
+    height:100%;  
+    vertical-align:middle;  
+    line-height:52px;
+}  
+.contentt img{  
+    vertical-align:middle;
+    padding-right: 5px;
+}  
+
+.tbliselect{
+    border-left: 10px solid #c4560d;
+}
+.tblinoselect{
+    padding-left: 10px;
+}
+
+.tasktitle{
+    margin-top: 18px;
+    width: 100%;
+    text-align: center;
+}
+.tbtitle{
+    color: #ff9036;
+    font-size: 24px;
+    margin-top: 21px;
+    border-top: 1px solid #585b69;
+    height: 46px;
+    line-height: 46px;
+}
+
+/*结束成就*/

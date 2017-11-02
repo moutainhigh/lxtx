@@ -1,0 +1,58 @@
+div.clearBoth{
+clear:both;
+margin-top:20px;
+}
+div.copyrightrow{
+background:#ffffff;
+clear:both;
+font-size:9px;
+padding:25px;
+text-align:center;
+}
+div.header{
+/*clear:both;*/
+color:#FFF;
+font-weight:bold;
+padding:3px;
+padding-bottom: 8px;
+background: url(../images/index_box.jpg);
+}
+div.reportBox{
+background: #DADADA;
+border:2px solid #868686;
+margin-top:1em;
+font: tahoma; color: #003399;
+}
+div.row{
+background: #FFF;
+clear:both;
+margin-top:1px;
+padding:4px;
+}
+div.row span.center{
+margin-right:30px;
+}
+div.row span.left{
+float:left;
+text-align:left;
+width:74%;
+}
+div.row span.right{
+float:right;
+text-align:right;
+width:34%;
+}
+div.warrantyrow{
+background:#ffffff;
+clear:both;
+font-size:9px;
+text-align:center;
+}
+#colone,#coltwo,#colthree{
+display:inline;
+float:left;
+margin-left:5px;
+padding-top:3em;
+width:30%;
+padding: 3px;
+}

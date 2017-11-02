@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="oneJumpFactory" class="com.jxt.netpay.appclient.util.OneJumpFactory">
+	    <property name="list">
+	        <list>
+	    	<bean class="com.jxt.netpay.appclient.service.impl.HaiTunPayImplIOneJump">
+	    	    <property name="appId" value="10710"/>
+	    	    <property name="appKey" value="76885da4b54348d4ca7a86b1529656c8"/>
+	    	</bean>
+	    	</list>
+	    </property>
+	    
+	</bean>
+	
+</beans>

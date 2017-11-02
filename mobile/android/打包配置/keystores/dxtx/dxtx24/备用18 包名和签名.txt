@@ -1,0 +1,7 @@
+包名 com.nujasndiue.jdeuij 
+md5:2858e1ed9dc1ae2e94397ea6e49d8b3a
+
+
+
+别名：1
+秘钥：123456

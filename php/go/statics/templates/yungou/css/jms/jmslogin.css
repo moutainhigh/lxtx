@@ -1,0 +1,211 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+	margin: 0;
+	padding: 0;
+}
+#container {
+	border: 1px solid #132c22;
+	width:1920px;
+	height:950px;
+	background-color:#099;
+	background:url(<?php echo G_TEMPLATES_IMAGE; ?>/jms/bg.jpg) no-repeat;
+}
+
+#main {
+ 	border: 1px solid #069; 
+	width: 100%;
+	height: 860px;
+	margin-top:90px;
+	background:url(<?php echo G_TEMPLATES_IMAGE; ?>/jms/kuang.png) no-repeat;
+	
+}
+#shouyi {
+	margin-top: 40px;
+	width: 124px;
+	height: 114px;
+}
+#shouyi:hover {
+	cursor:pointer;
+}
+#neirong {
+	width: 124px;
+	height: 114px;
+}
+#neirong:hover {
+	cursor: pointer;
+}
+#shangpin {
+	width: 124x;
+	height: 114px;
+}
+#shangpin:hover {
+	cursor:pointer;
+}
+#huiyuan {
+	width: 124px;
+	height: 114px;
+}
+#huiyuan:hover {
+	cursor:pointer;
+}
+#top {
+ 	border: 1px solid #069; 
+	width: 100%;
+	height: 49px;
+	font-size: 12px;
+	color: #FFF;	
+}
+#top .logininfo{
+border: 1px solid red; 
+width:350px;
+padding-top:10px;
+padding-right:30px;
+float:right;
+text-align:right;
+}
+#top .logininfo a{
+color: #FFF;
+margin-right:10px;
+text-decoration:none;
+}
+#top .logininfo a:hover{
+	
+	color:red;
+}
+#login2{
+display:none;
+}
+#left{
+ 	border: 1px solid red; 
+	height:  687px;
+	width:172px;
+	float:left;
+}
+#middle {
+ 	border: 1px solid green; 
+	height: 687px;
+	width:1670px;
+	float:left;
+}
+#person{
+	height:  568px;
+	width:338px;
+	position: absolute;
+	top: 383px;
+	right: 10px;
+	background: url(<?php echo G_TEMPLATES_IMAGE; ?>/jms/person.png) no-repeat;
+	/*display:none;*/
+}
+#menu {
+/* 	border: 1px solid #069; */
+	height: 540px;
+	width: 130px;
+	position: absolute;
+	top: 90px;
+	left: 37px;
+	background: url(<?php echo G_TEMPLATES_IMAGE; ?>/jms/menu.png) no-repeat;
+}
+#center {
+/* 	border: 1px solid #069; */
+	height: 812px;
+	width: 59px;
+	float: left;
+}
+
+#guanli {
+/* 	border: 1px solid #069; */
+	height: 84px;
+	width: 358px;
+	position: absolute;
+	top: 42px;
+	left: 783px;
+	background: url(<?php echo G_TEMPLATES_IMAGE; ?>/jms/admincenter.png) no-repeat;
+}
+#jmslogin {
+/* 	border: 1px solid #069; */
+	height: 446px;
+	width: 744px;
+	position: absolute;
+	top: 90px;
+	left: 592px;
+	background-image: url(<?php echo G_TEMPLATES_IMAGE; ?>/jms/login_main.png);
+	background-repeat: no-repeat;
+	
+}
+#jmslogin ul {
+	margin-top: 90px;
+	margin-left: 160px;
+	width: 427px;
+	height: 286px;
+}
+#jmslogin ul li {
+	list-style: none;
+	width: 427px;
+	height: 78px;
+/* 	border: 1px solid #069; */
+}
+.t {
+	width: 130px;
+	height: 33px;
+	font-size: 30px;
+	color: #FFF;
+	font-family: "黑体";
+	float:left;
+
+}
+.myinput{
+	float:left;}
+.myinput input{
+	width: 274px;
+	height: 34px;
+    font-size:20px;
+}
+
+.checkcode {
+	width: 132px;
+	height: 34px;
+	float:left;
+	font-size:20px;
+	text-transform:uppercase;
+}
+.yanzhengma{
+width:90px;
+height:33px;
+margin-left:20px;
+}
+.back {
+	width: 133px;
+	height: 45px;
+}
+.back:hover{
+cursor:pointer;
+}
+.login {
+	width: 133px;
+	height: 45px;
+	margin-left: 88px;
+}
+.login:hover{
+cursor:pointer;
+}
+#welcome{
+height:  934px;
+	width:1436px;
+	position: absolute;
+	top: 5px;
+	left: 250px;
+	background: url(<?php echo G_TEMPLATES_IMAGE; ?>/jms/adminindex-welcome.png) no-repeat;
+}
+#welcome1{
+   height:  72px;
+	width:806px;
+	position: absolute;
+	top: 624px;
+	left: 570px;
+	font-size:30px;
+	color:#444444;
+	font-family:'宋体';
+}
+
+

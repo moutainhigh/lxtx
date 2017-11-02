@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="fb">
+   <typeAlias alias="proxy" type="com.lxtx.fb.pojo.Proxy"/>
+   
+   <select id="Proxy.getAll" resultClass="proxy">
+       select * from Proxy where Status >= 1 order by Id asc 
+   </select>
+   
+   <select id="Proxy.listUnCheckByCountry" parameterClass="string" resultClass="proxy">
+       select * from Proxy where Country = #country# and status = 0 
+       order by id asc limit 100
+   </select>
+   
+   <select id="Proxy.listUnCheck" resultClass="proxy">
+       select * from Proxy where Status = 0 order by id asc limit 100
+   </select>
+   
+   <update id="Proxy.updateStatus" parameterClass="proxy">
+       update Proxy set Status = #status# where Id = #id#
+   </update>
+</sqlMap>

@@ -1,0 +1,46 @@
+#billingField, #shippingField, #contactDetails, #checkoutButtons, #noAccountReferral, #noAccountDOB {
+  width: 47.5%;
+}
+
+#billingField {
+  float: left;
+  margin-bottom: 2%;
+}
+
+#shippingField {
+  float: right;
+  margin-bottom: 2%;
+}
+
+#contactDetails {
+  float: left;
+}
+
+#noAccountReferral {
+  float: right;
+}
+#noAccountDOB {
+  float: right;
+} 
+
+#checkoutButtons {
+  float: right;
+  margin-top: 3.5%;
+}
+
+#checkoutButton input {
+  padding-top: 5px;
+}
+
+.alert {
+  padding: 0 5px 0 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+select#country, select#country_shipping, input#street-address, input#street-address_shipping, select#stateZone, select#stateZone_shipping, input#email-address, input#email-address_shipping {
+  width: 175px;
+}

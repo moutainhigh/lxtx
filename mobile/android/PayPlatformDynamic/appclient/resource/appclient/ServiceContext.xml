@@ -1,0 +1,1127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<!-- dynamic start -->
+
+	<bean id="njDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.NjDynamicService">
+		<property name="timeOut" value="300" />
+		<property name="mobileInfoHandler" ref="mobileInfoHandler" />
+		<property name="phoneNoRegionHandler" ref="phoneNoRegionHandler" />
+		<property name="blackMobileHelper" ref="blackMobileHelper" />
+	</bean>
+
+	<bean id="njdjDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.NjdjDynamicService">
+		<property name="timeOut" value="120" />
+		<property name="mobileInfoHandler" ref="mobileInfoHandler" />
+		<property name="phoneNoRegionHandler" ref="phoneNoRegionHandler" />
+		<property name="blackMobileHelper" ref="blackMobileHelper" />
+	</bean>
+
+	<bean id="xmwtDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.XmwtDynamicService">
+		<property name="mobileInfoHandler" ref="mobileInfoHandler" />
+		<property name="blackMobileHelper" ref="blackMobileHelper" />
+	</bean>
+
+	<bean id="zztDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZztDynamicService">
+	</bean>
+
+	<bean id="hsblDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.HsblDynamicService">
+	</bean>
+
+	<bean id="mobileDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.MobileDynamicService">
+		<property name="mobileInfoHandler" ref="mobileInfoHandler" />
+	</bean>
+
+	<bean id="sxdDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.SxdDynamicService">
+	</bean>
+
+	<bean id="jsgdDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.JsgdDynamicService">
+	</bean>
+
+	<bean id="ttzzDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.TtzzDynamicService">
+	</bean>
+
+	<bean id="zztmmDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZztmmDynamicService">
+	</bean>
+
+	<bean id="zztldDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZztldDynamicService">
+	</bean>
+
+	<bean id="zztPldDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZztPldDynamicService">
+		<property name="mobileInfoHandler" ref="mobileInfoHandler" />
+		<property name="blackMobileHelper" ref="blackMobileHelper" />
+	</bean>
+
+	<bean id="kdslDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.KdslDynamicService">
+		<property name="timeOut" value="300" />
+		<property name="mobileInfoHandler" ref="mobileInfoHandler" />
+		<property name="phoneNoRegionHandler" ref="phoneNoRegionHandler" />
+		<property name="blackMobileHelper" ref="blackMobileHelper" />
+	</bean>
+
+	<bean id="klbxdDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.KlbxdDynamicService">
+	</bean>
+
+	<bean id="zztWoDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZztWoDynamicService">
+	</bean>
+
+	<bean id="fhDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.FhDynamicService">
+		<property name="timeOut" value="200" />
+		<property name="mobileInfoHandler" ref="mobileInfoHandler" />
+		<property name="phoneNoRegionHandler" ref="phoneNoRegionHandler" />
+		<property name="blackMobileHelper" ref="blackMobileHelper" />
+	</bean>
+
+	<bean id="zztFmmDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZztFmmDynamicService">
+	</bean>
+
+	<bean id="zztPldSgDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZztPldSgDynamicService">
+		<property name="mobileInfoHandler" ref="mobileInfoHandler" />
+		<property name="blackMobileHelper" ref="blackMobileHelper" />
+	</bean>
+
+	<bean id="zztXlyDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZztXlyDynamicService">
+	</bean>
+
+	<bean id="zztXlyLtDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZztXlyLtDynamicService">
+	</bean>
+
+	<bean id="zztFxDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZztFxDynamicService">
+	</bean>
+
+	<bean id="bjjsDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.BjjsDynamicService">
+	</bean>
+
+	<bean id="zztRandomDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZztRandomDynamicService">
+	</bean>
+
+	<bean id="zztDwyDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZztDwyDynamicService">
+	</bean>
+
+	<bean id="xxcWoDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.XxcWoDynamicService">
+	</bean>
+
+	<bean id="duohDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.DuohDynamicService">
+		<property name="duohSyncHandler" ref="duohSyncHandler" />
+	</bean>
+
+	<bean id="sztsDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.SztsDynamicService">
+	</bean>
+
+	<bean id="xxcWo1DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.XxcWo1DynamicService">
+	</bean>
+
+	<bean id="xxcWo2DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.XxcWo2DynamicService">
+	</bean>
+
+	<bean id="tsxzDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.TsxzDynamicService">
+	</bean>
+
+	<bean id="ffkjDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.FfkjDynamicService">
+	</bean>
+
+	<bean id="ljdmDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.LjdmDynamicService">
+	</bean>
+
+	<bean id="ffkjLtDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.FfkjLtDynamicService">
+	</bean>
+
+	<bean id="xmwtMmDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.XmwtMmDynamicService">
+	</bean>
+
+	<bean id="shylDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ShylDynamicService">
+	</bean>
+
+	<bean id="wimiDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.WimiDynamicService">
+	</bean>
+
+	<bean id="sztsLtDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.SztsLtDynamicService">
+	</bean>
+
+	<bean id="ffkj1DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.Ffkj1DynamicService">
+	</bean>
+
+	<bean id="bjjsMmDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.BjjsMmDynamicService">
+	</bean>
+
+	<bean id="xmwtMm1DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.XmwtMm1DynamicService">
+	</bean>
+
+	<bean id="fhDmDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.FhDmDynamicService">
+	</bean>
+
+	<bean id="ffkjPcDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.FfkjPcDynamicService">
+	</bean>
+
+	<bean id="szts1DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.Szts1DynamicService">
+	</bean>
+
+	<bean id="zztWyDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZztWyDynamicService">
+	</bean>
+
+	<bean id="ffkj2DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.Ffkj2DynamicService">
+	</bean>
+
+	<bean id="bjjsLtDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.BjjsLtDynamicService">
+	</bean>
+
+	<bean id="zztSmmDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZztSmmDynamicService">
+	</bean>
+
+	<bean id="mmpmDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.MmpmDynamicService">
+	</bean>
+
+	<bean id="lxtxMmDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.LxtxMmDynamicService">
+	</bean>
+
+	<bean id="xmwtMm2DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.XmwtMm2DynamicService">
+	</bean>
+
+	<bean id="xmwtMm3DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.XmwtMm3DynamicService">
+	</bean>
+
+	<bean id="xmwtMm4DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.XmwtMm4DynamicService">
+	</bean>
+
+	<bean id="bjjsMm2DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.BjjsMm2DynamicService">
+	</bean>
+
+	<bean id="xmwtDmDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.XmwtDmDynamicService">
+	</bean>
+
+	<bean id="xmwtRdoDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.XmwtRdoDynamicService">
+	</bean>
+
+	<bean id="xmwtMm5DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.XmwtMm5DynamicService">
+	</bean>
+
+	<bean id="bjjsMm1DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.BjjsMm1DynamicService">
+	</bean>
+
+	<bean id="zcVccDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZcVccDynamicService">
+	</bean>
+
+	<bean id="lxtxSmmDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.LxtxSmmDynamicService">
+	</bean>
+
+	<bean id="jxMm1DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.JxMm1DynamicService">
+	</bean>
+
+	<bean id="hhkjMm1DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.HhkjMm1DynamicService">
+	</bean>
+
+	<bean id="bjjsMm3DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.BjjsMm3DynamicService">
+	</bean>
+
+	<bean id="zztDmDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZztDmDynamicService">
+	</bean>
+
+	<bean id="hhkjDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.HhkjDynamicService">
+	</bean>
+
+	<bean id="fhDm1DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.FhDm1DynamicService">
+	</bean>
+
+	<bean id="hhkjWyDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.HhkjWyDynamicService">
+	</bean>
+
+	<bean id="lxtxSmm1DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.LxtxSmm1DynamicService">
+	</bean>
+
+	<bean id="sxdLtDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.SxdLtDynamicService">
+	</bean>
+
+	<bean id="twMmDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.TwMmDynamicService">
+	</bean>
+
+	<bean id="jxMm2DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.JxMm2DynamicService">
+	</bean>
+
+	<bean id="xmwtMm6DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.XmwtMm6DynamicService">
+	</bean>
+
+	<bean id="hyfdLtDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.HyfdLtDynamicService">
+	</bean>
+
+	<bean id="lxtxSmm2DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.LxtxSmm2DynamicService">
+	</bean>
+
+	<bean id="bjjsLt1DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.BjjsLt1DynamicService">
+	</bean>
+
+	<bean id="xmwtDm1DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.XmwtDm1DynamicService">
+	</bean>
+
+	<bean id="bjjsDmDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.BjjsDmDynamicService">
+	</bean>
+
+	<bean id="kestrelDmDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.KestrelDmDynamicService">
+		<property name="ip" value="10.163.104.78" />
+		<property name="port" value="22134" />
+	</bean>
+
+	<bean id="bjjsSmm1DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.BjjsSmm1DynamicService">
+	</bean>
+
+	<bean id="bjjsSmmDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.BjjsSmmDynamicService">
+	</bean>
+
+	<bean id="bjjsMm4DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.BjjsMm4DynamicService">
+
+		<property name="passageHandler" ref="passageHandler" />
+	</bean>
+
+	<bean id="bjjsSmm2DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.BjjsSmm2DynamicService">
+	</bean>
+
+	<bean id="bjjsMm5DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.BjjsMm5DynamicService">
+	</bean>
+
+	<bean id="bjjsMm6DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.BjjsMm6DynamicService">
+	</bean>
+
+	<bean id="bjjsDdoDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.BjjsDdoDynamicService">
+	</bean>
+
+	<bean id="hhkjMm2DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.HhkjMm2DynamicService">
+	</bean>
+
+	<bean id="fyhdMmDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.FyhdMmDynamicService">
+	</bean>
+
+	<bean id="xmwtMm7DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.XmwtMm7DynamicService">
+	</bean>
+
+	<bean id="hhkjWy2DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.HhkjWy2DynamicService">
+	</bean>
+
+	<bean id="bjjsMm7DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.BjjsMm7DynamicService">
+	</bean>
+
+	<bean id="bjjsMm8DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.BjjsMm8DynamicService">
+	</bean>
+
+	<bean id="hhkjMm3DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.HhkjMm3DynamicService">
+	</bean>
+
+	<bean id="xmwtMm8DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.XmwtMm8DynamicService">
+	</bean>
+
+	<bean id="xmwtMm9DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.XmwtMm9DynamicService">
+	</bean>
+
+	<bean id="hhkjDmDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.HhkjDmDynamicService">
+	</bean>
+
+	<bean id="bjjsMm9DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.BjjsMm9DynamicService">
+	</bean>
+
+	<bean id="bjjsLt2DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.BjjsLt2DynamicService">
+	</bean>
+
+	<bean id="bjjsMm10DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.BjjsMm10DynamicService">
+	</bean>
+
+	<bean id="hhkjMm4DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.HhkjMm4DynamicService">
+	</bean>
+
+	<bean id="xmwtWyDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.XmwtWyDynamicService">
+	</bean>
+
+	<bean id="kestrelMmqdDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.KestrelMmqdDynamicService">
+		<property name="ip" value="10.163.104.78" />
+		<property name="port" value="22134" />
+	</bean>
+
+	<bean id="ffkjDm1DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.FfkjDm1DynamicService">
+	</bean>
+
+	<bean id="bjjsDm2DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.BjjsDm2DynamicService">
+	</bean>
+
+	<bean id="jkhlH5DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.JkhlH5DynamicService">
+	</bean>
+
+	<bean id="xmwtDjDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.XmwtDjDynamicService">
+	</bean>
+
+	<bean id="lxtxSmm3DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.LxtxSmm3DynamicService">
+	</bean>
+
+	<bean id="onceDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.OnceDynamicService">
+	</bean>
+
+	<bean id="once1DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.Once1DynamicService">
+	</bean>
+
+	<bean id="once2DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.Once2DynamicService">
+	</bean>
+
+	<bean id="once3DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.Once3DynamicService">
+	</bean>
+
+	<bean id="once4DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.Once4DynamicService">
+	</bean>
+
+	<bean id="once5DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.Once5DynamicService">
+	</bean>
+
+	<bean id="twiceDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.TwiceDynamicService">
+	</bean>
+
+	<bean id="sxdLt1DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.SxdLt1DynamicService">
+	</bean>
+
+	<bean id="once6DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.Once6DynamicService">
+	</bean>
+
+	<bean id="once7DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.Once7DynamicService">
+	</bean>
+
+	<bean id="jkhlDdoDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.JkhlDdoDynamicService">
+	</bean>
+
+	<bean id="jkhlPcDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.JkhlPcDynamicService">
+	</bean>
+
+	<bean id="zztYyDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZztYyDynamicService">
+	</bean>
+
+
+
+	<bean id="kestrelShuaMmDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.KestrelMmqdDynamicService">
+		<property name="type" value="kestrelShuaMm" />
+		<property name="appCode" value="shuaMm" />
+		<property name="ip" value="10.163.104.78" />
+		<property name="port" value="22134" />
+	</bean>
+
+	<bean id="gzqsDxDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.GzqsDxDynamicService">
+	</bean>
+
+	<bean id="once8DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.Once8DynamicService">
+	</bean>
+
+	<bean id="zcVcc2DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZcVcc2DynamicService">
+	</bean>
+
+	<bean id="gzfcDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.GzfcDynamicService">
+	</bean>
+
+	<bean id="zcDdoDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZcDdoDynamicService">
+	</bean>
+
+	<bean id="once9DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.Once9DynamicService">
+	</bean>
+
+	<bean id="cqykDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.CqykDynamicService">
+	</bean>
+
+	<bean id="smsDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.SmsDynamicService">
+	</bean>
+
+	<bean id="once10DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.Once10DynamicService">
+	</bean>
+
+	<bean id="hhkjApiDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.HhkjApiDynamicService">
+	</bean>
+
+	<bean id="jhtcDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.JhtcDynamicService">
+	</bean>
+
+	<bean id="ddoDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.DdoDynamicService">
+	</bean>
+
+	<bean id="xmwtMm10DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.XmwtMm10DynamicService">
+	</bean>
+
+	<bean id="gzfc1DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.Gzfc1DynamicService">
+	</bean>
+
+	<bean id="hhkjYyDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.HhkjYyDynamicService">
+	</bean>
+
+	<bean id="fhSdkDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.FhSdkDynamicService">
+	</bean>
+
+	<bean id="upayDdoDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.UpayDdoDynamicService">
+	</bean>
+
+	<bean id="mhDdoDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.MhDdoDynamicService">
+	</bean>
+
+	<bean id="fhDm2DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.FhDm2DynamicService">
+	</bean>
+
+	<bean id="yyjdDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.YyjdDynamicService">
+	</bean>
+
+	<bean id="yyjdNjDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.YyjdNjDynamicService">
+	</bean>
+
+	<bean id="bjjsPcDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.BjjsPcDynamicService">
+	</bean>
+
+	<bean id="hhkjSpjdDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.HhkjSpjdDynamicService">
+	</bean>
+
+	<bean id="mmCheckDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.MmCheckDynamicService">
+	</bean>
+
+	<bean id="hhkjYxjdbyDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.HhkjYxjdbyDynamicService">
+	</bean>
+
+	<bean id="fhSpjdDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.FhSpjdDynamicService">
+	</bean>
+
+	<bean id="dmSdkDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.DmSdkDynamicService">
+	</bean>
+
+	<bean id="bjzdDdoDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.BjzdDdoDynamicService">
+	</bean>
+
+	<bean id="sjdySjqbDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.SjdySjqbDynamicService">
+	</bean>
+
+	<bean id="htwxDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.HtwxDynamicService">
+		<property name="callBackPath"
+			value="http://115.28.52.43:9020/pay/synch/synch/htwx" />
+		<property name="referUrl" value="http://www.baidu.com" />
+	</bean>
+
+	<bean id="rlwDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.RlwDynamicService">
+	</bean>
+
+	<bean id="sysjPcDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.SysjPcDynamicService">
+	</bean>
+
+	<bean id="zzfApiDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZzfApiDynamicService">
+	</bean>
+
+	<bean id="zztDm1DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZztDm1DynamicService">
+	</bean>
+
+	<bean id="sysjTykjDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.SysjTykjDynamicService">
+	</bean>
+
+	<bean id="sysjWoDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.SysjWoDynamicService">
+	</bean>
+
+	<bean id="zzaceDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZzaceDynamicService">
+	</bean>
+
+	<bean id="zwydDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZwydDynamicService">
+	</bean>
+
+	<bean id="zztDdoDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZztDdoDynamicService">
+	</bean>
+
+	<bean id="mobile1DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.Mobile1DynamicService">
+		<property name="mobileInfoHandler" ref="mobileInfoHandler" />
+	</bean>
+
+	<bean id="sysjDxDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.SysjDxDynamicService">
+	</bean>
+
+
+	<bean id="sydjWoDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.SjdyWoDynamicService">
+	</bean>
+
+	<bean id="cdxmXezfDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.CdxmXezfDynamicService">
+	</bean>
+
+	<bean id="videoSdkDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.VideoSdkDynamicService">
+	</bean>
+
+	<bean id="zcDdoLtDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZcDdoLtDynamicService">
+	</bean>
+
+	<bean id="zcDdoDxDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZcDdoDxDynamicService">
+	</bean>
+
+	<bean id="zztVideoDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZztVideoDynamicService">
+	</bean>
+
+	<bean id="dxayxDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.DxayxDynamicService">
+	</bean>
+
+	<bean id="zcLtydDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZcLtydDynamicService">
+	</bean>
+
+	<bean id="rmkjSpDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.RmkjSpDynamicService">
+	</bean>
+
+	<bean id="xcnGameDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.XcnGameDynamicService">
+	</bean>
+
+
+	<bean id="rmkjYdspDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.RmkjYdspDynamicService">
+	</bean>
+
+	<bean id="willGuoDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.WillGuoDynamicService">
+	</bean>
+
+	<bean id="sjdydmsdkDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.SjdyDmSdkDynamicService">
+	</bean>
+
+	<bean id="rmkjWoDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.RmkjWoDynamicService">
+	</bean>
+
+	<bean id="rmkjRdoDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.RmkjRdoDynamicService">
+	</bean>
+
+	<bean id="cdblYyDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.CdblYyDynamicService">
+	</bean>
+
+	<bean id="sysjDmDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.SysjDmDynamicService">
+	</bean>
+
+	<bean id="rmkjYkspDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.RmkjYkspDynamicService">
+	</bean>
+
+	<bean id="sjdyRdoDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.SjdyRdoDynamicService">
+	</bean>
+
+	<bean id="upayWiDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.UpayWiDynamicService">
+	</bean>
+
+	<bean id="upayVideoDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.UpayVideoDynamicService">
+	</bean>
+
+	<bean id="rmkjDxspDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.RmkjDxspDynamicService">
+	</bean>
+
+	<bean id="zztJfdhDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZztJfdhDynamicService">
+	</bean>
+
+	<bean id="cdblYlhDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.CdblYlhDynamicService">
+	</bean>
+
+	<bean id="upayDxbyDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.UpayDxbyDynamicService">
+	</bean>
+
+	<bean id="upayZtsxDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.UpayZtsxDynamicService">
+	</bean>
+
+	<bean id="rmkjDmcDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.RmkjDmcDynamicService">
+	</bean>
+
+	<bean id="hyzxJfdhDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.HyzxJfdhDynamicService">
+	</bean>
+
+
+	<bean id="upaySpdmDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.UpaySpdmDynamicService">
+	</bean>
+
+
+	<bean id="zcLtWtjDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZcLtWtjDynamicService">
+	</bean>
+
+	<bean id="hyzxWtjDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.HyzxWtjDynamicService">
+	</bean>
+
+	<bean id="hyzxLtWoDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.HyzxLtWoDynamicService">
+	</bean>
+
+	<bean id="zxMgSdDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZxMgSdDynamicService">
+	</bean>
+
+	<bean id="rmkjDmdbDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.RmkjDmdbDynamicService">
+	</bean>
+
+	<bean id="rmkjDdoDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.RmkjDdoDynamicService">
+	</bean>
+
+	<bean id="zqssOneDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZqssOneDynamicService">
+	</bean>
+
+	<bean id="hyzxTykjTwoDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.HyzxTykjTwoDynamicService">
+	</bean>
+
+	<bean id="zztFzzxDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZztFzzxDynamicService">
+	</bean>
+
+
+	<bean id="hyzxLtWo2DynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.HyzxLtWo2DynamicService">
+	</bean>
+
+	<bean id="zcDxAcyDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZcDxAcyDynamicService">
+	</bean>
+
+	<bean id="zcDdoLtWoDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.ZcDdoLtWoDynamicService">
+	</bean>
+
+	<bean id="xiaMenDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.XiaMenDynamicService">
+	</bean>
+
+	<bean id="tuoWeiDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.TuoWeiDynamicService">
+	</bean>
+	
+	<bean id="rmkjSuperDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.RmkjSuperDynamicService">
+	</bean>
+	
+	<bean id="hyzxMobileDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.HyzxMobileDynamicService">
+	</bean>
+
+	<bean id="hyzxJsuDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.HyzxJsuDynamicService">
+	</bean>
+	
+	<bean id="rmkjDmcTwoDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.RmkjDmcTwoDynamicService">
+	</bean>
+	
+	<bean id="hyzxWydDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.HyzxWydDynamicService">
+	</bean>
+	
+	<bean id="hyzxWeiDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.HyzxWeiDynamicService">
+	</bean>
+	
+	<bean id="xilinByDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.XiLinByDynamicService">
+	</bean>
+	
+	<bean id="xinhuaPageDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.XinHuaPageDynamicService">
+	</bean>
+	
+	<bean id="damaodxDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.DamaoDxDynamicService">
+	</bean>
+	
+	<bean id="xilinddoDynamicService"
+		class="com.jxt.pay.appclient.service.dynamic.net.XiLinDdoDynamicService">
+	</bean>
+	
+	<bean id="dynamicServiceFactory"
+		class="com.jxt.pay.appclient.service.dynamic.net.DynamicServiceFactory">
+		<property name="list">
+			<list>
+				<ref local="njDynamicService" />
+				<ref local="xmwtDynamicService" />
+				<ref local="zztDynamicService" />
+				<ref local="hsblDynamicService" />
+				<ref local="mobileDynamicService" />
+				<ref local="sxdDynamicService" />
+				<ref local="jsgdDynamicService" />
+				<ref local="kdslDynamicService" />
+				<ref local="ttzzDynamicService" />
+				<ref local="klbxdDynamicService" />
+				<ref local="zztmmDynamicService" />
+				<ref local="zztldDynamicService" />
+				<ref local="zztPldDynamicService" />
+				<ref local="zztWoDynamicService" />
+				<ref local="fhDynamicService" />
+				<ref local="zztFmmDynamicService" />
+				<ref local="zztPldSgDynamicService" />
+				<ref local="zztXlyDynamicService" />
+				<ref local="zztXlyLtDynamicService" />
+				<ref local="zztFxDynamicService" />
+				<ref local="bjjsDynamicService" />
+				<ref local="zztRandomDynamicService" />
+				<ref local="zztDwyDynamicService" />
+				<ref local="xxcWoDynamicService" />
+				<ref local="duohDynamicService" />
+				<ref local="sztsDynamicService" />
+				<ref local="xxcWo1DynamicService" />
+				<ref local="xxcWo2DynamicService" />
+				<ref local="tsxzDynamicService" />
+				<ref local="ffkjDynamicService" />
+				<ref local="ljdmDynamicService" />
+				<ref local="ffkjLtDynamicService" />
+				<ref local="xmwtMmDynamicService" />
+				<ref local="shylDynamicService" />
+				<ref local="wimiDynamicService" />
+				<ref local="sztsLtDynamicService" />
+				<ref local="ffkj1DynamicService" />
+				<ref local="bjjsMmDynamicService" />
+				<ref local="xmwtMm1DynamicService" />
+				<ref local="fhDmDynamicService" />
+				<ref local="ffkjPcDynamicService" />
+				<ref local="szts1DynamicService" />
+				<ref local="zztWyDynamicService" />
+				<ref local="ffkj2DynamicService" />
+				<ref local="bjjsLtDynamicService" />
+				<ref local="zztSmmDynamicService" />
+				<ref local="mmpmDynamicService" />
+				<ref local="lxtxMmDynamicService" />
+				<ref local="xmwtMm2DynamicService" />
+				<ref local="xmwtMm3DynamicService" />
+				<ref local="xmwtMm4DynamicService" />
+				<ref local="bjjsMm2DynamicService" />
+				<ref local="xmwtDmDynamicService" />
+				<ref local="xmwtRdoDynamicService" />
+				<ref local="xmwtMm5DynamicService" />
+				<ref local="bjjsMm1DynamicService" />
+				<ref local="zcVccDynamicService" />
+				<ref local="lxtxSmmDynamicService" />
+				<ref local="lxtxSmm1DynamicService" />
+				<ref local="jxMm1DynamicService" />
+				<ref local="hhkjMm1DynamicService" />
+				<ref local="bjjsMm3DynamicService" />
+				<ref local="zztDmDynamicService" />
+				<ref local="hhkjDynamicService" />
+				<ref local="fhDm1DynamicService" />
+				<ref local="hhkjWyDynamicService" />
+				<ref local="sxdLtDynamicService" />
+				<ref local="twMmDynamicService" />
+				<ref local="jxMm2DynamicService" />
+				<ref local="xmwtMm6DynamicService" />
+				<ref local="hyfdLtDynamicService" />
+				<ref local="lxtxSmm2DynamicService" />
+				<ref local="bjjsLt1DynamicService" />
+				<ref local="xmwtDm1DynamicService" />
+				<ref local="bjjsDmDynamicService" />
+				<ref local="kestrelDmDynamicService" />
+				<ref local="bjjsSmm1DynamicService" />
+				<ref local="bjjsSmmDynamicService" />
+				<ref local="bjjsMm4DynamicService" />
+				<ref local="bjjsSmm2DynamicService" />
+				<ref local="bjjsMm5DynamicService" />
+				<ref local="bjjsMm6DynamicService" />
+				<ref local="bjjsDdoDynamicService" />
+				<ref local="hhkjMm2DynamicService" />
+				<ref local="fyhdMmDynamicService" />
+				<ref local="xmwtMm7DynamicService" />
+				<ref local="hhkjWy2DynamicService" />
+				<ref local="bjjsMm7DynamicService" />
+				<ref local="bjjsMm8DynamicService" />
+				<ref local="hhkjMm3DynamicService" />
+				<ref local="xmwtMm8DynamicService" />
+				<ref local="xmwtMm9DynamicService" />
+				<ref local="hhkjDmDynamicService" />
+				<ref local="bjjsMm9DynamicService" />
+				<ref local="bjjsLt2DynamicService" />
+				<ref local="bjjsMm10DynamicService" />
+				<ref local="hhkjMm4DynamicService" />
+				<ref local="xmwtWyDynamicService" />
+				<ref local="kestrelMmqdDynamicService" />
+				<ref local="ffkjDm1DynamicService" />
+				<ref local="bjjsDm2DynamicService" />
+				<ref local="xmwtDjDynamicService" />
+				<ref local="jkhlH5DynamicService" />
+				<ref local="lxtxSmm3DynamicService" />
+				<ref local="onceDynamicService" />
+				<ref local="once1DynamicService" />
+				<ref local="once2DynamicService" />
+				<ref local="once3DynamicService" />
+				<ref local="once4DynamicService" />
+				<ref local="once5DynamicService" />
+				<ref local="twiceDynamicService" />
+				<ref local="sxdLt1DynamicService" />
+				<ref local="once6DynamicService" />
+				<ref local="once7DynamicService" />
+				<ref local="jkhlDdoDynamicService" />
+				<ref local="jkhlPcDynamicService" />
+				<ref local="zztYyDynamicService" />
+				<ref local="kestrelShuaMmDynamicService" />
+				<ref local="gzqsDxDynamicService" />
+				<ref local="once8DynamicService" />
+				<ref local="zcVcc2DynamicService" />
+				<ref local="gzfcDynamicService" />
+				<ref local="zcDdoDynamicService" />
+				<ref local="once9DynamicService" />
+				<ref local="cqykDynamicService" />
+				<ref local="smsDynamicService" />
+				<ref local="once10DynamicService" />
+				<ref local="hhkjApiDynamicService" />
+				<ref local="jhtcDynamicService" />
+				<ref local="ddoDynamicService" />
+				<ref local="xmwtMm10DynamicService" />
+				<ref local="gzfc1DynamicService" />
+				<ref local="fhSdkDynamicService" />
+				<ref local="hhkjYyDynamicService" />
+				<ref local="upayDdoDynamicService" />
+				<ref local="mhDdoDynamicService" />
+				<ref local="fhDm2DynamicService" />
+				<ref local="yyjdDynamicService" />
+				<ref local="yyjdNjDynamicService" />
+				<ref local="bjjsPcDynamicService" />
+				<ref local="hhkjSpjdDynamicService" />
+				<ref local="mmCheckDynamicService" />
+				<ref local="hhkjYxjdbyDynamicService" />
+				<ref local="fhSpjdDynamicService" />
+				<ref local="dmSdkDynamicService" />
+				<ref local="bjzdDdoDynamicService" />
+				<ref local="sjdySjqbDynamicService" />
+				<ref local="htwxDynamicService" />
+				<ref local="rlwDynamicService" />
+				<ref local="sysjPcDynamicService" />
+				<ref local="zzfApiDynamicService" />
+				<ref local="zztDm1DynamicService" />
+				<ref local="sysjTykjDynamicService" />
+				<ref local="sysjWoDynamicService" />
+				<ref local="zzaceDynamicService" />
+				<ref local="zwydDynamicService" />
+				<ref local="zztDdoDynamicService" />
+				<ref local="mobile1DynamicService" />
+				<ref local="sysjDxDynamicService" />
+
+				<ref local="sydjWoDynamicService" />
+				<ref local="cdxmXezfDynamicService" />
+				<ref local="videoSdkDynamicService" />
+				<ref local="zcDdoLtDynamicService" />
+				<ref local="zcDdoDxDynamicService" />
+				<ref local="zztVideoDynamicService" />
+				<ref local="dxayxDynamicService" />
+				<ref local="zcLtydDynamicService" />
+				<ref local="rmkjSpDynamicService" />
+				<ref local="xcnGameDynamicService" />
+				<ref local="rmkjYdspDynamicService" />
+				<ref local="willGuoDynamicService" />
+				<ref local="sjdydmsdkDynamicService" />
+				<ref local="rmkjWoDynamicService" />
+				<ref local="rmkjRdoDynamicService" />
+				<ref local="cdblYyDynamicService" />
+				<ref local="sysjDmDynamicService" />
+				<ref local="rmkjYkspDynamicService" />
+				<ref local="sjdyRdoDynamicService" />
+				<ref local="upayWiDynamicService" />
+				<ref local="upayVideoDynamicService" />
+				<ref local="rmkjDxspDynamicService" />
+				<ref local="zztJfdhDynamicService" />
+				<ref local="cdblYlhDynamicService" />
+				<ref local="upayDxbyDynamicService" />
+				<ref local="upayZtsxDynamicService" />
+				<ref local="rmkjDmcDynamicService" />
+				<ref local="hyzxJfdhDynamicService" />
+				<ref local="upaySpdmDynamicService" />
+				<ref local="zcLtWtjDynamicService" />
+				<ref local="hyzxWtjDynamicService" />
+				<ref local="hyzxLtWoDynamicService" />
+				<ref local="zxMgSdDynamicService" />
+				<ref local="rmkjDmdbDynamicService" />
+				<ref local="rmkjDdoDynamicService" />
+				<ref local="zqssOneDynamicService" />
+				<ref local="hyzxTykjTwoDynamicService" />
+				<ref local="zztFzzxDynamicService" />
+				<ref local="hyzxLtWo2DynamicService" />
+				<ref local="zcDxAcyDynamicService" />
+				<ref local="zcDdoLtWoDynamicService" />
+				<ref local="xiaMenDynamicService" />
+				<ref local="tuoWeiDynamicService" />
+				<ref local="rmkjSuperDynamicService" />
+				<ref local="hyzxMobileDynamicService" />
+				<ref local="hyzxJsuDynamicService" />
+				<ref local="rmkjDmcTwoDynamicService" />
+				<ref local="hyzxWydDynamicService" />
+				<ref local="hyzxWeiDynamicService" />
+				<ref local="xilinByDynamicService"/>
+				<ref local="xinhuaPageDynamicService"/>
+				<ref local="damaodxDynamicService"/>
+				<ref local="xilinddoDynamicService"/>
+			</list>
+		</property>
+	</bean>
+	<!-- dynamic end -->
+
+</beans>

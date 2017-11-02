@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.lxtx.dao.AmountChangeHistoryMapper">
+	<insert id="insert" parameterType="com.lxtx.model.AmountChangeHistory"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into g_amount_change_history (
+		`user_id`, amount_change, platform, operator_time
+		)
+		values (#{user_id,jdbcType=INTEGER},
+		#{amount_change,jdbcType=INTEGER},
+		#{platform,jdbcType=VARCHAR},
+		#{operator_time,jdbcType=TIMESTAMP}
+		)
+	</insert>
+</mapper>

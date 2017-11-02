@@ -1,0 +1,1 @@
+[25-Oct-2016 10:23:07 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, integer given in /home/ftp/1520/jl_rb161025-20161025-RyC/rboutletss.com/includes/classes/class.smtp.php on line 1019

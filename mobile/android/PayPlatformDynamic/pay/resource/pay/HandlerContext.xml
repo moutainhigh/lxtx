@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="pay_SqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation" value="classpath:resource/pay/sqlMapConfig.xml"/>
+		<property name="dataSource" ref="pay_dataSource"/>
+	</bean>
+
+	<bean id="pay_SqlMapClientTemplate" class="com.qlzf.commons.factory.SqlMapClientTemplate">
+		<property name="sqlMapClient" ref="pay_SqlMapClient"/>
+	</bean>
+	
+	 <bean id="blackMobileHandler" class="com.jxt.pay.handler.BlackMobileHandler"> 
+       <property name="sqlMapClientTemplate" ref="pay_SqlMapClientTemplate"/>
+    </bean> 
+    
+     <bean id="mobileInfoHandler" class="com.jxt.pay.handler.MobileInfoHandler"> 
+       <property name="sqlMapClientTemplate" ref="pay_SqlMapClientTemplate"/>
+    </bean> 
+    
+     <bean id="phoneNoRegionHandler" class="com.jxt.pay.handler.PhoneNoRegionHandler"> 
+       <property name="sqlMapClientTemplate" ref="pay_SqlMapClientTemplate"/>
+    </bean> 
+    
+     <bean id="passageHandler" class="com.jxt.pay.handler.PassageHandler"> 
+       <property name="sqlMapClientTemplate" ref="pay_SqlMapClientTemplate"/>
+    </bean> 
+    
+	<bean id="shuaConfigHandler" class="com.jxt.pay.handler.ShuaConfigHandler"> 
+       <property name="sqlMapClientTemplate" ref="pay_SqlMapClientTemplate"/>
+    </bean> 
+</beans>

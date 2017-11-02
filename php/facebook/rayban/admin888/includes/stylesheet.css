@@ -1,0 +1,545 @@
+/**
+ * @package admin
+ * @ignore
+ * @access private
+ * @copyright Copyright 2003-2006 Zen Cart Development Team
+ * @copyright Portions Copyright 2003 osCommerce
+ * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
+ * @version $Id: stylesheet.css 5454 2006-12-29 20:10:17Z drbyte $
+ */
+@import url("menu.css");/* including stylesheet for dhtml menu */
+@import url("index.css");/* including stylesheet for index.php */
+a{
+color: #0000ff;
+text-decoration:none;
+}
+
+a,body,html,table{
+font:normal normal 12px Verdana,sans-serif;
+}
+
+a:hover{
+color:#0000ff;
+text-decoration:underline;
+}
+a.headerLink:link{
+color:#333;
+font-weight:bold;
+text-decoration:none;
+}
+
+a.headerLink:visited{
+color:#333;
+font-weight:bold;
+text-decoration:none;
+}
+
+a.headerLink:hover{
+color:#333;
+font-weight:bold;
+text-decoration:underline;
+}
+
+a.headerLink:active{
+color:#333;
+font-weight:bold;
+text-decoration:none;
+}
+
+a.menuBoxContentLink:link{
+color:#0000ff;
+text-decoration:none;
+}
+
+a.menuBoxContentLink:visited{
+color:#0000ff;
+text-decoration:none;
+}
+
+a.menuBoxContentLink:hover{
+color:#0000ff;
+text-decoration:underline;
+}
+
+a.menuBoxContentLink:active{
+color:#0000ff;
+text-decoration:none;
+}
+
+a.menuBoxHeadingLink:link{
+color:#0000ff;
+font-weight:bold;
+text-decoration:none;
+}
+a.menuBoxHeadingLink:visited{
+color:#0000ff;
+font-weight:bold;
+text-decoration:none;
+}
+
+a.menuBoxHeadingLink:hover{
+color:#0000ff;
+font-weight:bold;
+text-decoration:none;
+}
+
+a.menuBoxHeadingLink:active{
+color:#0000ff;
+font-weight:bold;
+text-decoration:none;
+}
+
+a.splitPageLink:link{
+color:#0000ff;
+text-decoration:none;
+}
+
+a.splitPageLink:visited{
+color:#0000ff;
+text-decoration:none;
+}
+
+a.splitPageLink:hover{
+background-color:#ffff33;
+color:#0000ff;
+text-decoration:underline;
+}
+
+a.splitPageLink:active{
+color:#0000ff;
+text-decoration:none;
+}
+
+body{
+background-color:#FFFFFF;
+color:#333333;
+margin:0;
+}
+
+body#login{
+margin-top:100px;
+text-align:center;
+}
+
+body#login .button{
+cursor:pointer;
+padding: 3px;
+margin-top: 10px;
+}
+
+body#login fieldset{
+margin:0 auto;
+padding:10px;
+width:400px;
+}
+
+.loginLabel {
+	margin-left: 60px;
+	margin-right: 5px;
+	width: 125px;
+	float: left;
+	text-align: right;
+	line-height: 1.5;
+	}
+
+body#login legend{
+background:#ffffff;
+border:1px solid #ff9900;
+color:#333333;
+font-size:90%;
+padding:0.2em 0.5em;
+text-align:right;
+}
+
+checkbox,input,radio,select,textarea,file{
+font-size:12px;
+}
+
+textarea {
+width: 80%;
+}
+
+/* to handle textareas for browsers which don't like % widths */
+textarea.sqlpatchKeyedQuery, TEXTAREA#file_contents {
+width:auto;
+}
+form{
+display:inline;
+}
+span.dataTableHeadingContentWhois{
+color:#ff6600;
+font-weight:bold;
+}
+
+span.normalprice{
+text-decoration:line-through;
+}
+
+span.productPriceDiscount,.inputRequirement{
+color:#ff0000;
+}
+span.productSpecialPrice,span.productSalePrice,.stockWarning,span.coming{
+color:#ff0000;
+}
+
+span.productSpecialPriceSale{
+color:#ff0000;
+text-decoration:line-through;
+}
+
+span.SortOrderHeader{
+color:#ff6600;
+font-weight:bold;
+}
+
+span.SortOrderHeaderLink{
+color: #FF6600;
+font-weight:bold;
+}
+
+td.alert,span.alert{
+color:#ff0000;
+font-weight:bold;
+}
+
+td.attributeBoxContent{
+background-color: #E8E8E8;
+color:#333333;
+}
+
+td.ot-subtotal-Amount,td.ot-cod-fee-Amount,td.ot-group-pricing-Amount,td.ot-gv-Amount,td.ot-loworderfee-Amount,td.ot-shipping-Amount,td.ot-subtotal-Amount,td.ot-tax-Amount,td.ot-coupon-Amount{
+}
+
+td.ot-subtotal-Text,td.ot-cod-fee-Text,td.ot-total-Text,td.ot-group-pricing-Text,td.ot-gv-Text,td.ot-loworderfee-Text,td.ot-shipping-Text,td.ot-subtotal-Text,td.ot-tax-Text,td.ot-coupon-Text{
+font-weight:bold;
+}
+
+td.ot-total-Amount{
+border-top:1px solid #9a9a9a;
+font-weight:bold;
+}
+
+tr.attributeBoxContent{
+background-color: #E8E8E8;
+color:#333333;
+}
+
+.attributeBoxContent{
+background-color: #E8E8E8;
+color:#333333;
+}
+
+.attributes-even{
+background-color:#ffffff;
+}
+
+.attributes-odd{
+background-color: #E8E8E8;
+}
+
+.columnLeft{
+background-color:#eeeff2;
+border-color:#999999;
+border-style:solid;
+border-width:1px;
+padding:2px;
+}
+
+.dataTableContent{
+color:#333333;
+padding: 1px 2px 0;
+border-bottom: 1px solid #C0C0C0;
+border-spacing: 0;
+}
+
+.dataTableContentBot{
+color:#333333;
+}
+
+.dataTableContentWhois{
+color:#333333;
+}
+
+.dataTableHeadingContent{
+color:#FFF;
+font-weight:bold;
+}
+
+.dataTableHeadingContentWhois{
+color:#fff;
+font-weight:bold;
+}
+
+.dataTableHeadingContentWhois a:link,.dataTableHeadingContentWhois a:visited{
+color: #FF6600;
+font-weight:bold;
+}
+
+.dataTableHeadingContentWhois a:hover{
+color: #FF0000;
+font-weight:bold;
+}
+
+.dataTableHeadingRow{
+background-color:#333;
+height: 25px;
+}
+
+.dataTableHeadingRowWhois{
+background-color:#333;
+}
+
+.dataTableRow{
+/*background-color: #fff;*/
+}
+
+.dataTableRowBot{
+background-color:#facbfa;
+}
+
+.dataTableRowOver{
+background-color: #E8E8E8;
+cursor:pointer;
+cursor:hand;
+}
+
+.dataTableRowOverBot{
+background-color:#ffffff;
+}
+
+.dataTableRowOverWhois{
+background-color:#E8F5FF;
+}
+
+.dataTableRowSelected{
+background-color: #E8E8E8;
+}
+
+.dataTableRowSelectedBot{
+background-color:#ff93ff;
+}
+
+.dataTableRowSelectedWhois{
+background-color:#E8F5FF;
+}
+
+.dataTableRowSpacer,td.dataTableRowSpacer,TR.dataTableRowSpacer{
+background-color:#b7bcca;
+color:#ff6600;
+font-size:11px;
+font-weight:bold;
+line-height:1.0;
+}
+
+.dataTableRowWhois{
+background-color:#eeeff2;
+}
+
+.errorText{
+color:#333;
+}
+
+.fieldRequired{
+color:#ff0000;
+}
+
+.formArea{
+background-color:#f1f9fe;
+border-color:#7b9ebd;
+border-style:solid;
+border-width:1px;
+}
+
+.formAreaTitle{
+font-family:Tahoma,Verdana,Arial,sans-serif;
+font-size:12px;
+font-weight:bold;
+}
+
+.headerBar{
+background:#ccc url(../images/header_tile.jpg);
+}
+
+.headerBarContent{
+color:#333;
+font-weight:bold;
+padding:2px;
+}
+
+.infoBoxContent{
+background-color: #E8E8E8;
+color:#333333;
+padding-left: 5px;
+}
+
+.infoBoxContent .dataTableHeadingContent {
+color: #333;
+}
+
+.infoBoxHeading{
+background-color:#555;
+color: #FFCC00;
+padding-left: 5px;
+height: 25px;
+}
+
+.main{
+}
+
+.menuBoxContent{
+color:#616060;
+}
+
+.menuBoxHeading{
+background-color:#ffffff;
+color:#616060;
+}
+
+.messageBox{
+}
+
+.messageStackCaution{
+background-color: #ffff00;
+}
+
+.messageStackError,.messageStackWarning{
+background-color: #D0CEEC;
+}
+
+.messageStackSuccess{
+background-color: #BDEEAE;
+}
+
+.oldPrice{
+text-decoration:line-through;
+}
+
+h1,.pageHeading{
+color: #FF9900;
+font-size:16px;
+font-variant:small-caps;
+font-weight:bold;
+}
+
+.SaleMakerDisabled{
+background-color:#f0f1f1;
+}
+
+.SaleMakerOver{
+background-color:#ffffff;
+cursor:pointer;
+cursor:hand;
+}
+
+.SaleMakerSelected{
+background-color:#dee4e8;
+cursor:pointer;
+cursor:hand;
+}
+
+.smallText{
+font-size:10px;
+}
+
+.specialPrice{
+color:#ff6600;
+}
+
+.lookupAttention {
+  color: #FF0000;
+}
+
+.clearBoth {
+	clear:both;
+}
+#loginExpiryPolicy {
+	margin-top: 2em;
+}
+.hiddenField {
+	display: none;
+}
+#alt_nav {
+	padding:20px;
+	font-size:110%;
+	line-height:1.8em;
+}
+#alt_nav h2 {
+	font-size:90%
+}
+#alt_nav p {
+	max-width:600px;
+}
+#alt_nav a {
+	white-space: nowrap;
+}
+/* <=<=<=<=<=<=<=<=<=<=<=<=<=<=<=<=< NEXLEVEL >=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=>=> */
+
+/*<<<<<<<< Fix For Multiple Links Manager Page >>>>>>>>> */
+
+.LinkManagerContent{
+  color:#333;
+  font-weight:bold;
+}
+
+.LinkManagerRow{
+  background-color:#E8F5FF;
+  height: 25px;
+}
+
+.LinkManagerHeading{
+  background-color: #333333;
+  color: #FF9900;
+  font-size:16px;
+  font-variant:small-caps;
+  font-weight:bold;
+  height: 25px;
+}
+
+/*<<<<<<<< Fix For Option names-value Manager pages >>>>>>>>> */
+
+.OptionsRow{
+  background-color:#333;
+  height: 25px;
+  padding-bottom: 5px;
+  margin-bottom: 3px;
+}
+
+.OptionValueRow{
+  background-color:#E8E8E8;
+  height: 25px;
+}
+
+/*<<<<<<<< Fix For Usertracking Content >>>>>>>>> */
+
+.UserSidemenu{
+color:#333333;
+background: #DFDFDF;
+border-bottom: 1px solid #C0C0C0;
+}
+
+.UserSubHeading{
+color:#333333;
+background: #E8E8E8;
+border-bottom: 1px solid #C0C0C0;
+}
+
+.UserTableContent{
+  color:#333333;
+  background: #F7F7F7;
+  /*border-bottom: 1px solid #C0C0C0;*/
+}
+
+/*<<<<<<<< Fix For Developers Toolkit Results >>>>>>>>> */
+
+.Devtools{
+background-color: #999999;
+color:#333333;
+padding-left: 5px;
+}
+
+.devtoolsHeadingContent{
+color:#fff;
+font-weight:bold;
+}
+
+/* <<<<<<<<<<<<<<<<< END >>>>>>>>>>>>>>>>>>>> */

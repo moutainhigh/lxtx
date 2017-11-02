@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.lxtx.dao.CloudChnFillPayMapper">
+	<resultMap id="BaseResultMap" type="com.lxtx.model.CloudChnFillPay">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="chnno" property="chnno" jdbcType="VARCHAR" />
+		<result column="all_amount" property="allAmount" jdbcType="DECIMAL" />
+		<result column="fill_amount" property="fillAmount" jdbcType="DECIMAL" />
+		<result column="repay_amount" property="repayAmount" jdbcType="DECIMAL" />
+		<result column="add_user" property="addUser" jdbcType="INTEGER" />
+		<result column="chn_commission" property="chnCommission"
+			jdbcType="DECIMAL" />
+		<result column="commission" property="commission" jdbcType="DECIMAL" />
+		<result column="order_count" property="orderCount" jdbcType="INTEGER" />
+		<result column="date" property="date" jdbcType="TIMESTAMP" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, chnno, all_amount, fill_amount, repay_amount, add_user,
+		chn_commission, commission,
+		order_count, `date`
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from cloud_chn_fill_pay
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from
+		cloud_chn_fill_pay
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" parameterType="com.lxtx.model.CloudChnFillPay"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into cloud_chn_fill_pay
+		(chnno, all_amount, fill_amount,
+		repay_amount, add_user,
+		chn_commission,
+		commission, order_count, `date`
+		)
+		values
+		(#{chnno,jdbcType=VARCHAR}, #{allAmount,jdbcType=DECIMAL},
+		#{fillAmount,jdbcType=DECIMAL},
+		#{repayAmount,jdbcType=DECIMAL},
+		#{addUser,jdbcType=INTEGER}, #{chnCommission,jdbcType=DECIMAL},
+		#{commission,jdbcType=DECIMAL}, #{orderCount,jdbcType=INTEGER},
+		#{date,jdbcType=TIMESTAMP}
+		)
+	</insert>
+	<insert id="insertSelective" parameterType="com.lxtx.model.CloudChnFillPay"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into cloud_chn_fill_pay
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			chnno,
+			all_amount,
+			fill_amount,
+			repay_amount,
+			add_user,
+			chn_commission,
+			commission,
+			order_count,
+			`date`,
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			#{chnno,jdbcType=VARCHAR},
+			#{allAmount,jdbcType=DECIMAL},
+			#{fillAmount,jdbcType=DECIMAL},
+			#{repayAmount,jdbcType=DECIMAL},
+			#{addUser,jdbcType=INTEGER},
+			#{chnCommission,jdbcType=DECIMAL},
+			#{commission,jdbcType=DECIMAL},
+			#{orderCount,jdbcType=INTEGER},
+			#{date,jdbcType=TIMESTAMP},
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.lxtx.model.CloudChnFillPay">
+		update cloud_chn_fill_pay
+		<set>
+			<if test="chnno != null">
+				chnno = #{chnno,jdbcType=VARCHAR},
+			</if>
+			<if test="allAmount != null">
+				all_amount = #{allAmount,jdbcType=DECIMAL},
+			</if>
+			<if test="fillAmount != null">
+				fill_amount = #{fillAmount,jdbcType=DECIMAL},
+			</if>
+			<if test="repayAmount != null">
+				repay_amount = #{repayAmount,jdbcType=DECIMAL},
+			</if>
+			<if test="addUser != null">
+				add_user = #{addUser,jdbcType=INTEGER},
+			</if>
+			<if test="chnCommission != null">
+				chn_commission = #{chnCommission,jdbcType=DECIMAL},
+			</if>
+			<if test="commission != null">
+				commission = #{commission,jdbcType=DECIMAL},
+			</if>
+			<if test="orderCount != null">
+				order_count = #{orderCount,jdbcType=INTEGER},
+			</if>
+			<if test="date != null">
+				`date` = #{date,jdbcType=TIMESTAMP},
+			</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.lxtx.model.CloudChnFillPay">
+		update
+		cloud_chn_fill_pay
+		set chnno = #{chnno,jdbcType=VARCHAR},
+		all_amount =
+		#{allAmount,jdbcType=DECIMAL},
+		fill_amount =
+		#{fillAmount,jdbcType=DECIMAL},
+		repay_amount =
+		#{repayAmount,jdbcType=DECIMAL},
+		add_user =
+		#{addUser,jdbcType=INTEGER},
+		chn_commission =
+		#{chnCommission,jdbcType=DECIMAL},
+		commission =
+		#{commission,jdbcType=DECIMAL},
+		order_count =
+		#{orderCount,jdbcType=INTEGER},
+		`date` = #{date,jdbcType=TIMESTAMP}
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+
+	<select id="queryChnFillPay" resultType="com.lxtx.model.CloudChnFillPay"
+		parameterType="map">
+		select a.chnno, IFNULL(aa.amount,0) as
+		allAmount,IFNULL(d.fill_amount,0) as
+		fillAmount,IFNULL(e.repay_amount,0) as
+		repayAmount,IFNULL(f.chn_commission,0) as
+		chnCommission,IFNULL(f.commission,0) as commission,
+		IFNULL(f.order_count,0) as orderCount,IFNULL(g.user_count,0) as
+		addUser from cloud_chn_code a left join (select
+		chnno,sum(balance+contract_amount) as amount from cloud_user group by
+		chnno) aa on a.chnno=aa.chnno left join
+		(select a.chnno,sum(b.amount)
+		as fill_amount from cloud_user a left join
+		cloud_fund_history b on a.id
+		= b.uid where b.type=1 and b.`status`=1
+		and b.time &gt;
+		#{begin,jdbcType=VARCHAR} and b.time &lt;= #{end,jdbcType=VARCHAR}
+		group by a.chnno) d
+		on a.chnno = d.chnno left join
+		(select
+		a.chnno,sum(b.amount) as repay_amount from cloud_user a left join
+		cloud_fund_history b on a.id = b.uid where b.type=2 and b.`status`=1
+		and b.time &gt; #{begin,jdbcType=VARCHAR} and b.time &lt;= #{end,jdbcType=VARCHAR}
+		group by a.chnno) e
+		on a.chnno = e.chnno left
+		join
+		(select chnno,count(1) as
+		order_count ,sum(commission) as
+		commission,IFNULL(sum(commission)-sum(coupon_commission),0) as
+		chn_commission
+		from cloud_order where clear_time
+		&gt;#{begin,jdbcType=VARCHAR}  and clear_time &lt;= #{end,jdbcType=VARCHAR} group by chnno) f on a.chnno =
+		f.chnno
+		left
+		join (select chnno,count(1) as user_count from cloud_user where
+		crt_tm
+		&gt; #{begin,jdbcType=VARCHAR}  and crt_tm &lt;= #{end,jdbcType=VARCHAR} group by chnno
+		) g on
+		a.chnno= g.chnno;
+	</select>
+</mapper>

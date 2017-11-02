@@ -1,0 +1,6 @@
+包名：com.hongguoshuo.zhcjfmp
+md5：2cf1ccd74d6422fa09d54ed3ad424dca
+
+签名密码：Lskj123456789
+签名：android.keystore
+别名密码：Lskj123456789

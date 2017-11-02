@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">org.gjt.mm.mysql.Driver</property>
+        <property name="hibernate.connection.password">3dIrM#sA@MA$x4aKGB</property>
+        <property name="hibernate.connection.url">jdbc:mysql://rm-rj9359u6ma681ncgto.mysql.rds.aliyuncs.com/fb</property>
+        <property name="hibernate.connection.username">fbuser</property>
+        <property name="hibernate.default_catalog">fb</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+    </session-factory>
+</hibernate-configuration>

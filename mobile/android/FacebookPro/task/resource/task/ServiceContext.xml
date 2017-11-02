@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+    <bean id="accountService" class="com.lxtx.fb.task.service.AccountService">
+        <property name="userHandler" ref="userHandler"/>
+        <property name="uaHelper" ref="uaHelper"/>
+    </bean>
+    <bean id="configService" class="com.lxtx.fb.task.service.ConfigService">
+        <property name="adminHelper" ref="adminHelper"/>
+    </bean>
+    <bean id="fbService" class="com.lxtx.fb.task.service.FbService">
+        <property name="webDriverFactory" ref="webDriverFactory"/>
+        <property name="loginService" ref="loginService"/>
+    </bean>
+    
+    <bean id="ipTimeService" class="com.lxtx.fb.task.service.IpTimeService">
+        <property name="ipTimeHandler" ref="ipTimeHandler"/>
+    </bean>
+    
+	<bean id="loginService" class="com.lxtx.fb.task.service.LoginService">
+	    <property name="userHandler" ref="userHandler"/>
+	</bean>
+	
+    <bean id="proxyService" class="com.lxtx.fb.task.service.ProxyService">
+        <property name="proxyHandler" ref="proxyHandler"/>
+    </bean>
+    
+    <bean id="taskService" class="com.lxtx.fb.task.service.TaskService">
+        <property name="fbService" ref="fbService"/>
+        <property name="taskHandler" ref="taskHandler"/>
+        <property name="userHandler" ref="userHandler"/>
+        <property name="userHelper" ref="userHelper"/>
+        <property name="pageHelper" ref="pageHelper"/>
+        <property name="activeHelper" ref="activeHelper"/>
+        <property name="adSetHelper" ref="adSetHelper"/>
+        <property name="flagContactHelper" ref="flagContactHelper"/>
+        <property name="ipTimeService" ref="ipTimeService"/>
+        <property name="alipayAccountHelper" ref="alipayAccountHelper"/>
+    </bean>
+    
+    <bean id="userProxyService" class="com.lxtx.fb.task.service.UserProxyService">
+        <property name="proxyHandler" ref="proxyHandler"/>
+        <property name="userHandler" ref="userHandler"/>
+    </bean>
+    
+	<bean id="webDriverFactory" class="com.lxtx.fb.task.util.WebDriverFactory">
+        <property name="chromeDriverPath" value="C:\\chromedriver.exe"/>
+        <property name="zipDir" value="C:\\facebook\zips\\"/>
+        <property name="templateDir" value="C:\\facebook\\templates\\"/>
+    </bean>
+
+</beans>

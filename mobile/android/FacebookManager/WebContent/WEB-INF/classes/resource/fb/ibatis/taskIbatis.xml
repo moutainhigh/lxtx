@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="fb">
+   <typeAlias alias="task" type="com.lxtx.fb.pojo.Task"/>
+   
+   <select id="Task.select" parameterClass="long" resultClass="task">
+       select * from Task where Id = #id#
+   </select>
+   
+   <select id="Task.listUnDeal" resultClass="task">
+       <![CDATA[
+       select * from Task where MachineId = #machineId# and StartTime <= #startTime# and Status = 0 
+       order by Id asc limit 1000
+       ]]>
+   </select>
+   
+   <update id="Task.updateStatus" parameterClass="task">
+       update Task set Status = #status# where Id = #id#
+   </update>
+</sqlMap>

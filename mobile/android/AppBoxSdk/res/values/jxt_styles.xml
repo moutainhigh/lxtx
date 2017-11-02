@@ -1,0 +1,34 @@
+<resources>
+
+    <style name="selectorDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@color/dialog_transparent_background</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+ 
+    <style
+    	name="sdkDialog"
+    	parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/jxt_selector_dialog_bg</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:backgroundDimAmount">60</item>
+    </style>  
+
+    <style name="selectorDialog_yx" parent="@android:style/Theme.Dialog">
+	 	<item name="android:backgroundDimAmount">60.0</item>
+        <item name="android:windowBackground">@drawable/jxt_selector_dialog_bg_yx</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+  	</style>
+    
+    <style name="HaiTun_PaymentActTheme" parent="android:Theme.DeviceDefault.Light.NoActionBar">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+    
+</resources>

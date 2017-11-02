@@ -1,0 +1,130 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:paddingLeft="2dp"
+    android:paddingRight="2dp"
+    android:layout_height="300dp"
+      android:background="@drawable/jxt_sm_pay_bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:background="#eeeeee"
+        android:padding="17dp" >
+
+        <TextView
+            android:id="@+id/jxt_zhif"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="支付中心" />
+
+        <TextView
+            android:id="@+id/jxt_sdk_dialog_yx_cancel"
+            android:layout_width="15.0dip"
+            android:layout_height="15.0dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/jxt_sm_close_btn"
+            android:gravity="right" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#dddddd" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+       
+        android:background="#eeeeee" >
+        
+         <TextView
+             android:id="@+id/jxt_sdk_dialog_yx_daoju"
+             android:paddingTop="10dp"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentTop="true"
+             android:layout_centerHorizontal="true"
+             android:text="闪电狂飙礼包"
+             android:textSize="20.0dip" />
+
+         <TextView
+             android:id="@+id/jxt_sdk_dialog_yx_price"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentBottom="true"
+             android:layout_centerHorizontal="true"
+             android:paddingBottom="15dp"
+             android:text="￥ 30.0元"
+             android:textColor="#ff317510"
+             android:textSize="15.0dip" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#dddddd" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:background="#ffffff"
+        android:padding="20dp" >
+
+        <TextView
+            android:id="@+id/jxt_sdk_dialog_yx_appname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView4"
+            android:layout_alignBottom="@+id/textView4"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/textView4"
+            android:text="全城酷跑夏日版"
+            android:textColor="#000000"
+            android:textSize="20.0dip" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="应用名称："
+            android:textColor="#aaaaaa"
+            android:textSize="20.0dip" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#dddddd" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+          android:layout_height="66dp"
+        android:layout_weight="1"
+        android:background="#eeeeee"
+        android:padding="12dp" >
+
+        <TextView
+            
+            android:id="@+id/jxt_sdk_dialog_yx_queren"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+          android:gravity="center"
+            android:text="确   认 "
+            android:background="@drawable/jxt_sm_pay_comfirm_button_yx"
+            android:textColor="#ffffff"
+            android:textSize="30.0dip" />
+    </RelativeLayout>
+
+</LinearLayout>

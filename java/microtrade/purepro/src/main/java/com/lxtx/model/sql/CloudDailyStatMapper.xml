@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd">
+<mapper namespace="com.lxtx.dao.CloudDailyStatMapper">
+  <resultMap id="BaseResultMap" type="com.lxtx.model.CloudDailyStat">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="day" jdbcType="INTEGER" property="day" />
+    <result column="income" jdbcType="DECIMAL" property="income" />
+    <result column="pay" jdbcType="DECIMAL" property="pay" />
+    <result column="net_income" jdbcType="DECIMAL" property="netIncome" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, `day`, income, pay, net_income
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cloud_daily_stat
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from cloud_daily_stat
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyProperty="id" parameterType="com.lxtx.model.CloudDailyStat" useGeneratedKeys="true">
+    insert into cloud_daily_stat (`day`, income, pay, 
+      net_income)
+    values (#{day,jdbcType=INTEGER}, #{income,jdbcType=DECIMAL}, #{pay,jdbcType=DECIMAL}, 
+      #{netIncome,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" keyProperty="id" parameterType="com.lxtx.model.CloudDailyStat" useGeneratedKeys="true">
+    insert into cloud_daily_stat
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      `day`,
+      income,
+      pay,
+      net_income,
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      #{day,jdbcType=INTEGER},
+      #{income,jdbcType=DECIMAL},
+      #{pay,jdbcType=DECIMAL},
+      #{netIncome,jdbcType=DECIMAL},
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lxtx.model.CloudDailyStat">
+    update cloud_daily_stat
+    <set>
+      <if test="day != null">
+        `day` = #{day,jdbcType=INTEGER},
+      </if>
+      <if test="income != null">
+        income = #{income,jdbcType=DECIMAL},
+      </if>
+      <if test="pay != null">
+        pay = #{pay,jdbcType=DECIMAL},
+      </if>
+      <if test="netIncome != null">
+        net_income = #{netIncome,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lxtx.model.CloudDailyStat">
+    update cloud_daily_stat
+    set `day` = #{day,jdbcType=INTEGER},
+      income = #{income,jdbcType=DECIMAL},
+      pay = #{pay,jdbcType=DECIMAL},
+      net_income = #{netIncome,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

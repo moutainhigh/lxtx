@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="netpay">
+   <typeAlias alias="receiverAccount" type="com.jxt.netpay.pojo.ReceiverAccount"/>
+   
+   <select id="ReceiverAccount.select" parameterClass="java.lang.Long" resultClass="receiverAccount">
+       select * from ReceiverAccount 
+       where Id = #id#
+   </select>
+   
+   <select id="ReceiverAccount.getValid" parameterClass="java.util.Map" resultClass="receiverAccount">
+       select * from ReceiverAccount 
+       where PaymentMethodId = #paymentMethodId# and Valid = 1
+       limit 1
+   </select>
+   
+   <select id="ReceiverAccount.listValid" resultClass="receiverAccount">
+       select * from ReceiverAccount 
+       where Valid = 1
+   </select>
+</sqlMap>

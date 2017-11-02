@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.lxtx.dao.CloudChnUserDayProfitMapper">
+	<resultMap id="BaseResultMap" type="com.lxtx.model.CloudChnUserDayProfit">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="uid" property="uid" jdbcType="INTEGER" />
+		<result column="wxnm" property="wxnm" jdbcType="VARCHAR" />
+		<result column="chnno" property="chnno" jdbcType="VARCHAR" />
+		<result column="subject" property="subject" jdbcType="VARCHAR" />
+		<result column="limit" property="limit" jdbcType="INTEGER" />
+		<result column="order_count" property="orderCount" jdbcType="INTEGER" />
+		<result column="profit_count" property="profitCount" jdbcType="INTEGER" />
+		<result column="loss_count" property="lossCount" jdbcType="INTEGER" />
+		<result column="cash" property="cash" jdbcType="DECIMAL" />
+		<result column="profit_amount" property="profitAmount"
+			jdbcType="DECIMAL" />
+		<result column="loss_amount" property="lossAmount" jdbcType="DECIMAL" />
+		<result column="profit_loss" property="profitLoss" jdbcType="DECIMAL" />
+		<result column="commission" property="commission" jdbcType="DECIMAL" />
+		<result column="coupon_count" property="couponCount" jdbcType="INTEGER" />
+		<result column="coupon_amount" property="couponAmount"
+			jdbcType="DECIMAL" />
+		<result column="date" property="date" jdbcType="DATE" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, `uid`, wxnm, chnno, subject, `limit`, order_count,
+		profit_count,
+		loss_count,
+		cash, profit_amount, loss_amount, profit_loss,
+		commission, coupon_count,
+		coupon_amount,
+		`date`
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from cloud_chn_user_day_profit
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from
+		cloud_chn_user_day_profit
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" parameterType="com.lxtx.model.CloudChnUserDayProfit"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into
+		cloud_chn_user_day_profit (`uid`, wxnm, chnno,
+		subject, `limit`,
+		order_count,
+		profit_count, loss_count, cash,
+		profit_amount, loss_amount,
+		profit_loss,
+		commission, coupon_count, coupon_amount,
+		`date`)
+		values
+		(#{uid,jdbcType=INTEGER}, #{wxnm,jdbcType=VARCHAR},
+		#{chnno,jdbcType=VARCHAR},
+		#{subject,jdbcType=VARCHAR},
+		#{limit,jdbcType=INTEGER}, #{orderCount,jdbcType=INTEGER},
+		#{profitCount,jdbcType=INTEGER}, #{lossCount,jdbcType=INTEGER},
+		#{cash,jdbcType=DECIMAL},
+		#{profitAmount,jdbcType=DECIMAL},
+		#{lossAmount,jdbcType=DECIMAL}, #{profitLoss,jdbcType=DECIMAL},
+		#{commission,jdbcType=DECIMAL}, #{couponCount,jdbcType=INTEGER},
+		#{couponAmount,jdbcType=DECIMAL},
+		#{date,jdbcType=DATE})
+	</insert>
+	<insert id="insertSelective" parameterType="com.lxtx.model.CloudChnUserDayProfit"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into cloud_chn_user_day_profit
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			`uid`,
+			wxnm,
+			chnno,
+			subject,
+			`limit`,
+			order_count,
+			profit_count,
+			loss_count,
+			cash,
+			profit_amount,
+			loss_amount,
+			profit_loss,
+			commission,
+			coupon_count,
+			coupon_amount,
+			`date`,
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			#{uid,jdbcType=INTEGER},
+			#{wxnm,jdbcType=VARCHAR},
+			#{chnno,jdbcType=VARCHAR},
+			#{subject,jdbcType=VARCHAR},
+			#{limit,jdbcType=INTEGER},
+			#{orderCount,jdbcType=INTEGER},
+			#{profitCount,jdbcType=INTEGER},
+			#{lossCount,jdbcType=INTEGER},
+			#{cash,jdbcType=DECIMAL},
+			#{profitAmount,jdbcType=DECIMAL},
+			#{lossAmount,jdbcType=DECIMAL},
+			#{profitLoss,jdbcType=DECIMAL},
+			#{commission,jdbcType=DECIMAL},
+			#{couponCount,jdbcType=INTEGER},
+			#{couponAmount,jdbcType=DECIMAL},
+			#{date,jdbcType=DATE},
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.lxtx.model.CloudChnUserDayProfit">
+		update cloud_chn_user_day_profit
+		<set>
+			<if test="uid != null">
+				`uid` = #{uid,jdbcType=INTEGER},
+			</if>
+			<if test="wxnm != null">
+				wxnm = #{wxnm,jdbcType=VARCHAR},
+			</if>
+			<if test="chnno != null">
+				chnno = #{chnno,jdbcType=VARCHAR},
+			</if>
+			<if test="subject != null">
+				subject = #{subject,jdbcType=VARCHAR},
+			</if>
+			<if test="limit != null">
+				`limit` = #{limit,jdbcType=INTEGER},
+			</if>
+			<if test="orderCount != null">
+				order_count = #{orderCount,jdbcType=INTEGER},
+			</if>
+			<if test="profitCount != null">
+				profit_count = #{profitCount,jdbcType=INTEGER},
+			</if>
+			<if test="lossCount != null">
+				loss_count = #{lossCount,jdbcType=INTEGER},
+			</if>
+			<if test="cash != null">
+				cash = #{cash,jdbcType=DECIMAL},
+			</if>
+			<if test="profitAmount != null">
+				profit_amount = #{profitAmount,jdbcType=DECIMAL},
+			</if>
+			<if test="lossAmount != null">
+				loss_amount = #{lossAmount,jdbcType=DECIMAL},
+			</if>
+			<if test="profitLoss != null">
+				profit_loss = #{profitLoss,jdbcType=DECIMAL},
+			</if>
+			<if test="commission != null">
+				commission = #{commission,jdbcType=DECIMAL},
+			</if>
+			<if test="couponCount != null">
+				coupon_count = #{couponCount,jdbcType=INTEGER},
+			</if>
+			<if test="couponAmount != null">
+				coupon_amount = #{couponAmount,jdbcType=DECIMAL},
+			</if>
+			<if test="date != null">
+				`date` = #{date,jdbcType=DATE},
+			</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.lxtx.model.CloudChnUserDayProfit">
+		update
+		cloud_chn_user_day_profit
+		set `uid` = #{uid,jdbcType=INTEGER},
+		wxnm =
+		#{wxnm,jdbcType=VARCHAR},
+		chnno = #{chnno,jdbcType=VARCHAR},
+		subject =
+		#{subject,jdbcType=VARCHAR},
+		`limit` = #{limit,jdbcType=INTEGER},
+		order_count = #{orderCount,jdbcType=INTEGER},
+		profit_count =
+		#{profitCount,jdbcType=INTEGER},
+		loss_count =
+		#{lossCount,jdbcType=INTEGER},
+		cash = #{cash,jdbcType=DECIMAL},
+		profit_amount = #{profitAmount,jdbcType=DECIMAL},
+		loss_amount =
+		#{lossAmount,jdbcType=DECIMAL},
+		profit_loss =
+		#{profitLoss,jdbcType=DECIMAL},
+		commission =
+		#{commission,jdbcType=DECIMAL},
+		coupon_count =
+		#{couponCount,jdbcType=INTEGER},
+		coupon_amount =
+		#{couponAmount,jdbcType=DECIMAL},
+		`date` = #{date,jdbcType=DATE}
+		where
+		id = #{id,jdbcType=INTEGER}
+	</update>
+	<select id="queryForPageChnUserProfit" resultMap="BaseResultMap"
+		parameterType="map">
+		select
+		<include refid="Base_Column_List" />
+		from cloud_chn_user_day_profit
+		where 1=1
+		<if test="wxnm != null and wxnm !=''">
+			and wxnm = #{wxnm,jdbcType=VARCHAR}
+		</if>
+		<if test="chnno != null and chnno !=''">
+			and chnno = #{chnno,jdbcType=VARCHAR}
+		</if>
+		<if test="begin != null and begin !=''">
+			and `date` &gt;= #{begin,jdbcType=VARCHAR}
+		</if>
+		<if test="end != null and end !=''">
+			and `date` &lt;= #{end,jdbcType=VARCHAR}
+		</if>
+		and chnno in (select chnno from c_user_chn_rel where `uid` =
+		#{uid,jdbcType=INTEGER})
+		order by cash desc
+	</select>
+	<select id="queryForPageChnAllUserSum" resultType="com.lxtx.model.CloudChnUserDayProfit"
+		parameterType="map">
+		select id,uid,wxnm,chnno,#{end,jdbcType=VARCHAR} as
+		date,sum(order_count) as
+		orderCount,sum(profit_count) as
+		profitCount,SUM(loss_count) as
+		lossCount,sum(cash) as
+		cash,sum(profit_amount) as
+		profitAmount,sum(loss_amount) as lossAmount,
+		sum(profit_loss) as
+		profitLoss,sum(commission) as commission
+		,sum(coupon_count) as
+		couponCount,sum(coupon_amount) as couponAmount
+		from
+		cloud_chn_user_day_profit where date &gt;=
+		#{begin,jdbcType=VARCHAR}
+		and
+		date &lt;= #{end,jdbcType=VARCHAR}
+		and
+		chnno in (select chnno from
+		c_user_chn_rel where `uid` =
+		#{uid,jdbcType=INTEGER}
+		<if test="chnno != null and chnno !=''">
+			and chnno = #{chnno,jdbcType=VARCHAR}
+		</if>
+		)
+		group by uid
+		order by profitLoss desc
+	</select>
+
+	<select id="downChnAllUserSum" resultType="com.lxtx.model.CloudChnUserDayProfit"
+		parameterType="map">
+		select a.*,IFNULL(b.fillAmount,0) as
+		fillAmount,IFNULL(c.repayAmount,0) as repayAmount,d.balance from (
+		select id,uid,wxnm,date,chnno,sum(order_count) as
+		orderCount,sum(profit_count) as
+		profitCount,SUM(loss_count) as
+		lossCount,sum(profit_amount) as
+		profitAmount,sum(loss_amount) as
+		lossAmount,
+		sum(commission) as commission
+		from
+		cloud_chn_user_day_profit
+		where date = #{begin,jdbcType=VARCHAR}
+		and
+		chnno in (select chnno from
+		c_user_chn_rel
+		where `uid` =
+		#{uid,jdbcType=INTEGER}
+		<if test="chnno != null and chnno !=''">
+			and chnno = #{chnno,jdbcType=VARCHAR}
+		</if>
+		)
+		group by uid
+		) a left join (select uid,sum(amount) as fillAmount from
+		cloud_fund_history where 1=1 and type=1 and status=1 and time BETWEEN
+		#{begin,jdbcType=VARCHAR} and #{end,jdbcType=VARCHAR} GROUP BY uid) b on a.uid=b.uid
+		left join (select uid,sum(amount) as repayAmount from cloud_fund_history
+		where 1=1 and type=2 and status=1 and time BETWEEN #{begin,jdbcType=VARCHAR} and
+		#{end,jdbcType=VARCHAR} GROUP BY uid) c on a.uid=c.uid
+		left join cloud_user d on a.uid=d.id
+	</select>
+</mapper>

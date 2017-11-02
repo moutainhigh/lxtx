@@ -1,0 +1,178 @@
+<?php
+/**
+ * Page Template
+ *
+ * Loaded by main_page=index<br />
+ * Displays category/sub-category listing<br />
+ * Uses tpl_index_category_row.php to render individual items
+ *
+ * @package templateSystem
+ * @copyright Copyright 2003-2006 Zen Cart Development Team
+ * @copyright Portions Copyright 2003 osCommerce
+ * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
+ * @version $Id: tpl_index_categories.php 4678 2006-10-05 21:02:50Z ajeh $
+ */
+?>
+<div class="centerColumn" id="indexCategories">
+<?php if ($show_welcome == true) { ?>
+<h1 id="indexCategoriesHeading"><?php echo HEADING_TITLE; ?></h1>
+<?php if (SHOW_CUSTOMER_GREETING == 1) { ?>
+<h2 class="greeting"><?php echo zen_customer_greeting(); ?></h2>
+<?php } ?>
+<?php if (DEFINE_MAIN_PAGE_STATUS >= 1 and DEFINE_MAIN_PAGE_STATUS <= 2) { ?>
+<div id="indexCategoriesMainContent" class="content"><?php
+/**
+ * require the html_define for the index/categories page
+ */
+  include($define_page);
+?></div>
+<?php } ?>
+<?php } else { ?>
+<h1 id="indexCategoriesHeading"><?php echo $breadcrumb->last(); ?></h1>
+<?php } ?>
+<?php
+if (PRODUCT_LIST_CATEGORIES_IMAGE_STATUS_TOP == 'true') {
+// categories_image
+  if ($categories_image = zen_get_categories_image($current_category_id)) {
+?>
+<div id="categoryImgListing" class="categoryImg"><?php echo zen_image(DIR_WS_IMAGES . $categories_image, '', SUBCATEGORY_IMAGE_TOP_WIDTH, SUBCATEGORY_IMAGE_TOP_HEIGHT); ?></div>
+<?php
+  }
+} // categories_image
+?>
+<?php
+// categories_description
+    if ($current_categories_description != '') {
+?>
+<div id="categoryDescription" class="catDescContent"><?php echo $current_categories_description;  ?></div>
+<?php } // categories_description ?>
+
+<?php /**************/
+if(sizeof($cPath_array) > 2 && $current_category_id == $cPath_array[0]) {
+	$cname = zen_get_categories_name($current_category_id);
+	$cimg = strtolower(str_replace(array(' & ', ' '), '-', $cname));
+	$cimg = DIR_WS_IMAGES.'categories/'.$cimg.'.jpg';
+	if(file_exists($cimg)) {
+		echo '<div class="categoryImg">'.zen_image($cimg, $cname, 740).'</div>';
+	}
+	require($template->get_template_dir('tpl_modules_category_row.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_category_row.php');
+} else {
+?>
+
+<?php /*
+  if (PRODUCT_LIST_CATEGORY_ROW_STATUS == 0) {
+    // do nothing
+  } else {
+    // display subcategories
+   require($template->get_template_dir('tpl_modules_category_row.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_category_row.php');
+  }*/
+?>
+
+<?php /**************/
+$PInC = zen_get_categories_products_list($cPath, false, true, 0, '');
+$pidAll = array_keys($PInC);
+
+$get = $_GET;
+$getKeys = array_keys($get);
+foreach($getKeys as $k => $gk){
+	$sql = "SELECT `products_options_id` FROM ".TABLE_PRODUCTS_OPTIONS." WHERE `products_options_name` = '".addslashes($gk)."'";
+	$is_opt = $db->Execute($sql);
+	if($is_opt->EOF) {
+		unset($getKeys[$k]);
+		unset($get[$gk]);
+	}
+}
+
+if(!empty($get)) {
+	foreach($get as $k => $v) {
+		$opid = $db->Execute("SELECT `products_options_id` FROM ".TABLE_PRODUCTS_OPTIONS." WHERE `products_options_name` = '".addslashes($k)."'")->fields['products_options_id'];
+		$opvid = $db->Execute("SELECT pov.`products_options_values_id` FROM ".TABLE_PRODUCTS_OPTIONS_VALUES." pov, ".TABLE_PRODUCTS_OPTIONS_VALUES_TO_PRODUCTS_OPTIONS." pov2po WHERE pov.products_options_values_name = '".addslashes($v)."' AND pov.products_options_values_id = pov2po.products_options_values_id AND pov2po.products_options_id = $opid")->fields['products_options_values_id'];
+		if(!$opvid) { unset($_GET[$k]); zen_redirect(zen_href_link(FILENAME_DEFAULT, zen_get_all_get_params(array($k)))); continue; }
+		
+		$pro_arr = zen_get_products_with_option($opid, $opvid);
+		$pidAll = array_intersect($pidAll, $pro_arr);
+	}
+}
+
+$pidStr = implode(',', $pidAll);
+if($pidStr != '') {
+	$pro_sql = "SELECT p.products_id AS pid, pd.products_name AS pname FROM ".TABLE_PRODUCTS." p, ".TABLE_PRODUCTS_DESCRIPTION." pd WHERE p.products_status = 1 AND p.products_id in ($pidStr) AND p.products_id = pd.products_id AND pd.language_id = {$_SESSION['languages_id']} ORDER BY p.products_date_added DESC, p.products_id DESC";
+} else {
+	$pro_sql = "SELECT p.products_id FROM ".TABLE_PRODUCTS." p WHERE 1 <> 1";
+}
+
+$listing_split = new splitPageResults($pro_sql, 35, 'p.products_id', 'page');
+if($listing_split->number_of_rows == 0) { echo '<p>There are no products to list in this category.</p>'; } else {
+if ( ($listing_split->number_of_rows > 0) && ( (PREV_NEXT_BAR_LOCATION == '1') || (PREV_NEXT_BAR_LOCATION == '3') ) ) {
+?>
+<div class="splitPages">
+<div class="splitWrapper">
+<div id="productsListingTopNumber" class="navSplitPagesResult back"><?php echo $listing_split->display_count(TEXT_DISPLAY_NUMBER_OF_PRODUCTS); ?></div>
+<div id="productsListingListingTopLinks" class="navSplitPagesLinks forward"><?php echo TEXT_RESULT_PAGE . ' ' . $listing_split->display_links(MAX_DISPLAY_PAGE_LINKS, zen_get_all_get_params(array('page', 'info', 'x', 'y', 'main_page'))); ?>
+<?php
+$pages = $listing_split->number_of_pages;
+$cur_page = 1;
+if(isset($_GET['page'])) $cur_page = $_GET['page'];
+?>
+<form action="<?php echo zen_href_link(FILENAME_DEFAULT, 'cPath='.$_GET['cPath']);?>" method="get">
+<select name="page" onchange="this.form.submit();">
+<?php
+for($i=1; $i<=$pages; $i++){
+	echo '	<option value="'.$i.'"'.($cur_page == $i ? ' selected="selected"' : '').'>page '.$i.'</option>'."\n";
+}
+?>
+</select>
+</form>
+</div>
+</div>
+</div>
+<?php
+}
+
+$row = 0;
+$col = 0;
+$title = false;
+$list_box_contents = array();
+$listing = $db->Execute($listing_split->sql_query);
+while(!$listing->EOF){
+	if($row == 0){ $row_class = ' first_row'; } else { $row_class = ''; }
+	if($col == 0){ $col_class = ' first_col'; } elseif($col == 4) { $col_class = ' last_col'; } else { $col_class = ''; }
+	$pimg = zen_get_products_image($listing->fields['pid']);
+	$price = zen_get_products_display_price($listing->fields['pid']);
+	$list_box_contents[$row][$col] = array('params' => 'class="prolist'.$row_class.$col_class.'"',
+										   'text' => '<div class="pImgBox"><div class="pImg"><a href="'.zen_href_link(FILENAME_PRODUCT_INFO, 'products_id='.$listing->fields['pid']).'">'.$pimg.'</a></div></div>'."\n".'<div class="pname"><a href="'.zen_href_link(FILENAME_PRODUCT_INFO, 'products_id='.$listing->fields['pid']).'">'.$listing->fields['pname'].'</a></div>'."\n".'<div class="cprice">'.$price.'</div>');
+	
+	$col++;
+	if($col > 4) {
+		$col = 0;
+		$row++;
+	}
+	
+	$listing->MoveNext();
+}
+require($template->get_template_dir('tpl_columnar_display.php', DIR_WS_TEMPLATE, $current_page_base, 'common').'/tpl_columnar_display.php');
+
+if ( ($listing_split->number_of_rows > 0) && ((PREV_NEXT_BAR_LOCATION == '2') || (PREV_NEXT_BAR_LOCATION == '3')) ) {
+?>
+<div class="splitPages">
+<div class="splitWrapper">
+<div id="productsListingBottomNumber" class="navSplitPagesResult back"><?php echo $listing_split->display_count(TEXT_DISPLAY_NUMBER_OF_PRODUCTS); ?></div>
+<div id="productsListingListingBottomLinks" class="navSplitPagesLinks forward"><?php echo TEXT_RESULT_PAGE . ' ' . $listing_split->display_links(MAX_DISPLAY_PAGE_LINKS, zen_get_all_get_params(array('page', 'info', 'x', 'y'))); ?>
+<form action="<?php echo zen_href_link(FILENAME_DEFAULT, 'cPath='.$_GET['cPath']);?>" method="get">
+<select name="page" onchange="this.form.submit();">
+<?php
+for($i=1; $i<=$pages; $i++){
+	echo '	<option value="'.$i.'"'.($cur_page == $i ? ' selected="selected"' : '').'>page '.$i.'</option>'."\n";
+}
+?>
+</select>
+</form>
+</div>
+</div>
+</div>
+<?php
+}
+}
+} //eof if($current_category_id == $cPath_array[0])
+?>
+</div>

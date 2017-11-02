@@ -1,0 +1,49 @@
+{
+    "button": [
+         {
+        	"name": "充值",
+            "sub_button": [
+            	{
+		            "name": "购买房卡",
+		            "type": "view",
+		            "key": "rselfmenu_0_1",
+		            "url": "http://%s/wx/redirect/%s"
+		        },
+		        {
+		            "name": "购买元宝",
+		            "type": "view",
+		            "key": "rselfmenu_0_2",
+		            "url": "http://%s/wx/redirectGoldFill/%s"
+		        }
+	        ]
+        },
+        {
+            "name": "活动报名",
+            "type": "view",
+            "key": "rselfmenu_1",
+            "url": "http://%s/wx/enterSignUp/%s"
+        },
+        {
+        	"name": "个人中心",
+            "sub_button": [
+	            {
+		        	"name": "我的客服",
+		            "type": "click",
+		            "key": "rselfmenu_2_0"
+		        },
+            	{
+                    "type": "view",
+                    "name": "个人信息",
+                    "key": "rselfmenu_2_1",
+              		"url": "http://%s/wx/userInfo/%s"
+                },
+                {
+		            "name": "下载游戏",
+		            "type": "view",
+		            "key": "rselfmenu_2_4",
+		            "url": "%s"
+		        }
+                ]
+        }
+    ]
+}

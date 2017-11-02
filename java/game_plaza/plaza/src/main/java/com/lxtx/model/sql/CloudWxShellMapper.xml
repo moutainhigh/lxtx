@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.lxtx.dao.CloudWxShellMapper">
+	<resultMap id="BaseResultMap" type="com.lxtx.model.CloudWxShell">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="app_id" property="app_id" jdbcType="VARCHAR" />
+		<result column="app_secret" property="app_secret" jdbcType="VARCHAR" />
+		<result column="app_name" property="app_name" jdbcType="VARCHAR" />
+		<result column="chnno" property="chnno" jdbcType="VARCHAR" />
+		<result column="domain" property="domain" jdbcType="VARCHAR" />
+		<result column="title" property="title" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, app_id, app_secret, app_name, chnno, domain, title
+	</sql>
+	<select id="selectByChnno" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from g_wx_shell
+		where chnno = #{chnno,jdbcType=VARCHAR} limit 1
+	</select>
+</mapper>

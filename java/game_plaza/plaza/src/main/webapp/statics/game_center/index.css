@@ -1,0 +1,100 @@
+@charset "utf-8";
+/* CSS Document */
+
+.message1{
+	width: 603px;
+	margin:32px auto;
+}
+
+.bbtnlist{
+	width:612px;
+	height: 190px;
+	margin:0 auto;
+
+}
+
+.bbtnlist .bbtn1{
+	width: 234px;
+	height: 186px;
+	float: left;
+	margin-right: 6px;
+	background: url("index_03.png") no-repeat;
+}
+
+.bbtnlist .bbtn2{
+	width: 186px;
+	height: 186px;
+	float: left;
+	margin-right: 6px;
+	background: url("index_05.png") no-repeat;
+}
+
+.bbtnlist .bbtn3{
+	width: 174px;
+	height: 186px;
+	float: left;
+	background: url("index_07.png") no-repeat;
+}
+
+.adtitle{
+	font-size: 25px;
+	color:#772910;
+	margin-top: 20px;
+	margin-left: 18px;
+}
+.admemo{
+	font-size: 20px;
+	color: #FFFFFF;
+	margin-left: 18px;
+}
+
+.gtitle{
+	margin-top: 32px;
+}
+
+.gtitle span{
+	font-size: 25px;
+	color: #fda721;
+	padding-left: 5px;
+}
+
+.gamelist{
+	width: 603px;
+	margin-top:20px;
+	margin-left: 10px;
+	margin-bottom:97px;
+}
+
+.game{
+	width:590px;
+	height: 187px;
+	margin-top: 7px;
+	background: url("bbg_17.png");
+	vertical-align: bottom;
+}
+
+.game img{
+	margin-left: 49px;
+	position: absolute;
+}
+
+.game .online{
+	font-size:18px;
+	color: #ffb422;
+	position: absolute;
+	margin-left: 400px;
+	margin-top: 16px;
+}
+
+.game .online span{
+	font-size:18px;
+	color: #FFFFFF;
+}
+
+.game .gametitle{
+	font-size:35px;
+	color: #fffdba;
+	position: absolute;
+	margin-left: 400px;
+	margin-top: 110px;
+}

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.lxtx.dao.GSendFreeMapper" >
+  <resultMap id="BaseResultMap" type="com.lxtx.model.GSendFree" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="uid" property="uid" jdbcType="INTEGER" />
+    <result column="free_count" property="freeCount" jdbcType="INTEGER" />
+    <result column="date" property="date" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, `uid`, free_count, `date`
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from g_send_free
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from g_send_free
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.lxtx.model.GSendFree" >
+    insert into g_send_free (id, `uid`, free_count, 
+      `date`)
+    values (#{id,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, #{freeCount,jdbcType=INTEGER}, 
+      #{date,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lxtx.model.GSendFree" >
+    insert into g_send_free
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      id,
+      `uid`,
+      free_count,
+      `date`,
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      #{id,jdbcType=INTEGER},
+      #{uid,jdbcType=INTEGER},
+      #{freeCount,jdbcType=INTEGER},
+      #{date,jdbcType=DATE},
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lxtx.model.GSendFree" >
+    update g_send_free
+    <set >
+      <if test="uid != null" >
+        `uid` = #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="freeCount != null" >
+        free_count = #{freeCount,jdbcType=INTEGER},
+      </if>
+      <if test="date != null" >
+        `date` = #{date,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lxtx.model.GSendFree" >
+    update g_send_free
+    set `uid` = #{uid,jdbcType=INTEGER},
+      free_count = #{freeCount,jdbcType=INTEGER},
+      `date` = #{date,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  <select id="selectSendFreeByUid" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from g_send_free
+    where `uid` = #{uid,jdbcType=INTEGER}
+  </select>
+  
+</mapper>

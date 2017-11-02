@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.lxtx.dao.CloudUserMapper">
+	<resultMap id="BaseResultMap" type="com.lxtx.model.CloudUser">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="wxid" property="wxid" jdbcType="VARCHAR" />
+		<result column="wxnm" property="wxnm" jdbcType="VARCHAR" />
+		<result column="balance" property="balance" jdbcType="DECIMAL" />
+		<result column="mobile" property="mobile" jdbcType="VARCHAR" />
+		<result column="password" property="password" jdbcType="VARCHAR" />
+		<result column="contract_amount" property="contractAmount"
+			jdbcType="DECIMAL" />
+		<result column="headimgurl" property="headimgurl" jdbcType="VARCHAR" />
+		<result column="broker_id" property="brokerId" jdbcType="INTEGER" />
+		<result column="first_visit" property="firstVisit" jdbcType="VARCHAR" />
+		<result column="crt_tm" property="crtTm" jdbcType="TIMESTAMP" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, wxid,wxnm, balance, mobile, `password`,
+		contract_amount,headimgurl,broker_id,first_visit,crt_tm
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from cloud_user
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from
+		cloud_user
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" parameterType="com.lxtx.model.CloudUser"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into cloud_user (wxid,
+		balance, mobile,wxnm,
+		`password`,
+		contract_amount,headimgurl,broker_id,crt_tm
+		)
+		values
+		(#{wxid,jdbcType=VARCHAR}, #{balance,jdbcType=DECIMAL},
+		#{mobile,jdbcType=VARCHAR},
+		#{wxnm,jdbcType=VARCHAR},
+		#{password,jdbcType=VARCHAR},
+		#{contractAmount,jdbcType=DECIMAL},
+		#{headimgurl,jdbcType=VARCHAR},
+		#{crtTm,jdbcType=TIMESTAMP},
+		#{firstVisit,jdbcType=VARCHAR},
+		#{brokerId,jdbcType=INTEGER}
+		)
+	</insert>
+	<insert id="insertSelective" parameterType="com.lxtx.model.CloudUser"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into cloud_user
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			wxid,
+			balance,
+			mobile,
+			wxnm,
+			`password`,
+			contract_amount,
+			headimgurl,
+			first_visit,
+			broker_id,
+			crt_tm,
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			#{wxid,jdbcType=VARCHAR},
+			#{balance,jdbcType=DECIMAL},
+			#{mobile,jdbcType=VARCHAR},
+			#{wxnm,jdbcType=VARCHAR},
+			#{password,jdbcType=VARCHAR},
+			#{contractAmount,jdbcType=DECIMAL},
+			#{headimgurl,jdbcType=VARCHAR},
+			#{firstVisit,jdbcType=VARCHAR},
+			#{brokerId,jdbcType=INTEGER},
+			#{crtTm,jdbcType=TIMESTAMP},
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.lxtx.model.CloudUser">
+		update cloud_user
+		<set>
+			<if test="wxid != null">
+				wxid = #{wxid,jdbcType=VARCHAR},
+			</if>
+			<if test="balance != null">
+				balance = #{balance,jdbcType=DECIMAL},
+			</if>
+			<if test="mobile != null">
+				mobile = #{mobile,jdbcType=VARCHAR},
+			</if>
+			<if test="wxnm != null">
+				wxnm = #{wxnm,jdbcType=VARCHAR},
+			</if>
+			<if test="password != null">
+				`password` = #{password,jdbcType=VARCHAR},
+			</if>
+			<if test="contractAmount != null">
+				contract_amount = #{contractAmount,jdbcType=DECIMAL},
+			</if>
+			<if test="headimgurl != null">
+				headimgurl = #{headimgurl,jdbcType=VARCHAR},
+			</if>
+			<if test="firstVisit != null">
+				first_visit = #{firstVisit,jdbcType=VARCHAR},
+			</if>
+			<if test="brokerId != null">
+				broker_id = #{brokerId,jdbcType=INTEGER},
+			</if>
+			<if test="crtTm != null">
+				crt_tm = #{crtTm,jdbcType=TIMESTAMP},
+			</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.lxtx.model.CloudUser">
+		update cloud_user
+		set wxid = #{wxid,jdbcType=VARCHAR},
+		balance =
+		#{balance,jdbcType=DECIMAL},
+		mobile = #{mobile,jdbcType=VARCHAR},
+		wxnm = #{wxnm,jdbcType=VARCHAR},
+		`password` = #{password,jdbcType=VARCHAR},
+		contract_amount =
+		#{contractAmount,jdbcType=DECIMAL},
+		broker_id =
+		#{brokerId,jdbcType=INTEGER},
+		crt_tm=#{crtTm,jdbcType=TIMESTAMP},
+		first_visit =
+		#{firstVisit,jdbcType=VARCHAR},
+		headimgurl =
+		#{headimgurl,jdbcType=VARCHAR}
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<select id="selectByWxid" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from cloud_user
+		where wxid = #{wxid,jdbcType=VARCHAR}
+	</select>
+	<update id="updateVisitById" parameterType="com.lxtx.model.CloudUser">
+		update cloud_user
+		set
+		first_visit = #{firstVisit,jdbcType=VARCHAR}
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<update id="updateTelById" parameterType="com.lxtx.model.CloudUser">
+		update cloud_user
+		set
+		mobile = #{mobile,jdbcType=VARCHAR}
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<update id="updatePwdById" parameterType="com.lxtx.model.CloudUser">
+		update cloud_user
+		set
+		`password` = #{password,jdbcType=VARCHAR}
+		where id =
+		#{id,jdbcType=INTEGER}
+	</update>
+	<update id="updateBalanceById" parameterType="com.lxtx.model.CloudUser">
+		update cloud_user
+		set `balance` = balance + #{balance,jdbcType=DECIMAL}
+		where id =
+		#{id,jdbcType=INTEGER}
+	</update>
+	<update id="reduceBalanceById" parameterType="com.lxtx.model.CloudUser">
+		update cloud_user
+		set `balance` = balance - #{balance,jdbcType=DECIMAL}
+		where id =
+		#{id,jdbcType=INTEGER}
+	</update>	
+	<select id="checkTelExist" resultType="java.lang.Integer"
+		parameterType="java.lang.String">
+		select count(1)
+		from cloud_user
+		where mobile =
+		#{mobile,jdbcType=VARCHAR}
+	</select>
+	<select id="selectUnderPerByMbl" resultType="com.lxtx.model.vo.BrokerUnderPerVo"
+		parameterType="java.lang.String">
+		select 
+		wxnm, balance, mobile,crt_tm as crtTm
+		from cloud_user
+		where 1=1 and broker_id= #{brokerId,jdbcType=INTEGER}
+		<if test="mobile != null and mobile != ''">
+			and mobile like "%"#{mobile,jdbcType=VARCHAR}"%"
+		</if>
+		order by id desc limit 0,20
+	</select>
+	<update id="updateBalanceAndContractById" parameterType="com.lxtx.model.CloudUser">
+		update cloud_user
+		set `balance` = balance + #{balance,jdbcType=DECIMAL},
+		contract_amount = contract_amount + #{contractAmount,jdbcType=DECIMAL}
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	
+	<update id="updateContractAmountById" parameterType="com.lxtx.model.CloudUser">
+		update cloud_user
+		set contract_amount = contract_amount + #{contractAmount,jdbcType=DECIMAL}
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+</mapper>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:task="http://www.springframework.org/schema/task" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+			http://www.springframework.org/schema/context 
+			http://www.springframework.org/schema/context/spring-context-3.2.xsd
+			http://www.springframework.org/schema/aop 
+			http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+			http://www.springframework.org/schema/tx 
+			http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+			http://www.springframework.org/schema/mvc 
+			http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+			http://www.springframework.org/schema/task
+			http://www.springframework.org/schema/task/spring-task-3.0.xsd
+			http://www.springframework.org/schema/context 
+			http://www.springframework.org/schema/context/spring-context-3.2.xsd
+			http://www.springframework.org/schema/cache
+           http://www.springframework.org/schema/cache/spring-cache.xsd">
+	<!-- 资源文件配置 -->
+	<bean id="propertiesBean"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:*.properties</value>
+			</list>
+		</property>
+	</bean>
+	<context:property-placeholder location="classpath*:*.properties"/>  
+
+	<!-- 拆分配置文件，导入 -->
+	<import resource="datasource-config.xml" />
+
+	<!-- 使Spring支持自动检测组件 -->
+	<context:component-scan base-package="com.lxtx" />
+	<!-- 默认的注解映射的支持 -->
+	<context:annotation-config/>
+	<mvc:annotation-driven>
+		<mvc:message-converters register-defaults="true">
+			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+				<property name="supportedMediaTypes" value="text/html;charset=UTF-8"/>
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+	
+		
+	
+	<mvc:resources location="/images/" mapping="/images/**" />
+	<mvc:resources location="/script/" mapping="/script/**" />
+	<mvc:resources location="/styles/" mapping="/styles/**" />
+	<mvc:resources location="/amcharts/" mapping="/amcharts/**" />
+
+	<bean id="cacheManager" class="org.springframework.cache.support.SimpleCacheManager">
+        <property name="caches">
+            <set>
+                <bean class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean">
+                    <property name="name" value="default"/>
+                </bean>
+                <bean class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean">
+                    <property name="name" value="accountCache"/>
+                </bean>
+            </set>
+        </property>
+    </bean>
+
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<mvc:exclude-mapping path="/login" />
+			<mvc:exclude-mapping path="/maintainace" />
+			<mvc:exclude-mapping path="/*.html" />
+			<mvc:exclude-mapping path="/images/**" />
+			<mvc:exclude-mapping path="/styles/**" />
+			<mvc:exclude-mapping path="/script/**" />
+			<bean class=" com.lxtx.util.interceptor.LoginInterceptor"></bean>
+		</mvc:interceptor>
+ 		<!-- <mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<mvc:exclude-mapping path="/*.html" />
+			<mvc:exclude-mapping path="/images/**" />
+			<mvc:exclude-mapping path="/styles/**" />
+			<mvc:exclude-mapping path="/script/**" />
+			<bean class=" com.lxtx.util.interceptor.JumpInterceptor"></bean>
+		</mvc:interceptor>	 -->
+	</mvc:interceptors>
+
+	<bean
+		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="order" value="1" />
+		<property name="favorParameter" value="false" />
+		<property name="ignoreAcceptHeader" value="true" />
+		<property name="mediaTypes">
+			<map>
+				<entry key="json" value="application/json" />
+				<entry key="xml" value="application/xml" />
+			</map>
+		</property>
+		<property name="defaultViews">
+			<list>
+				<bean
+					class="org.springframework.web.servlet.view.json.MappingJacksonJsonView"></bean>
+			</list>
+		</property>
+	</bean>
+	<!-- 上传文件 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="104857600" />
+		<property name="maxInMemorySize" value="4096" />
+		<property name="defaultEncoding" value="utf-8" />
+	</bean>
+
+	<!-- 对静态资源文件的访问 -->
+	<mvc:default-servlet-handler />
+	<!-- 启动定时器 -->
+	<task:annotation-driven />
+
+	<!-- jsp页面解析器，当Controller返回XXX字符串时，先通过拦截器，然后该类就会在/WEB-INF/views/目录下，查找XXX.jsp文件 -->
+	<!-- 定义JSP文件的位置 -->
+	<bean id="jspViewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	<bean name="exceptionResolver"  class="com.lxtx.util.tool.CustomMappingExceptionResolver">  
+       <!-- 定义异常处理页面用来获取异常信息的变量名，默认名为exception -->  
+       <property name="exceptionAttribute" value="ex"></property>  
+       <!--定义需要特殊处理的异常，用类名或完全路径名作为key，异常也页名作为值-->  
+    <property name="exceptionMappings">  
+        <props>  
+            <prop key="com.rrtong.frame.exception.GuideTestException">/error/error-interface</prop>  
+            <!--<prop key="com.rrtong.frame.exception.NotLoginException">login</prop>-->  
+            <prop key="java.lang.Exception">/error/exception</prop>  
+        </props>  
+    </property>  
+       <property name="statusCodes">       
+            <props>       
+                <prop key="errors/error">500</prop>       
+                <prop key="errors/404">404</prop>       
+            </props>       
+       </property>          
+    <!-- 设置日志输出级别，不定义则默认不输出警告等错误日志信息 -->  
+    <property name="warnLogCategory" value="DEBUG" />  
+    <!-- 默认HTTP状态码 -->  
+    <property name="defaultStatusCode" value="500" />  
+</bean> 
+</beans>

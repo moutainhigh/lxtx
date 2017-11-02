@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.lxtx.dao.CloudRakeBackMapper">
+	<resultMap id="BaseResultMap" type="com.lxtx.model.CloudRakeBack">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="uid" property="uid" jdbcType="INTEGER" />
+		<result column="commission" property="commission" jdbcType="DECIMAL" />
+		<result column="broker_commission" property="brokerCommission"
+			jdbcType="DECIMAL" />
+		<result column="wx_nm" property="wxNm" jdbcType="VARCHAR" />
+		<result column="subjectnm" property="subjectnm" jdbcType="VARCHAR" />
+		<result column="clear_tm" property="clearTm" jdbcType="DATE" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, `uid`, commission, broker_commission, wx_nm, subjectnm, clear_tm
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from cloud_rake_back
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from cloud_rake_back
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" parameterType="com.lxtx.model.CloudRakeBack"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into cloud_rake_back (`uid`, commission, broker_commission,
+		wx_nm, subjectnm, clear_tm
+		)
+		values (#{uid,jdbcType=INTEGER}, #{commission,jdbcType=DECIMAL},
+		#{brokerCommission,jdbcType=DECIMAL},
+		#{wxNm,jdbcType=VARCHAR}, #{subjectnm,jdbcType=VARCHAR}, #{clearTm,jdbcType=DATE}
+		)
+	</insert>
+	<insert id="insertSelective" parameterType="com.lxtx.model.CloudRakeBack"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into cloud_rake_back
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			`uid`,
+			commission,
+			broker_commission,
+			wx_nm,
+			subjectnm,
+			clear_tm,
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			#{uid,jdbcType=INTEGER},
+			#{commission,jdbcType=DECIMAL},
+			#{brokerCommission,jdbcType=DECIMAL},
+			#{wxNm,jdbcType=VARCHAR},
+			#{subjectnm,jdbcType=VARCHAR},
+			#{clearTm,jdbcType=DATE},
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.lxtx.model.CloudRakeBack">
+		update cloud_rake_back
+		<set>
+			<if test="uid != null">
+				`uid` = #{uid,jdbcType=INTEGER},
+			</if>
+			<if test="commission != null">
+				commission = #{commission,jdbcType=DECIMAL},
+			</if>
+			<if test="brokerCommission != null">
+				broker_commission = #{brokerCommission,jdbcType=DECIMAL},
+			</if>
+			<if test="wxNm != null">
+				wx_nm = #{wxNm,jdbcType=VARCHAR},
+			</if>
+			<if test="subjectnm != null">
+				subjectnm = #{subjectnm,jdbcType=VARCHAR},
+			</if>
+			<if test="clearTm != null">
+				clear_tm = #{clearTm,jdbcType=DATE},
+			</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.lxtx.model.CloudRakeBack">
+		update cloud_rake_back
+		set `uid` = #{uid,jdbcType=INTEGER},
+		commission = #{commission,jdbcType=DECIMAL},
+		broker_commission = #{brokerCommission,jdbcType=DECIMAL},
+		wx_nm = #{wxNm,jdbcType=VARCHAR},
+		subjectnm = #{subjectnm,jdbcType=VARCHAR},
+		clear_tm = #{clearTm,jdbcType=DATE}
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<select id="selectRateBackByDate" resultMap="BaseResultMap"
+		parameterType="map">
+		select
+		<include refid="Base_Column_List" />
+		from cloud_rake_back
+		where 1=1 and `uid` = #{brokerId,jdbcType=INTEGER}
+		<if test="start != null and start != ''">
+			and clear_tm &gt;= #{start}
+		</if>
+		<if test="end != null and end !=''">
+			and clear_tm &lt;= #{end}
+		</if>
+		<if test="id != null and id != 0">
+			and a.id &lt; #{id,jdbcType=INTEGER}
+		</if>
+		order by id desc limit 0,10
+	</select>
+</mapper>

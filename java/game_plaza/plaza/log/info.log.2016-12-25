@@ -1,0 +1,28 @@
+[2016-12-25 22:09:04:831] Skipping MapperFactoryBean with name 'cloudFundHistoryMapper' and 'com.lxtx.dao.CloudFundHistoryMapper' mapperInterface. Bean already defined with the same name!
+ [2016-12-25 22:09:04:833] Skipping MapperFactoryBean with name 'cloudOrderMapper' and 'com.lxtx.dao.CloudOrderMapper' mapperInterface. Bean already defined with the same name!
+ [2016-12-25 22:09:04:833] Skipping MapperFactoryBean with name 'cloudUserMapper' and 'com.lxtx.dao.CloudUserMapper' mapperInterface. Bean already defined with the same name!
+ [2016-12-25 22:09:04:833] Skipping MapperFactoryBean with name 'cloudWxServiceProviderMapper' and 'com.lxtx.dao.CloudWxServiceProviderMapper' mapperInterface. Bean already defined with the same name!
+ [2016-12-25 22:09:04:833] Skipping MapperFactoryBean with name 'cloudWxShellMapper' and 'com.lxtx.dao.CloudWxShellMapper' mapperInterface. Bean already defined with the same name!
+ [2016-12-25 22:09:04:833] Skipping MapperFactoryBean with name 'cloudWxShellUserMapper' and 'com.lxtx.dao.CloudWxShellUserMapper' mapperInterface. Bean already defined with the same name!
+ [2016-12-25 22:09:04:833] Skipping MapperFactoryBean with name 'lotteryCqsscDataMapper' and 'com.lxtx.dao.LotteryCqsscDataMapper' mapperInterface. Bean already defined with the same name!
+ [2016-12-25 22:09:04:833] Skipping MapperFactoryBean with name 'lotteryOrderMapper' and 'com.lxtx.dao.LotteryOrderMapper' mapperInterface. Bean already defined with the same name!
+ [2016-12-25 22:09:04:833] No MyBatis mapper was found in '[com.lxtx.dao]' package. Please check your configuration.
+ [2016-12-25 22:09:28:387] Skipping MapperFactoryBean with name 'cloudFundHistoryMapper' and 'com.lxtx.dao.CloudFundHistoryMapper' mapperInterface. Bean already defined with the same name!
+ [2016-12-25 22:09:28:388] Skipping MapperFactoryBean with name 'cloudOrderMapper' and 'com.lxtx.dao.CloudOrderMapper' mapperInterface. Bean already defined with the same name!
+ [2016-12-25 22:09:28:388] Skipping MapperFactoryBean with name 'cloudUserMapper' and 'com.lxtx.dao.CloudUserMapper' mapperInterface. Bean already defined with the same name!
+ [2016-12-25 22:09:28:388] Skipping MapperFactoryBean with name 'cloudWxServiceProviderMapper' and 'com.lxtx.dao.CloudWxServiceProviderMapper' mapperInterface. Bean already defined with the same name!
+ [2016-12-25 22:09:28:388] Skipping MapperFactoryBean with name 'cloudWxShellMapper' and 'com.lxtx.dao.CloudWxShellMapper' mapperInterface. Bean already defined with the same name!
+ [2016-12-25 22:09:28:388] Skipping MapperFactoryBean with name 'cloudWxShellUserMapper' and 'com.lxtx.dao.CloudWxShellUserMapper' mapperInterface. Bean already defined with the same name!
+ [2016-12-25 22:09:28:388] Skipping MapperFactoryBean with name 'lotteryCqsscDataMapper' and 'com.lxtx.dao.LotteryCqsscDataMapper' mapperInterface. Bean already defined with the same name!
+ [2016-12-25 22:09:28:388] Skipping MapperFactoryBean with name 'lotteryOrderMapper' and 'com.lxtx.dao.LotteryOrderMapper' mapperInterface. Bean already defined with the same name!
+ [2016-12-25 22:09:28:388] No MyBatis mapper was found in '[com.lxtx.dao]' package. Please check your configuration.
+ [2016-12-25 22:13:58:483] Skipping MapperFactoryBean with name 'cloudFundHistoryMapper' and 'com.lxtx.dao.CloudFundHistoryMapper' mapperInterface. Bean already defined with the same name!
+ [2016-12-25 22:13:58:483] Skipping MapperFactoryBean with name 'cloudOrderMapper' and 'com.lxtx.dao.CloudOrderMapper' mapperInterface. Bean already defined with the same name!
+ [2016-12-25 22:13:58:483] Skipping MapperFactoryBean with name 'cloudUserMapper' and 'com.lxtx.dao.CloudUserMapper' mapperInterface. Bean already defined with the same name!
+ [2016-12-25 22:13:58:483] Skipping MapperFactoryBean with name 'cloudWxServiceProviderMapper' and 'com.lxtx.dao.CloudWxServiceProviderMapper' mapperInterface. Bean already defined with the same name!
+ [2016-12-25 22:13:58:483] Skipping MapperFactoryBean with name 'cloudWxShellMapper' and 'com.lxtx.dao.CloudWxShellMapper' mapperInterface. Bean already defined with the same name!
+ [2016-12-25 22:13:58:483] Skipping MapperFactoryBean with name 'cloudWxShellUserMapper' and 'com.lxtx.dao.CloudWxShellUserMapper' mapperInterface. Bean already defined with the same name!
+ [2016-12-25 22:13:58:483] Skipping MapperFactoryBean with name 'lotteryCqsscDataMapper' and 'com.lxtx.dao.LotteryCqsscDataMapper' mapperInterface. Bean already defined with the same name!
+ [2016-12-25 22:13:58:484] Skipping MapperFactoryBean with name 'lotteryOrderMapper' and 'com.lxtx.dao.LotteryOrderMapper' mapperInterface. Bean already defined with the same name!
+ [2016-12-25 22:13:58:484] No MyBatis mapper was found in '[com.lxtx.dao]' package. Please check your configuration.
+ 

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="netpay">
+   <typeAlias alias="paymentLog" type="com.jxt.netpay.pojo.PaymentLog"/>
+
+   <insert id="PaymentLog.insert" parameterClass="paymentLog">
+     	insert into PaymentLog (PaymentMethodId,Status,Fee,ReceiverAccountId,OrderId,OrderDesc,CallbackUrl,NotifyUrl,CreateDay,Ip)
+		values (#paymentMethodId#,#status#,#fee#,#receiverAccountId#,#orderId#,#orderDesc#,#callbackUrl#,#notifyUrl#,#createDay#,#ip#)
+		<selectKey keyProperty="id" resultClass="long">
+			select LAST_INSERT_ID() as id
+		</selectKey>
+	</insert>
+   
+   <update id="PaymentLog.updateNotify" parameterClass="paymentLog">
+       update PaymentLog 
+       set NotifyData = #notifyData#,PaymentTime = #paymentTime#,
+       Status = #status#,TransactionNumber = #transactionNumber#,
+       DealStatus = 0
+       where Id = #id# 
+   </update>
+   
+   <select id="PaymentLog.select" parameterClass="java.lang.Long" resultClass="paymentLog">
+       select * from PaymentLog 
+       where Id = #id#
+   </select>
+   
+   <select id="PaymentLog.queryPayList" resultClass="paymentLog" parameterClass="int">
+	<![CDATA[
+		select Id,OrderId,Status,NotifyUrl,TransactionNumber from PaymentLog where DealStatus=#dealStatus# order by Id asc limit 100
+	]]>
+	</select>
+
+	<update id="PaymentLog.updateDealStatus" parameterClass="paymentLog">
+	<![CDATA[
+		update PaymentLog set DealStatus=#dealStatus# where Id=#id#
+	]]>
+	</update>
+</sqlMap>

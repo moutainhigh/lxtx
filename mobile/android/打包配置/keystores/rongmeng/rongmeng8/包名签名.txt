@@ -1,0 +1,15 @@
+应用包名： com.zswj.wlqs
+签名密码： android
+密钥别名： rm1.keystore
+签名MD5 ： B661582F636F9CCAC632ED98363D9263
+
+
+
+
+
+
+
+
+
+
+

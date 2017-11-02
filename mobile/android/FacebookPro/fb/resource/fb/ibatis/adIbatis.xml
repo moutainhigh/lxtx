@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="fb">
+   <typeAlias alias="ad" type="com.lxtx.fb.pojo.Ad"/>
+   
+   <select id="Ad.getAll" resultClass="ad">
+       select * from Ad order by AdSetId asc, SortIdx asc
+   </select>
+</sqlMap>

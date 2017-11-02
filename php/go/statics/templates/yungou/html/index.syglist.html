@@ -1,0 +1,44 @@
+{wc:templates "index","header"}
+<div class="index_body">
+	<div class="index_body_gg"><a href="{WEB_PATH}/goods/18302" target="_blank"><img src="{G_TEMPLATES_STYLE}/images/index_body_gg1.jpg" /></a></div>
+	<div class="ten_list">
+		<div class="index_body_title"><img src="{G_TEMPLATES_STYLE}/images/ten_list_title.png" /></div>
+		<div class="ten_list_cont">
+			{wc:loop $shoplist $i $shop}
+				{wc:php:start}
+				$p_width=round($shop['canyurenshu']/$shop['zongrenshu']*100);
+				{wc:php:end}
+					<div class="index_qgjp_item">
+						{wc:if $shop['yunjiage']=='10.00'}	
+                          				
+						<i class="ten_ioc"></i>
+							
+						
+						{wc:if:end}
+						<div class="index_qgjp_img"><a  href="{WEB_PATH}/goods/{wc:$shop['id']}" title="{wc:$shop['title']}" target="_blank"><img alt="{wc:$shop['title']}" src="{G_UPLOAD_PATH}/{wc:$shop['thumb']}" /></a></div>
+						<p class="index_qgjp_title"><a  href="{WEB_PATH}/goods/{wc:$shop['id']}" title="{wc:$shop['title']}" target="_blank">(第{wc:$shop['qishu']}期) {wc:$shop['title']}</a></p>
+						<p class="index_qgjp_price">总需：{wc:$shop['zongrenshu']}人次</p>
+						<div class="progressBar">
+							<p class="progressBar_wrap"><span class="progressBar_bar" style="width:{wc:$p_width}%;"></span></p>
+							<ul class="progressBar_txt">
+								<li class="progressBar_txt_l">
+									<p><b>{wc:$shop['canyurenshu']}</b></p>
+									<p>已参与人次</p>
+								</li>
+								<li class="progressBar_txt_r">
+									<p><b>{wc:$shop['zongrenshu']-$shop['canyurenshu']}</b></p>
+									<p>剩余人次</p>
+								</li>
+							</ul>
+						</div>
+						<div class="index_body_zrjp_Button">
+							<a href="{WEB_PATH}/goods/{wc:$shop['id']}">立即抢购 ></a>
+						</div>
+					</div>
+			{wc:loop:end}
+			
+		</div>
+	</div>
+</div>
+
+{wc:templates "index","footer"}

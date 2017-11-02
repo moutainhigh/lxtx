@@ -1,0 +1,67 @@
+09:03:58 S2S array (
+  '_sn' => '245150206020',
+  '_checkcode' => '71658263d2d806a66336fa3733b6a7ed',
+  '_currency' => 'USD',
+  '_amount' => '69.5',
+  '_status' => 'declined',
+  '_transactionno' => '15060218999730377Y',
+  'local_sign' => '71658263d2d806a66336fa3733b6a7ed',
+)
+09:04:12 S2B array (
+  'main_page' => 'checkout_process',
+  'amount' => '69.5',
+  'checkcode' => '71658263d2d806a66336fa3733b6a7ed',
+  'siteno' => '193736180',
+  'sn' => '245150206020',
+  'status' => 'declined',
+  'transactionno' => '15060218999730377Y',
+  'local_sign' => '71658263d2d806a66336fa3733b6a7ed',
+)
+09:56:45 S2S array (
+  '_sn' => '245150206025',
+  '_checkcode' => 'c90147cb34a3ba4a38b4aa4ac558ce5c',
+  '_currency' => 'USD',
+  '_amount' => '51.5',
+  '_status' => 'approved',
+  '_transactionno' => '15060218999748595V',
+  'local_sign' => 'c90147cb34a3ba4a38b4aa4ac558ce5c',
+)
+09:56:58 S2B array (
+  'main_page' => 'checkout_process',
+  'amount' => '51.5',
+  'checkcode' => 'c90147cb34a3ba4a38b4aa4ac558ce5c',
+  'siteno' => '193736180',
+  'sn' => '245150206025',
+  'status' => 'approved',
+  'transactionno' => '15060218999748595V',
+  'local_sign' => 'c90147cb34a3ba4a38b4aa4ac558ce5c',
+)
+11:36:49 S2B array (
+  'main_page' => 'checkout_process',
+  'amount' => '73',
+  'checkcode' => '72f508b1ee08038fa1d934ee40dd5d0b',
+  'siteno' => '193736180',
+  'sn' => '245150206034',
+  'status' => 'declined',
+  'transactionno' => '15060218999794399E',
+  'local_sign' => '72f508b1ee08038fa1d934ee40dd5d0b',
+)
+13:39:54 S2S array (
+  '_sn' => '245150206047',
+  '_checkcode' => 'e678cb4e919a0c904597c9ad5645ddee',
+  '_currency' => 'USD',
+  '_amount' => '99.5',
+  '_status' => 'declined',
+  '_transactionno' => '15060218999812758K',
+  'local_sign' => 'e678cb4e919a0c904597c9ad5645ddee',
+)
+13:40:07 S2B array (
+  'main_page' => 'checkout_process',
+  'amount' => '99.5',
+  'checkcode' => 'e678cb4e919a0c904597c9ad5645ddee',
+  'siteno' => '193736180',
+  'sn' => '245150206047',
+  'status' => 'declined',
+  'transactionno' => '15060218999812758K',
+  'local_sign' => 'e678cb4e919a0c904597c9ad5645ddee',
+)

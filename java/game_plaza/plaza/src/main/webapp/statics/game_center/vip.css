@@ -1,0 +1,218 @@
+@charset "utf-8";
+/* CSS Document */
+
+.vipbox{
+	width: 441px;
+	height: 320px;
+	background-color: #3f414a;
+	border: 3px solid #c4560d;
+	border-radius: 6px;
+	z-index:1300;
+	left:50%;/*FF IE7*/
+	top: 50%;/*FF IE7*/
+	margin-left:-220px!important;/*FF IE7 该值为本身宽的一半 */
+	margin-top:-168px!important;/*FF IE7 该值为本身高的一半*/
+	margin-top:0px;
+	position:fixed!important;/*FF IE7*/
+	position:absolute;/*IE6*/
+
+_top:       expression(eval(document.compatMode &&
+			document.compatMode=='CSS1Compat') ?
+			documentElement.scrollTop + (document.documentElement.clientHeight-this.offsetHeight)/2 :/*IE6*/
+			document.body.scrollTop + (document.body.clientHeight - this.clientHeight)/2);/*IE5 IE5.5*/
+}
+
+.vipbox .viptop{
+	position: absolute;
+	margin-top: -273px;
+	margin-left: -95px;
+	text-align: center;
+	height: 533px;
+	width: 621px;
+	background: url("viptop_03.png") no-repeat center;
+	z-index: 2000;
+}
+
+.vipbox .vipcontent{
+	font-size: 25px;
+	color: #FFFFFF;
+	margin-top: 42px;
+	width: 100%;
+	text-align: center;
+}
+.vipbox .vipcontent p{
+	line-height: 40px;
+}
+
+.vipbox .vipcontent p span{
+	color:#ffb136;
+}
+
+.vipbox .vipreturn{
+	margin: 20px auto;
+	background-color: #ffb136;
+	border-radius: 6px;
+	width: 166px;
+	height: 38px;
+	text-align: center;
+	line-height: 38px;
+}
+.vipbox .vipreturn a{
+	color:#772910;
+	font-size: 22px;
+	font-weight: bold;
+}
+
+.vipbox .viptop p{
+	font-size: 30px;
+	font-weight: bold;
+	color: #ffda0b;
+	padding-top: 220px;
+}
+
+.vipbox .viptitle{
+	margin: -20px auto;
+	text-align: center;
+	width: 216px;
+	height: 74px;
+	background: url("vip_03.png") no-repeat center;
+}
+
+.vipbox .viptitle p{
+	font-size: 22px;
+	color: #FFFFFF;
+	padding-top: 26px;
+}
+
+.vipbox .vipfoot{
+	height: 38px;
+	background-color: #ffb136;
+	border-radius: 6px;
+	margin-top: 247px;
+}
+
+.vipbox .vipfoot span{
+	font-size: 20px;
+	margin-left: 10px;
+	color:#c4560d;
+}
+
+.vipbox .vipfoot span.sleft{
+	margin-left: 50px;
+}
+
+.vipbox .vipfoot p{
+	width: 100%;
+	line-height: 38px;
+	font-size: 20px;
+	color:#FFFFFF;
+}
+
+.vipbox .close{
+	margin-top: -45px;
+	margin-left: 380px;
+}
+
+.vipbox .vipbody{
+	
+}
+
+.vipbox .vipbody ul li{
+	float: left;
+	margin-left: 39px;
+	margin-top: 20px;
+}
+.vipbox .vipbody ul li{
+	padding-right: 30px;
+	height: 97px;
+}
+.vipbox .vipbody ul li p{
+	color:#ffffff;
+	font-size: 18px;
+	text-align: center;
+}
+
+.vipbg {
+background-color: #030402;
+width: 100%;
+height: 100%;
+left:0;
+top:0;/*FF IE7*/
+filter:alpha(opacity=50);/*IE*/
+opacity:0.5;/*FF*/
+z-index:1200;
+
+position:fixed!important;/*FF IE7*/
+position:absolute;/*IE6*/
+
+_top:       expression(eval(document.compatMode &&
+			document.compatMode=='CSS1Compat') ?
+			documentElement.scrollTop + (document.documentElement.clientHeight-this.offsetHeight)/2 :/*IE6*/
+			document.body.scrollTop + (document.body.clientHeight - this.clientHeight)/2);/*IE5 IE5.5*/
+
+}
+
+.viptitle{
+	font-size: 22px;
+	color: #9093a2;
+}
+
+.viptitle img{
+	margin-left: -40px;
+	position: absolute;
+}
+
+.viptitle span{
+	color:#ffb136;
+}
+
+.vipcheckbox{
+	width:92px;
+	height:132px;
+	border: 2px solid #c4560d;
+	border-radius: 6px;
+}
+
+.vipcheckbox .boxtitle{
+	height: 26px;
+	font-size: 15px;
+	color: #e4e3ac;
+	width: 100%;
+	background-color: #30323a;
+	border-radius: 3px 3px 0 0;
+
+}
+
+.vipcheckbox .boximg{
+	height: 82px;
+	width: 100%;
+}
+
+.vipcheckbox .boximg p{
+	padding-top: 10px;
+	line-height: 82px;
+}
+
+.vipcheckbox .boxmoney{
+	height: 24px;
+	font-size: 15px;
+	color: #fff551;
+	width: 100%;
+	background-color: #db5f35;
+	border-radius: 0 0 3px 3px;
+
+}
+
+.boxcheck{
+	position: absolute;
+	margin-top: -10px;
+	margin-left: 60px;
+}
+
+
+.vipboxlist ul li{
+	padding-top: 15px;
+	float: left;
+	padding-left: 5px;
+	padding-right: 5px;
+}

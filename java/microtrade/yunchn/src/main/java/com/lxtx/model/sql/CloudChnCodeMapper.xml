@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.lxtx.dao.CloudChnCodeMapper" >
+  <resultMap id="BaseResultMap" type="com.lxtx.model.CloudChnCode" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="chnno" property="chnno" jdbcType="VARCHAR" />
+    <result column="code_url" property="codeUrl" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, chnno, code_url
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from cloud_chn_code
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from cloud_chn_code
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.lxtx.model.CloudChnCode" useGeneratedKeys="true" keyProperty="id" >
+    insert into cloud_chn_code (chnno, code_url)
+    values (#{chnno,jdbcType=VARCHAR}, #{codeUrl,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lxtx.model.CloudChnCode" useGeneratedKeys="true" keyProperty="id" >
+    insert into cloud_chn_code
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      chnno,
+      code_url,
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      #{chnno,jdbcType=VARCHAR},
+      #{codeUrl,jdbcType=VARCHAR},
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lxtx.model.CloudChnCode" >
+    update cloud_chn_code
+    <set >
+      <if test="chnno != null" >
+        chnno = #{chnno,jdbcType=VARCHAR},
+      </if>
+      <if test="codeUrl != null" >
+        code_url = #{codeUrl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lxtx.model.CloudChnCode" >
+    update cloud_chn_code
+    set chnno = #{chnno,jdbcType=VARCHAR},
+      code_url = #{codeUrl,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

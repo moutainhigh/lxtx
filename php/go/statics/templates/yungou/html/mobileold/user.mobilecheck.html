@@ -1,0 +1,140 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>验证身份 - {wc:$webname}触屏版</title>
+    <meta content="app-id=518966501" name="apple-itunes-app" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <link href="{G_TEMPLATES_CSS}/mobile/comm.css" rel="stylesheet" type="text/css" />
+	<link href="{G_TEMPLATES_CSS}/mobile/login.css" rel="stylesheet" type="text/css" />
+	<script src="{G_TEMPLATES_JS}/mobile/jquery190.js" language="javascript" type="text/javascript"></script>
+	<script id="pageJS" data="{G_TEMPLATES_JS}/mobile/MobileCheck.js" language="javascript" type="text/javascript"></script>
+	<style type="text/css">
+	.redbt{
+	        background: #E71C46;
+            border: 1px solid #E71C46;
+	}
+	#btnGetCode:hover{
+	       cursor:pointer;
+	}
+	#cf2{
+	      display:none;
+	 }
+	 #cf3{
+	      cursor:pointer;
+	 }
+	 .message{
+     display:none;
+     position:absolute;left:20px; top:230px;
+     width:250px;height:30px;
+     background:rgba(0,0,0,0.5);
+     color:#fff;
+     font-size:16px;
+     font-weight:bold;
+     border-radius:10px;
+     padding-left:10px;
+     padding-top:5px;
+    }
+    </style>
+</head>
+<body>
+    <div class="h5-1yyg-v1" id="content">
+        
+<!-- 栏目页面顶部 -->
+<div class='message'>
+</div>
+
+<!-- 内页顶部 -->
+
+
+        <section>
+	        <div class="registerCon">
+	            <input type="hidden" id="inpAccount" value="{wc:$name}" />
+    	        <ul>
+        	        <li><input type="text" id="code" placeholder="请输入手机验证码" class="rText"/><s class="rs2"></s></li>
+                    <li><a href="javascript:void(0);" id="btnPostCode" class="nextBtn  orgBtn">确认，下一步</a></li>
+                    <li style="font-size:12px;">如未收到验证短信，请在120秒后点击重新发送。</li>
+                    <li><a id="btnGetCode" class="resendBtn grayBtn">重新发送</a></li>
+                </ul>
+	        </div>
+        </section>
+        
+{wc:templates "mobile/index","footer"}
+<script language="javascript" type="text/javascript">
+$().ready(function(){
+	function showmessage(msg){
+		$('.message').text(msg);
+		$('.message').css('display','block').show(300).delay(3000).hide(300);
+	}
+	function getcookie(a){
+	    var arr=document.cookie.split("; ");
+	    for(var i=0;i<arr.length;i++){
+	          var brr=arr[i].split("=");
+	          if(brr[0]==a){
+	              return brr[1];
+	          }
+	    }
+	}
+	
+	//点击下一步按钮
+	$('#btnPostCode').bind('click',function(){
+		if($('#inpAccount').val()==''){
+			showmessage('参数错误！');
+			//alert('参数错误！');
+			history.go(-1);
+			exit;
+		}
+		var z=$('#code').val();
+		z=z.toUpperCase();
+		//alert('a1____'+$.md5(z));
+		//alert('a2____'+getcookie('regcheckcode'));
+		if(z==''){
+			showmessage('验证码不能为空！');
+			alert('验证码不能为空！');
+			$('#code').focus();
+			exit;
+		}
+		var data={
+				account:$('#inpAccount').val(),
+				code:$('#code').val()
+		}
+		//alert($('#inpAccount').val());
+		//alert($('#code').val());
+		$.post('{WEB_PATH}/mobile/user/checkyzm',data,function(msg){
+			//showmessage('checkyzm='+msg);
+			if(msg=='1'){
+				showmessage('手机验证成功！即将跳转到登录页。');
+				window.setTimeout(function(){
+					location.href='{WEB_PATH}/mobile/user/login';
+				},3000);
+			}else if(msg=='2'){
+				showmessage('手机验证失败！即将调到重新注册页');
+				window.setTimeout(function(){
+					location.href='{WEB_PATH}/mobile/user/register';
+				},3000);
+			}else if(msg=='3'){
+				showmessage('邮箱验证成功！');
+				window.setTimeout(function(){
+					location.href='{WEB_PATH}/mobile/user/login';
+				},3000);
+			}else if(msg=='4'){
+				showmessage('邮箱验证失败！即将调到重新注册页');
+				window.setTimeout(function(){
+					location.href='{WEB_PATH}/mobile/user/register';
+				},3000);
+			}
+		});
+	});
+	
+});
+
+</script>
+
+    </div>
+</body>
+</html>

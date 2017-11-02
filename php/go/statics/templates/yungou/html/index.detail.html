@@ -1,0 +1,185 @@
+{wc:templates "index","header"}
+<!--晒单详情-->
+<div class="dir">
+	<div class="dir_cont">
+		<a href="{WEB_PATH}">首页</a> &gt; <a href="{WEB_PATH}/go/shaidan/">晒单分享</a> &gt; 晒单详请
+	</div>
+</div>
+<div class="index_body">
+	<div class="share_box">
+		<div class="share_box_user">
+			<div class="share_box_l">
+				<div class="share_box_l_pic"><a href="{WEB_PATH}/uname/{wc:fun:idjia($shaidan['sd_userid'])}" target="_blank"><img src="{G_UPLOAD_PATH}/{wc:fun:get_user_key($shaidan['sd_userid'],'img','8080')}" /></a></div>
+				<p class="share_box_l_name">幸运获得者：<a class="blue" href="{WEB_PATH}/uname/{wc:fun:idjia($shaidan['sd_userid'])}" target="_blank">{wc:fun:userid($shaidan['sd_userid'],'username')}</a></p>
+				<p>总共云购：<b class="blue">{wc:fun:get_user_goods_num($shaidan['sd_userid'],$shaidan['sd_shopid'])}</b>人次</p>
+				{wc:php:start}
+				$jikxiao = get_shop_if_jiexiao($shaidan['sd_shopid']);	
+				{wc:php:end}
+				{wc:if $jikxiao['q_uid']}
+				<p>幸运云购码：{wc:$jikxiao['q_user_code']}	</p>
+				<p>揭晓时间：{wc:fun:date("Y-m-d H:i:s",$jikxiao['q_end_time'])}</p>
+				{wc:if:end}
+			</div>
+			<div class="share_box_r">
+				<a class="share_box_r_img" href="{WEB_PATH}/dataserver/{wc:$shaidan['sd_shopid']}" target="_blank"><img src="{G_UPLOAD_PATH}/{wc:$goods['thumb']}" ></a>
+				<div class="share_box_r_getinfo">
+					<p class="share_box_r_title"><a class="gray01" href="{WEB_PATH}/goods/{wc:$goods['id']}" target="_blank">(第{wc:$goods['qishu']}期){wc:$goods['title']}</a></p>
+					<p>价值：￥{wc:$goods['money']}</p>
+					<p id="GoToBuy"><a class="share_box_r_a" href="{WEB_PATH}/goods/{wc:$goods['id']}" target="_blank">
+					{wc:if !empty($goods['q_uid'])}
+					已揭晓
+					{wc:else}
+					第{wc:$goods['qishu']}期正在进行中...
+					{wc:if:end}
+					</a></p>
+				</div>
+			</div>
+		</div>
+		<div class="share_box_title">
+			{wc:$shaidan['sd_title']}
+		</div>
+		<div class="share_box_time">
+			晒单时间：<span>{wc:fun:date("Y-m-d H:i:s",$shaidan['sd_time'])}</span>
+		</div>
+		<div class="share_box_cont">
+		<i class="share_box_cont_l"></i>
+			{wc:$shaidan['sd_content']}
+		<i class="share_box_cont_r"></i>
+		</div>
+		<div class="share_box_img">
+			{wc:loop $sd_photolist $sdimg}
+			<img src="{G_UPLOAD_PATH}/{wc:$sdimg}" border="0" />
+			{wc:loop:end}
+		</div>
+		<div class="clear"></div>
+		<div class="mood">
+			<div class="moodwm">
+				<div class="moodm hidden" style="display: block;">
+					 <span class="smile" id="emHits"><i></i><b>羡慕嫉妒恨(<em>{wc:$shaidan['sd_zhan']}</em>)</b></span>
+					 <span class="much"> <i></i>评论(<em id="emReplyCount">{wc:$shaidan['sd_ping']}</em>)</span>
+				</div>
+				<div class="share">
+					<span class="fen">分享到：</span>
+					<!-- Baidu Button BEGIN -->
+					<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+					<a class="bds_qzone"></a>
+					<a class="bds_tsina"></a>
+					<a class="bds_tqq"></a>
+					<a class="bds_renren"></a>
+					<a class="bds_t163"></a>
+					<span class="bds_more"></span>
+					</div>
+					<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=671207" ></script>
+					<script type="text/javascript" id="bdshell_js"></script>
+					<script type="text/javascript">
+					document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+					</script>
+					<!-- Baidu Button END -->
+				</div>
+			</div>
+		</div>
+		<div class="share_box_bottom">
+			<div id="bottomComment" class="qcomment_bottom_reply clearfix">
+				<div class="Comment_Reply clearfix">
+					<div class="Comment-pic">
+					{wc:if !$member or $member['img']==null}
+					<img src="{G_WEB_PATH}/statics/uploads/photo/member.jpg" width="50" height="50" />
+					{wc:else}
+					<img id="imgUserPhoto" src="{G_UPLOAD_PATH}/{wc:fun:userid($member['uid'],'img')}" width="50" height="50" border="0"/>
+					{wc:if:end}	
+					</div>
+					<div class="Comment_form">
+						<div class="Comment_textbox">
+						{wc:if !$member}					
+							<div id="notLogin" name="replyLogin" class="Comment_login">
+								请您<a href="{WEB_PATH}/login" class="blue" name="replyLoginBtn">登录</a>
+								或<a href="{WEB_PATH}/register" class="blue">注册</a>后再回复评论
+							</div>
+						{wc:else}
+							<form action="" method="post">
+							<textarea name="sdhf_content" class="Comment-txt"></textarea>
+							<input type="submit" name="submit" value="发表评论" class="reply_unbotton">
+							</form>
+						{wc:if:end}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="commentMain" class="qcomment_main">
+			<ul>
+				{wc:loop $shaidan_hueifu $sdhf}
+				<li class="Comment_single">
+					<div class="Comment_box_con clearfix">
+						<div class="User_head">
+						<a href="{WEB_PATH}/uname/{wc:fun:idjia($sdhf['sdhf_userid'])}" target="_blank" >
+							{wc:if userid($sdhf['sdhf_userid'],'img')==null}
+							<img src="{G_WEB_PATH}/statics/uploads/photo/member.jpg" width="50" height="50" />
+							{wc:else}
+							<img id="imgUserPhoto" src="{G_UPLOAD_PATH}/{wc:fun:userid($sdhf['sdhf_userid'],'img')}" width="50" height="50" border="0"/>
+							{wc:if:end}		
+						</a>
+						</div>
+						<div class="Comment_con">
+							<div class="Comment_User">
+								<span><a class="blue" href="#" target="_blank">{wc:fun:userid($sdhf['sdhf_userid'],'username')}</a></span>
+							</div>
+							<div class="C_summary">{wc:$sdhf['sdhf_content']}
+								<span class="Summary-time">{wc:fun:date("Y-m-d H:i",$sdhf['sdhf_time'])}</span>
+							</div>
+						</div>
+					</div>
+				</li>
+				{wc:loop:end}
+			</ul>
+		</div>			
+		<!--用户评论列表开始-->
+		<div class="Comment_main clearfix" id="CommentMain"></div>
+		<!--用户评论部分结束-->
+		</div>
+		
+	</div>
+	<div class="share_list">
+		<div class="share_list_title"><img src="{G_TEMPLATES_STYLE}/images/share_list_title.jpg" /></div>
+		<div class="share_list_cont">
+			{wc:loop $shaidannew $sd}
+			<div class="sharr_list_box">
+				<div class="share_list_box_img">
+					<a href="{WEB_PATH}/go/shaidan/detail/{wc:$sd['sd_id']}" target="_blank">
+						<img src="{G_UPLOAD_PATH}/{wc:$sd['sd_thumbs']}">
+					</a>
+				</div>
+				<div class="share_list_box_name">
+					<a class="blue" href="{WEB_PATH}/uname/{wc:fun:idjia($sd['sd_userid'])}" target="_blank">{wc:fun:userid($sd['sd_userid'],'username')}</a>{wc:fun:date("Y-m-d",$sd['sd_time'])}
+				</div>
+				<div class="share_list_box_cont">
+					<a href="{WEB_PATH}/go/shaidan/detail/{wc:$sd['sd_id']}" target="_blank">{wc:fun:_strcut($sd['sd_content'],100)}</a>
+				</div>
+			</div>
+			{wc:loop:end}
+			<div class="share_list_button"><a href="{WEB_PATH}/go/shaidan/" target="_blank">查看全部</a></div>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+	
+
+<script>
+$(function(){
+	if($.cookie('xianmu')=={wc:$shaidan['sd_id']}){
+		$("#emHits").addClass("smile-have");
+		return false;
+	}
+	$("#emHits").click(function(){		
+		$.post(
+			"{WEB_PATH}/go/shaidan/xianmu",
+			{id:"{wc:$shaidan['sd_id']}"},
+			function(data){
+				$("#emHits em").text(data);
+				$("#emHits").addClass("smile-have");
+				$.cookie("xianmu","{wc:$shaidan['sd_id']}", { expires:7,path: '/'});
+			}
+		);
+	})
+})
+</script>
+{wc:templates "index","footer"}

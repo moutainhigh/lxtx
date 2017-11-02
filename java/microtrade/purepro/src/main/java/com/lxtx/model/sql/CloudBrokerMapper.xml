@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.lxtx.dao.CloudBrokerMapper" >
+  <resultMap id="BaseResultMap" type="com.lxtx.model.CloudBroker" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="uid" property="uid" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="inst_code" property="instCode" jdbcType="VARCHAR" />
+    <result column="crt_tm" property="crtTm" jdbcType="TIMESTAMP" />
+    <result column="under_count" property="underCount" jdbcType="INTEGER" />
+    <result column="commission" property="commission" jdbcType="DECIMAL" />
+    <result column="clear_count" property="clearCount" jdbcType="INTEGER" />
+    <result column="ext" property="ext" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.lxtx.model.CloudBroker" extends="BaseResultMap" >
+    <result column="td_code" property="tdCode" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, `uid`, `name`, inst_code, crt_tm, under_count, commission, clear_count, ext
+  </sql>
+  <sql id="Blob_Column_List" >
+    td_code
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from cloud_broker
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from cloud_broker
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.lxtx.model.CloudBroker" useGeneratedKeys="true" keyProperty="id" >
+    insert into cloud_broker (`uid`, `name`, inst_code, 
+      crt_tm, under_count, commission, 
+      clear_count, ext, td_code
+      )
+    values (#{uid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{instCode,jdbcType=VARCHAR}, 
+      #{crtTm,jdbcType=TIMESTAMP}, #{underCount,jdbcType=INTEGER}, #{commission,jdbcType=DECIMAL}, 
+      #{clearCount,jdbcType=INTEGER}, #{ext,jdbcType=VARCHAR}, #{tdCode,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lxtx.model.CloudBroker" useGeneratedKeys="true" keyProperty="id" >
+    insert into cloud_broker
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      `uid`,
+      `name`,
+      inst_code,
+      crt_tm,
+      under_count,
+      commission,
+      clear_count,
+      ext,
+      td_code,
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      #{uid,jdbcType=INTEGER},
+      #{name,jdbcType=VARCHAR},
+      #{instCode,jdbcType=VARCHAR},
+      #{crtTm,jdbcType=TIMESTAMP},
+      #{underCount,jdbcType=INTEGER},
+      #{commission,jdbcType=DECIMAL},
+      #{clearCount,jdbcType=INTEGER},
+      #{ext,jdbcType=VARCHAR},
+      #{tdCode,jdbcType=LONGVARCHAR},
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lxtx.model.CloudBroker" >
+    update cloud_broker
+    <set >
+      <if test="uid != null" >
+        `uid` = #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="instCode != null" >
+        inst_code = #{instCode,jdbcType=VARCHAR},
+      </if>
+      <if test="crtTm != null" >
+        crt_tm = #{crtTm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="underCount != null" >
+        under_count = #{underCount,jdbcType=INTEGER},
+      </if>
+      <if test="commission != null" >
+        commission = #{commission,jdbcType=DECIMAL},
+      </if>
+      <if test="clearCount != null" >
+        clear_count = #{clearCount,jdbcType=INTEGER},
+      </if>
+      <if test="ext != null" >
+        ext = #{ext,jdbcType=VARCHAR},
+      </if>
+      <if test="tdCode != null" >
+        td_code = #{tdCode,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.lxtx.model.CloudBroker" >
+    update cloud_broker
+    set `uid` = #{uid,jdbcType=INTEGER},
+      `name` = #{name,jdbcType=VARCHAR},
+      inst_code = #{instCode,jdbcType=VARCHAR},
+      crt_tm = #{crtTm,jdbcType=TIMESTAMP},
+      under_count = #{underCount,jdbcType=INTEGER},
+      commission = #{commission,jdbcType=DECIMAL},
+      clear_count = #{clearCount,jdbcType=INTEGER},
+      ext = #{ext,jdbcType=VARCHAR},
+      td_code = #{tdCode,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lxtx.model.CloudBroker" >
+    update cloud_broker
+    set `uid` = #{uid,jdbcType=INTEGER},
+      `name` = #{name,jdbcType=VARCHAR},
+      inst_code = #{instCode,jdbcType=VARCHAR},
+      crt_tm = #{crtTm,jdbcType=TIMESTAMP},
+      under_count = #{underCount,jdbcType=INTEGER},
+      commission = #{commission,jdbcType=DECIMAL},
+      clear_count = #{clearCount,jdbcType=INTEGER},
+      ext = #{ext,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectBrokerInfoByUserId" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from cloud_broker
+    where uid = #{id,jdbcType=INTEGER}
+  </select>
+</mapper>

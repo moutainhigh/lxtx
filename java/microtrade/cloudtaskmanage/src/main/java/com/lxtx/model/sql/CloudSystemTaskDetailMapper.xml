@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.lxtx.dao.CloudSystemTaskDetailMapper">
+	<resultMap id="BaseResultMap" type="com.lxtx.model.CloudSystemTaskDetail">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="exec_day" property="execDay" jdbcType="DATE" />
+		<result column="exec_time" property="execTime" jdbcType="TIME" />
+		<result column="detail" property="detail" jdbcType="VARCHAR" />
+		<result column="task_nm" property="taskNm" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, exec_day, exec_time, detail, task_nm
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from cloud_system_task_detail
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from
+		cloud_system_task_detail
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" parameterType="com.lxtx.model.CloudSystemTaskDetail"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into
+		cloud_system_task_detail (exec_day, exec_time, detail,
+		task_nm)
+		values
+		(#{execDay,jdbcType=DATE}, #{execTime,jdbcType=TIME},
+		#{detail,jdbcType=VARCHAR},
+		#{taskNm,jdbcType=VARCHAR})
+	</insert>
+	<insert id="insertSelective" parameterType="com.lxtx.model.CloudSystemTaskDetail"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into cloud_system_task_detail
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			exec_day,
+			exec_time,
+			detail,
+			task_nm,
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			#{execDay,jdbcType=DATE},
+			#{execTime,jdbcType=TIME},
+			#{detail,jdbcType=VARCHAR},
+			#{taskNm,jdbcType=VARCHAR},
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.lxtx.model.CloudSystemTaskDetail">
+		update cloud_system_task_detail
+		<set>
+			<if test="execDay != null">
+				exec_day = #{execDay,jdbcType=DATE},
+			</if>
+			<if test="execTime != null">
+				exec_time = #{execTime,jdbcType=TIME},
+			</if>
+			<if test="detail != null">
+				detail = #{detail,jdbcType=VARCHAR},
+			</if>
+			<if test="taskNm != null">
+				task_nm = #{taskNm,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.lxtx.model.CloudSystemTaskDetail">
+		update
+		cloud_system_task_detail
+		set exec_day = #{execDay,jdbcType=DATE},
+		exec_time = #{execTime,jdbcType=TIME},
+		detail =
+		#{detail,jdbcType=VARCHAR},
+		task_nm = #{taskNm,jdbcType=VARCHAR}
+		where
+		id = #{id,jdbcType=INTEGER}
+	</update>
+	<update id="updateByDayAndTaskNm" parameterType="com.lxtx.model.CloudSystemTaskDetail">
+		update
+		cloud_system_task_detail
+		set
+		exec_time = #{execTime,jdbcType=TIME},
+		detail =
+		#{detail,jdbcType=VARCHAR}
+		where exec_day =
+		#{execDay,jdbcType=DATE}
+		and task_nm =
+		#{taskNm,jdbcType=VARCHAR}
+	</update>
+</mapper>

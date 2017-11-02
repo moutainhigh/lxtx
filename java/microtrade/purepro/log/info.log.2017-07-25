@@ -1,0 +1,320 @@
+[2017-07-25 11:07:25:034] in show guest page.
+ [2017-07-25 11:07:30:186] in showguestpage, step1
+ [2017-07-25 11:07:30:214] in showguestpage, step2
+ [2017-07-25 11:07:30:430] Recommend to use `net.rubyeye.xmemcached.impl.RandomMemcachedSessionLocaltor` as session locator for kestrel protocol.
+ [2017-07-25 11:07:30:456] XMemcachedClient use Kestrel protocol
+ [2017-07-25 11:07:30:532] Creating 8 reactors...
+ [2017-07-25 11:07:30:555] The Controller started at localhost/127.0.0.1:0 ...
+ [2017-07-25 11:07:30:559] You are using connection pool for xmemcached client,it's not recommended unless you have test it that it could increase performance in your app.
+ [2017-07-25 11:07:30:657] Add a session: 119.29.98.103:22134
+ [2017-07-25 11:07:30:739] Add a session: 119.29.98.103:22134
+ [2017-07-25 11:07:30:739] Disable merge get commands
+ [2017-07-25 11:07:30:739] Disable merge get commands
+ [2017-07-25 11:07:30:823] in showguestpage, step3
+ [2017-07-25 11:07:33:882] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:07:35:327] session user login status is: opPADwPAX7FBXT5KHMPDxbNifbz4 null
+ [2017-07-25 11:07:35:347] retrieve cookie for login_statusopPADwPAX7FBXT5KHMPDxbNifbz4 value is: 
+ [2017-07-25 11:07:39:444] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:07:43:269] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:08:11:259] session user login status is: opPADwPAX7FBXT5KHMPDxbNifbz4 null
+ [2017-07-25 11:08:11:259] retrieve cookie for login_statusopPADwPAX7FBXT5KHMPDxbNifbz4 value is: 
+ [2017-07-25 11:11:02:015] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:11:05:260] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:11:15:117] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:11:29:339] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:11:37:162] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:11:42:144] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:11:43:555] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:19:47:296] in show guest page.
+ [2017-07-25 11:19:48:151] in showguestpage, step1
+ [2017-07-25 11:19:48:156] in showguestpage, step2
+ [2017-07-25 11:19:48:268] Recommend to use `net.rubyeye.xmemcached.impl.RandomMemcachedSessionLocaltor` as session locator for kestrel protocol.
+ [2017-07-25 11:19:48:279] XMemcachedClient use Kestrel protocol
+ [2017-07-25 11:19:48:326] Creating 8 reactors...
+ [2017-07-25 11:19:48:339] The Controller started at localhost/127.0.0.1:0 ...
+ [2017-07-25 11:19:48:343] You are using connection pool for xmemcached client,it's not recommended unless you have test it that it could increase performance in your app.
+ [2017-07-25 11:19:48:554] Add a session: 119.29.98.103:22134
+ [2017-07-25 11:19:48:715] Add a session: 119.29.98.103:22134
+ [2017-07-25 11:19:48:715] Disable merge get commands
+ [2017-07-25 11:19:48:716] Disable merge get commands
+ [2017-07-25 11:19:48:880] in showguestpage, step3
+ [2017-07-25 11:19:52:322] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:19:56:898] session user login status is: opPADwPAX7FBXT5KHMPDxbNifbz4 null
+ [2017-07-25 11:19:56:899] retrieve cookie for login_statusopPADwPAX7FBXT5KHMPDxbNifbz4 value is: 
+ [2017-07-25 11:19:57:827] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:20:19:238] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:20:22:713] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:20:24:560] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:20:25:615] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:33:57:018] in show guest page.
+ [2017-07-25 11:33:57:516] in showguestpage, step1
+ [2017-07-25 11:33:57:520] in showguestpage, step2
+ [2017-07-25 11:33:57:647] Recommend to use `net.rubyeye.xmemcached.impl.RandomMemcachedSessionLocaltor` as session locator for kestrel protocol.
+ [2017-07-25 11:33:57:659] XMemcachedClient use Kestrel protocol
+ [2017-07-25 11:33:57:697] Creating 8 reactors...
+ [2017-07-25 11:33:57:710] The Controller started at localhost/127.0.0.1:0 ...
+ [2017-07-25 11:33:57:713] You are using connection pool for xmemcached client,it's not recommended unless you have test it that it could increase performance in your app.
+ [2017-07-25 11:33:57:873] Add a session: 119.29.98.103:22134
+ [2017-07-25 11:33:57:992] Add a session: 119.29.98.103:22134
+ [2017-07-25 11:33:57:993] Disable merge get commands
+ [2017-07-25 11:33:57:993] Disable merge get commands
+ [2017-07-25 11:33:58:108] in showguestpage, step3
+ [2017-07-25 11:34:00:872] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:34:04:949] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:34:06:594] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:34:16:462] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:34:31:531] in show guest page.
+ [2017-07-25 11:34:31:800] in showguestpage, step1
+ [2017-07-25 11:34:31:800] in showguestpage, step2
+ [2017-07-25 11:34:31:903] in showguestpage, step3
+ [2017-07-25 11:34:32:747] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:34:33:249] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:34:38:589] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:39:21:617] in show guest page.
+ [2017-07-25 11:39:22:194] in showguestpage, step1
+ [2017-07-25 11:39:22:194] in showguestpage, step2
+ [2017-07-25 11:39:22:427] in showguestpage, step3
+ [2017-07-25 11:39:23:631] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:39:26:815] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:39:28:643] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:40:39:384] in show guest page.
+ [2017-07-25 11:40:39:703] in showguestpage, step1
+ [2017-07-25 11:40:39:703] in showguestpage, step2
+ [2017-07-25 11:40:39:760] in showguestpage, step3
+ [2017-07-25 11:40:40:727] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:40:44:489] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:47:57:215] in show guest page.
+ [2017-07-25 11:48:01:195] in showguestpage, step1
+ [2017-07-25 11:48:01:195] in showguestpage, step2
+ [2017-07-25 11:48:01:261] in showguestpage, step3
+ [2017-07-25 11:48:02:845] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:48:03:340] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:57:41:411] in show guest page.
+ [2017-07-25 11:57:41:799] in showguestpage, step1
+ [2017-07-25 11:57:41:803] in showguestpage, step2
+ [2017-07-25 11:57:41:937] Recommend to use `net.rubyeye.xmemcached.impl.RandomMemcachedSessionLocaltor` as session locator for kestrel protocol.
+ [2017-07-25 11:57:41:949] XMemcachedClient use Kestrel protocol
+ [2017-07-25 11:57:41:982] Creating 8 reactors...
+ [2017-07-25 11:57:41:991] The Controller started at localhost/127.0.0.1:0 ...
+ [2017-07-25 11:57:41:995] You are using connection pool for xmemcached client,it's not recommended unless you have test it that it could increase performance in your app.
+ [2017-07-25 11:57:42:101] Add a session: 119.29.98.103:22134
+ [2017-07-25 11:57:42:163] Add a session: 119.29.98.103:22134
+ [2017-07-25 11:57:42:164] Disable merge get commands
+ [2017-07-25 11:57:42:164] Disable merge get commands
+ [2017-07-25 11:57:42:236] in showguestpage, step3
+ [2017-07-25 11:57:44:328] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:57:48:612] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:58:29:478] in show guest page.
+ [2017-07-25 11:58:29:774] in showguestpage, step1
+ [2017-07-25 11:58:29:774] in showguestpage, step2
+ [2017-07-25 11:58:29:841] in showguestpage, step3
+ [2017-07-25 11:58:30:957] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:58:31:460] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:58:53:943] in show guest page.
+ [2017-07-25 11:58:54:434] in showguestpage, step1
+ [2017-07-25 11:58:54:434] in showguestpage, step2
+ [2017-07-25 11:58:54:560] in showguestpage, step3
+ [2017-07-25 11:58:56:099] seconds values is:0 in /user/listOrder
+ [2017-07-25 11:59:00:552] seconds values is:0 in /user/listOrder
+ [2017-07-25 12:00:47:386] in show guest page.
+ [2017-07-25 12:00:47:814] in showguestpage, step1
+ [2017-07-25 12:00:47:818] in showguestpage, step2
+ [2017-07-25 12:00:47:957] Recommend to use `net.rubyeye.xmemcached.impl.RandomMemcachedSessionLocaltor` as session locator for kestrel protocol.
+ [2017-07-25 12:00:47:969] XMemcachedClient use Kestrel protocol
+ [2017-07-25 12:00:48:007] Creating 8 reactors...
+ [2017-07-25 12:00:48:019] The Controller started at localhost/127.0.0.1:0 ...
+ [2017-07-25 12:00:48:022] You are using connection pool for xmemcached client,it's not recommended unless you have test it that it could increase performance in your app.
+ [2017-07-25 12:00:48:125] Add a session: 119.29.98.103:22134
+ [2017-07-25 12:00:48:189] Add a session: 119.29.98.103:22134
+ [2017-07-25 12:00:48:189] Disable merge get commands
+ [2017-07-25 12:00:48:189] Disable merge get commands
+ [2017-07-25 12:00:48:278] in showguestpage, step3
+ [2017-07-25 12:00:50:805] seconds values is:0 in /user/listOrder
+ [2017-07-25 12:00:55:797] seconds values is:0 in /user/listOrder
+ [2017-07-25 12:03:17:829] in show guest page.
+ [2017-07-25 12:03:18:230] in showguestpage, step1
+ [2017-07-25 12:03:18:235] in showguestpage, step2
+ [2017-07-25 12:03:18:361] Recommend to use `net.rubyeye.xmemcached.impl.RandomMemcachedSessionLocaltor` as session locator for kestrel protocol.
+ [2017-07-25 12:03:18:375] XMemcachedClient use Kestrel protocol
+ [2017-07-25 12:03:18:417] Creating 8 reactors...
+ [2017-07-25 12:03:18:431] The Controller started at localhost/127.0.0.1:0 ...
+ [2017-07-25 12:03:18:435] You are using connection pool for xmemcached client,it's not recommended unless you have test it that it could increase performance in your app.
+ [2017-07-25 12:03:18:513] Add a session: 119.29.98.103:22134
+ [2017-07-25 12:03:18:575] Add a session: 119.29.98.103:22134
+ [2017-07-25 12:03:18:575] Disable merge get commands
+ [2017-07-25 12:03:18:575] Disable merge get commands
+ [2017-07-25 12:03:18:651] in showguestpage, step3
+ [2017-07-25 12:03:21:787] seconds values is:0 in /user/listOrder
+ [2017-07-25 12:03:25:308] seconds values is:0 in /user/listOrder
+ [2017-07-25 12:03:44:234] in show guest page.
+ [2017-07-25 12:03:44:568] in showguestpage, step1
+ [2017-07-25 12:03:44:568] in showguestpage, step2
+ [2017-07-25 12:03:44:663] in showguestpage, step3
+ [2017-07-25 12:03:46:243] seconds values is:0 in /user/listOrder
+ [2017-07-25 12:03:46:712] seconds values is:0 in /user/listOrder
+ [2017-07-25 12:04:23:619] seconds values is:0 in /user/listOrder
+ [2017-07-25 12:23:59:988] in show guest page.
+ [2017-07-25 12:24:00:349] in showguestpage, step1
+ [2017-07-25 12:24:00:353] in showguestpage, step2
+ [2017-07-25 12:24:00:486] Recommend to use `net.rubyeye.xmemcached.impl.RandomMemcachedSessionLocaltor` as session locator for kestrel protocol.
+ [2017-07-25 12:24:00:497] XMemcachedClient use Kestrel protocol
+ [2017-07-25 12:24:00:543] Creating 8 reactors...
+ [2017-07-25 12:24:00:553] The Controller started at localhost/127.0.0.1:0 ...
+ [2017-07-25 12:24:00:555] You are using connection pool for xmemcached client,it's not recommended unless you have test it that it could increase performance in your app.
+ [2017-07-25 12:24:00:627] Add a session: 119.29.98.103:22134
+ [2017-07-25 12:24:00:690] Add a session: 119.29.98.103:22134
+ [2017-07-25 12:24:00:690] Disable merge get commands
+ [2017-07-25 12:24:00:690] Disable merge get commands
+ [2017-07-25 12:24:00:748] in showguestpage, step3
+ [2017-07-25 12:24:02:800] seconds values is:0 in /user/listOrder
+ [2017-07-25 12:24:06:115] seconds values is:0 in /user/listOrder
+ [2017-07-25 12:24:07:487] seconds values is:0 in /user/listOrder
+ [2017-07-25 12:31:29:318] in show guest page.
+ [2017-07-25 12:31:29:662] in showguestpage, step1
+ [2017-07-25 12:31:29:665] in showguestpage, step2
+ [2017-07-25 12:31:29:769] Recommend to use `net.rubyeye.xmemcached.impl.RandomMemcachedSessionLocaltor` as session locator for kestrel protocol.
+ [2017-07-25 12:31:29:782] XMemcachedClient use Kestrel protocol
+ [2017-07-25 12:31:29:814] Creating 8 reactors...
+ [2017-07-25 12:31:29:825] The Controller started at localhost/127.0.0.1:0 ...
+ [2017-07-25 12:31:29:827] You are using connection pool for xmemcached client,it's not recommended unless you have test it that it could increase performance in your app.
+ [2017-07-25 12:31:29:893] Add a session: 119.29.98.103:22134
+ [2017-07-25 12:31:29:954] Add a session: 119.29.98.103:22134
+ [2017-07-25 12:31:29:954] Disable merge get commands
+ [2017-07-25 12:31:29:954] Disable merge get commands
+ [2017-07-25 12:31:30:018] in showguestpage, step3
+ [2017-07-25 12:31:32:117] seconds values is:0 in /user/listOrder
+ [2017-07-25 12:31:36:227] seconds values is:0 in /user/listOrder
+ [2017-07-25 12:37:21:115] in show guest page.
+ [2017-07-25 12:37:21:348] in showguestpage, step1
+ [2017-07-25 12:37:21:348] in showguestpage, step2
+ [2017-07-25 12:37:21:405] in showguestpage, step3
+ [2017-07-25 12:37:23:244] seconds values is:0 in /user/listOrder
+ [2017-07-25 12:37:23:695] seconds values is:0 in /user/listOrder
+ [2017-07-25 12:37:41:152] seconds values is:58 in /user/listOrder
+ [2017-07-25 12:55:04:592] in show guest page.
+ [2017-07-25 12:55:11:692] in showguestpage, step1
+ [2017-07-25 12:55:11:692] in showguestpage, step2
+ [2017-07-25 12:55:11:918] in showguestpage, step3
+ [2017-07-25 12:55:13:801] seconds values is:0 in /user/listOrder
+ [2017-07-25 12:55:14:645] seconds values is:0 in /user/listOrder
+ [2017-07-25 12:55:38:266] in show guest page.
+ [2017-07-25 12:55:39:082] in showguestpage, step1
+ [2017-07-25 12:55:39:082] in showguestpage, step2
+ [2017-07-25 12:55:39:263] in showguestpage, step3
+ [2017-07-25 12:55:41:634] seconds values is:0 in /user/listOrder
+ [2017-07-25 12:55:42:372] seconds values is:0 in /user/listOrder
+ [2017-07-25 13:04:33:724] Session(119.29.98.103:22134) heartbeat fail 4 times,close session and try to heal it
+ [2017-07-25 13:04:33:733] Remove a session: 119.29.98.103:22134
+ [2017-07-25 13:04:33:777] Session(119.29.98.103:22134) heartbeat fail 4 times,close session and try to heal it
+ [2017-07-25 13:04:33:778] Remove a session: 119.29.98.103:22134
+ [2017-07-25 13:04:35:735] Trying to connect to 119.29.98.103:22134 for 1 times
+ [2017-07-25 13:04:38:548] Add a session: 119.29.98.103:22134
+ [2017-07-25 13:04:38:548] Trying to connect to 119.29.98.103:22134 for 1 times
+ [2017-07-25 13:04:38:763] Add a session: 119.29.98.103:22134
+ [2017-07-25 13:21:21:889] in show guest page.
+ [2017-07-25 13:21:23:003] in showguestpage, step1
+ [2017-07-25 13:21:23:003] in showguestpage, step2
+ [2017-07-25 13:21:23:411] in showguestpage, step3
+ [2017-07-25 13:21:28:532] seconds values is:0 in /user/listOrder
+ [2017-07-25 13:21:36:962] seconds values is:0 in /user/listOrder
+ [2017-07-25 13:23:37:763] seconds values is:0 in /user/listOrder
+ [2017-07-25 13:23:39:521] seconds values is:0 in /user/listOrder
+ [2017-07-25 13:23:41:045] seconds values is:0 in /user/listOrder
+ [2017-07-25 13:23:44:618] seconds values is:0 in /user/listOrder
+ [2017-07-25 14:35:15:657] in show guest page.
+ [2017-07-25 14:35:21:291] in showguestpage, step1
+ [2017-07-25 14:35:21:291] in showguestpage, step2
+ [2017-07-25 14:35:21:421] in showguestpage, step3
+ [2017-07-25 14:35:23:302] seconds values is:0 in /user/listOrder
+ [2017-07-25 14:35:27:582] seconds values is:0 in /user/listOrder
+ [2017-07-25 14:46:34:113] Session(119.29.98.103:22134) heartbeat fail 4 times,close session and try to heal it
+ [2017-07-25 14:46:34:114] Remove a session: 119.29.98.103:22134
+ [2017-07-25 14:46:36:120] Trying to connect to 119.29.98.103:22134 for 1 times
+ [2017-07-25 14:46:37:337] Add a session: 119.29.98.103:22134
+ [2017-07-25 15:44:27:960] seconds values is:0 in /user/listOrder
+ [2017-07-25 15:44:36:851] seconds values is:0 in /user/listOrder
+ [2017-07-25 15:44:40:939] seconds values is:0 in /user/listOrder
+ [2017-07-25 15:44:41:746] seconds values is:0 in /user/listOrder
+ [2017-07-25 15:44:44:328] seconds values is:0 in /user/listOrder
+ [2017-07-25 15:44:47:623] seconds values is:0 in /user/listOrder
+ [2017-07-25 15:45:06:063] seconds values is:0 in /user/listOrder
+ [2017-07-25 15:45:12:331] seconds values is:0 in /user/listOrder
+ [2017-07-25 15:45:32:996] seconds values is:0 in /user/listOrder
+ [2017-07-25 15:46:44:877] seconds values is:0 in /user/listOrder
+ [2017-07-25 15:46:48:036] seconds values is:0 in /user/listOrder
+ [2017-07-25 15:46:48:518] seconds values is:0 in /user/listOrder
+ [2017-07-25 15:46:48:769] in show guest page.
+ [2017-07-25 15:46:49:018] in showguestpage, step1
+ [2017-07-25 15:46:49:019] in showguestpage, step2
+ [2017-07-25 15:46:49:091] in showguestpage, step3
+ [2017-07-25 15:46:50:105] seconds values is:0 in /user/listOrder
+ [2017-07-25 15:46:50:559] seconds values is:0 in /user/listOrder
+ [2017-07-25 15:46:54:170] seconds values is:0 in /user/listOrder
+ [2017-07-25 15:46:55:096] seconds values is:0 in /user/listOrder
+ [2017-07-25 16:03:36:760] in show guest page.
+ [2017-07-25 16:03:37:115] in showguestpage, step1
+ [2017-07-25 16:03:37:119] in showguestpage, step2
+ [2017-07-25 16:03:37:242] Recommend to use `net.rubyeye.xmemcached.impl.RandomMemcachedSessionLocaltor` as session locator for kestrel protocol.
+ [2017-07-25 16:03:37:256] XMemcachedClient use Kestrel protocol
+ [2017-07-25 16:03:37:293] Creating 8 reactors...
+ [2017-07-25 16:03:37:308] The Controller started at localhost/127.0.0.1:0 ...
+ [2017-07-25 16:03:37:312] You are using connection pool for xmemcached client,it's not recommended unless you have test it that it could increase performance in your app.
+ [2017-07-25 16:03:37:389] Add a session: 119.29.98.103:22134
+ [2017-07-25 16:03:37:450] Add a session: 119.29.98.103:22134
+ [2017-07-25 16:03:37:451] Disable merge get commands
+ [2017-07-25 16:03:37:451] Disable merge get commands
+ [2017-07-25 16:03:37:525] in showguestpage, step3
+ [2017-07-25 16:03:40:276] seconds values is:0 in /user/listOrder
+ [2017-07-25 16:03:44:246] seconds values is:0 in /user/listOrder
+ [2017-07-25 16:03:44:646] seconds values is:0 in /user/listOrder
+ [2017-07-25 16:03:53:514] seconds values is:0 in /user/listOrder
+ [2017-07-25 16:04:06:692] seconds values is:0 in /user/listOrder
+ [2017-07-25 16:04:14:460] seconds values is:58 in /user/listOrder
+ [2017-07-25 17:06:26:389] in show guest page.
+ [2017-07-25 17:06:28:203] in showguestpage, step1
+ [2017-07-25 17:06:28:207] in showguestpage, step2
+ [2017-07-25 17:06:28:312] Recommend to use `net.rubyeye.xmemcached.impl.RandomMemcachedSessionLocaltor` as session locator for kestrel protocol.
+ [2017-07-25 17:06:28:324] XMemcachedClient use Kestrel protocol
+ [2017-07-25 17:06:28:359] Creating 8 reactors...
+ [2017-07-25 17:06:28:374] The Controller started at localhost/127.0.0.1:0 ...
+ [2017-07-25 17:06:28:377] You are using connection pool for xmemcached client,it's not recommended unless you have test it that it could increase performance in your app.
+ [2017-07-25 17:06:29:109] Add a session: 119.29.98.103:22134
+ [2017-07-25 17:06:29:326] Add a session: 119.29.98.103:22134
+ [2017-07-25 17:06:29:326] Disable merge get commands
+ [2017-07-25 17:06:29:326] Disable merge get commands
+ [2017-07-25 17:06:29:485] in showguestpage, step3
+ [2017-07-25 17:06:37:067] seconds values is:0 in /user/listOrder
+ [2017-07-25 17:06:39:192] seconds values is:0 in /user/listOrder
+ [2017-07-25 17:06:40:175] seconds values is:0 in /user/listOrder
+ [2017-07-25 17:06:43:056] seconds values is:0 in /user/listOrder
+ [2017-07-25 17:10:27:182] in show guest page.
+ [2017-07-25 17:10:27:625] in showguestpage, step1
+ [2017-07-25 17:10:27:629] in showguestpage, step2
+ [2017-07-25 17:10:27:735] Recommend to use `net.rubyeye.xmemcached.impl.RandomMemcachedSessionLocaltor` as session locator for kestrel protocol.
+ [2017-07-25 17:10:27:748] XMemcachedClient use Kestrel protocol
+ [2017-07-25 17:10:27:784] Creating 8 reactors...
+ [2017-07-25 17:10:27:797] The Controller started at localhost/127.0.0.1:0 ...
+ [2017-07-25 17:10:27:800] You are using connection pool for xmemcached client,it's not recommended unless you have test it that it could increase performance in your app.
+ [2017-07-25 17:10:28:146] Add a session: 119.29.98.103:22134
+ [2017-07-25 17:10:28:364] Add a session: 119.29.98.103:22134
+ [2017-07-25 17:10:28:364] Disable merge get commands
+ [2017-07-25 17:10:28:364] Disable merge get commands
+ [2017-07-25 17:10:28:436] in showguestpage, step3
+ [2017-07-25 17:10:39:858] seconds values is:0 in /user/listOrder
+ [2017-07-25 17:10:43:422] seconds values is:0 in /user/listOrder
+ [2017-07-25 17:10:44:655] seconds values is:0 in /user/listOrder
+ [2017-07-25 17:11:41:603] seconds values is:0 in /user/listOrder
+ [2017-07-25 17:11:49:989] seconds values is:0 in /user/listOrder
+ [2017-07-25 17:12:46:990] seconds values is:0 in /user/listOrder
+ [2017-07-25 17:13:07:749] seconds values is:0 in /user/listOrder
+ [2017-07-25 17:13:16:218] seconds values is:55 in /user/listOrder
+ [2017-07-25 17:13:17:237] seconds values is:54 in /user/listOrder
+ [2017-07-25 17:15:30:112] seconds values is:0 in /user/listOrder
+ [2017-07-25 17:15:31:455] seconds values is:0 in /user/listOrder
+ [2017-07-25 17:15:32:787] seconds values is:0 in /user/listOrder
+ [2017-07-25 17:15:34:156] seconds values is:0 in /user/listOrder
+ [2017-07-25 17:15:34:734] seconds values is:0 in /user/listOrder
+ [2017-07-25 17:15:35:803] seconds values is:0 in /user/listOrder
+ [2017-07-25 17:18:23:648] seconds values is:58 in /user/listOrder
+ [2017-07-25 17:18:25:075] seconds values is:56 in /user/listOrder
+ 

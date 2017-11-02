@@ -1,0 +1,16 @@
+应用包名： com.zfsy.rmnewgdfj
+签名密码： android
+密钥别名： rm1.keystore
+签名MD5 ： 62F3E67BC7600CA13C223CBA8784F0D5
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1 @@
+<div><img alt="Quality Chart" src="includes/templates/jersey/images/nfl-image/quality_chart.jpg"></div>

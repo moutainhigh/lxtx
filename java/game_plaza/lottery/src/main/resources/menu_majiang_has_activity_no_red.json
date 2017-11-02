@@ -1,0 +1,38 @@
+{
+    "button": [
+        {
+            "name": "购买房卡",
+            "type": "view",
+            "key": "rselfmenu_0",
+            "url": "http://%s/wx/redirect/%s"
+        },
+        {
+            "name": "成为代理",
+            "type": "view",
+            "key": "rselfmenu_1",
+            "url": "http://%s/wx/enterSignUp/%s"
+        },
+        {
+        	"name": "个人中心",
+            "sub_button": [
+	            {
+		        	"name": "我的客服",
+		            "type": "click",
+		            "key": "rselfmenu_2_0"
+		        },
+                {
+		            "name": "下载游戏",
+		            "type": "view",
+		            "key": "rselfmenu_2_1",
+		            "url": "%s"
+		        },
+		        {
+		        	"name": "登录后台",
+		            "type": "view",
+		            "key": "rselfmenu_2_2",
+		            "url": "%s"
+		        }
+            ]
+        }
+    ]
+}

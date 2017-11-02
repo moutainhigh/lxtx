@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="fb">
+   <typeAlias alias="page" type="com.lxtx.fb.pojo.Page"/>
+   
+   <select id="Page.getAll" resultClass="page">
+       select * from Page order by Id asc 
+   </select>
+</sqlMap>

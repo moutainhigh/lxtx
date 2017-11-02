@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>获得的商品 - {wc:$webname}触屏版</title>
+    <meta content="app-id=518966501" name="apple-itunes-app" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <link href="{G_TEMPLATES_CSS}/mobile/comm.css" rel="stylesheet" type="text/css" />
+	<link href="{G_TEMPLATES_CSS}/mobile/member.css" rel="stylesheet" type="text/css" />
+	    <link href="{G_TEMPLATES_CSS}/mobile/zzsc.css" rel="stylesheet" type="text/css" />
+	<script src="{G_TEMPLATES_JS}/mobile/jquery190.js" language="javascript" type="text/javascript"></script>
+	<script id="pageJS" data="{G_TEMPLATES_JS}/mobile/OrderList.js" language="javascript" type="text/javascript"></script>
+</head>
+<body>
+<div class="h5-1yyg-v1" id="loadingPicBlock">
+    
+<!-- 栏目页面顶部 -->
+
+
+<!-- 内页顶部 -->
+{wc:php:start}
+	$uid = _encrypt(get_user_uid());
+{wc:php:end}
+    <header class="g-header">
+        <div class="head-l">
+	        <a href="javascript:;" onclick="history.go(-1)" class="z-HReturns"></a>
+        </div>
+        <h2>邀请赚钱</h2>
+        <div class="head-r">
+	        <a href="{WEB_PATH}/mobile/home" class="z-Member"></a>
+        </div>
+    </header>
+
+    <input name="hidTotalCount" type="hidden" id="hidTotalCount" />
+    <input name="hidPageMax" type="hidden" id="hidPageMax" />
+    <section class="clearfix g-member g-goods">
+    	<img src="{G_TEMPLATES_STYLE}/img/yaoqing.gif" border="0" alt="" width="100%">
+        <p class="fs14">这是您的专属邀请链接，请通过 MSN 或 QQ 发送给您的好友</p>
+	    <div class="">
+	    <textarea name="copyShareText" id="fe_text" class="textarea">我刚发现一个很好很好玩的网站，1元就能买IPhone 6哦，快去看看吧！
+{WEB_PATH}/mobile/user/register/{wc:$uid}</textarea>
+	    </div>
+	    <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+    </section>
+    
+			    
+			    
+			    
+{wc:templates "mobile/index","footer"}
+</div>
+</body>
+</html>

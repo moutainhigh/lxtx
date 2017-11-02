@@ -1,0 +1,16 @@
+#checkoutConfirmDefault {
+  display: none;
+  visibility: hidden;
+}
+#onePageText {
+  text-align:center; 
+  color:#ff0000; 
+  font-weight:bold; 
+  padding-top: 30px;
+  padding-bottom: 300px;
+  visibility: visible;
+  display: block;
+}
+.centerColumn {
+  font-size: large;
+}

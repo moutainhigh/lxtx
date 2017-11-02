@@ -1,0 +1,187 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>编辑个人资料 - {wc:$webname}触屏版</title>
+<meta content="app-id=518966501" name="apple-itunes-app" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0" />
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta content="telephone=no" name="format-detection" />
+
+<link href="{G_TEMPLATES_CSS}/mobile/comm.css" rel="stylesheet"
+	type="text/css" />
+<link href="{G_TEMPLATES_CSS}/mobile/modify.css" rel="stylesheet"
+	type="text/css" />
+<script src="{G_TEMPLATES_JS}/mobile/jquery190.js" language="javascript"
+	type="text/javascript"></script>
+
+<style type="text/css">
+.message {
+	 display:none;
+     position:absolute; left:20px;top:465px;
+     width:250px;height:30px;
+     background:rgba(0,0,0,0.5);
+     color:#fff;
+     font-size:16px;
+     font-weight:bold;
+     border-radius:10px;
+      padding-left:10px;
+     padding-top:5px;
+}
+#btnNext:hover{
+cursor:pointer;
+}
+.rt{
+width:100%;
+height:45px;
+}
+.rt1{
+height:45px;
+width:20%;
+}
+.rt2{
+height:45px;
+width:40%;
+}
+.rt3{
+height:45px;
+width:30%;
+}
+</style>
+</head>
+<body>
+
+	<div class="h5-1yyg-v1" id="content">
+
+		<!-- 栏目页面顶部 -->
+
+		<div class='message'></div>
+		<section>
+			<div class="modify">
+				<ul>
+					<li>所在地区：<br />
+					<div>
+							<select id="s_province" name="s_province" class="rt1"></select>  
+							<select id="s_city" name="s_city" class="rt2"></select>   
+							<select id="s_county" name="s_county" class="rt3"></select>
+							<script class="resources library"
+								src="{G_TEMPLATES_JS}/mobile/area.js" type="text/javascript"></script>
+							<script type="text/javascript">
+								_init_area();
+							</script>
+						</div>
+						<div id="show"></div><br/>
+						街道：<br /><input id="jiedao" name="jiedao"  type="text" class="rt" value="{wc:$dizhi['jiedao']}">
+					</li>
+					<li>收货人：<br /> <input id="contact" name="contact" type="text" class="rt" value="{wc:$dizhi['shouhuoren']}">
+					</li>
+					<li>联系人手机：<br /> <input id="mobile"  name="mobile" type="text" class="rt" value="{wc:$dizhi['mobile']}"><input type='hidden'  id='uid' name='uid' value="{wc:$uid}"/>
+					</li>
+					<li>支付宝账号：<br /> <input id="zhifubao"  name="zhifubao" type="text" class="rt" value="{wc:$dizhi['zhifuxinxi']}">
+					</li>
+					<li><a id="btnNext"  type="submit" name="submit" class="nextBtn  orgBtn" >提交</a></li>
+				</ul>
+			</div>
+		</section>
+
+
+	</div>
+</body>
+</html>
+<script>
+/*
+	var Gid = document.getElementById;
+	var showArea = function() {
+		Gid('show').innerHTML = "<h3>省" + Gid('s_province').value + " - 市"
+				+ Gid('s_city').value + " - 县/区" + Gid('s_county').value
+				+ "</h3>"
+	}
+	Gid('s_county').setAttribute('onchange', 'showArea()');
+*/
+
+$().ready(function() {
+	//信息弹出框
+	function showmessage(msg) {
+		$('.message').text(msg);
+		$('.message').css('display', 'block').show(300)
+				.delay(3000).hide(300);
+	}
+	//绑定单击事件
+	$('#btnNext').bind('click',function(){
+		if ($('#s_province').val() == '省份') {
+			showmessage('您未选择省份！');
+			$('#s_province').focus();
+			exit;
+		}
+		if ($('#s_city').val() == '地级市') {
+			showmessage('您未选择地级市！');
+			$('#s_city').focus();
+			exit;
+		}
+		if ($('#s_county').val() == '市、县级市') {
+			showmessage('您未选择市、县级市！');
+			$('#s_county').focus();
+			exit;
+		}
+		if ($('#jiedao').val().trim() == '') {
+			showmessage('您未填写街道！');
+			$('#jiedao').focus();
+			exit;
+		}
+		if ($('#contact').val().trim() == '') {
+			showmessage('您未填写收货人！');
+			$('#contact').focus();
+			exit;
+		}
+		if ($('#mobile').val().trim() == '') {
+			showmessage('您未填写手机！');
+			$('#mobile').focus();
+			exit;
+		}
+		if ($('#zhifubao').val().trim() == '') {
+			showmessage('您未填写支付宝！');
+			$('#zhifubao').focus();
+			exit;
+		}
+		if (checkPhone($('#mobile').val()) == false) {
+			showmessage('您手机未填写正确！');
+			$('#mobile').focus();
+			exit;
+		}
+		
+		var data={
+				uid:$('#uid').val(),
+				sheng:$('#s_province').val(),
+				shi:$('#s_city').val(),
+				xian:$('#s_county').val(),
+				jiedao:$('#jiedao').val(),
+				contact:$('#contact').val(),
+				mobile:$('#mobile').val(),
+				zhifubao:$('#zhifubao').val()
+		};
+		$.post('{WEB_PATH}/mobile/mobile/modify',data,function(msg){
+			//alert(msg);
+			       if(msg==1){
+			    	   showmessage('更新成功');
+			       }else{
+			    	   showmessage('更新失败');
+			       }
+		});
+	});
+	                   
+		//检测手机
+		function checkPhone(mobile) {
+			var reg = /(^13\d{9}$)|(^14)[5,7]\d{8}$|(^15[0,1,2,3,5,6,7,8,9]\d{8}$)|(^17)[6,7,8]\d{8}$|(^18\d{9}$)/g;
+			if (reg.test(mobile)) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+						
+});
+</script>

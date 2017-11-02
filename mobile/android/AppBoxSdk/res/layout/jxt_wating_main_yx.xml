@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/jxt_wating_bg_yx"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/jxt_waiting_main_yx_t1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="20dp"
+		android:paddingRight="20dp"
+        android:layout_marginBottom="24dp"
+        android:textColor="#FFFFFF"
+        android:text="老公搂着新婚妻子，高兴地说：亲爱的，我终于把你追到手了！
+老婆淡淡地：先别高兴，睡几晚再说....
+老公：为什么要睡几晚再说？
+老婆：第一个打呼噜，鼾声如雷....第二个睡觉流口水，臭死人......都被我抛弃了，谁知你有没有啥毛病啊？
+老公：啊....那JJ小算不算毛病？
+老婆：尼玛，谢谢你的坦诚，今晚和衣而睡吧....不用睡几晚了，明天就离婚！
+老公：.............." />
+
+    <TextView
+        android:id="@+id/jxt_waiting_main_yx_TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="98dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:text="领取中，请等待"
+        android:textColor="#FFFFFF"
+        android:textSize="24dp" />
+
+</RelativeLayout>

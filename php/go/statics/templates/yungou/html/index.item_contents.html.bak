@@ -1,0 +1,70 @@
+<div class="detail_main">
+		<div class="detail_main_l">
+			<div id="zoom1" class="detail_main_l_img">
+				<a  href="{G_UPLOAD_PATH}/{wc:$item_img}" id="zoom1" class="MagicZoom MagicThumb"><img width="410" height="380" src="{G_UPLOAD_PATH}/{wc:$item_img}" /> </a>
+			<div class="mousetrap" style="background-image:url();z-index:999;position:absolute;width:400px;height:400px;left:0px;top:0px;cursor:crosshair;"></div>
+			</div>
+			<div class="detail_main_l_imgli">
+				<ul class="detail_main_l_imgul">
+					{wc:loop $item['picarr'] $i $imgtu}                  
+						{wc:if $i==0}
+							<li data-pro="thumbnail" imgid="{wc:$i}" class="selected"><a href="{G_UPLOAD_PATH}/{wc:$imgtu}"  rel="zoom1" rev="{G_UPLOAD_PATH}/{wc:$imgtu}"><img width="64" height="60" src="{G_UPLOAD_PATH}/{wc:$imgtu}" /></a> </li>
+						{wc:else}
+							<li data-pro="thumbnail" imgid="{wc:$i}"> <a href="{G_UPLOAD_PATH}/{wc:$imgtu}"  rel="zoom1" rev="{G_UPLOAD_PATH}/{wc:$imgtu}"><img width="64" height="60" src="{G_UPLOAD_PATH}/{wc:$imgtu}" /> </a></li>
+						{wc:if:end}	
+					{wc:loop:end} 
+				</ul>
+			</div>
+		</div>
+		<div class="detail_main_c">
+			<div class="detail_main_c_title"><span style="font-size:18px;font-weight:normal">(第{wc:$item['qishu']}期)</span> {wc:$item['title']}<span class="txt-red" title="{wc:$item['title2']}"> {wc:$item['title2']}</span></div>
+			<div class="detail_main_c_cont">
+				<p class="detail_main_c_cont_price">总需：<span class="txt-main">{wc:$item['zongrenshu']}</span> 人次</p>
+				{wc:php:start}
+				 $p_width=round($item['canyurenshu']/$item['zongrenshu']*100);
+				{wc:php:end}
+				<div class="detail_progressBar">
+					<p class="detail_progressBar_wrap"><span class="detail_progressBar_bar" style="width:{wc:$p_width}%;"></span></p>
+					<ul class="detail_progressBar_txt">
+						<li class="detail_progressBar_txt_l">
+							<p>已参与人次：</p>
+							<p><b>{wc:$item[canyurenshu]}</b></p>
+						</li>
+						<li class="detail_progressBar_txt_r">
+							<p><b>{wc:$item['zongrenshu']-$item['canyurenshu']}</b></p>
+							<p>剩余人次：</p>
+						</li>
+					</ul>
+				</div>
+				<div class="detail_main_c_count">
+					参与：
+					<div id="buyNumbers" class="detail_main_c_count_number"> 
+					<div id="pro-view-4" class="detail_main_c_count_inline"> 
+					   <input class="detail_main_c_count_input" value="1" data-pro="input" maxlength="7" onKeyUp="value=value.replace(/\D/g,'')" id="num_dig" /> 
+					   <a id="shopadd" class="detail_main_c_count_add" href="javascript:void(0);" data-pro="plus">+</a> 
+					   <a id="shopsub" class="detail_main_c_count_sub" href="javascript:void(0);" data-pro="minus">-</a> 
+					</div> 
+					</div>人次 
+					 <span class="detail_main_c_count_buyHint"><i class="ico_buyHint"></i><b>多参与1人次，获奖机会翻倍！</b></span> 
+				</div>
+				<div class="detail_main_c_button">
+					<a id="quickBuy" href="javascript:;" class="Det_Shopbut">立即云购</a>
+					<a id="addToCart"  href="javascript:;" class="Det_Cart">加入清单</a>
+				</div>
+				<div class="detail_main_c_state">
+					<img src="{G_TEMPLATES_STYLE}/images/detail_main_c_state.jpg" />
+				</div>
+			</div>
+		</div>
+		<div class="detail_main_r">
+			<div class="detail_main_r_title"><img src="{G_TEMPLATES_STYLE}/images/detail_main_r_title.jpg" /></div>
+			<div class="detail_main_r_zxcy">
+				<ul>
+					{wc:loop $go_record_list $user}	
+					<li><p class="detail_main_r_zxcy_l"><a class="w-record-user" title="{wc:fun:_strcut($user['username'],6)}" href="{WEB_PATH}/uname/{wc:fun:idjia($user['uid'])}" target="_blank">{wc:fun:_strcut($user['username'],20)}</a></p><p class="detail_main_r_zxcy_r">参与了<span>{wc:$user['gonumber']}</span>人次</p></li>
+					{wc:loop:end}
+				</ul>
+			</div>
+			<!--<div class="detail_main_r_button"><a href="">查看全部</a></div>-->
+		</div>
+	</div>

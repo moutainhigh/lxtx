@@ -1,0 +1,33 @@
+#attrib-grid-table { border: 1px solid #f3ecd9; border-collapse: collapse; }
+#attrib-grid-table tr { background: #fcfcea; }
+#attrib-grid-table tr:hover { background: #F7FDFD; }
+#attrib-grid-table td { padding: 3px 5px; border: 1px solid #f3ecd9; }
+#attrib-grid-table input[type="text"] { text-align: center; width: 40px; margin: 0; }
+#attrib-grid-table tr:first-child td { font-size: 14px; padding: 5px; }
+.attrib-grid-opt-nameH { font-weight: normal; width: 150px; }
+.attrib-grid-opt-nameV { font-weight: normal; }
+.attrib-grid-cell { width: 120px; }
+.cart_qty { padding: 2px 5px; display: inline-block; }
+.cart_qty a { color: #333; font-size: 12px; line-height: 14px; text-align: center; text-decoration: none; width: 16px; height: 14px; border: 1px solid #ddd; display: inline-block; }
+.cart_qty a:hover { color: #a00; text-decoration: none; border-color: #A00; }
+input.inpQty { line-height: 14px; border: 1px solid #999; height: 14px; }
+
+.whorice { margin-bottom: 6px; padding-bottom: 7px; }
+.sizesds tr.hiuud { background: #F1F1F1; height: 38px; padding: 10px 0; }
+.whorice span { font-size: 13px; font-style: italic; font-weight: bold; padding-right: 5px; padding-top: 6px; float: left; }
+.whorice table { margin-top: 8px; }
+tr.hiuud { color: #4B4B4B; font-weight: bold; }
+.whorice tr.hiuud td { border-bottom: 2px solid #F3ECD9; }
+.whorice tr td { color: #666; font-family: verdana; line-height: 25px; border-bottom: 1px solid #F3ECD9; }
+.whorice tr:hover { background:#ffc; }
+.freesip { margin-bottom: 8px; padding-bottom: 7px; border-bottom: 1px dashed #E3E3E3; }
+.freesip p { font-family: Tahoma; line-height: 22px; }
+.freesip b { color:#900;} 
+.freesip strong, .sdsy strong { padding-right: 11px; }
+.sdsy ul { margin: 0; padding: 0; list-style: none; }
+.sdsy ul li { color: #888; font-family: tahoma; font-size: 13px; line-height: 44px; }
+.sdsy span.j { text-align: right; width: 75px; padding-right: 10px; display: block; float: left; }
+.sdsy b { color:#cf0000; font-size:25px; font-weight:normal; line-height: 23px; }
+span.thu { color: #888; text-decoration: line-through; }
+.sdsy .prichh { font-weight: bold; }
+span.op { color:#090; }

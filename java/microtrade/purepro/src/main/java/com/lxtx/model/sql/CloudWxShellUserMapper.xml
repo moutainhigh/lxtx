@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.lxtx.dao.CloudWxShellUserMapper">
+	<resultMap id="BaseResultMap" type="com.lxtx.model.CloudWxShellUser">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="wxid" property="wxid" jdbcType="VARCHAR" />
+		<result column="chnno" property="chnno" jdbcType="VARCHAR" />
+		<result column="status" property="status" jdbcType="INTEGER" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, wxid, chnno, `status`
+	</sql>
+	<select id="selectByChnno" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from cloud_wx_shell_user
+		where chnno = #{chnno,jdbcType=VARCHAR}
+	</select>
+	
+	<select id="getUserByWxid" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from cloud_wx_shell_user
+		where wxid = #{wxid,jdbcType=VARCHAR} limit 1
+	</select>
+
+	<update id="updateByWxid" parameterType="com.lxtx.model.CloudWxShellUser">
+		update cloud_wx_shell_user
+		set
+		status = 
+		#{status,jdbcType=INTEGER}
+		where wxid =
+		#{wxid,jdbcType=VARCHAR}
+	</update>
+
+	<insert id="insert" parameterType="com.lxtx.model.CloudWxShellUser"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into cloud_wx_shell_user (wxid,
+		chnno, `status`)
+		values
+		(#{wxid,jdbcType=VARCHAR},
+		#{chnno,jdbcType=VARCHAR},
+		#{status,jdbcType=INTEGER}
+		)
+	</insert>
+</mapper>

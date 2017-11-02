@@ -1,0 +1,47 @@
+[2017-08-05 11:23:39:539] in show guest page.
+ [2017-08-05 11:23:39:930] in showguestpage, step1
+ [2017-08-05 11:23:39:932] in showguestpage, step2
+ [2017-08-05 11:23:40:035] Recommend to use `net.rubyeye.xmemcached.impl.RandomMemcachedSessionLocaltor` as session locator for kestrel protocol.
+ [2017-08-05 11:23:40:046] XMemcachedClient use Kestrel protocol
+ [2017-08-05 11:23:40:087] Creating 8 reactors...
+ [2017-08-05 11:23:40:097] The Controller started at localhost/127.0.0.1:0 ...
+ [2017-08-05 11:23:40:099] You are using connection pool for xmemcached client,it's not recommended unless you have test it that it could increase performance in your app.
+ [2017-08-05 11:23:40:172] Add a session: 119.29.98.103:22134
+ [2017-08-05 11:23:40:237] Add a session: 119.29.98.103:22134
+ [2017-08-05 11:23:40:237] Disable merge get commands
+ [2017-08-05 11:23:40:237] Disable merge get commands
+ [2017-08-05 11:23:40:322] in showguestpage, step3
+ [2017-08-05 11:23:42:688] seconds values is:0 in /user/listOrder
+ [2017-08-05 11:23:48:014] seconds values is:0 in /user/listOrder
+ [2017-08-05 11:32:16:130] in show guest page.
+ [2017-08-05 11:32:16:377] in showguestpage, step1
+ [2017-08-05 11:32:16:377] in showguestpage, step2
+ [2017-08-05 11:32:16:435] in showguestpage, step3
+ [2017-08-05 11:32:17:340] seconds values is:0 in /user/listOrder
+ [2017-08-05 11:32:21:993] seconds values is:0 in /user/listOrder
+ [2017-08-05 12:25:43:496] seconds values is:0 in /user/listOrder
+ [2017-08-05 12:26:24:217] in show guest page.
+ [2017-08-05 12:26:24:449] in showguestpage, step1
+ [2017-08-05 12:26:24:449] in showguestpage, step2
+ [2017-08-05 12:26:24:503] in showguestpage, step3
+ [2017-08-05 12:26:25:297] seconds values is:0 in /user/listOrder
+ [2017-08-05 12:26:25:657] seconds values is:0 in /user/listOrder
+ [2017-08-05 12:26:33:215] in show guest page.
+ [2017-08-05 12:26:33:422] in showguestpage, step1
+ [2017-08-05 12:26:33:422] in showguestpage, step2
+ [2017-08-05 12:26:33:477] in showguestpage, step3
+ [2017-08-05 12:26:34:329] seconds values is:0 in /user/listOrder
+ [2017-08-05 12:26:34:887] seconds values is:0 in /user/listOrder
+ [2017-08-05 12:29:03:030] in show guest page.
+ [2017-08-05 12:29:07:251] in showguestpage, step1
+ [2017-08-05 12:29:07:251] in showguestpage, step2
+ [2017-08-05 12:29:07:301] in showguestpage, step3
+ [2017-08-05 12:29:08:222] seconds values is:0 in /user/listOrder
+ [2017-08-05 12:29:08:615] seconds values is:0 in /user/listOrder
+ [2017-08-05 12:57:39:668] in show guest page.
+ [2017-08-05 12:57:39:882] in showguestpage, step1
+ [2017-08-05 12:57:39:882] in showguestpage, step2
+ [2017-08-05 12:57:39:939] in showguestpage, step3
+ [2017-08-05 12:57:40:895] seconds values is:0 in /user/listOrder
+ [2017-08-05 12:57:45:567] seconds values is:0 in /user/listOrder
+ 

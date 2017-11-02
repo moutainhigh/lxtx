@@ -1,0 +1,131 @@
+.alert {
+	/* 	减小头部alert DIV样式 */
+	margin-bottom: 10px;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+	padding: 7px;
+}
+
+#grid-pager span.ui-icon {
+	width: 36px;
+	font-size: 30px;
+}
+
+#grid-pager .ui-pg-button ui-corner-all, #grid-pager .ui-pg-div {
+	width: 36px;
+	height: 36px;
+}
+
+.profile-info-name {
+	position: absolute;
+	width: 180px;
+	text-align: right;
+	padding: 6px 10px 6px 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	font-weight: normal;
+	color: #667e99;
+	background-color: transparent;
+	border-top: 1px dotted #d5e4f1;
+}
+
+.profile-info-name1 {
+	position: absolute;
+	width: 180px;
+	text-align: right;
+	padding: 6px 10px 6px 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	font-weight: normal;
+	color: #667e99;
+	background-color: transparent;
+	border-top: 1px solid #e1e1e1;
+	border-right: 1px solid #e1e1e1;
+}
+.profile-info-value1 {
+	padding: 6px 4px 6px 6px;
+	margin-left: 180px;
+	border-top: 1px solid #e1e1e1;
+	height:100%;
+}
+.profile-info-type {
+	position: absolute;
+	width: 80px;
+	text-align: right;
+	padding: 6px 10px 6px 0;
+	left: 180px;
+	top: 0;
+	bottom: 0;
+	font-weight: normal;
+	color: #667e99;
+	background-color: transparent;
+	border-top: 1px dotted #d5e4f1;
+	border-left: 1px dotted #d5e4f1;
+}
+
+.profile-user-info-striped .profile-info-type {
+	color: #336199;
+	background-color: #edf3f4;
+	border-top: 1px solid #f7fbff;
+}
+
+.profile-info-value {
+	padding: 6px 4px 6px 6px;
+	margin-left: 240px;
+	border-top: 1px dotted #d5e4f1;
+}
+
+.dd {
+	max-width: 1200px;
+}
+/*添加商品 定制化参数 拖拽的li样式*/
+.dd-item {
+	margin-top: 20px;
+}
+/**/
+.orderAttr-info-name {
+	position: absolute;
+	width: 260px;
+	text-align: right;
+	padding: 6px 10px 6px 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	font-weight: normal;
+	color: #667e99;
+	background-color: #edf3f4;
+	border-top: 1px dotted #d5e4f1;
+	border-right: 1px dotted #d5e4f1;
+}
+
+.orderAttr-info-value {
+	text-align: center;
+	padding: 6px 4px 6px 6px;
+	margin-left: 260px;
+	border-top: 1px dotted #d5e4f1;
+}
+
+.search {
+	border: 0px;
+	overflow: hidden;
+	font-size: 0px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	width: 16px;
+	height: 16px;
+	max-width: 16px;
+	max-height: 16px;
+	cursor: pointer;
+	margin-top: 8px;
+	margin-left: 10px;
+	background-image: url(../../images/security/icon024.gif);
+	background-repeat: no-repeat;
+}
+
+/**/
+.oprbutton:hover{
+	font-weight:bold;
+}

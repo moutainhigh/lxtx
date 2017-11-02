@@ -1,0 +1,16 @@
+应用包名： com.sfdz.newemm
+签名密码： android
+密钥别名： rm1.keystore
+签名MD5 ： 2BE4493BCCFF440DB0BEE95F4A10A907
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,79 @@
+<ion-view view-title="邀请小伙伴" need-login>
+    <ion-nav-bar class="bar-positive bar-header-black" align-title="center">
+        <ion-nav-back-button>返回</ion-nav-back-button>
+    </ion-nav-bar>
+
+
+    <ion-content>
+
+        <div class="list list-inset" align="center">
+            <span style="color:grey;margin-left: 20px;">辣么好玩的游戏,赶紧转发给小伙伴吧~</span>
+            <div align="center"><img  src="{{user.invitImg}}"></div>
+            <label class="item item-input">
+                邀请： <input type="text" ng-model="user.url">
+            </label>
+        </div>
+
+        <ion-list>
+            <ion-item class="item-divider"></ion-item>
+
+            <ion-item class="item-icon-left item-icon-right" ui-sref="tab.account-proxy-create">
+                <i class="icon ion-android-add"></i>
+                创建账号
+                <i class="icon ion-ios-arrow-right item-note"></i>
+            </ion-item>
+
+            <ion-item class="item-icon-left item-icon-right" ui-sref="tab.account-proxy-users">
+                <i class="icon ion-person-stalker"></i>
+                我邀请的人
+                <i class="icon ion-ios-arrow-right item-note"></i>
+            </ion-item>
+            <ion-item class="item-icon-left item-icon-right" ui-sref="tab.account-proxy-logs">
+                <i class="icon ion-ios-heart-outline"></i>
+                邀请贡献
+                <i class="icon ion-ios-arrow-right item-note"></i>
+            </ion-item>
+            <ion-item class="item-icon-left item-icon-right" ui-sref="tab.account-proxy-recharge-do">
+                <i class="icon ion-arrow-up-a"></i>
+                代理上分 </span>
+                <i class="icon ion-ios-arrow-right item-note"></i>
+            </ion-item>
+            <ion-item class="item-icon-left item-icon-right" ui-sref="tab.account-proxy-recharge-log">
+                <i class="icon ion-android-clipboard"></i>
+                上分记录
+                <i class="icon ion-ios-arrow-right item-note"></i>
+            </ion-item>
+            <ion-item class="item-icon-left item-icon-right" ui-sref="tab.account-proxy-unRecharge-do">
+                <i class="icon ion-arrow-down-a"></i>
+                代理下分 </span>
+                <i class="icon ion-ios-arrow-right item-note"></i>
+            </ion-item>
+            <ion-item class="item-icon-left item-icon-right" ui-sref="tab.account-proxy-unRecharge-log">
+                <i class="icon ion-android-clipboard"></i>
+                下分记录
+                <i class="icon ion-ios-arrow-right item-note"></i>
+            </ion-item>
+        </ion-list>
+
+<!--
+        <div class="list">
+            <div class="item card">
+                <div class="row clearfix">
+                    <div class="left">天煞反击战 <span style="color:chartreuse;">+150.00</span></div>
+                    <div class="right">1988-11-21</div>
+                </div>
+            </div>
+
+            <div class="item card">
+                <div class="row clearfix">
+                    <div class="left">天煞反击战 <span style="color:chartreuse;">+150.00</span></div>
+                    <div class="right">1988-11-21</div>
+                </div>
+            </div>
+
+            <div class="item" ng-show="forWithdraw" style="border: 0;">
+                <button class="button button-block button-positive button-green" ui-sref="tab.account-withdraw">其他</button>
+            </div>
+        </div>-->
+    </ion-content>
+</ion-view>

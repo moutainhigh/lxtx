@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head id="Head1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0" />
+<title>我的云购记录 - {wc:$webname}触屏版</title>
+<meta content="app-id=518966501" name="apple-itunes-app" />
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta content="telephone=no" name="format-detection" />
+<link href="{G_TEMPLATES_CSS}/mobile/comm.css" rel="stylesheet"
+	type="text/css" />
+<link href="{G_TEMPLATES_CSS}/mobile/lottery.css" rel="stylesheet"
+	type="text/css" />
+<script src="{G_TEMPLATES_JS}/mobile/jquery190.js" language="javascript"
+	type="text/javascript"></script>
+<script id="pageJS" data="{G_TEMPLATES_JS}/mobile/Lottery.js"
+	language="javascript" type="text/javascript"></script>
+<style type="text/css">
+.A {
+	width: 100%;
+	height: 100px;
+}
+
+.pic {
+	width: 80px;
+	height: 80px; padding-left : 10px;
+	float: left;
+	padding-left: 10px; float : left;
+}
+
+.myimg {
+	width: 80px;
+	height: 80px;
+	margin-top: 10px;
+}
+
+.status {
+	width: 80px;
+	height: 20px;
+	filter: alpha(opacity = 80);
+	-moz-opacity: 0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;;
+	position: relative;
+	left: 0;
+	top: -22px;
+	text-align: center;
+	color:#fff;
+	
+}
+.s1{
+background: #C1C1C1;
+}
+.s2{
+background: #AAE394;
+}
+
+
+.title {
+	width: 70%;
+	height: 30px;
+	float: left;
+	margin-left: 10px;
+	margin-top: 10px;
+	
+}
+
+.huode {
+	width: 70%;
+	height: 35px;
+	float: left;
+	margin-left: 10px;
+}
+
+.jiexiaotime {
+	width: 70%;
+	height: 15px;
+	float: left;
+	margin-left: 10px;
+}
+.canyu{
+	width: 70%;
+	height: 20px;
+	float: left;
+	margin-left: 10px;
+}
+ span{color:red;}
+</style>
+</head>
+<body>
+	{wc:loop $record $r}
+	    {wc:php:start}
+						$shopinfo = getshopinfo($r['shopid']);						
+		{wc:php:end}
+	<div class='A' id="{wc:$shopinfo['id']}">
+	    
+		
+		{wc:if $shopinfo['q_uid']!=''}
+		<div class='pic'>
+			<img src="{G_UPLOAD_PATH}/{wc:$shopinfo['thumb']}"
+				class='myimg' />
+			<div class="status s1">已揭晓</div>
+		</div>
+		<!--商品图片-->
+		<div class='title'>
+			(第<span>{wc:$shopinfo['qishu']}</span>期){wc:$r['shopname']}
+		</div>
+		<div class='huode'>获得者：<span>{wc:fun:getQuser($r['shopid'])}</span>&nbsp;UID:<span>{wc:$shopinfo['q_uid']}</span>&nbsp;<br/>中奖码：<span>{wc:$shopinfo['q_user_code']}</span></div>
+		<div class='jiexiaotime'>
+			揭晓时间：{wc:fun:date("Y-m-d H:i:s",$shopinfo['wc_time'])}</div>
+		<!--商品信息-->
+		{wc:else}
+		<div class='pic'>
+			<img src="{G_UPLOAD_PATH}/{wc:$shopinfo['thumb']}"
+				class='myimg' />
+			<div class="status s2">进行中...</div>
+		</div>
+		<!--商品图片-->
+		<div class='title'>
+			(第<span>{wc:$shopinfo['qishu']}</span>期){wc:$r['shopname']}<span ></span>
+		</div>
+		<div class='canyu'>
+		您本次参与<span>{wc:$r['gonumber']}</span>人次<br/>
+		该奖品已参与<span>{wc:$shopinfo['canyurenshu']}</span>人次
+		总需<span>{wc:$shopinfo['zongrenshu']}</span>人次
+		剩余<span>{wc:$shopinfo['shenyurenshu']}</span>人次
+		</div>
+		<!--商品信息-->
+		{wc:if:end}
+		
+	</div>
+	<hr>
+	{wc:loop:end} {wc:templates "mobile/index","footer"}
+	</div>
+</body>
+</html>
+<script>
+$().ready(function(){
+	$('.A').bind('click',function(){
+		location.href="{WEB_PATH}/mobile/user/buyDetail/"+$(this).attr('id');
+		//location.href="{WEB_PATH}/mobile/mobile/item/"+$(this).attr('id');
+		//var qishu=$(this).find('.title span').text();
+		//alert(getNum(qishu));
+	});
+	//提取字符串中的数字
+	function getNum(text){
+		var value = text.replace(/[^0-9]/ig,""); 
+		return value;
+	}
+
+});
+</script>

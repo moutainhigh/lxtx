@@ -1,0 +1,39 @@
+{
+    "button": [
+        {
+            "name": "游戏大厅",
+            "type": "view",
+            "key": "rselfmenu_0_0",
+            "url": "http://%s/plaza/wx/redirect/%s/%s"
+        },
+        {
+            "name": "服务中心",
+            "sub_button": [
+                {
+                    "type": "view",
+                    "name": "常见问题",
+                    "key": "rselfmenu_1_0",
+              "url": "http://yun.1flz.com/yun/common_problem_x.html?t=0.141215"
+                },
+                {
+                    "type": "view",
+                    "name": "操作规则",
+                    "key": "rselfmenu_1_1",
+                    "url": "http://yun.1flz.com/yun/tran_rule_x.html?t=0.141215"
+                },
+                {
+                    "type": "view",
+                    "name": "产品种类",
+                    "key": "rselfmenu_1_2",
+                    "url": "http://yun.1flz.com/yun/tran_type_x.html?t=0.141215"
+                }
+            ]
+        },
+        {
+            "name": "云购九州",
+            "type": "view",
+            "key": "rselfmenu_2_0",
+            "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=%s&redirect_uri=http://%s/plaza/wx/goredirect/%s/%s&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect"
+        }
+    ]
+}

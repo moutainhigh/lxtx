@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="fb">
+   <typeAlias alias="csUserRole" type="com.lxtx.fb.pojo.CsUserRole"/>
+   
+   <insert id="CsUserRole.insert" parameterClass="csUserRole">
+       insert into CsUserRole (CsUserId, RoleId, Status)
+       values (#csUserId#, #roleId#, #status#)
+       <selectKey keyProperty="id" resultClass="long">
+			select LAST_INSERT_ID() as id
+		</selectKey>
+   </insert>
+   
+   <delete id="CsUserRole.deleteByPrimaryKey" parameterClass="long">
+       delete from CsUserRole where Id = #id#
+   </delete>
+   
+   <select id="CsUserRole.listByUser" parameterClass="int" resultClass="csUserRole">
+       select * from CsUserRole where CsUserId = #csUserId# order by Id asc 
+   </select>
+</sqlMap>

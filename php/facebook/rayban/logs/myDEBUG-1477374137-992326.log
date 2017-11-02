@@ -1,0 +1,8 @@
+[25-Oct-2016 07:47:17 Europe/Paris] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in D:\wamp\www\rayban1021\includes\modules\payment\neworder.php on line 850
+[25-Oct-2016 07:47:17 Europe/Paris] PHP Stack trace:
+[25-Oct-2016 07:47:17 Europe/Paris] PHP   1. {main}() D:\wamp\www\rayban1021\index.php:0
+[25-Oct-2016 07:47:17 Europe/Paris] PHP   2. require() D:\wamp\www\rayban1021\index.php:36
+[25-Oct-2016 07:47:17 Europe/Paris] PHP   3. payment->payment() D:\wamp\www\rayban1021\includes\modules\pages\quick_shopping\header_php.php:129
+[25-Oct-2016 07:47:17 Europe/Paris] PHP   4. NewOrder->NewOrder() D:\wamp\www\rayban1021\includes\classes\payment.php:74
+[25-Oct-2016 07:47:17 Europe/Paris] PHP   5. NewOrder->getNewOrderConfig() D:\wamp\www\rayban1021\includes\modules\payment\neworder.php:67
+[25-Oct-2016 07:47:17 Europe/Paris] PHP   6. NewOrder->http_response() D:\wamp\www\rayban1021\includes\modules\payment\neworder.php:863

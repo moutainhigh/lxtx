@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+	
+	<wrapManage>
+		<register beanName="com.lxtx.fb.pojo.Page" wrapId="pageWrap" type="spring"/>
+		<register beanName="com.lxtx.fb.pojo.User" wrapId="userWrap" type="spring"/>
+		<register beanName="com.lxtx.fb.pojo.AdSet" wrapId="adSetWrap" type="spring"/>
+	</wrapManage>
+</configs>

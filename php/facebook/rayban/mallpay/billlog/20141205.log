@@ -1,0 +1,19 @@
+11:02:08 S2S array (
+  '_sn' => '245141205001',
+  '_checkcode' => 'ce4bcc150aee29b751227821bc54730a',
+  '_currency' => 'USD',
+  '_amount' => '108',
+  '_status' => 'approved',
+  '_transactionno' => '14051218964297586N',
+  'local_sign' => 'ce4bcc150aee29b751227821bc54730a',
+)
+11:02:10 S2B array (
+  'main_page' => 'checkout_process',
+  'amount' => '108',
+  'checkcode' => 'ce4bcc150aee29b751227821bc54730a',
+  'siteno' => '193736180',
+  'sn' => '245141205001',
+  'status' => 'approved',
+  'transactionno' => '14051218964297586N',
+  'local_sign' => 'ce4bcc150aee29b751227821bc54730a',
+)

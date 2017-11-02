@@ -1,0 +1,28 @@
+第七套：tksjdz
+
+机构编号：102510156459
+
+签名密钥：f13cd82f459b401c59946addcf5a65a1
+
+APPID  :    wx91a119ab11ba4890
+
+包  名：    com.zjsy.tksjdz
+
+签 名：   82B5A5354E391CF9F3F3BA18D4DB7BC4
+
+
+
+
+
+
+第八套：    tkzs   
+
+机构编号：102570156644
+
+签名密钥：e3ddc05f67cb0c4f2a583bec6515c0b9
+
+APPID: wx3692577b5cb39233
+
+包  名：com.zswj.tkzs
+
+签 名： DF82D7F4094289CCF2ABB129389BFFBB

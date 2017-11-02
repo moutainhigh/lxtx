@@ -1,0 +1,12 @@
+
+第十四套：  （fbyrq）
+
+机构编号：102550156351
+
+签名密钥：0314692cd1060c0f73b292853bd569c3
+
+APPID：wxe50acb3557c43d70 
+
+包名：com.sfdz.newfbyrh
+
+签名：53D8AEA582AFF8571F0F9C4312EE652D

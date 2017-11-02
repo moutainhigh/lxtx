@@ -1,0 +1,22 @@
+<ion-view view-title="我邀请的人" need-login>
+    <ion-nav-bar class="bar-positive bar-header-black" align-title="center">
+        <ion-nav-back-button>返回</ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+        <ion-refresher pulling-text="下拉刷新列表..." on-refresh="doRefresh()"></ion-refresher>
+        <div class="list">
+            <div ng-if="records.length==0" style="margin: 10px;color: grey">
+                没有任何记录.
+            </div>
+            <div class="item card" ng-repeat="r in records">
+                <div class="row clearfix">
+                    <div class="left"><span style="color:forestgreen;font-weight: bold">{{r[1]?r[1]:r[2]}} </span><span style="color:grey">(ID:{{r[0]}})</span></div>
+                    <div class="right"><span style="color:grey">{{r[3]}}</span></div>
+                    <br>
+                    <div class="left"><span style="color:orangered;">账户:{{r[4]}}萬金</span></div>
+                </div>
+            </div>
+        </div>
+        <ion-infinite-scroll on-infinite="loadMore()" ng-if="!noMoreItemsAvailable"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

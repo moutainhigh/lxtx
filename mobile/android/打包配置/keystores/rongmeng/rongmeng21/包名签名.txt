@@ -1,0 +1,16 @@
+应用包名： com.zmfz.rmnewcjty
+签名密码： android
+密钥别名： rm1.keystore
+签名MD5 ： FC120162F3C6828F05BBD4E3E205855C
+
+
+
+
+
+
+
+
+
+
+
+

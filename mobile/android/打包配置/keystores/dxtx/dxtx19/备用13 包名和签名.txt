@@ -1,0 +1,7 @@
+包名 com.heuewo.hiaodoipo 
+md5:24091ecc872eb2abad9d976649d59902
+
+
+
+别名：1
+秘钥：123456

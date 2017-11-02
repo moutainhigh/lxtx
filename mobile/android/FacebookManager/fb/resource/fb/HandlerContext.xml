@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <bean id="fb_SqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation" value="classpath:resource/fb/sqlMapConfig.xml"/>
+		<property name="dataSource" ref="fb_dataSource"/>
+	</bean>
+	
+	<bean id="fb_SqlMapClientTemplate" class="com.qlzf.commons.factory.SqlMapClientTemplate">
+		<property name="sqlMapClient" ref="fb_SqlMapClient"/>
+	</bean>
+	
+	<!-- handler -->
+	<bean id="csUserHandler" class="com.lxtx.fb.handler.CsUserHandler">
+	    <property name="sqlMapClientTemplate" ref="fb_SqlMapClientTemplate"/>
+	</bean>
+	
+	<bean id="csUserRoleHandler" class="com.lxtx.fb.handler.CsUserRoleHandler">
+	    <property name="sqlMapClientTemplate" ref="fb_SqlMapClientTemplate"/>
+	</bean>
+	
+	<bean id="machineHandler" class="com.lxtx.fb.handler.MachineHandler">
+	    <property name="sqlMapClientTemplate" ref="fb_SqlMapClientTemplate"/>
+	</bean>
+	
+	<bean id="machineUserHandler" class="com.lxtx.fb.handler.MachineUserHandler">
+	    <property name="sqlMapClientTemplate" ref="fb_SqlMapClientTemplate"/>
+	</bean>
+	
+	<bean id="proxyHandler" class="com.lxtx.fb.handler.ProxyHandler">
+	    <property name="sqlMapClientTemplate" ref="fb_SqlMapClientTemplate"/>
+	</bean>
+	
+	<bean id="roleHandler" class="com.lxtx.fb.handler.RoleHandler">
+	    <property name="sqlMapClientTemplate" ref="fb_SqlMapClientTemplate"/>
+	</bean>
+   
+	<bean id="taskHandler" class="com.lxtx.fb.handler.TaskHandler">
+	    <property name="sqlMapClientTemplate" ref="fb_SqlMapClientTemplate"/>
+	</bean>
+	
+	<bean id="userHandler" class="com.lxtx.fb.handler.UserHandler">
+	    <property name="sqlMapClientTemplate" ref="fb_SqlMapClientTemplate"/>
+	</bean>
+	
+</beans>

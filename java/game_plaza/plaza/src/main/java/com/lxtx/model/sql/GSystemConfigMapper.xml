@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.lxtx.dao.GSystemConfigMapper" >
+  <resultMap id="BaseResultMap" type="com.lxtx.model.GSystemConfig" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="property" property="property" jdbcType="VARCHAR" />
+    <result column="value" property="value" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, property, `value`
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from g_system_config
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from g_system_config
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.lxtx.model.GSystemConfig" useGeneratedKeys="true" keyProperty="id" >
+    insert into g_system_config (property, `value`)
+    values (#{property,jdbcType=VARCHAR}, #{value,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lxtx.model.GSystemConfig" useGeneratedKeys="true" keyProperty="id" >
+    insert into g_system_config
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      property,
+      `value`,
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      #{property,jdbcType=VARCHAR},
+      #{value,jdbcType=VARCHAR},
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lxtx.model.GSystemConfig" >
+    update g_system_config
+    <set >
+      <if test="property != null" >
+        property = #{property,jdbcType=VARCHAR},
+      </if>
+      <if test="value != null" >
+        `value` = #{value,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lxtx.model.GSystemConfig" >
+    update g_system_config
+    set property = #{property,jdbcType=VARCHAR},
+      `value` = #{value,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectConfig" resultType="java.lang.Integer" parameterType="java.lang.String" >
+    select value
+    from g_system_config
+    where property = #{property,jdbcType=VARCHAR}
+  </select>
+  <select id="selectConfigStr" resultType="java.lang.String" parameterType="java.lang.String" >
+    select value
+    from g_system_config
+    where property = #{property,jdbcType=VARCHAR}
+  </select>
+</mapper>

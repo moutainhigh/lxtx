@@ -1,0 +1,89 @@
+{wc:templates "index","header"}
+<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_STYLE}/css/results.css"/>
+<div class="g-body">
+    <div class="m-results">
+        <div class="g-wrap f-clear">
+            <div class="g-main m-results-revealList">
+                <div class="w-hd2">
+
+                </div>
+                <div class="m-results-mod-bd">
+                    <ul class="w-revealList f-clear">
+                    	 <li id="pro-view-3" data-pro="entry">
+						   {wc:loop $shopqishu $qishu}
+		                    {wc:php:start}
+		                    	$qishu['q_user'] = unserialize($qishu['q_user']);
+		                    {wc:php:end}				
+						   <div id="pro-view-19" class="w-revealList-item">
+						    <div class="w-goods w-goods-reveal">
+						     <div class="w-goods-info">
+						      <div class="w-goods-pic">
+						       <a href="{WEB_PATH}/dataserver/{wc:$qishu['id']}" target="_blank"><img class="" style="min-height: 40px; min-width: 40px;" src="{G_UPLOAD_PATH}/{wc:$qishu['thumb']}" height="150" width="200" /></a>
+						      </div>
+						      <p class="w-goods-title f-txtabb"><a href="{WEB_PATH}/dataserver/{wc:$qishu['id']}" target="_blank">(第{wc:$qishu['qishu']}期) {wc:$qishu['title']}</a></p>
+						      <p class="w-goods-price">总需：{wc:$qishu['zongrenshu']}人次</p>
+						     </div>
+						     <div class="w-record">
+						      <div class="w-record-avatar">
+						       <a href="{WEB_PATH}/uname/{wc:fun:idjia($qishu['q_uid'])}" target="_blank"><img src="{G_UPLOAD_PATH}/{wc:$qishu['q_user']['img']}" height="40" width="40" /></a>
+						      </div>
+						      <div class="w-record-detail">
+						       <p class="user f-breakword">恭喜<a href="{WEB_PATH}/uname/{wc:fun:idjia($qishu['q_uid'])}" title="{wc:fun:get_user_name($qishu['q_user'])}(ID:{wc:$qishu['q_uid']})">{wc:fun:get_user_name($qishu['q_user'])}</a><span class="txt-green">(IP:{wc:$qishu['q_user']['user_ip']})</span>获得该奖品</p>
+						       <p>幸运号码：<b class="txt-red">{wc:$qishu['q_user_code']}</b></p>
+						       <p>本期参与：<b class="txt-red">{wc:fun:get_user_goods_num($qishu['q_uid'],$qishu['id'])}</b>人次</p>
+						       <p>揭晓时间：<span title="{wc:fun:microt($qishu['q_end_time'],'r')}">{wc:fun:microt($qishu['q_end_time'],'r')}</span></p>
+						       <p><a class="w-button w-button-simple" href="{WEB_PATH}/dataserver/{wc:$qishu['id']}" target="_blank">查看详情</a></p>
+						      </div>
+						     </div>
+						    </div>
+						   </div>
+						  
+						   {wc:loop:end}
+						 </li>
+                    </ul>
+                </div>
+                
+                <div class="m-results-revealList-end" style="display:none">
+                    <p style="padding:20px 0;text-align:center;">以上是最近三天揭晓的全部奖品~</p>
+                </div>
+            </div>
+            <div class="g-side">
+                <div class="m-results-leastRemain">
+                    <div class="m-results-leastRemain-title">
+                        <h4>最快揭晓</h4>
+                    </div>
+                    <div class="m-results-leastRemain-main">
+                        <ul class="w-remainList">
+                        {wc:loop $shoplist $list}
+						{wc:php:start}
+		            	$p_width=round($list['canyurenshu']/$list['zongrenshu']*100);
+		            	{wc:php:end}
+						<li class="w-remainList-item"> 
+						   <div class="w-goods w-goods-ing"> 
+						    <div class="w-goods-pic"> 
+						     <a href="{WEB_PATH}/goods/{wc:$list['id']}" title="{wc:$list['title']}" target="_blank"> <img width="200px" height="150px" alt="{wc:$list['title']}" src="{G_UPLOAD_PATH}/{wc:fun:shopimg($list['id'])}" /> </a> 
+						    </div> 
+						    <p class="w-goods-title f-txtabb"><a title="{wc:$list['title']}" href="{WEB_PATH}/goods/{wc:$list['id']}" target="_blank">(第{wc:$list['qishu']}期) {wc:$list['title']}</a></p> 
+						    <p class="w-goods-price"> 总需：{wc:$list['zongrenshu']} 人次 </p> 
+						    <div class="w-progressBar" title="{wc:$p_width}%"> 
+						     <p class="w-progressBar-wrap"> <span class="w-progressBar-bar" style="width:{wc:$p_width}%;"></span> </p> 
+						     <ul class="w-progressBar-txt f-clear"> 
+						      <li class="w-progressBar-txt-l"><p><b>{wc:$list['canyurenshu']}</b></p><p>已参与人次</p></li> 
+						      <li class="w-progressBar-txt-r"><p><b>{wc:$list['zongrenshu']-$list['canyurenshu']}</b></p><p>剩余人次</p></li> 
+						     </ul> 
+						    </div> 
+						    <p class="w-goods-progressHint"> <b class="txt-blue">{wc:$list['canyurenshu']}</b>人次已参与，赶快去参加吧！剩余<b class="txt-red">{wc:$list['zongrenshu']-$list['canyurenshu']}</b>人次 </p> 
+						    <div class="w-goods-opr"> 
+						     <a class="w-button w-button-main w-button-l" href="{WEB_PATH}/goods/{wc:$list['id']}" style="width:96px;" target="_blank">我来包尾</a> 
+						    </div> 
+						   </div> 
+						 </li>
+						{wc:loop:end}        				
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{wc:templates "index","footer"}

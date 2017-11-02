@@ -1,0 +1,150 @@
+.m-share .g-wrap {
+	padding-top: 15px;
+}
+
+.m-share .group {
+	margin-right: 11px;
+	margin-left: 0;
+	width: 292px;
+}
+
+.m-share .group-first {
+	margin-right: 10px;
+}
+
+.m-share .group-last {
+	margin-right: 0;
+}
+
+.m-share .m-shareList .item {
+	margin-bottom: 10px;
+}
+
+.m-share-hd {
+	position: relative;
+	height: 40px;
+	border-bottom: 2px solid #888888;
+	z-index: 1;
+}
+
+.m-share-hd h3 {
+	line-height: 40px;
+	font-size: 18px;
+	color: #000;
+	font-weight: bold;
+}
+
+.m-share .m-shareList .item {
+	width: 290px;
+}
+
+.m-share .m-shareList .item .title {
+	font-size: 14px;
+	color: #3C3C3C;
+}
+
+.m-share .m-shareList .item .author {
+	position: relative;
+	+zoom;1
+}
+
+.m-share .m-shareList .item .author a {
+	color: #329AFD;
+}
+
+.m-share .m-shareList .item .author .time {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.m-share .m-shareList .item .status {
+	display: none;
+}
+
+.m-share .m-shareList .item .pic {
+	width: 272px;
+}
+
+.m-share .m-shareList .item .pic img {
+	width: 272px;
+}
+
+.m-share .m-shareList .item .name {
+	width: 237px;
+}
+
+.m-share-loading {
+	text-align: center;
+	padding: 50px 0 25px;
+}
+
+.m-share-loading .inner {
+	display: inline-block;
+	+display: inline;
+	+zoom: 1;
+	position: relative;
+	+zoom: 1;
+	line-height: normal;
+	font-size: 12px;
+	padding-left: 54px;
+}
+
+.m-share-loading .inner .loading {
+	position: absolute;
+	top: -20px;
+	left: 0;
+}
+
+.m-share-page {
+	text-align: right;
+	border-top: 1px solid #ddd;
+	padding-top: 20px;
+}
+
+.m-share-page .w-pager .w-button {
+	margin-left: 6px;
+	margin-right: 0;
+}
+
+.m-share-slogan {
+	text-align: center;
+	position: relative;
+	+zoom: 1;
+	background: #F05759 url('../img/share_slogan_2.png') center top no-repeat;
+	height: 180px;
+}
+
+.m-share-slogan img {
+	margin: 0 auto;
+}
+
+.m-share-slogan .g-wrap {
+	width: 1200px;
+	height: 100%;
+	padding: 0;
+}
+
+.m-share-slogan-border {
+	height: 3px;
+	overflow: hidden;
+	background: url('../img/mix-icon.png') 0 -12px repeat-x;
+	_background-image: url('../img/mix-icon_ie6.png');
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+.m-share-slogan-dec {
+	position: absolute;
+	z-index: 2;
+	bottom: -18px;
+	right: 88px;
+}
+
+.m-share-blank {
+	text-align: center;
+	padding: 20px 0;
+}

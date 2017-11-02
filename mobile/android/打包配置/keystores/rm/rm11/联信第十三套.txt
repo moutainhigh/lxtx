@@ -1,0 +1,11 @@
+第十三套：（mfds） 
+机构编号：102570156485
+
+签名密钥：3b131e1fbc4bfc03771d013e1e458700
+
+APPID:wx938d4fb17aaa2045
+
+包名：com.zfsy.mfds
+
+签名：AD56F0F79CA6207FE9385BBEBC1BB85F
+ 

@@ -1,0 +1,142 @@
+{wc:templates "index","header"}
+<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_STYLE}/css/share.css"/>
+ <div class="g-body"> 
+   <div class="m-share"> 
+    <div class="m-share-slogan"> 
+     <div class="g-wrap">
+      <img src="{G_TEMPLATES_STYLE}/img/share_slogan_dec.png" class="m-share-slogan-dec" />
+     </div> 
+     <div class="m-share-slogan-border"></div> 
+    </div> 
+    <div class="g-wrap f-clear"> 
+     <div class="m-share-hd"> 
+      <h3>共 <span class="txt-impt" id="spTotal">{wc:$total}</span> 条晒单</h3> 
+     </div> 
+     <div class="m-shareList"> 
+      <div style="position:relative;" id="brand-waterfall"> 
+      {wc:loop $shaidan $sd}	
+	  {wc:getone sql="select * from `@#_shoplist` where `id` = '$sd[sd_shopid]'" return="shop"}
+	  {wc:getone:end}
+		<div class="item"> 
+		        <div class="pic">
+			         <table>
+			          <tbody>
+			           <tr>
+			            <td valign="middle" align="center"><a target="_blank" href="{WEB_PATH}/go/shaidan/detail/{wc:$sd['sd_id']}" title="{wc:$sd['sd_title']}"><img class="sky_pic" src="{G_UPLOAD_PATH}/{wc:$sd['sd_thumbs']}" alt="{wc:$sd['sd_title']}" /></a></td>
+			           </tr>
+			          </tbody>
+			         </table>
+		        </div> 
+		        <div class="name">
+		         	<a target="_blank" href="{WEB_PATH}/goods/{wc:$shop['id']}">(第{wc:$shop['qishu']}期) {wc:$shop['title']}</a>
+		        </div> 
+		        <div class="code">
+		        	 幸运号码：<strong class="txt-impt">{wc:$shop['q_user_code']}</strong>
+		        </div> 
+		        <div class="post"> 
+			         <div class="title">
+			          	<a target="_blank" href="{WEB_PATH}/go/shaidan/detail/{wc:$sd['sd_id']}"><strong>{wc:$sd['sd_title']}</strong></a>
+			         </div> 
+			         <div class="author">
+				          <a target="_blank" href="{WEB_PATH}/uname/{wc:fun:idjia($sd['sd_userid'])}" title="{wc:fun:get_user_name($sd['sd_userid'],'username')}(ID:{wc:$sd['sd_userid']})">{wc:fun:get_user_name($sd['sd_userid'],'username')}</a>
+				          <span class="time">{wc:fun:date("Y-m-d H:i",$sd['sd_time'])}</span>
+			         </div> 
+			         <div class="abbr">{wc:fun:_strcut($sd['sd_content'],50)}</div> 
+		        </div> 
+	       </div> 
+	  {wc:loop:end}     
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+<script>
+$(".sky_pic").load(function(){
+	$('#brand-waterfall').waterfall();
+}); 
+
+//$(function(){
+//	$('#brand-waterfall').waterfall();
+//});
+// 瀑布流插件
+// pannysp 2013.4.9
+;(function ($) {
+    $.fn.waterfall = function(options) {
+        var df = {
+            item: '.item',
+            margin: 8,
+            addfooter: true
+        };
+        options = $.extend(df, options);
+        return this.each(function() {
+            var $box = $(this), pos = [],
+            _box_width = $box.width(),
+            $items = $box.find(options.item),
+            _owidth = $items.eq(0).outerWidth() + options.margin,
+            _oheight = $items.eq(0).outerHeight() + options.margin,
+            _num = Math.floor(_box_width/_owidth);
+
+            (function() {
+                var i = 0;
+                for (; i < _num; i++) {
+                    pos.push([i*_owidth,0]);
+                } 
+            })();
+
+            $items.each(function() {
+                var _this = $(this),
+                _temp = 0,
+                _height = _this.outerHeight() + options.margin;
+
+                _this.hover(function() {
+                    _this.addClass('hover');
+                },function() {
+                    _this.removeClass('hover');
+                });
+
+                for (var j = 0; j < _num; j++) {
+                    if(pos[j][1] < pos[_temp][1]){
+                        //暂存top值最小那列的index
+                        _temp = j;
+                    }
+                }
+                this.style.cssText = 'left:'+pos[_temp][0]+'px; top:'+pos[_temp][1]+'px;';
+                //插入后，更新下该列的top值
+                pos[_temp][1] = pos[_temp][1] + _height;
+            });
+
+            // 计算top值最大的赋给外围div
+            (function() {
+                var i = 0, tops = [];
+                for (; i < _num; i++) {
+                    tops.push(pos[i][1]);
+                }
+                tops.sort(function(a,b) {
+                    return a-b;
+                });
+                $box.height(tops[_num-1]);
+
+                //增加尾部填充div
+              
+
+            })();
+
+            function addfooter(max) {
+                var addfooter = document.createElement('div');
+                addfooter.className = 'item additem';
+                for (var i = 0; i < _num; i++) {
+                    if(max != pos[i][1]){
+                        var clone = addfooter.cloneNode(),
+                        _height = max - pos[i][1] - options.margin;
+                        clone.style.cssText = 'left:'+pos[i][0]+'px; top:'+pos[i][1]+'px; height:'+_height+'px;';
+                        $box[0].appendChild(clone);
+                    }
+                }
+            }
+
+        });
+    }
+})(jQuery);
+
+</script>
+{wc:templates "index","footer"}

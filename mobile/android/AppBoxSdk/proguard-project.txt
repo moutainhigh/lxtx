@@ -1,0 +1,51 @@
+
+-keep class com.huawei.android.pushagent.** { *; }
+-keep class com.xcmgame.** { *; }
+
+-keep class com.taobao.** { *; }
+
+-keep class com.data.mm.** { *; }
+-keep class com.chinaMobile.** { *; }
+-keep class com.tencent.** { *; }
+
+-keep class com.mm.** { *; }
+-keep class com.n0stop.** { *; }
+-keep class com.popgame.** { *; }
+-keep class cn.cmqame.sdk.** { *; }
+-keep class org.cocos2dx.chameleon.** { *; }
+-keep class com.tencent.bugly.** { *; }
+-keep class com.snowfish.**{*;}
+-dontwarn com.unity3d.** 
+-keep class com.unity3d.**{*;}
+
+-keep class cn.banny.**{*;}
+-keep class com.n0stop.**{*;}
+-keep class com.popgame.**{*;}
+-keep class com.romainpiel.**{*;}
+-keep class com.waterwest.**{*;}
+-keep class com.xs.hs.**{*;}
+-keep class com.zhangzhifu.**{*;}
+-keep class mm.api.**{*;}
+-keep class rp.**{*;}
+
+
+-dontwarn de.tavendo.autobahn.**
+-keep class de.tavendo.autobahn.**{*;}
+
+-dontwarn com.push2.sdk.**
+-keep class com.push2.sdk.**{*;}
+-keep class com.push2.sdk.a.**{*;}
+-keep class com.push2.sdk.b.**{*;}
+-keep class com.push2.sdk.c.**{*;}
+-keep class com.push2.sdk.util**{*;}
+
+
+-dontskipnonpubliclibraryclassmembers
+
+-keep class com.alipay.**{*;}
+-keep class com.ta.**{*;}
+-keep class com.ut.**{*;}
+-keep class org.json.**{*;}
+
+-dontwarn com.switfpass.**
+-keep class com.switfpass.**{*;}

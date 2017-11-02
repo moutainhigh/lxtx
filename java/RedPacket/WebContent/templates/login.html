@@ -1,0 +1,40 @@
+<ion-view view-title="登录">
+    <ion-nav-bar class="bar-positive bar-header-black" align-title="center">
+<!--        <ion-nav-buttons>
+            <button class="button button-clear" ui-sref="tab.rooms">大厅</button>
+        </ion-nav-buttons>-->
+        <ion-nav-buttons side="secondary">
+            <button class="button button-clear" ui-sref="register">注册</button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+
+    <ion-content>
+        <div class="list list-inset">
+            <label class="item item-input">
+                <i class="icon ion-person placeholder-icon"></i>
+                <input type="text" placeholder="帐号" ng-model="data.username">
+            </label>
+            <label class="item item-input">
+                <i class="icon ion-key placeholder-icon"></i>
+                <input type="password" placeholder="密码" ng-model="data.password">
+            </label>
+
+            <ul class="list">
+                <li class="item item-checkbox">
+                    <label class="checkbox">
+                        <input type="checkbox" ng-model="data.autoLogin">
+                    </label>
+                    记住账号和密码
+                </li>
+                </ul>
+            <button class="button button-block button-positive button-green" ng-click="doLogin()">
+                登录
+            </button>
+<!--
+            <div class="third-login">
+                <label class="third-login-title">第三方登录</label>
+                <img class="third-login-wx" src="../img/login/appwx.png" ng-click="loginWx()">
+            </div>  -->
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,16 @@
+应用包名： com.wjdz.rmrllq
+签名密码： android
+密钥别名： rm1.keystore
+签名MD5 ： 1B1B12710EB3139E2B9B84F4195ECE90
+
+
+
+
+
+
+
+
+
+
+
+

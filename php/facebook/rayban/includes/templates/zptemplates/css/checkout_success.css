@@ -1,0 +1,16 @@
+.checkHeading {
+	background: url(../images/gradient_below_nav.jpg) repeat-x scroll center top transparent;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 30px;
+	margin-bottom: 5px;
+	padding: 5px 0 0 10px;
+}
+.box {
+    background: url(../images/blue_gradient_bottom_968x15.jpg) no-repeat scroll center bottom transparent;
+    border: 1px solid #CCCCCC;
+    margin-bottom: 14px;
+    padding: 0 0 10px;
+}
+#customerPassword { color: #900; font: bold 14px/24px Arial, Helvetica, sans-serif; }
+.content { padding: 0 20px; }

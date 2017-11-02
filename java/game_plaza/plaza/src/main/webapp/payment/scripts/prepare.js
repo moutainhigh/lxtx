@@ -1,0 +1,1 @@
+!function(a){var b=navigator.userAgent.toLowerCase();return a.tap="ontouchstart"in window?"touchend":"click",a.isInWeiXin="micromessenger"==b.match(/MicroMessenger/i)||!0,a.BaseAbsolutePath=document.getElementsByTagName("base")[0].href,isInWeiXin?void 0:(window.location.href=BaseAbsolutePath+"pages/errors/999.jsp",void 0)}(this);

@@ -1,0 +1,133 @@
+00:48:49 S2S array (
+  '_sn' => '245150418003',
+  '_checkcode' => '8b84220072b700df81e08574a339dc51',
+  '_currency' => 'USD',
+  '_amount' => '62.5',
+  '_status' => 'declined',
+  '_transactionno' => '15180419016641528S',
+  'local_sign' => '8b84220072b700df81e08574a339dc51',
+)
+00:48:52 S2B array (
+  'main_page' => 'checkout_process',
+  'amount' => '62.5',
+  'checkcode' => '8b84220072b700df81e08574a339dc51',
+  'siteno' => '193736180',
+  'sn' => '245150418003',
+  'status' => 'declined',
+  'transactionno' => '15180419016641528S',
+  'local_sign' => '8b84220072b700df81e08574a339dc51',
+)
+01:05:16 S2S array (
+  '_sn' => '245150418007',
+  '_checkcode' => '6bb0657442fabdc4fc2c9b72b05c7f32',
+  '_currency' => 'USD',
+  '_amount' => '66.16',
+  '_status' => 'declined',
+  '_transactionno' => '15180419016642709H',
+  'local_sign' => '6bb0657442fabdc4fc2c9b72b05c7f32',
+)
+01:05:19 S2B array (
+  'main_page' => 'checkout_process',
+  'amount' => '66.16',
+  'checkcode' => '6bb0657442fabdc4fc2c9b72b05c7f32',
+  'siteno' => '193736180',
+  'sn' => '245150418007',
+  'status' => 'declined',
+  'transactionno' => '15180419016642709H',
+  'local_sign' => '6bb0657442fabdc4fc2c9b72b05c7f32',
+)
+01:32:52 S2S array (
+  '_sn' => '245150418010',
+  '_checkcode' => '06b23d3bb210807aca89c7c04c8a73eb',
+  '_currency' => 'USD',
+  '_amount' => '62.5',
+  '_status' => 'declined',
+  '_transactionno' => '15180419016643964X',
+  'local_sign' => '06b23d3bb210807aca89c7c04c8a73eb',
+)
+01:32:54 S2B array (
+  'main_page' => 'checkout_process',
+  'amount' => '62.5',
+  'checkcode' => '06b23d3bb210807aca89c7c04c8a73eb',
+  'siteno' => '193736180',
+  'sn' => '245150418010',
+  'status' => 'declined',
+  'transactionno' => '15180419016643964X',
+  'local_sign' => '06b23d3bb210807aca89c7c04c8a73eb',
+)
+09:23:46 S2S array (
+  '_sn' => '245150418033',
+  '_checkcode' => 'b2f274590362ec68dc8788995302907b',
+  '_currency' => 'USD',
+  '_amount' => '151',
+  '_status' => 'declined',
+  '_transactionno' => '15180419016701373J',
+  'local_sign' => 'b2f274590362ec68dc8788995302907b',
+)
+09:23:49 S2B array (
+  'main_page' => 'checkout_process',
+  'amount' => '151',
+  'checkcode' => 'b2f274590362ec68dc8788995302907b',
+  'siteno' => '193736180',
+  'sn' => '245150418033',
+  'status' => 'declined',
+  'transactionno' => '15180419016701373J',
+  'local_sign' => 'b2f274590362ec68dc8788995302907b',
+)
+21:07:15 S2S array (
+  '_sn' => '245150418051',
+  '_checkcode' => '9cb85ef567e028cb7c74ae45f79b5da4',
+  '_currency' => 'USD',
+  '_amount' => '62.5',
+  '_status' => 'declined',
+  '_transactionno' => '15180419016766125H',
+  'local_sign' => '9cb85ef567e028cb7c74ae45f79b5da4',
+)
+21:07:18 S2B array (
+  'main_page' => 'checkout_process',
+  'amount' => '62.5',
+  'checkcode' => '9cb85ef567e028cb7c74ae45f79b5da4',
+  'siteno' => '193736180',
+  'sn' => '245150418051',
+  'status' => 'declined',
+  'transactionno' => '15180419016766125H',
+  'local_sign' => '9cb85ef567e028cb7c74ae45f79b5da4',
+)
+21:07:32 S2S array (
+  '_sn' => '245150418050',
+  '_checkcode' => 'ae0da121142c8d474e3188c68478f53c',
+  '_currency' => 'USD',
+  '_amount' => '105',
+  '_status' => 'declined',
+  '_transactionno' => '15180419016765347M',
+  'local_sign' => 'ae0da121142c8d474e3188c68478f53c',
+)
+21:07:35 S2B array (
+  'main_page' => 'checkout_process',
+  'amount' => '105',
+  'checkcode' => 'ae0da121142c8d474e3188c68478f53c',
+  'siteno' => '193736180',
+  'sn' => '245150418050',
+  'status' => 'declined',
+  'transactionno' => '15180419016765347M',
+  'local_sign' => 'ae0da121142c8d474e3188c68478f53c',
+)
+21:11:50 S2S array (
+  '_sn' => '245150418055',
+  '_checkcode' => 'c1506c8927c2acf819a43182ded09a17',
+  '_currency' => 'USD',
+  '_amount' => '105',
+  '_status' => 'declined',
+  '_transactionno' => '15180419016766779J',
+  'local_sign' => 'c1506c8927c2acf819a43182ded09a17',
+)
+21:11:53 S2B array (
+  'main_page' => 'checkout_process',
+  'amount' => '105',
+  'checkcode' => 'c1506c8927c2acf819a43182ded09a17',
+  'siteno' => '193736180',
+  'sn' => '245150418055',
+  'status' => 'declined',
+  'transactionno' => '15180419016766779J',
+  'local_sign' => 'c1506c8927c2acf819a43182ded09a17',
+)

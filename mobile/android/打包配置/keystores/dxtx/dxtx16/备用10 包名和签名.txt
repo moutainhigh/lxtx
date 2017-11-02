@@ -1,0 +1,6 @@
+包名 com.kshejhospa.sjoej 
+md5:d5d5afa87413b3c0704ea94ff797f804
+
+
+别名：1
+秘钥：123456

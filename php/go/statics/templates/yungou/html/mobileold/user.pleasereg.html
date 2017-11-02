@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title>获得的商品 - {wc:$webname}触屏版</title>
+
+	<script src="{G_TEMPLATES_JS}/mobile/jquery190.js" language="javascript" type="text/javascript"></script>
+	<script id="pageJS" data="{G_TEMPLATES_JS}/mobile/OrderList.js" language="javascript" type="text/javascript"></script>
+	<script type="text/javascript" src="{G_TEMPLATES_STYLE}/js/ZeroClipboard.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        .PLbg{
+            width: 100%;
+            position:fixed;
+        }
+        .PLbg img{
+            width: 100%;
+            height: 100%;
+        }
+        .PLcontent{
+            position:absolute;
+            width:100%;
+            font-size: 1em;
+            color: #fff;
+            font-family: 微软雅黑;
+        }
+        .PLup{
+            position:relative;
+            width: 100%;
+            height: 90%;
+        }
+        .PLcontent img{
+            width: 100%;
+            height: 45px;
+            position: fixed;
+            display: block;
+            margin: 0 auto;
+			//margin-left:30px;
+        }
+    </style>
+
+</head>
+<body>
+<!--<div style="padding-left:10px; padding-right:10px; padding-top:10px; background-color:#ffd488; height:70px; color:#494949; font-size:17px;font-weight:bold">　　您邀请的每一位好友成功参与云购，即可获得50代金卷(代金卷能当钱花哦！)</div>-->
+<!--<div style="padding-left:10px; padding-right:10px; padding-top:10px; background-color:#feefc0; height:70px; color:#494949; font-size:18px;font-weight:bold">　　您邀请的所有好友，成功参与云购后，您都可以获得6%的消费提成，并且永久有效。</div>-->
+<div class="PLbg">
+    <img src="{G_TEMPLATES_STYLE}/images/mobile/PLbg.gif" alt=""/>
+</div>
+<div class="PLcontent">
+    <div class="PLup"></div>
+    <img src="{G_TEMPLATES_STYLE}/images/mobile/PLbtn.png" alt="" / >
+	<input id="txtInfo"  style="width:500px;height:20px; " disabled="disabled" value="{WEB_PATH}/mobile/user/registers/{wc:$uid}" onpaste="return false" type="hidden">
+	 <div class="d_clip_copy"></div>
+		<div id="d_clip_container" style="position:relative;">									
+		<div id="d_clip_button" class="bluebut" style="text-align:center;margin-top:0px"  ></div>
+</div>
+
+
+</body>
+</html>
+<script>
+ //var clip = null;	
+//function copy(id){ return document.getElementById(id); }	
+//function initx(){
+//	clip = new ZeroClipboard.Client();
+//	clip.setHandCursor(true);
+//	ZeroClipboard.setMoviePath("{G_TEMPLATES_STYLE}/js/ZeroClipboard.swf");
+//	clip.addEventListener('mouseOver',function (client){
+//		clip.setText(copy('txtInfo').value );
+//	});		
+//	clip.addEventListener('complete',function(client,text){
+//		alert(copy('txtInfo').value);
+//	});		
+//	clip.glue('d_clip_button','d_clip_container');
+//}
+//$(function(){
+//	initx();
+//})
+
+$('.bluebut').bind('click',function(){
+	alert($('#txtInfo').attr('value'));
+})
+</script>

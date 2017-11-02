@@ -1,0 +1,6 @@
+包名 com.oahufdeui.jdeipi 
+md5:6a23fa6e9d92f587aec42a51e52ca960
+
+
+别名：1
+秘钥：123456

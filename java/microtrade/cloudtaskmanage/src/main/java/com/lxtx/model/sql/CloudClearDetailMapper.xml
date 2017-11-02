@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.lxtx.dao.CloudClearDetailMapper" >
+  <resultMap id="BaseResultMap" type="com.lxtx.model.CloudClearDetail" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="clear_count" property="clearCount" jdbcType="INTEGER" />
+    <result column="profit_count" property="profitCount" jdbcType="INTEGER" />
+    <result column="profit_amount" property="profitAmount" jdbcType="DECIMAL" />
+    <result column="loss_count" property="lossCount" jdbcType="INTEGER" />
+    <result column="loss_amount" property="lossAmount" jdbcType="DECIMAL" />
+    <result column="sys_amount" property="sysAmount" jdbcType="DECIMAL" />
+    <result column="cleart_tm" property="cleartTm" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, clear_count, profit_count, profit_amount, loss_count, loss_amount, sys_amount, 
+    cleart_tm
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from cloud_clear_detail
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from cloud_clear_detail
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.lxtx.model.CloudClearDetail" useGeneratedKeys="true" keyProperty="id" >
+    insert into cloud_clear_detail (clear_count, profit_count, profit_amount, 
+      loss_count, loss_amount, sys_amount, 
+      cleart_tm)
+    values (#{clearCount,jdbcType=INTEGER}, #{profitCount,jdbcType=INTEGER}, #{profitAmount,jdbcType=DECIMAL}, 
+      #{lossCount,jdbcType=INTEGER}, #{lossAmount,jdbcType=DECIMAL}, #{sysAmount,jdbcType=DECIMAL}, 
+      #{cleartTm,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lxtx.model.CloudClearDetail" useGeneratedKeys="true" keyProperty="id" >
+    insert into cloud_clear_detail
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      clear_count,
+      profit_count,
+      profit_amount,
+      loss_count,
+      loss_amount,
+      sys_amount,
+      cleart_tm,
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      #{clearCount,jdbcType=INTEGER},
+      #{profitCount,jdbcType=INTEGER},
+      #{profitAmount,jdbcType=DECIMAL},
+      #{lossCount,jdbcType=INTEGER},
+      #{lossAmount,jdbcType=DECIMAL},
+      #{sysAmount,jdbcType=DECIMAL},
+      #{cleartTm,jdbcType=TIMESTAMP},
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lxtx.model.CloudClearDetail" >
+    update cloud_clear_detail
+    <set >
+      <if test="clearCount != null" >
+        clear_count = #{clearCount,jdbcType=INTEGER},
+      </if>
+      <if test="profitCount != null" >
+        profit_count = #{profitCount,jdbcType=INTEGER},
+      </if>
+      <if test="profitAmount != null" >
+        profit_amount = #{profitAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="lossCount != null" >
+        loss_count = #{lossCount,jdbcType=INTEGER},
+      </if>
+      <if test="lossAmount != null" >
+        loss_amount = #{lossAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="sysAmount != null" >
+        sys_amount = #{sysAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="cleartTm != null" >
+        cleart_tm = #{cleartTm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lxtx.model.CloudClearDetail" >
+    update cloud_clear_detail
+    set clear_count = #{clearCount,jdbcType=INTEGER},
+      profit_count = #{profitCount,jdbcType=INTEGER},
+      profit_amount = #{profitAmount,jdbcType=DECIMAL},
+      loss_count = #{lossCount,jdbcType=INTEGER},
+      loss_amount = #{lossAmount,jdbcType=DECIMAL},
+      sys_amount = #{sysAmount,jdbcType=DECIMAL},
+      cleart_tm = #{cleartTm,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

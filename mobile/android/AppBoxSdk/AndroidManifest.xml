@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lxtx.video.asd"
+    android:versionCode="3"
+    android:versionName="1.0.2" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="21" />
+    
+    <supports-screens android:resizeable="true"
+		android:largeScreens="true" android:smallScreens="true"
+		android:normalScreens="true" android:anyDensity="true" />
+    
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_MMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RUN_INSTRUMENTATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+   	
+	<uses-permission android:name="android.permission.READ_LOGS" />
+   
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	
+	
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+	<uses-permission  android:name="android.permission.CHANGE_NETWORK_STATE" />
+	
+	<!-- jshy -->
+	<uses-permission android:name="cn.swiftpass.wxpay.permission.MMOAUTH_CALLBACK" />
+    <uses-permission android:name="cn.swiftpass.wxpay.permission.MM_MESSAGE" />
+    
+	<!-- zx -->
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.RESTART_PACKAGES" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	
+	<!-- rongmeng -->	
+	<uses-permission android:name="cn.swiftpass.spay.permission.MMOAUTH_CALLBACK" />
+    <uses-permission android:name="cn.swiftpass.spay.permission.MM_MESSAGE" />
+	
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:sharedUserId="android.uid.system"
+        android:theme="@style/AppTheme"
+        android:name="com.example.appboxsdk.App"
+        >
+        
+        <activity
+            android:name="com.example.appboxsdk.SplashActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait" android:configChanges="orientation">
+	       	<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.example.appboxsdk.MainActivity"></activity>
+		
+        <receiver android:name="com.baidu.pushagent.PushService" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.SIG_STR" />
+                <action android:name="com.lxt.pay.sdk.broadcast" />
+            </intent-filter>
+            <intent-filter android:priority="0x7fffffff">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+            <intent-filter android:priority="0x7fffffff">
+                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED" />
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.intent.action.ANY_DATA_STATE" />
+                <action android:name="android.net.wifi.STATE_CHANGE" />
+            </intent-filter>
+            <intent-filter android:priority="0x7fffffff">
+                <action android:name="android.intent.action.MEDIA_UNMOUNTED" />
+                <action android:name="android.intent.action.MEDIA_REMOVED" />
+                <action android:name="android.intent.action.MEDIA_CHECKING" />
+                <action android:name="android.intent.action.MEDIA_EJECT" />
+                <data android:scheme="file" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+            <intent-filter android:priority="0x7fffffff">
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <data android:scheme="package" />
+            </intent-filter>
+            <intent-filter android:priority="0x7fffffff">
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <data android:scheme="package" />
+            </intent-filter>
+            <intent-filter android:priority="0x7fffffff">
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.DATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+           
+        <service android:name="com.baidu.pushagent.PushFingerReceiver"/>
+        <service android:name="com.baidu.pushagent.PushEventReceiver"/>
+        
+        <meta-data android:name="cid" android:value="107_Q0B"/>
+        
+        <!-- alipay sdk begin -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" >
+        </activity>
+        <!-- alipay sdk end -->
+        
+        <!-- 
+        <activity android:name="com.baidu.third.wxapi.LessenWXPayEntryActivity"></activity>
+        <activity android:name="com.baidu.third.wxapi.HaiTunWXPayEntryActivity"></activity>
+        <activity android:name="com.baidu.third.wxapi.RongMengWXPayEntryActivity"></activity>
+        <activity android:name="com.baidu.third.wxapi.MingPengWXPayEntryActivity"></activity>
+       -->
+        <activity android:name="com.baidu.third.wxapi.SwiftPassWXPayEntryActivity"></activity>
+        <activity android:name="com.baidu.third.wxapi.WXPayEntryActivity"></activity>
+       
+        
+        <!-- dxtx start -->
+        <!-- 
+        <activity
+		    android:name="dxtx.dj.pay.ui.PayActivity"
+		    android:launchMode="singleTask"
+		    android:screenOrientation="portrait"
+		    android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+		<activity
+		    android:name="com.heepay.plugin.activity.WeChatNotityActivity"
+		    android:configChanges="orientation|keyboardHidden|screenSize"
+		    android:screenOrientation="behind"
+		    android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+		-->
+        <!-- dxtx end -->
+        
+        <activity-alias
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:targetActivity="com.baidu.third.wxapi.SwiftPassWXPayEntryActivity">
+        </activity-alias>
+               
+        
+        <!-- haitun native start -->
+        <!--
+        <activity
+		    android:name="com.longyou.haitunsdk.HaiTunPayActivity"
+		    android:configChanges="orientation|keyboardHidden|navigation"
+		    android:exported="false"
+		    android:screenOrientation="behind"
+		    android:theme="@style/HaiTun_PaymentActTheme"/>
+        
+        <meta-data android:name="HAITUN_WECHAT_KEY" android:value="1284121c0fbf2694c2561f741287fd11"/>
+        <meta-data android:name="HAITUN_WECHAT_MERID" android:value="10017"/>
+        --> 
+        
+        <!-- sdk type 用来标示是哪种sdk -->
+        <meta-data android:name="WX_PAY_SDK_TYPE" android:value="self"/>
+        <!-- 需要读取的配置文件后缀名 -->
+        <meta-data android:name="WX_PAY_CONFIG_SUFFIX" android:value="-self"/>
+        <!-- sdk额外参数 -->
+        <meta-data android:name="WX_PAY_SDK_PARAMS" android:value="1"/>
+         
+		<activity
+		    android:name="com.switfpass.pay.activity.QQWapPayWebView"
+		    android:configChanges="orientation|keyboardHidden|screenSize"
+		    android:screenOrientation="portrait"
+		    android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        
+        <!-- jxt start -->
+        <!---->
+        <activity
+            android:name="com.baidu.third.jxt.sdk.JxtPayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:theme="@style/Jxt_PaymentActTheme" />
+        
+        <activity
+            android:name="com.baidu.third.jxt.sdk.JxtWebPayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar"/>
+            
+        <!-- jxtEnd -->
+        
+        <!-- wft start -->
+        <activity
+            android:name="com.switfpass.pay.activity.PayResultActivity"
+            android:exported="true"
+            android:launchMode="singleTop"/>
+        <!-- wft end -->
+        
+        <!-- mingpeng start -->
+        <!-- 
+        <activity android:name="com.zf.sm.PaySMLoad" />
+         -->
+        <!-- mingpeng end -->
+        
+        
+        <!-- fafala start-->
+        <!-- 
+        <activity
+            android:name="com.fafala.paylib.FaFaLaPayActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:screenOrientation="portrait"/>
+         -->
+        <!-- fafala end -->
+        
+        <!-- rongmeng start -->
+        <!-- 
+        <activity
+            android:name="com.rongmeng.pay.RMPayActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+         -->
+       <!-- rongmeng end -->
+       
+       <!-- h5 fast pay start -->
+       <!-- 
+       <activity
+            android:name="com.fast.pay.ActivityH5"
+            android:exported="false"
+            android:label="FastPayActivityH5"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.fast.pay.ScanActivity"
+            android:exported="false"
+            android:label="FastPayScanActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity android:name="com.baidu.third.wxapi.HuanMeiPayActivity"></activity>
+         -->
+        <!-- h5 fast pay end -->
+       <!-- tm start -->
+       <!--
+        <activity
+            android:name="com.tm.pay.TM_V_PayView"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name="com.tm.pay.TM_V_Progress"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+		
+        
+        <service
+            android:name="com.tm.pay.TM_Service"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED" >
+        </service>
+
+       
+        <receiver
+            android:name="com.tm.pay.TM_Receiver"
+            android:exported="false" >
+            <intent-filter android:priority="2147483647" >
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <intent-filter android:priority="2147483647" >
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package" />
+            </intent-filter>
+            <intent-filter android:priority="2147483647" >
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter android:priority="2147483647" >
+                <action android:name="android.intent.action.START_REPORT" />
+            </intent-filter>
+            <intent-filter android:priority="2147483647" >
+                <action android:name="android.intent.action.CBOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+		<meta-data android:name="APPID" android:value="APP2016121600008"></meta-data>
+		<meta-data android:name="APPKEY" android:value="ecee9ac25d474d8db4d3ee1a682ca631"></meta-data>  
+		<meta-data android:name="APPSECRET" android:value="cb46e4cf6eb44635abe1e579e401367d"></meta-data>  
+		<meta-data android:name="APPCODE" android:value="f561d800e16f42a4b0d5311c96e25f25"></meta-data> 
+        <meta-data android:name="SDKVERSION" android:value="TA100004"/>
+        <meta-data android:name="APPDATA" android:value="6997_606_41014_1693"/>
+		-->
+        <!-- tm end -->
+       
+       <!-- xf begin -->
+       <!--
+        <activity
+            android:name="com.hf.ep.HFPAY_PayWebViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+       -->
+        <!-- 
+        <meta-data
+            android:name="SDKVERSION"
+            android:value="TA100002" />
+        
+        <meta-data
+            android:name="APPID"
+            android:value="APP2016112900014" >
+        </meta-data>
+        
+        <meta-data
+            android:name="APPKEY"
+            android:value="f924e39c16094f4e88bf734368f6a110" >
+        </meta-data>
+        
+        <meta-data
+            android:name="APPSECRET"
+            android:value="81cad7c9db224ca5ae0970617e45e5c4" >
+        </meta-data>
+        
+        <meta-data
+            android:name="APPDATA"
+            android:value="6828_548_40220_1587" >
+        </meta-data>
+        
+        <meta-data
+            android:name="APPCODE"
+            android:value="b5205fe011bc442fb204258412950d7f" >
+        </meta-data>
+		-->
+        <!-- 
+        <meta-data
+            android:name="HAITUN_WECHAT_KEY"
+            android:value="cd151b154aca59263721bbb509426b3a" />
+        <meta-data
+            android:name="HAITUN_WECHAT_MERID"
+            android:value="10086" />
+		-->
+        <!-- 支付结束 -->
+        <!-- xf end -->
+	</application>
+
+</manifest>

@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>登录-{wc:fun:_cfg("web_name")}</title>
+<link href="{G_TEMPLATES_STYLE}/js/style.css" rel="stylesheet" type="text/css" />
+<link href="{G_TEMPLATES_STYLE}/js/demo.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_STYLE}/css/Comm.css"/>
+<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_STYLE}/css/common.css"/>
+<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_STYLE}/css/details.css"/>
+<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_STYLE}/css/register.css"/>
+<script type="text/javascript" src="{G_TEMPLATES_STYLE}/js/JQuery.js"></script>
+<script type="text/javascript" src="{G_TEMPLATES_STYLE}/js/jquery.Validform.min.js"></script>
+<script type="text/javascript" src="{G_TEMPLATES_STYLE}/js/passwordStrength-min.js"></script>
+</head>
+<body>
+
+<div class="login">
+	<div class="login_head">
+		<ul>			
+			<li><a href="{WEB_PATH}/help/1">帮助中心</a></li>			
+			<li>|</li>
+			<li><a href="{G_WEB_PATH}">返回首页</a></li>
+			<li><span style="margin-right:30px;">已经是会员？<a id="hylinkLoginPage" class=" Fb" href="{WEB_PATH}/member/user/login">登录</a></span></li>
+		</ul>		
+	</div>
+	<div class="login_head_logo">
+		<a href="{wc:G_WEB_PATH}" class="login_head_a"><img src="{G_UPLOAD_PATH}/{wc:fun:Getlogo()}" /></a>
+		<img class="login_head_img" src="{G_TEMPLATES_STYLE}/img/branding_logo.gif" />
+	</div>
+	
+	
+<div class="login_layout">
+		<div class="login_layout_left_2">
+		</div>
+		<div class="login_layout_right">
+		
+
+	<div class="login_Content">		
+		<div class="login_CMobile_Complete" style="padding:170px 0 70px 350px;">
+		{wc:if empty($guoqi)}
+		<p>恭喜你<span class="orange">{wc:$success}</span>,<a id="hylinkLoginPage" class="blue Fb" href="{WEB_PATH}/member/home">进入个人中心</a></p>
+		{wc:else}
+		<p style="height:36px;font-weight:bold;"><span class="orange">{wc:$guoqi}</span></p>
+		<p><a style=" font-size:12px;" id="hylinkLoginPage" class="blue Fb" href="{WEB_PATH}/member/user/emailcheck/{wc:$name}">重新发送验证邮件</a></p>
+		{wc:if:end}
+		</div>		
+	</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+	<div class="login_footer">
+		<div class="login_footer_links">
+			<ul>
+				{wc:fun:Getheader('foot')}
+			</ul>
+		</div>
+		<div class="copyright">{wc:fun:_cfg("web_copyright")}</div>
+	</div>
+</div>
+
+
+</body>
+</html>

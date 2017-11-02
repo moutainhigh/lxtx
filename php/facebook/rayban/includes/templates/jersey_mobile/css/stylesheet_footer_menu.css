@@ -1,0 +1,136 @@
+#bottom .mainWrapper {
+	width: 938px;
+}
+#footer {
+	clear:both;
+	margin: 0;
+}
+.bottom-columns {
+	font-size: 11px;
+	margin: 8px 0;
+	clear:both;
+	width:100%;
+	border: 1px solid #F1F1F1;
+	background: #F7F7F7;
+	padding: 12px 0;
+	line-height: 14px;
+}
+.bottom-columns td {
+	padding: 0 12px;
+ *padding: 12px 12px 0;
+	vertical-align: top;
+	color: #626262;
+ *display: inline-block;
+}
+.bottom-columns tr + tr td {
+ *padding-top: 0px;
+ *padding-bottom: 12px;
+}
+.bottom-columns .menuTitle img {
+	margin: 4px 0 0px;
+}
+.bottom-columns .column {
+	width: 25%; /*Column width of the menu - currently set for 4 columns*/
+}
+.menuTitle {
+	margin: 0;
+	padding-bottom: 5px !important;
+	text-align: left;
+	font: bold 11px arial;
+	color: #626262;
+}
+.first, .second, .third, .fourth {
+}
+#siteinfoLegal, #siteinfoIP {
+  color: #999999;
+  font-size: 5px !important;
+  font-weight: bold !important;
+  line-height: normal;
+  margin: 0 auto;
+  padding: 0 0 8px;
+  text-align: center;
+}
+#siteinfoLegal a {
+  border: none;
+  color: #999999;
+  font-size: 10px;
+}
+.bottom-wrapper, .bottom-wrapper a, .bottom-wrapper a:link, .bottom-wrapper a:visited {
+	text-decoration: none;
+}
+.bottom-wrapper a:hover {
+	color: #6f6f6f;
+	text-decoration: none;
+}
+#navSuppWrapper .float-left {
+	color: #fff;
+	display: block;
+	float: none;
+	padding-top: 5px;
+}
+.legalCopyright {
+	line-height: 16px !important;
+	font: 0.93em arial !important;
+	padding: 6px 0 !important;
+}
+#footer ul {
+	margin:0;
+	padding:0;
+	list-style: none;
+}
+#footer ul li {
+	background: url("../images/dots.gif") no-repeat scroll left center transparent;
+	padding: 2px 0 3px 8px;
+}
+#footer li a {
+	font-size: 11px;
+	font-weight: normal;
+	margin: 0;
+	padding-left: 1px;
+	color: #25449E;
+	line-height: 14px;
+}
+#footer li a:hover {
+}
+.footer-links {
+	padding: 5px;
+}
+.footer-links li {
+	font: normal 11px arial;
+	display: inline;
+	margin: 0 6px;
+	line-height: 20px;
+}
+.footer-links a {
+	color: #999 !important;
+}
+.b-icons img {
+	padding: 0 0 0 5px;
+}
+
+
+/*footer mcafee*/
+.security {
+  background-image: url("../images/secureFooter_c.png");
+  background-repeat: no-repeat;
+  /*display: inline-block;*/
+  height: 40px;
+  /*margin-left: 25px;*/
+  margin:0 auto;
+  padding: 10px 10px 10px 12px;
+  width: 185px;
+  box-sizing: content-box;
+}
+.security div {
+  float: left;
+  padding: 10px 0 0 5px;
+  width: 40%;
+}
+.security img {
+  border: medium none;
+  width: 100%;
+}
+.mcafeeContainer > a,.bbbContainer a {
+  border: medium none;
+}
+

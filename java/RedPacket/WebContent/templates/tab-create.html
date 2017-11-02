@@ -1,0 +1,28 @@
+<ion-view view-title="成为代理">
+    <ion-header-bar align-title="center" class="bar-positive bar-header-black">
+        <h1 class="title">成为代理</h1>
+        <div class="buttons"><!--
+            <a class="button button-icon icon ion-ios-telephone-outline" href="http://www.baidu.com"></a>-->
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div class="padding" style="background-color: #F1E9CF;color:#8E7525;margin: 1px;">
+            想要一个自己的房间吗?请留下联系方式,我们会联系您商讨合作.
+        </div>
+        <div class="list list-inset">
+            <label class="item item-input">
+                <span class="input-label">姓名</span>
+                <input type="text" placeholder="填写姓名" ng-model="data.name">
+            </label>
+            <br>
+            <label class="item item-input">
+                <span class="input-label">手机号码</span>
+                <input type="text" placeholder="填写手机号码" ng-model="data.mobile">
+            </label>
+            <br>
+            <button class="button button-block button-positive button-green" ng-click="applyRoom()">
+                提交申请
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

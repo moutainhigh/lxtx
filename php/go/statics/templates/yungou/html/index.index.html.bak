@@ -1,0 +1,465 @@
+
+
+{wc:templates "index","header"}
+<!--herd end-->
+<!--BANNER-->
+<div class="index_banner" id="slider">
+	{wc:getlist sql="select * from `@#_slide` where 1" return="slides"}
+	{wc:loop $slides $slide}
+		<a href="{wc:$slide['link']}" target="_blank"><img src="{G_UPLOAD_PATH}/{wc:$slide['img']}" alt="" title="" /></a>
+	 {wc:loop:end}
+  {wc:getlist:end} 
+</div>
+<!--BANNER END-->
+<!--body-->
+<div class="index_body">
+	<div class="index_body_zxjx">
+		<div class="index_body_ksyg"><a href="{WEB_PATH}/single/newbie"><img src="{G_TEMPLATES_STYLE}/images/index_body_ksyg.jpg" /></a></div>
+		<div class="index_body_zxjx_cont">
+			<div class="hd">
+				<a class="next"></a>
+				<a class="prev"></a>
+			</div>
+
+			<div class="bd">
+				<ul>
+					 {wc:loop $shopqishu $sq}
+					{wc:php:start}
+					    
+						$user_goods_num = get_user_goods_num($sq['q_uid'],$sq['id']);
+						$huibaolv= round($sq['zongrenshu']/$user_goods_num);
+					{wc:php:end}
+					<li>
+						<i class="index_body_zxjx_ioc"></i>
+						<div class="index_body_focus">
+							<div class="index_body_jx_img"><a href="{WEB_PATH}/dataserver/{wc:$sq['id']}" title="{wc:$sq['title']}" target="_blank"><img src="{G_UPLOAD_PATH}/{wc:$sq['thumb']}" /></a></div>
+							<div class="index_body_jx_cont">
+								<p class="index_body_jx_title"><a href="{WEB_PATH}/dataserver/{wc:$sq['id']}" title="{wc:$sq['title']}" target="_blank">(第{wc:$sq['qishu1']}期) {wc:$sq['title']}</a></p>
+								<span>总需：{wc:$sq['zongrenshu']}人次</span>
+								<p>获奖者：<a href="{WEB_PATH}/uname/{wc:fun:idjia($sq['q_uid'])}" title="{wc:fun:get_user_name($sq['q_user'])}(ID:{wc:$sq['q_uid']})"><b>{wc:if $sq['q_user']['username']!=null}
+						{wc:$sq['q_user']['username']}
+					{wc:elseif $sq['q_user']['mobile']!=null}
+						{wc:$sq['q_user1']}
+					{wc:else}
+						{wc:$sq['q_user2']}
+					{wc:if:end}</b></a></p>
+								<p>本期参与：{wc:$user_goods_num}人次</p>
+								<p>幸运号码：{wc:$sq['q_user_code']}</p>
+								<p>回报率：<b>{wc:$huibaolv}</b>倍</p>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</li>
+					{wc:loop:end}
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="index_body_tjsp">
+		<div class="index_body_title"><img src="{G_TEMPLATES_STYLE}/images/index_body_zxjx_title.png" /></div>
+		<div class="clear"></div>
+		<div class="index_body_tjsp_cont">
+			<div class="hd">
+				<a class="next"></a>
+				<a class="prev"></a>
+			</div>
+			<div class="bd">
+			<ul class="w-goodsList-djs">
+				{wc:loop $shopqishu $djs}
+
+				<li class="w-goodsList-item">
+					<div class="index_body_tjsp_img"><a  href="{WEB_PATH}/dataserver/{wc:$djs['id']}" title="{wc:$djs['title']}" target="_blank"><img alt="{wc:$djs['title']}" src="{G_UPLOAD_PATH}/{wc:$djs['thumb']}" /></a></div>
+					<p><a title="{wc:$djs['title']}" href="{WEB_PATH}/dataserver/{wc:$djs['id']}" target="_blank">(第{wc:$djs['qishu']}期) {wc:$djs['title']}</a></p>
+					{wc:if $djs['q_uid']}
+					<div class="countdown_end">
+						<p class="countdown_end_p">恭喜<a href="{WEB_PATH}/uname/{wc:fun:idjia($djs['q_uid'])}" title="{wc:fun:get_user_name($djs['q_user'])}(ID:{wc:$djs['q_uid']})">{wc:fun:get_user_name($djs['q_user'])}</a>获得</p>
+					</div>
+					{wc:else}
+					<div class="countdown_nums">
+						<p class="countdown_nums_p"><b class="count-m0">0</b><b class="count-m1">0</b>:<b class="count-s0">0</b><b class="count-s1">0</b>:<b class="count-ms0">0</b><b class="count-ms1">0</b></p>
+					</div>
+					{wc:if:end}
+				</li>
+				{wc:loop:end}
+				
+			</ul>
+<script type="text/javascript">	 
+function show_date_time_location(){
+	//	$("#divLotteryTimer").hide();
+	//	$("#divLotteryTiming").show();	
+		var djs='{wc:$djs_id}';
+		$.post("{WEB_PATH}/api/getshop/lottery_shop_set/",{"lottery_sub":"true","gid":djs,"times":Math.random()},function(data){
+			if(data>0)
+			{
+				if(djs)
+				{
+					$.post("{WEB_PATH}/go/index/jxdjs/",{"times":Math.random()},function(sdata){	
+						if(sdata){$(".w-goodsList-djs").html(sdata);}
+					});
+				}
+			}
+			else
+			{
+				window.setTimeout("show_date_time_location()",1000);
+			}
+		});
+	//	window.setInterval(get_cp, 1000); 
+		
+}
+function show_date_time(endTime,obj){	
+	if(!this.endTime){this.endTime=endTime;this.obj=obj;}	
+	rTimeout = window.setTimeout("show_date_time()",30);	
+	timeold = this.endTime-(new Date().getTime());
+	
+	if(timeold <= 0){	
+	
+		$(".countdown_nums").html("<p class='countdown_nums_js'>正在计算，请稍候...</p>");
+		
+		rTimeout && clearTimeout(rTimeout);	
+		show_date_time_location();	
+		return;
+	}
+	
+	sectimeold=timeold/1000
+	secondsold=Math.floor(sectimeold); 
+	msPerDay=24*60*60*1000
+	e_daysold=timeold/msPerDay 	
+	daysold=Math.floor(e_daysold); 				//天	
+	e_hrsold=(e_daysold-daysold)*24; 
+	hrsold=Math.floor(e_hrsold); 				//时
+	e_minsold=(e_hrsold-hrsold)*60;
+	hrsold = (hrsold<10?'0'+hrsold:hrsold)
+	hrsold = new String(hrsold);
+	hrsold_1 = hrsold.substr(0,1);
+	hrsold_2 = hrsold.substr(1,1);
+	//分
+	minsold=Math.floor((e_hrsold-hrsold)*60);
+	minsold = (minsold<10?'0'+minsold:minsold)
+	minsold = new String(minsold);
+	minsold_1 = minsold.substr(0,1);
+	minsold_2 = minsold.substr(1,1);	
+
+	//秒
+	e_seconds = (e_minsold-minsold)*60;	
+	seconds=Math.floor((e_minsold-minsold)*60);
+	seconds = (seconds<10?'0'+seconds:seconds)
+	seconds = new String(seconds);
+	seconds_1 = seconds.substr(0,1);
+	seconds_2 = seconds.substr(1,1);	
+	//毫秒	
+	ms = e_seconds-seconds;
+	ms = new String(ms)
+	ms_1 = ms.substr(2,1);
+	ms_2 = ms.substr(3,1);
+	if(hrsold>0)
+	{
+		$(".count-m0").html(hrsold_1);
+		$(".count-m1").html(hrsold_2);
+		$(".count-s0").html(minsold_1);
+		$(".count-s1").html(minsold_2);
+		$(".count-ms0").html(seconds_1);
+		$(".count-ms1").html(seconds_2);
+	}
+	else
+	{
+		$(".count-m0").html(minsold_1);
+		$(".count-m1").html(minsold_2);
+		$(".count-s0").html(seconds_1);
+		$(".count-s1").html(seconds_2);
+		$(".count-ms0").html(ms_1);
+		$(".count-ms1").html(ms_2);		
+	}
+	//this.obj.innerHTML=daysold+"天"+(hrsold<10?'0'+hrsold:hrsold)+"小时"+(minsold<10?'0'+minsold:minsold)+"分"+(seconds<10?'0'+seconds:seconds)+"秒."+ms;
+}
+
+$(function(){
+	$.ajaxSetup({async:false});
+	$.post("{WEB_PATH}/api/getshop/lottery_shop_get",{"lottery_shop_get":true,"gid":{wc:$djs_id},"times":Math.random()},function(sdata){	
+		if(sdata!='no'){show_date_time((new Date().getTime())+(parseInt(sdata))*1000,null);}
+	});
+});
+</script>  
+
+			</div>
+		</div>
+	</div>
+
+	<div class="index_body_xptj">
+		{wc:fun:Getindexcat('indexmid')}
+		
+		<div class="clear"></div>
+	</div>
+	<div class="index_body_gg">{wc:fun:Getindexad('index_ad_1')}</div>
+	<div class="index_body_zrjp">
+		<div class="index_body_zrjp_left">
+			<div class="index_body_hjjl">
+				<div class="index_body_jltop"><img src="{G_TEMPLATES_STYLE}/images/index_body_hjjltop.jpg"></div>
+				<div class="bd">
+					<ul>
+						{wc:loop $zhongjiang $i $qishu}
+						{wc:php:start}
+							$qishu['q_user'] = unserialize($qishu['q_user']);
+							$user_goods_num = get_user_goods_num($qishu['q_uid'],$qishu['id']);
+						{wc:php:end}
+						{wc:if $i%2==0}
+						<li>
+							<div class="index_body_jlimg"><a href="{WEB_PATH}/uname/{wc:fun:idjia($qishu['q_uid'])}"><img src="{G_UPLOAD_PATH}/{wc:$qishu['q_user']['img']}" /></a></div>
+							<div class="index_body_jlcont">
+								<p class="index_body_jlcont_name1"><a href="{WEB_PATH}/uname/{wc:fun:idjia($qishu['q_uid'])}" target="_blank" title="{wc:fun:get_user_name($qishu['q_user'])}(ID:{wc:$qishu['q_uid']})">{wc:fun:get_user_name($qishu['q_user'])}</a>于{wc:fun:date('m月d日',$qishu['q_end_time'])}</p>
+								<p class="index_body_jlcont_cont">{wc:$user_goods_num}人次夺得<a title="{wc:$qishu['title']}" href="{WEB_PATH}/dataserver/{wc:$qishu['id']}" target="_blank">{wc:$qishu['title']}</a></p>
+								<p>总需：{wc:$qishu['zongrenshu']}人次</p>
+							</div>
+						</li>
+						{wc:else}
+						<li>
+							<div class="index_body_jlimg"><a href="{WEB_PATH}/uname/{wc:fun:idjia($qishu['q_uid'])}"><img src="{G_UPLOAD_PATH}/{wc:$qishu['q_user']['img']}" /></a></div>
+							<div class="index_body_jlcont">
+								<p class="index_body_jlcont_name1"><a href="{WEB_PATH}/uname/{wc:fun:idjia($qishu['q_uid'])}" target="_blank" title="{wc:fun:get_user_name($qishu['q_user'])}(ID:{wc:$qishu['q_uid']})">{wc:fun:get_user_name($qishu['q_user'])}</a>于{wc:fun:date('m月d日',$qishu['q_end_time'])}</p>
+								<p class="index_body_jlcont_cont">{wc:$user_goods_num}人次夺得<a title="{wc:$qishu['title']}" href="{WEB_PATH}/dataserver/{wc:$qishu['id']}" target="_blank">{wc:$qishu['title']}</a></p>
+								<p>总需：{wc:$qishu['zongrenshu']}人次</p>
+							</div>
+						</li>
+						{wc:if:end}
+				{wc:loop:end}
+					</ul>
+				</div>
+			</div>
+			<div class="index_body_cyjl">
+				<div class="index_body_jltop"><img src="{G_TEMPLATES_STYLE}/images/index_body_cyjltop.jpg"></div>
+				<div class="bd">
+					<ul>
+						{wc:loop $go_record $gorecord}
+						<li>
+							<div class="index_body_jlimg"><a href="{WEB_PATH}/goods/{wc:$gorecord['shopid']}"><img src="{G_UPLOAD_PATH}/{wc:fun:shopimg($gorecord['shopid'])}" /></a></div>
+							<div class="index_body_jlcont">
+								<p class="index_body_jlcont_name"><a class="w-record-user" title="{wc:fun:get_user_name($gorecord)}(ID:{wc:$gorecord['uid']})" href="{WEB_PATH}/uname/{wc:fun:idjia($gorecord['uid'])}" target="_blank">{wc:fun:get_user_name($gorecord)}</a>参与了</p>
+								<p class="index_body_jlcont_cont">{wc:$gorecord['gonumber']}人次 <a title="{wc:$gorecord['shopname']}" href="{WEB_PATH}/goods/{wc:$gorecord['shopid']}" target="_blank">{wc:$gorecord['shopname']}</a></p>
+								<p></p>
+							</div>
+						</li>
+						{wc:loop:end}
+					</ul>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="index_body_zrjp_right">
+			<div class="index_body_titles"><img src="{G_TEMPLATES_STYLE}/images/index_body_zrjp_title.png" /></div>
+			<div class="clear"></div>
+			<div class="index_body_zrjp_cont">
+				
+				{wc:loop $shoplistrenqi1 $renqi}
+	            		{wc:php:start}
+		            	$rq_width=round($renqi['canyurenshu']/$renqi['zongrenshu']*100);
+		            	{wc:php:end}
+				<div class="index_body_zrjp_item">
+					<i class="index_body_zrjp_ioc"></i>
+					<div class="index_body_zrjp_img"><a  href="{WEB_PATH}/goods/{wc:$renqi['id']}" title="{wc:$renqi['title']}" target="_blank"><img alt="{wc:$renqi['title']}" src="{G_UPLOAD_PATH}/{wc:$renqi['thumb']}" /></a></div>
+					<p class="index_body_zrjp_title"><a  title="{wc:$renqi['title']}" href="{WEB_PATH}/goods/{wc:$renqi['id']}" target="_blank">(第{wc:$renqi['qishu']}期) {wc:$renqi['title']}</a></p>
+					<p class="index_body_zrjp_price">总需：{wc:$renqi['zongrenshu']}人次</p>
+					<div class="progressBar">
+						<p class="progressBar_wrap"><span class="progressBar_bar" style="width:{wc:$rq_width}%;"></span></p>
+						<ul class="progressBar_txt">
+							<li class="progressBar_txt_l">
+								<p><b>{wc:$renqi['canyurenshu']}</b></p>
+								<p>已参与人次</p>
+							</li>
+							<li class="progressBar_txt_r">
+								<p><b>{wc:$renqi['zongrenshu']-$renqi['canyurenshu']}</b></p>
+								<p>剩余人次</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				{wc:loop:end} 
+				<div class="index_body_zrjp_Slider">
+					<div class="bd">
+						<ul>
+							{wc:fun:Getindexad('index_ad_2')}
+							
+						</ul>
+					</div>
+					<div class="hd">
+						<ul><li></li><li></li><li></li></ul>
+					</div>
+				</div>
+				
+				
+				<div class="clear"></div>
+				{wc:loop $shoplistrenqi2 $renqi}
+	            		{wc:php:start}
+		            	$rq_width=round($renqi['canyurenshu']/$renqi['zongrenshu']*100);
+		            	{wc:php:end}
+				<div class="index_body_zrjp_item">
+					<i class="index_body_zrjp_ioc"></i>
+					<div class="index_body_zrjp_img"><a  href="{WEB_PATH}/goods/{wc:$renqi['id']}" title="{wc:$renqi['title']}" target="_blank"><img alt="{wc:$renqi['title']}" src="{G_UPLOAD_PATH}/{wc:$renqi['thumb']}" /></a></div>
+					<p class="index_body_zrjp_title"><a  title="{wc:$renqi['title']}" href="{WEB_PATH}/goods/{wc:$renqi['id']}" target="_blank">(第{wc:$renqi['qishu']}期) {wc:$renqi['title']}</a></p>
+					<p class="index_body_zrjp_price">总需：{wc:$renqi['zongrenshu']}人次</p>
+					<div class="progressBar">
+						<p class="progressBar_wrap"><span class="progressBar_bar" style="width:{wc:$rq_width}%;"></span></p>
+						<ul class="progressBar_txt">
+							<li class="progressBar_txt_l">
+								<p><b>{wc:$renqi['canyurenshu']}</b></p>
+								<p>已参与人次</p>
+							</li>
+							<li class="progressBar_txt_r">
+								<p><b>{wc:$renqi['zongrenshu']-$renqi['canyurenshu']}</b></p>
+								<p>剩余人次</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				{wc:loop:end}
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="index_body_gg">{wc:fun:Getindexad('index_ad_3')}</div>
+	<div class="index_body_sjpb">
+		<div class="index_body_title"><img src="{G_TEMPLATES_STYLE}/images/index_body_sjpb_title.png" /></div>
+		<div class="index_body_sjpb_cont">
+			{wc:loop $shoplistshouji $qita}
+				{wc:php:start}
+				$rq_width=$qita['canyurenshu']/$qita['zongrenshu']*100;
+				{wc:php:end}			
+				<div class="index_qgjp_item">
+				{wc:if $qita['yunjiage']=='10.00'}							
+					<i class="index_body_ten_ioc"></i>
+				{wc:if:end}
+					<div class="index_qgjp_img"><a href="{WEB_PATH}/goods/{wc:$qita['id']}" title="{wc:$qita['title']}" target="_blank"><img alt="{wc:$qita['title']}" src="{G_UPLOAD_PATH}/{wc:$qita['thumb']}"/></a></div>
+					<p class="index_qgjp_title"><a href="{WEB_PATH}/goods/{wc:$qita['id']}" title="{wc:$qita['title']}" target="_blank">(第{wc:$qita['qishu']}期) {wc:$qita['title']}</a></p>
+					<p class="index_qgjp_price">总需：{wc:$qita['zongrenshu']}人次</p>
+					<div class="progressBar">
+						<p class="progressBar_wrap"><span class="progressBar_bar" style="width:{wc:$rq_width}%;"></span></p>
+						<ul class="progressBar_txt">
+							<li class="progressBar_txt_l">
+								<p><b>{wc:$qita['canyurenshu']}</b></p>
+								<p>已参与人次</p>
+							</li>
+							<li class="progressBar_txt_r">
+								<p><b>{wc:$qita['zongrenshu']-$qita['canyurenshu']}</b></p>
+								<p>剩余人次</p>
+							</li>
+						</ul>
+					</div>
+					<div class="index_body_zrjp_Button">
+						<a href="{WEB_PATH}/goods/{wc:$qita['id']}">立即抢购 ></a>
+					</div>
+				</div>
+			{wc:loop:end}
+			
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="index_body_gg">{wc:fun:Getindexad('index_ad_3')}</div>
+	<div class="index_body_qtjp">
+		<div class="index_body_title"><img src="{G_TEMPLATES_STYLE}/images/index_body_qtjp_title.png" /></div>
+		<div class="index_body_qtjp_cont">
+			{wc:loop $shoplistqita $qita}
+				{wc:php:start}
+				$rq_width=$qita['canyurenshu']/$qita['zongrenshu']*100;
+				{wc:php:end}
+				<div class="index_qgjp_item">
+				{wc:if $qita['yunjiage']=='10.00'}							
+					<i class="index_body_ten_ioc"></i>
+				{wc:if:end}
+				<div class="index_qgjp_img"><a href="{WEB_PATH}/goods/{wc:$qita['id']}" title="{wc:$qita['title']}" target="_blank"><img width="200" height="150" alt="{wc:$qita['title']}" src="{G_UPLOAD_PATH}/{wc:$qita['thumb']}" /></a></div>
+				<p class="index_qgjp_title"><a title="{wc:$qita['title']}" href="{WEB_PATH}/goods/{wc:$qita['id']}" target="_blank">(第{wc:$qita['qishu']}期) {wc:$qita['title']}</a></p>
+				<p class="index_qgjp_price">总需：{wc:$qita['zongrenshu']}人次</p>
+				<div class="progressBar">
+					<p class="progressBar_wrap"><span class="progressBar_bar" style="width:{wc:$rq_width}%;"></span></p>
+					<ul class="progressBar_txt">
+						<li class="progressBar_txt_l">
+							<p><b>{wc:$qita['canyurenshu']}</b></p>
+							<p>已参与人次</p>
+						</li>
+						<li class="progressBar_txt_r">
+							<p><b>{wc:$qita['zongrenshu']-$qita['canyurenshu']}</b></p>
+							<p>剩余人次</p>
+						</li>
+					</ul>
+				</div>
+				<div class="index_body_zrjp_Button">
+					<a href="{WEB_PATH}/goods/{wc:$qita['id']}" target="_blank">立即抢购 ></a>
+				</div>
+			</div>
+			{wc:loop:end}
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="index_body_zxsj">
+		<div class="index_body_title"><img src="{G_TEMPLATES_STYLE}/images/index_body_zxsj_title.png" /></div>
+		<div class="index_body_zxsj_cont">
+			<ul>
+				{wc:loop $shoplistnew $new} 
+				<li>
+					<i class="index_body_zxsj_ioc"></i>
+						<div class="index_body_zxsj_conts">
+							<p class="index_body_zxsj_conts_p p1"><a href="{WEB_PATH}/goods/{wc:$new['id']}" title="{wc:$new['title']}" target="_blank">{wc:$new['title']}</a></p>							
+							<div class="index_body_zxsj_conts_img">
+							<a href="{WEB_PATH}/goods/{wc:$new['id']}" title="{wc:$new['title']}" target="_blank"><img alt="{wc:$new['title']}" src="{G_UPLOAD_PATH}/{wc:$new['thumb']}"  /></a>
+							</div>
+						</div>
+					
+				</li>
+				{wc:loop:end} 
+			</ul>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="index_body_sdhp">
+		<div class="index_body_title"><img src="{G_TEMPLATES_STYLE}/images/index_body_sdhp_title.png" /></div>
+		<div class="index_body_sdhp_cont">
+			<ul>
+				{wc:loop $shaidan $sd}
+          		{wc:php:start}
+            	$sd['sd_content']=str_replace('<p>','',$sd['sd_content']);
+            	$sd['sd_content']=str_replace('</p>','',$sd['sd_content']);
+            	{wc:php:end}
+				<li>
+					<div class="index_body_sdhp_img"><a href="{WEB_PATH}/go/shaidan/detail/{wc:$sd['sd_id']}" target="_blank"> <img src="{G_UPLOAD_PATH}/{wc:$sd['sd_thumbs']}" /></a></div>
+					<div class="index_body_sdhp_conts">
+						<b><a title="{wc:fun:get_user_name($sd['sd_userid'])}(ID:{wc:$sd['sd_userid']})" href="{WEB_PATH}/uname/{wc:$sd['sd_userid']}" target="_blank">{wc:fun:get_user_name($sd['sd_userid'])}</a><span>{wc:fun:date("Y-m-d",$sd['sd_time'])}</span></b>
+						<p>{wc:fun:_strcut($sd['sd_content'],100)}</p>
+					</div>
+				</li>
+				{wc:loop:end}
+				
+				{wc:loop $shaidan_two $sd}
+          		{wc:php:start}
+            	$sd['sd_content']=str_replace('<p>','',$sd['sd_content']);
+            	$sd['sd_content']=str_replace('</p>','',$sd['sd_content']);
+            	{wc:php:end}
+				<li>
+					<div class="index_body_sdhp_img"><a href="{WEB_PATH}/go/shaidan/detail/{wc:$sd['sd_id']}" target="_blank"> <img src="{G_UPLOAD_PATH}/{wc:$sd['sd_thumbs']}" /></a></div>
+					<div class="index_body_sdhp_conts">
+						<b><a title="{wc:fun:get_user_name($sd['sd_userid'])}(ID:{wc:$sd['sd_userid']})" href="{WEB_PATH}/uname/{wc:$sd['sd_userid']}" target="_blank">{wc:fun:get_user_name($sd['sd_userid'])}</a><span>{wc:fun:date("Y-m-d",$sd['sd_time'])}</span></b>
+						<p>{wc:fun:_strcut($sd['sd_content'],100)}</p>
+					</div>
+					
+				</li>
+				{wc:loop:end}
+			</ul>
+		</div>
+	<div class="clear"></div>
+	</div>
+</div>
+<!--body end-->
+
+<!--foot-->
+{wc:templates "index","footer"}
+<!--foot end-->
+<script>
+
+$(function(){
+	$(".index_submenu").show();
+	$(".index_menu").css("background-image","url({G_TEMPLATES_STYLE}/images/index_menu.png)")
+	$('#slider').nivoSlider();
+	
+});
+
+</script>
+<!--index_menu-->
+
+<!--index_menu end-->
+

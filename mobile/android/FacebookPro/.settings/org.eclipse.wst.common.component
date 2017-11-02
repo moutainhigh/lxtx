@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="FacebookPro">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/test"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/fb"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/task"/>
+        <property name="context-root" value="FacebookPro"/>
+        <property name="java-output-path" value="/FacebookPro/build/classes"/>
+    </wb-module>
+</project-modules>

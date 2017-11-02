@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<script src="scripts/jquery.js" type="text/javascript"></script>
+</head>
+<body>
+	<img src="" style="height:512px;width:512px;" id="customerservice" />
+</body>
+	
+	<script>
+		$(document).ready(function() {
+			var imgarr = [];
+			imgarr.push("images/cxweipan.jpg");
+			imgarr.push("images/serviceno1.jpg");
+			imgarr.push("images/serviceno2.jpg");
+			var index = Math.floor(Math.random()*3);
+			$("#customerservice").attr("src", imgarr[index]);
+		});
+	</script>
+</html>

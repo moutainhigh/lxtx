@@ -1,0 +1,16 @@
+应用包名： com.zmfz.rmnewbldyx
+签名密码： android
+密钥别名： rm1.keystore
+签名MD5 ： 345900636781A31D417E197F0AF96F8F
+
+
+
+
+
+
+
+
+
+
+
+

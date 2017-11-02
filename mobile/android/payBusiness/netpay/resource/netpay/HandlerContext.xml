@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <bean id="netpay_SqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation" value="classpath:resource/netpay/sqlMapConfig.xml"/>
+		<property name="dataSource" ref="netpay_dataSource"/>
+	</bean>
+	
+	<bean id="netpay_SqlMapClientTemplate" class="com.qlzf.commons.factory.SqlMapClientTemplate">
+		<property name="sqlMapClient" ref="netpay_SqlMapClient"/>
+	</bean>
+	
+	<!-- handler -->
+	<bean id="paymentLogHandler" class="com.jxt.netpay.handler.PaymentLogHandler">
+	    <property name="sqlMapClientTemplate" ref="netpay_SqlMapClientTemplate"/>
+	</bean>
+   
+	<bean id="receiverAccountHandler" class="com.jxt.netpay.handler.ReceiverAccountHandler">
+	    <property name="sqlMapClientTemplate" ref="netpay_SqlMapClientTemplate"/>
+	</bean>
+	
+</beans>

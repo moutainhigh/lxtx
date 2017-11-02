@@ -1,0 +1,5 @@
+别名:zf
+密码:android
+MD5:671c59d5674140e546ff025f584b5a68
+
+包名：com.sdjqone.fire

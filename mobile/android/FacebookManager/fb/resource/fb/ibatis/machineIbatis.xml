@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="fb">
+   
+   <typeAlias alias="machine" type="com.lxtx.fb.pojo.Machine"/>
+   
+   <insert id="Machine.insert" parameterClass="machine">
+		insert into Machine (Country, Ip, Num, Status)
+       	values (#country#, #ip#, #num#, #status#)
+       	<selectKey keyProperty="id" resultClass="int">
+			select LAST_INSERT_ID() as id
+		</selectKey>
+   </insert>
+   
+   <select id="Machine.cntByCountry" parameterClass="map" resultClass="int">
+       select count(*) from Machine 
+       where 1 = 1
+       <isNotEmpty property="country" prepend="and">
+           Country = #country#
+       </isNotEmpty>
+       <isNotEmpty property="status" prepend="and">
+           Status = #status#
+       </isNotEmpty>
+   </select>
+   
+   <select id="Machine.listByCountry" parameterClass="map" resultClass="machine">
+       select * from Machine 
+       where 1 = 1
+       <isNotEmpty property="country" prepend="and">
+           Country = #country#
+       </isNotEmpty>
+       <isNotEmpty property="status" prepend="and">
+           Status = #status#
+       </isNotEmpty>
+       limit $fromRow$, $fetchNum$
+   </select>
+   
+   <update id="Machine.updateNum" parameterClass="machine">
+       update Machine set Num = Num + #num# where Id = #id#
+   </update>
+   
+   <update id="Machine.update" parameterClass="machine">
+       update Machine set Country = #country#, Ip = #ip# where Id = #id#
+   </update>
+</sqlMap>

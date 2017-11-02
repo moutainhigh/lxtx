@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.lxtx.dao.CloudTargetIndexMinuteMapper">
+	<resultMap id="BaseResultMap" type="com.lxtx.model.CloudTargetIndexMinute">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="subject" property="subject" jdbcType="VARCHAR" />
+		<result column="dtime" property="dtime" jdbcType="TIMESTAMP" />
+		<result column="idx" property="idx" jdbcType="INTEGER" />
+		<result column="timeindex" property="timeindex" jdbcType="INTEGER" />
+		<result column="day" property="day" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, subject, dtime, idx, timeindex, `day`
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from cloud_target_index_minute
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from
+		cloud_target_index_minute
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" parameterType="com.lxtx.model.CloudTargetIndexMinute"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into
+		cloud_target_index_minute (subject, dtime, idx,
+		timeindex, `day`)
+		values (#{subject,jdbcType=VARCHAR}, #{dtime,jdbcType=TIMESTAMP},
+		#{idx,jdbcType=INTEGER},
+		#{timeindex,jdbcType=INTEGER},
+		#{day,jdbcType=VARCHAR})
+	</insert>
+	<insert id="insertSelective" parameterType="com.lxtx.model.CloudTargetIndexMinute"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into cloud_target_index_minute
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			subject,
+			dtime,
+			idx,
+			timeindex,
+			`day`,
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			#{subject,jdbcType=VARCHAR},
+			#{dtime,jdbcType=TIMESTAMP},
+			#{idx,jdbcType=INTEGER},
+			#{timeindex,jdbcType=INTEGER},
+			#{day,jdbcType=VARCHAR},
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.lxtx.model.CloudTargetIndexMinute">
+		update cloud_target_index_minute
+		<set>
+			<if test="subject != null">
+				subject = #{subject,jdbcType=VARCHAR},
+			</if>
+			<if test="dtime != null">
+				dtime = #{dtime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="idx != null">
+				idx = #{idx,jdbcType=INTEGER},
+			</if>
+			<if test="timeindex != null">
+				timeindex = #{timeindex,jdbcType=INTEGER},
+			</if>
+			<if test="day != null">
+				`day` = #{day,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.lxtx.model.CloudTargetIndexMinute">
+		update
+		cloud_target_index_minute
+		set subject = #{subject,jdbcType=VARCHAR},
+		dtime = #{dtime,jdbcType=TIMESTAMP},
+		idx = #{idx,jdbcType=INTEGER},
+		timeindex = #{timeindex,jdbcType=INTEGER},
+		`day` =
+		#{day,jdbcType=VARCHAR}
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<select id="selectLastData" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from cloud_target_index_minute where id in (select Max(id) from
+		cloud_target_index_minute group by subject)
+	</select>
+</mapper>

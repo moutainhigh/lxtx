@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.lxtx.dao.CloudWxShellArticlePushMapper">
+	<resultMap id="BaseResultMap" type="com.lxtx.model.CloudWxShellArticlePush">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="wxid" property="wxid" jdbcType="VARCHAR" />
+		<result column="last_send_time" property="last_send_time" jdbcType="INTEGER" />
+		<result column="current_index" property="current_index" jdbcType="INTEGER" />
+		<result column="chnno" property="chnno" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, wxid, last_send_time, current_index, chnno
+	</sql>
+	<select id="selectByWxid" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from cloud_wx_shell_article_push
+		where wxid = #{wxid,jdbcType=VARCHAR} limit 1
+	</select>
+	<update id="updateByWxid" parameterType="com.lxtx.model.CloudWxShellArticlePush">
+		update cloud_wx_shell_article_push
+		set
+		current_index = #{current_index,jdbcType=INTEGER},
+		last_send_time =  #{last_send_time,jdbcType=INTEGER}
+		where wxid =
+		#{wxid,jdbcType=VARCHAR}
+	</update>
+	<insert id="insert" parameterType="com.lxtx.model.CloudWxShellArticlePush"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into cloud_wx_shell_article_push (wxid,
+		last_send_time, current_index, `chnno`)
+		values
+		(#{wxid,jdbcType=VARCHAR},
+		#{last_send_time, jdbcType=INTEGER},
+		#{current_index, jdbcType=INTEGER},
+		#{chnno,jdbcType=VARCHAR}
+		)
+	</insert>
+</mapper>

@@ -1,0 +1,153 @@
+@charset "utf-8";
+/* CSS Document */
+
+.paybox{
+	width: 441px;
+	height: 337px;
+	background-color: #3f414a;
+	border: 3px solid #c4560d;
+	border-radius: 6px;
+	z-index:1300;
+	left:50%;/*FF IE7*/
+	top: 50%;/*FF IE7*/
+	margin-left:-220px!important;/*FF IE7 该值为本身宽的一半 */
+	margin-top:-168px!important;/*FF IE7 该值为本身高的一半*/
+	margin-top:0px;
+	position:fixed!important;/*FF IE7*/
+	position:absolute;/*IE6*/
+
+_top:       expression(eval(document.compatMode &&
+            document.compatMode=='CSS1Compat') ?
+            documentElement.scrollTop + (document.documentElement.clientHeight-this.offsetHeight)/2 :/*IE6*/
+            document.body.scrollTop + (document.body.clientHeight - this.clientHeight)/2);/*IE5 IE5.5*/
+}
+
+.paybox .paytop{
+	position: absolute;
+	margin-top: -260px;
+	margin-left: -100px;
+	text-align: center;
+	height: 533px;
+	width: 621px;
+	background: url("../images/paysuccess.png") no-repeat center;
+	z-index: 2000;
+}
+
+.paybox .paycontent{
+	font-size: 25px;
+	color: #FFFFFF;
+	margin-top: 88px;
+	width: 100%;
+	text-align: center;
+}
+.paybox .paycontent p{
+	line-height: 40px;
+}
+
+.paybox .paycontent p span{
+	color:#ffb136;
+}
+
+.paybox .payreturn{
+	margin: 10px auto;
+	background-color: #ffb136;
+	border-radius: 6px;
+	width: 116px;
+	height: 38px;
+	text-align: center;
+	line-height: 38px;
+}
+.paybox .payreturn a{
+	color:#772910;
+	font-weight: bold;
+}
+
+.paybox .paytop p{
+	font-size: 30px;
+	font-weight: bold;
+	color: #ffda0b;
+	padding-top: 220px;
+}
+
+.paybox .paytitle{
+	margin: -20px auto;
+	text-align: center;
+	width: 216px;
+	height: 74px;
+	background: url("pay_03.png") no-repeat center;
+}
+
+.paybox .paytitle p{
+	font-size: 22px;
+	color: #FFFFFF;
+	padding-top: 26px;
+}
+
+.paybox .payfoot{
+	height: 38px;
+	background-color: #ffb136;
+	border-radius: 6px;
+	margin-top: 247px;
+}
+
+.paybox .payfoot span{
+	font-size: 20px;
+	margin-left: 10px;
+	color:#c4560d;
+}
+
+.paybox .payfoot span.sleft{
+	margin-left: 50px;
+}
+
+.paybox .payfoot p{
+	width: 100%;
+	line-height: 38px;
+	font-size: 20px;
+	color:#FFFFFF;
+}
+
+.paybox .close{
+	margin-top: -45px;
+	margin-left: 380px;
+}
+
+.paybox .paybody{
+	
+}
+
+.paybox .paybody ul li{
+	float: left;
+	margin-left: 39px;
+	margin-top: 20px;
+}
+.paybox .paybody ul li{
+	padding-right: 30px;
+	height: 97px;
+}
+.paybox .paybody ul li p{
+	color:#ffffff;
+	font-size: 18px;
+	text-align: center;
+}
+
+.paybg {
+background-color: #030402;
+width: 100%;
+height: 100%;
+left:0;
+top:0;/*FF IE7*/
+filter:alpha(opacity=50);/*IE*/
+opacity:0.5;/*FF*/
+z-index:1200;
+
+position:fixed!important;/*FF IE7*/
+position:absolute;/*IE6*/
+
+_top:       expression(eval(document.compatMode &&
+            document.compatMode=='CSS1Compat') ?
+            documentElement.scrollTop + (document.documentElement.clientHeight-this.offsetHeight)/2 :/*IE6*/
+            document.body.scrollTop + (document.body.clientHeight - this.clientHeight)/2);/*IE5 IE5.5*/
+
+}
+

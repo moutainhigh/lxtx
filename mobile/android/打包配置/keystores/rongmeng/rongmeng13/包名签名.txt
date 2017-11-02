@@ -1,0 +1,17 @@
+应用包名：com.zfsy.newswfj
+签名密码： android
+密钥别名： rm1.keystore
+签名MD5 ： 99E02C0121CA9448862AD0CA022983B9
+
+
+
+
+
+
+
+
+
+
+
+
+

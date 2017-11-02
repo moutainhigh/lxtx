@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>检查广告状态及申诉</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
+    <script th:src="@{/js/jquery-1.8.1.js}"></script>
+    <style>
+    	p {
+    		padding-top:8px;
+    	}
+    	
+    	.has-error {
+    		color:red;
+    	}
+    </style>
+</head>
+<body class="container">
+<br/>
+<h1>广告设置参数</h1>
+<br/><br/>
+<div class="with:80%">
+    <form class="form-horizontal" id="taskForm" th:action="@{/task/saveAdset}" method="post">
+        <input type="hidden"  name="taskType" id="taskType"  value="6" />
+        <input type="hidden" name="taskId" th:value="${taskId}" />
+        <input type="hidden" id="statusval" name="statusval" value="" />
+        <input type="hidden" id="adstatusval" name="adstatusval" value="" />
+        <div class="form-group">
+            <label class="col-sm-3 control-label">machine ip</label>
+			<p class="col-sm-9" th:text="${task.fbUser.machine.ip}" ></p>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">machine user</label>
+			<p class="col-sm-9" th:text="${task.fbUser.machineUser.name}" ></p>
+        </div>            
+        <div id="status_action_container" class="col-sm-12" style="border:1px red dotted;background-color:DarkSeaGreen;">
+			<div class="form-group">
+	                <label class="col-sm-3 control-label">页面成功创建</label>
+	                <div class="col-sm-9" style="text-align:left;float:left;">
+	                	<input type="checkbox" name="status" id="status" checked="true"/>
+	        		</div>
+	        </div>
+			<div class="form-group" id="success_actions">
+				<div class="form-group">
+	                <label class="col-sm-3 control-label">当前广告状态</label>
+	                <div class="col-sm-9" style="text-align:left;float:left;">
+	                	<input type="radio" class="adstat"  name="adstat" id="adstat1" checked="true" value="0" /> 被拒绝,执行申诉
+	                	<input type="radio" class="adstat" name="adstat" id="adstat2" value="1" /> 审核通过
+	        		</div>
+		        </div>
+	        </div>
+	        <div id="failure_actions" style="display:none;">
+				<div class="form-group">
+		                <label class="col-sm-3 control-label">创建失败原因</label>
+		                <div class="col-sm-9" style="text-align:left;float:left;">
+		                	<input type="radio" class="reason"  name="reason" id="reason1" checked="true" value="-1" /> 用户修改密码
+		                	<input type="radio" class="reason" name="reason" id="reason2" value="-2" /> 用户被验证
+		                	<input type="radio" class="reason" name="reason" id="reason3" value="-99" /> 其他原因，请在下方文本框中输入具体原因 
+		        		</div>
+		        </div>
+				<div class="form-group">
+		                <label class="col-sm-3 control-label">其他失败原因</label>
+		                <div class="col-sm-9" style="text-align:left;float:left;">
+							<input type="text" id="reason_desc"  name="reason_desc" value="" size="80" />
+		        		</div>
+		        </div>
+		       </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input type="button" id="tosubmit"  value="设置任务状态" class="btn btn-warning" />
+                &nbsp; &nbsp; &nbsp;
+                <a href="/toAdd" th:href="@{/task/list?operatorId=}+${operatorId}" class="btn btn-info">Back</a>
+                <label class="has-error" id="error"></label>
+            </div>
+        </div>
+        </div>                           
+    </form>
+</div>
+<script th:src="@{/js/util.js}"></script>
+<script th:src="@{/js/adset.js}"></script>
+</body>
+
+</html>

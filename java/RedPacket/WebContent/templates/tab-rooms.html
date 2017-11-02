@@ -1,0 +1,66 @@
+﻿<ion-view>
+    <!--<ion-header-bar align-title="center" class="bar-positive bar-header-black">-->
+    <!--<div class="buttons">-->
+    <!--<button class="button button-icon icon ion-navicon" ng-click="toggleLeft()"></button>-->
+    <!--</div>-->
+    <!--<h1 class="title">{{appTitle}}</h1>-->
+    <!--<div class="buttons">-->
+    <!--<a class="button button-icon icon ion-ios-telephone-outline" href="http://www.baidu.com"></a>-->
+    <!--</div>-->
+    <!--</ion-header-bar>-->
+    <ion-content>
+        <!--<ion-refresher pulling-text="下拉加载更多房间..." on-refresh="doRefresh()"></ion-refresher>-->
+
+        <div>
+            <div class="home-nav">
+                <div class="nav-buttons clearfix">
+                    <a class="button button-icon icon  help" href="http://www.baidu.com"></a>
+                    <div class="home-title">
+                        <span>九州红包娱乐</span><i>（在线人数:<span ng-bind="onlineCount">0</span>）</i>
+                    </div>
+                    <a class="button button-icon icon ion-ios-help-outline new-room" ui-sref="kf"></a>
+                </div>
+            </div>
+            <div class="home-north">
+                <div class="home-n-bg"></div>
+                <div class="home-n-bg-b"></div>
+            </div>
+            <div class="home-cover">
+                <div class="wrapper">
+                    <img src="http://hb.sunruiling.com/img/home/banner.png">
+                </div>
+            </div>
+        </div>
+
+        <ion-list>
+            <ion-item ng-repeat="gameType in gameTypes" class="game-group"
+                      ng-if="rooms[gameType.key] && rooms[gameType.key].length">
+                <div class="game-type-bar clearfix">
+                    <div class="game-icon clearfix">
+                        <img ng-src="img/home/{{gameType.properties.icon}}.png">
+                        <span class="group-name">{{gameType.text}}</span>
+                    </div>
+                    <div class="group-collapse clearfix" ng-click="collapseRoomGroup(gameType.key)">
+                        <i ng-class="{true: 'ion-ios-arrow-down', false: 'ion-ios-arrow-up', undefined: 'ion-ios-arrow-up'}[gameTypeHideStatus[gameType.key]]"></i>
+                        <span>收起</span>
+                    </div>
+                </div>
+                <div class="home-rooms" ng-show="!gameTypeHideStatus[gameType.key]" >
+                    <div class="room-row clearfix" ng-repeat="row in rooms[gameType.key]">
+                        <div class="home-room" ng-repeat="room in row" ng-click=join(room)>
+                            <div class="home-room-out">
+                                <div class="home-room-in">
+                                    <div class="room-name">{{room.name}}</div>
+                                    <div class="room-limit">
+                                        <div>在线人数:{{room.position}}人</div>
+                                        <div>限{{room.limitNum}}人</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

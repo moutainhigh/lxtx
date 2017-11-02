@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="alipay" class="com.jxt.netpay.appclient.service.impl.AliPayImplIPay" scope="prototype"></bean>
+	
+	<bean id="tenpay" class="com.jxt.netpay.appclient.service.impl.TenPayImplIPay" scope="prototype"></bean>
+	
+	<bean id="unionpay" class="com.jxt.netpay.appclient.service.impl.UnionPayImplIPay" scope="prototype"></bean>
+	
+	<bean id="iapppay" class="com.jxt.netpay.appclient.service.impl.IAppPayImplIPay" scope="prototype"></bean>
+	
+	<bean id="zxsmpay" class="com.jxt.netpay.appclient.service.impl.ZxsmPayImplIPay" scope="prototype"></bean>
+	
+	<bean id="heepay" class="com.jxt.netpay.appclient.service.impl.HeePayImplIPay" scope="prototype"></bean>
+	
+	<bean id="payFactory" class="com.jxt.netpay.appclient.util.IPayObjFactory">
+	    <property name="map">
+	        <map>
+	        	<entry key="1" >
+	        	    <bean class="com.jxt.netpay.appclient.pojo.PayClassObj">
+	        	        <property name="payClassName" value="com.jxt.netpay.appclient.service.impl.AliPayImplIPay"/>
+	        	        <property name="callBackUrl" value="/pay/netpay/appclient/alipayCallBack.do"/>
+	        	        <property name="notifyUrl" value="/pay/netpay/appclient/alipayNotify.do"/>
+	        	    </bean>
+	        	</entry>
+	        	<entry key="2">
+	        	    <bean class="com.jxt.netpay.appclient.pojo.PayClassObj">
+	        	       <property name="payClassName" value="com.jxt.netpay.appclient.service.impl.IAppPayImplIPay"/>
+	        	        <property name="callBackUrl" value="/pay/netpay/appclient/iapppayCallBack.do"/>
+	        	        <property name="notifyUrl" value="/pay/netpay/appclient/iapppayNotify.do"/>
+	        	    </bean>
+	        	</entry>
+				<entry key="3">
+	        	    <bean class="com.jxt.netpay.appclient.pojo.PayClassObj">
+	        	        <property name="payClassName" value="com.jxt.netpay.appclient.service.impl.ZxsmPayImplIPay"/>
+	        	        <property name="callBackUrl" value="/pay/netpay/appclient/zxsmpayCallBack.do"/>
+	        	        <property name="notifyUrl" value="/pay/netpay/appclient/zxsmpayNotify.do"/>
+	        	    </bean>
+	        	</entry>
+	        	<entry key="4">
+	        	    <bean class="com.jxt.netpay.appclient.pojo.PayClassObj">
+	        	        <property name="payClassName" value="com.jxt.netpay.appclient.service.impl.HeePayImplIPay"/>
+	        	        <property name="callBackUrl" value="/pay/netpay/appclient/heepayCallBack.do"/>
+	        	        <property name="notifyUrl" value="/pay/netpay/appclient/heepayNotify.do"/>
+	        	    </bean>
+	        	</entry>
+	        	<!-- 
+	        	<entry key="2">
+	        	    <bean class="com.jxt.netpay.appclient.pojo.PayClassObj">
+	        	       <property name="payClassName" value="com.jxt.netpay.appclient.service.impl.TenPayImplIPay"/>
+	        	        <property name="callBackUrl" value="/pay/netpay/appclient/tenpayCallBack.do"/>
+	        	        <property name="notifyUrl" value="/pay/netpay/appclient/tenpayNotify.do"/>
+	        	    </bean>
+	        	</entry>
+	        	<entry key="3">
+	        	    <bean class="com.jxt.netpay.appclient.pojo.PayClassObj">
+	        	        <property name="payClassName" value="com.jxt.netpay.appclient.service.impl.UnionPayImplIPay"/>
+	        	        <property name="callBackUrl" value="/pay/netpay/appclient/unionpayCallBack.do"/>
+	        	        <property name="notifyUrl" value="/pay/netpay/appclient/unionpayNotify.do"/>
+	        	    </bean>
+	        	</entry>
+	        	 -->
+			</map>
+	    </property>
+	    
+	</bean>
+	
+</beans>

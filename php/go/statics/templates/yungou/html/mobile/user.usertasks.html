@@ -1,0 +1,169 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head><title>
+电话卡兑现明细 - {wc:$webname}触屏版
+</title><meta content="app-id=518966501" name="apple-itunes-app" /><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0" /><meta content="yes" name="apple-mobile-web-app-capable" /><meta content="black" name="apple-mobile-web-app-status-bar-style" /><meta content="telephone=no" name="format-detection" />
+
+<link href="{G_TEMPLATES_CSS}/mobile/comm.css" rel="stylesheet" type="text/css" />
+
+<link href="{G_TEMPLATES_CSS}/mobile/member.css" rel="stylesheet" type="text/css" />
+
+<script src="{G_TEMPLATES_JS}/mobile/jquery190.js" language="javascript" type="text/javascript"></script>
+</head>
+<body>
+    <input type="hidden" id="mobile" name="mobile" value="{wc:$mobile}" />
+    <input type="hidden" id="day" name="day" value="{wc:$day}" />
+    <input type="hidden" id="token" name="token" value="{wc:$token}" />
+<div class="h5-1yyg-v1" id="loadingPicBlock">
+    <input name="loadDataType" type="hidden" id="loadDataType" value="0" />
+<!-- 栏目页面顶部 -->
+<!-- 内页顶部 -->
+    <header class="header" style="position: fixed;width: 100%;z-index: 99999999;">
+
+    <h1 style="width: 100%;text-align: center;float: none;top: 0px;left: 0px;font-size: 25px;" class="fl">
+        <span style="display: block;height: 49px;line-height: 49px;">
+            <a style="font-size: 20px;line-height: 60px;" href="{WEB_PATH}/mobile/mobile">
+                电话卡兑现明细
+            </a>
+        </span>
+
+        <!--<img src="{G_UPLOAD_PATH}/{wc:fun:Getlogo()}"/>
+        -->
+        <!--<img src="/statics/templates/yungou/images/sjlogo.png"/>
+        -->
+    </h1>
+    <a id="fanhui" class="cefenlei" onclick="history.go(-1)" href="javascript:;">
+        <img width="30" height="30" src="/statics/templates/yungou/images/mobile/fanhui.png">
+    </a>
+    <div class="fr head-r" style="position: absolute;right: 6px;top: 10px;">
+        <!--<a href="{WEB_PATH}/mobile/user/login" class="z-Member"></a>
+    -->
+    <a href="{WEB_PATH}/mobile/mobile" class="z-shop" style="background-position: 2px -73px;"></a>
+
+</div>
+
+</header>
+    <section class="clearfix g-member" style="padding-top: 55px;">
+	    <article class="clearfix m-round g-userMoney">
+            <div style="float:left;">
+                    {wc:if $member['mobile']} 
+                    <em>
+                    已绑定手机号:({wc:$member['mobile']})
+                    </em>
+                    {wc:else} 
+                    <em>
+                    <a href="{WEB_PATH}/mobile/user/mobile" class="fr z-Recharge-btn" style="line-height:24px; margin-right:5px; margin-top:3px;">
+                    绑定手机[若需要兑现电话卡请先验证手机号]
+                    </a>
+                    </em> 
+                    {wc:if:end}
+            </div>        
+                    <div style="float:right;width:100px;">
+                        <input style="padding: 5px 5px;margin-left:5px;" type="button" name="jishoubao" id="jishoubao" class="greenbut" title="进入寄售宝" value="进入寄售宝">
+                    </div>
+	    </article>
+	    <article class="mt10 m-round">
+		    <ul class="m-userMoneyNav">
+			    <li><a id="btnConsumption" href="javascript:;"><b>未完成{wc:$newtaskcount}项充值任务</b>(总金额：￥{wc:$newtaskamount})</a><s></s></li>
+			    <li><a id="btnRecharge" href="javascript:;"><b>已完成{wc:$donetaskcount}项充值任务</b>(总金额：￥{wc:$donetaskamount})</a></li>
+		    </ul>
+		    <ul id="ulConsumption" class="m-userMoneylst m-Consumption" style="height:400px;overflow-y:auto;">
+
+		    </ul>
+		    <ul id="ulRechage" class="m-userMoneylst" style="display:none;">
+
+		    </ul>
+	    </article>
+    </section>   
+{wc:templates "mobile/index","footer"}
+
+<script language="javascript" type="text/javascript">
+
+    var  fetchNewcardsAndDisplay = function(){
+        $.get("/index.php/mobile/home/getnewtasks", {}, function(data) {
+            var data = $.parseJSON(data); 
+            console.log(data.length);
+            var content = "<li class=\"m-userMoneylst-tt\"><span style=\"width:20%;\">金额(元)</span><span style=\"width:20%;\">类型</span><span style=\"width:20%;\">状态</span><span style=\"width:30%;\">创建时间</span></li>";
+            $.each(data, function(index, ele) {
+                content += "<li><span style=\"width:20%;\">" + ele.amount + "</span><span style=\"width:20%;\">" + ele.type + "</span>"  
+                        + "<span style=\"width:20%;\">" + ele.status + "</span><span style=\"width:40%;\">" + ele.crt_time + "</span>"
+                "</li>"; 
+            });
+
+            $("#ulConsumption").html(content);
+            $("#ulConsumption").css("display", "block");
+            $("#ulRechage").css("display", "none");
+            $("#btnConsumption").css("color", "red");
+            $("#btnRecharge").css("color", "grey");            
+        });
+    };
+
+    var  fetchUsedcardsAndDisplay = function(){
+        $.get("/index.php/mobile/home/getdonetasks", {}, function(data) {
+            var data = $.parseJSON(data); 
+            console.log(data.length);
+            var content = "<li class=\"m-userMoneylst-tt\"><span style=\"width:30%;\">金额</span><span  style=\"width:30%;\">类型</span><span  style=\"width:40%;\">订单号</span></li>";
+            $.each(data, function(index, ele) {
+                content += "<li><span style=\"width:30%;\">" + ele.amount + "</span><span style=\"width:30%;\">" + ele.type + "</span>"  
+                        + "<span style=\"width:40%;\">" + ele.order_id + "</span>"
+                        + "<span style=\"width:37%;\">创建时间</span><span style=\"width:63%;\">" + ele.crt_time + "</span>"
+                        + "<span style=\"width:37%;\">兑现时间</span><span style=\"width:63%;\">" + ele.fin_time + "</span>"
+                "</li>"; 
+            });
+
+            $("#ulRechage").html(content);
+            $("#ulRechage").css("display", "block");
+            $("#ulConsumption").css("display", "none");
+            $("#btnConsumption").css("color", "grey");
+            $("#btnRecharge").css("color", "red");
+        });
+    };
+
+     $("#jishoubao").click(function(){
+      var mobile = $("#mobile").val();
+      //alert('11');
+      if (!mobile || mobile == '') {
+        window.location = "{WEB_PATH}/mobile/user/mobile?backurl=/mobile/home/usercards";
+        return;
+      } 
+
+      var day = $("#day").val();
+      var token = $("#token").val();
+      window.location = "http://jishou.sino518.com/sale/exchange/apply?mobile="+mobile+"&day="+day+"&token="+token;
+    });
+
+  var Path = new Object();
+
+  Path.Skin="{G_TEMPLATES_STYLE}";  
+
+  Path.Webpath = "{WEB_PATH}";
+ 
+var Base={head:document.getElementsByTagName("head")[0]||document.documentElement,Myload:function(B,A){this.done=false;B.onload=B.onreadystatechange=function(){if(!this.done&&(!this.readyState||this.readyState==="loaded"||this.readyState==="complete")){this.done=true;A();B.onload=B.onreadystatechange=null;if(this.head&&B.parentNode){this.head.removeChild(B)}}}},getScript:function(A,C){var B=function(){};if(C!=undefined){B=C}var D=document.createElement("script");D.setAttribute("language","javascript");D.setAttribute("type","text/javascript");D.setAttribute("src",A);this.head.appendChild(D);this.Myload(D,B)},getStyle:function(A,B){var B=function(){};if(callBack!=undefined){B=callBack}var C=document.createElement("link");C.setAttribute("type","text/css");C.setAttribute("rel","stylesheet");C.setAttribute("href",A);this.head.appendChild(C);this.Myload(C,B)}}
+function GetVerNum(){var D=new Date();return D.getFullYear().toString().substring(2,4)+'.'+(D.getMonth()+1)+'.'+D.getDate()+'.'+D.getHours()+'.'+(D.getMinutes()<10?'0':D.getMinutes().toString().substring(0,1))}
+  //  Base.getScript('{G_TEMPLATES_JS}/mobile/Bottom.js?v='+GetVerNum());
+    $(document).ready(function(){
+        console.log("ready.");
+        fetchNewcardsAndDisplay();
+
+        $("#btnConsumption").click(function(){
+            fetchNewcardsAndDisplay();
+        });
+        $("#btnRecharge").click(function() {
+           fetchUsedcardsAndDisplay(); 
+        });
+
+    });    
+</script>
+
+
+
+</div>
+
+</body>
+
+</html>
+

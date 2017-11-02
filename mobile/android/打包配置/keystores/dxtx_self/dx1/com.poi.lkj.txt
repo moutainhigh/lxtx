@@ -1,0 +1,9 @@
+包名 com.poi.lkj 
+md5:9b8cc3e3be2f6b428287f47df66d81ba
+
+使用的签名位置：C:\Users\admin\Desktop\sda\outs\kld
+
+签名信息：
+keyAlias '1'
+storePassword '123456'
+keyPassword '123456'

@@ -1,0 +1,12 @@
+第四套：bqbtx
+
+机构编号：102570156598
+
+签名密钥：de2c8665bcc1889c4af542cb57779c9a
+
+APPID : wx88f908ddc4ec9395
+
+应用签名： C03E8E2863F5539B3F43FB96B6B38874
+
+包    名:  com.zswj.newbqbtx
+

@@ -1,0 +1,178 @@
+{wc:templates "index","header"}
+<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_STYLE}/css/glist.css"/>
+<div class="g-body">
+    <div class="m-list">
+        <div class="g-wrap g-body-hd f-clear">
+            <div class="w-dir">
+                <a href="{WEB_PATH}">首页</a> &gt; <span class="txt-red">{wc:$daohang_title}</span>
+            </div>
+
+            <div class="m-list-mod m-list-allType">
+                <div class="m-list-mod-hd">
+                    <h3><a href="{WEB_PATH}/goods_list">{wc:$daohang_title}</a> <span class="extra">（共 <b class="txt-red count">{wc:$total}</b> 件相关奖品）</span></h3>
+                </div>
+                <div class="m-list-mod-bd">
+                    <ul class="m-list-allType-list">
+	                {wc:getlist sql="select * from `@#_category` where `model`='1' and `parentid` = '0' order by `order` ASC limit 8"}
+					{wc:loop $data $i $categoryx}
+					{wc:php:start}
+	            	$categoryx['info'] = unserialize($categoryx['info']);
+	           		$categoryx_thumb=$categoryx['info']['thumb'];
+	            	{wc:php:end}
+	            	{wc:if $i==count($data)-1}
+	            	 <li class="last">
+	            	{wc:else}
+					 <li class="">
+					{wc:if:end}
+						<a href="{WEB_PATH}/goods_list/{wc:$categoryx['cateid']}">
+						    <span class="icon"><i class="ico ico-type ico-type-1" style='background: url("{G_UPLOAD_PATH}/{wc:$categoryx_thumb}") no-repeat scroll 0 0 rgba(0, 0, 0, 0);'></i></span>
+						    <b class="name">{wc:$categoryx['name']}</b>
+						</a>
+	                 </li>
+					{wc:loop:end}
+					{wc:getlist:end}                   
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="g-wrap g-body-bd f-clear">
+            <div class="m-list-mod m-list-goodsList">
+                <div class="m-list-mod-hd">
+                    <h6>排序：</h6>
+                    <ul class="m-list-sortList">    
+                        <li {wc:if $select=='20'}class="selected"{wc:if:end}>
+							<a href="{WEB_PATH}/goods_list/{wc:$cate_band}/20">人气奖品</a>
+                        </li>
+                        <li {wc:if $select=='30'}class="selected"{wc:if:end}>
+							<a href="{WEB_PATH}/goods_list/{wc:$cate_band}/30">剩余人次</a>
+                        </li>
+                        <li {wc:if $select=='40'}class="selected"{wc:if:end}>
+							<a href="{WEB_PATH}/goods_list/{wc:$cate_band}/40">最新奖品</a>
+                        </li>
+                        <li {wc:if $select=='60'}class="selected"{wc:if:end}>
+							<a href="{WEB_PATH}/goods_list/{wc:$cate_band}/60">总需人次 <i title='升序' class='ico ico-arrow-sort ico-arrow-sort-gray-up'></i></a>
+                        </li>
+                        <li {wc:if $select=='50'}class="selected"{wc:if:end}>
+							<a href="{WEB_PATH}/goods_list/{wc:$cate_band}/50">总需人次 <i title='降序' class='ico ico-arrow-sort ico-arrow-sort-gray-down'></i></a>
+                        </li>
+                    </ul>
+                    
+                </div>
+                <div class="m-list-mod-bd">
+                    <ul class="w-quickBuyList f-clear">
+                    {wc:loop $shoplist $i $shop}
+                    {wc:php:start}
+	            	$p_width=round($shop['canyurenshu']/$shop['zongrenshu']*100);
+	            	{wc:php:end}					
+					{wc:if ($i+1)%4==0}
+					<li class="w-quickBuyList-item row-last">
+					{wc:else}
+					<li class="w-quickBuyList-item">
+                    {wc:if:end}
+                    {wc:if $shop['yunjiage']=='10.00'}
+                    <i class="ico ico-label ico-label-ten"></i>
+                    {wc:if:end}
+                    <div class="w-goods w-goods-l w-goods-ing" data-gid="137" data-period="3428" data-price="6088" data-existingTimes="2798" data-regularBuyMax="50" data-buyUnit="1">
+			        <div class="w-goods-pic">
+			            <a href="{WEB_PATH}/goods/{wc:$shop['id']}" title="{wc:$shop['title']}" target="_blank">
+			                <img width="200" height="150" alt="{wc:$shop['title']}" src="{G_UPLOAD_PATH}/{wc:$shop['thumb']}" />
+			            </a>
+			        </div>
+			        <p class="w-goods-title f-txtabb"><a title="{wc:$shop['title']}" href="{WEB_PATH}/goods/{wc:$shop['id']}" target="_blank">(第{wc:$shop['qishu']}期) {wc:$shop['title']}</a></p>
+			        <p class="w-goods-price">总需：{wc:$shop['zongrenshu']} 人次</p>
+			        <div class="w-progressBar" title="{wc:$p_width}%">
+			            <p class="w-progressBar-wrap">
+			                <span class="w-progressBar-bar" style="width:{wc:$p_width}%;"></span>
+			            </p>
+			            <ul class="w-progressBar-txt f-clear">
+			                <li class="w-progressBar-txt-l"><p><b>{wc:$shop['canyurenshu']}</b></p><p>已参与人次</p></li>
+			                <li class="w-progressBar-txt-r"><p><b>{wc:$shop['zongrenshu']-$shop['canyurenshu']}</b></p><p>剩余人次</p></li>
+			            </ul>
+			        </div>
+			        <p class="w-goods-progressHint">
+			                    <b class="txt-blue">{wc:$shop['canyurenshu']}</b>人次已参与，赶快去参加吧！剩余<b class="txt-red">{wc:$shop['zongrenshu']-$shop['canyurenshu']}</b>人次
+			        </p>
+			        <div class="w-goods-opr">			             
+			                <!-- 我要参与： <div class="w-goods-opr-number"></div> 人次 -->			                 
+			                    <p class="w-goods-opr-buy">
+			                        <a class="w-button w-button-main w-button-l w-goods-btn-quickBuy go_Shopping" href="javascript:void(0)" style="width:90px;">立即夺宝</a>
+			                        <a class="w-button w-button-l w-goods-btn-addToCart go_cart" href="javascript:void(0)" style="width:90px;">加入清单</a>
+			                    </p>
+			        </div>
+			    </div>
+			    <div class="Curbor_id" style="display:none;">{wc:$shop['id']}</div>
+				<div class="Curbor_yunjiage" style="display:none;">{wc:$shop['yunjiage']}</div>
+				<div class="Curbor_shenyu" style="display:none;">{wc:$shop['shenyurenshu']}</div>
+                            </li>
+					{wc:loop:end}
+       
+                    </ul>
+                </div>
+            </div>
+            <div class="m-list-pager"></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+$(function(){
+	$(".go_cart").click(function(){ 
+		var sw = $(".go_cart").index(this);
+		var src = $(".w-goods-pic a img").eq(sw).attr('src');				
+		var $shadow = $('<img id="cart_dh" style="display:none; border:1px solid #aaa; z-index:99999;" width="200" height="200" src="'+src+'" />').prependTo("body");  			
+		var $img = $(".w-goods-pic").eq(sw);
+		$shadow.css({ 
+			'width' : 200, 
+			'height': 200, 
+			'position' : 'absolute',      
+			"left":$img.offset().left+16, 
+			"top":$img.offset().top+9,
+			'opacity' : 1    
+		}).show();
+		var $cart = $("#btnMyCart");
+		$shadow.animate({   
+			width: 1, 
+			height: 1, 
+			top: $cart.offset().top,    
+			left: $cart.offset().left, 
+			opacity: 0
+		},500,function(){
+			Cartcookie(sw,false);
+		});	
+		
+	});
+	$(".go_Shopping").click(function(){	
+		var sw = $(".go_Shopping").index(this);
+
+		Cartcookie(sw,true); 
+	});	
+});
+//存到COOKIE
+function Cartcookie(sw,cook){
+	var shopid = $(".Curbor_id").eq(sw).text(),
+		shenyu = $(".Curbor_yunjiage").eq(sw).text(),
+		money = $(".Curbor_shenyu").eq(sw).text();
+	var Cartlist = $.cookie('Cartlist');
+	if(!Cartlist){
+		var info = {};
+	}else{
+		var info = $.evalJSON(Cartlist);
+	}
+	if(!info[shopid]){
+		var CartTotal=$("#sCartTotal").text();
+			$("#sCartTotal").text(parseInt(CartTotal)+1);
+			$("#btnMyCart em").text(parseInt(CartTotal)+1);
+	}	
+	info[shopid]={};
+	info[shopid]['num']=1;
+	info[shopid]['shenyu']=shenyu;
+	info[shopid]['money']=money;
+	info['MoenyCount']='0.00';
+	$.cookie('Cartlist',$.toJSON(info),{expires:30,path:'/'});
+	if(cook){
+		window.location.href="{WEB_PATH}/member/cart/cartlist";
+	}
+}  
+
+</script>
+{wc:templates "index","footer"}

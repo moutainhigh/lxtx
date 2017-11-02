@@ -1,0 +1,120 @@
+<ion-view view-title="我的帐户" need-login hide-tabs="false" ng-class="{true: 'animated bounceIn', false: ''}[tabAnimation]"
+          tab-animation>
+    <ion-header-bar align-title="center" class="bar-positive bar-header-black">
+        <h1 class="title">我的帐户</h1>
+        <div class="buttons">
+            <!--
+            <a class="button button-icon icon ion-ios-telephone-outline" href="http://www.baidu.com"></a>-->
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <ion-refresher pulling-text="下拉刷新用户信息..." on-refresh="doRefresh()"></ion-refresher>
+        <ion-list>
+            <ion-item class="item-thumbnail-left">
+                <img ng-src="{{user.headImg}}" style="border-radius: 40px;" ngf-select="upload($file)" ng-model="file" name="file" ngf-pattern="'image/*'"
+                     ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100"
+                     ngf-resize="{width: 200, height: 200}">
+                <div style="padding-top: 18px;">
+                    <h2>{{user.nickName}}</h2>
+                    <p></p>
+                    <p>
+                        <!--<img src="img/gold.png" width="15" height="15">-->
+                        <span class="act-balance"><strong style="color:darkorange">金币:{{user.money}}</strong>萬金</span>
+                    </p>
+                </div>
+<!--                <div class="button" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"
+                     ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100"
+                     ngf-resize="{width: 100, height: 100}">上传头像</div>-->
+            </ion-item>
+            <ion-item class="row">
+                <div class="col text-center" ui-sref="tab.rooms">首页</div>
+                <!--<div class="col text-center" ui-sref="tab.history">我的足迹</div>-->
+                <!--<div class="col text-center" ui-sref="tab.account-recharge">充值</div>-->
+                <!--   onclick="window.location.href='/user/gamecenterfill';" -->
+                <div class="col text-center" ng-click="fill();">充值</div>
+            </ion-item>
+            
+            <ion-item class="item-divider"></ion-item>
+            <ion-item class="item-icon-left item-icon-right" ui-sref="tab.account-manager">
+                <i class="icon ion-person"></i>
+                帐号管理<span style="font-size: 14px;color:orangered;font-weight: bold;">(ID:{{user.id}})</span>
+                <i class="icon ion-ios-arrow-right item-note"></i>
+            </ion-item>
+            <ion-item class="item-divider"></ion-item>
+            <ion-item class="item-icon-left item-icon-right" ui-sref="tab.account-rooms">
+                <i class="icon ion-home"></i>
+                <div class="clearfix">
+                    <span style="float: left;">我的房间(<span ng-bind="roomCount ? roomCount : 0">0</span>)</span>
+<!--                     <span class="item-note room-note" ng-if="roomCount > 0">看看你房间的收益吧</span> -->
+                    <span class="item-note room-note" ng-if="!roomCount">还没有房间,赶紧申请一个房间,邀请好友开抢吧!</span>
+                </div>
+                <i class="icon ion-ios-arrow-right item-note"></i>
+            </ion-item>
+            <!--
+            <ion-item class="item-icon-left item-icon-right" ui-sref="tab.history">
+                <i class="icon ion-magnet"></i>
+                房间收藏
+                <i class="icon ion-ios-arrow-right item-note"></i>
+            </ion-item>
+            -->
+            <ion-item class="item-divider"></ion-item><!--
+            <ion-item class="item-icon-left item-icon-right" ui-sref="tab.account-lottery-detail">
+                <i class="icon ion-android-hand"></i>
+                游戏记录
+                <i class="icon ion-ios-arrow-right item-note"></i>
+            </ion-item>-->
+            <ion-item class="item-icon-left item-icon-right" ui-sref="tab.account-bonus-detail">
+                <i class="icon ion-ios-star"></i>
+                红包游戏记录
+                <i class="icon ion-ios-arrow-right item-note"></i>
+            </ion-item>
+            <ion-item class="item-divider"></ion-item>
+            <ion-item class="item-icon-left item-icon-right" ui-sref="tab.account-bonus03-detail">
+                <i class="icon ion-ios-game-controller-b-outline"></i>
+              幸运二八记录
+                <i class="icon ion-ios-arrow-right item-note"></i>
+            </ion-item>
+
+            <ion-item class="item-divider"></ion-item>
+            <!--
+            <ion-item class="item-icon-left item-icon-right" ui-sref="tab.account-recharge-history">
+                <i class="icon ion-card"></i>
+                充值记录
+                <i class="icon ion-ios-arrow-right item-note"></i>
+            </ion-item>-->
+<!--
+            <ion-item class="item-icon-left item-icon-right" ui-sref="tab.account-rechargeAndWithdraw">
+                <i class="icon ion-card"></i>
+                充值与提现
+                <i class="icon ion-ios-arrow-right item-note"></i>
+            </ion-item>-->
+<!--             <ion-item class="item-icon-left item-icon-right" ng-click="exchange();"> -->
+<!--                 <i class="icon ion-bag"></i> -->
+<!--                 	游戏币兑换 -->
+<!--                 <i class="icon ion-ios-arrow-right item-note"></i> -->
+<!--             </ion-item> -->
+            <ion-item class="item-icon-left item-icon-right" ui-sref="tab.exchange-card">
+                <i class="icon ion-bag"></i>
+                	房卡兑换
+                <i class="icon ion-ios-arrow-right item-note"></i>
+            </ion-item>
+            <ion-item class="item-divider"></ion-item>
+ 			<ion-item class="item-icon-left item-icon-right" ui-sref="tab.account-fill-exchange">
+                <i class="icon ion-card"></i>
+                	充值及兑卡记录
+                <i class="icon ion-ios-arrow-right item-note"></i>
+            </ion-item>
+             <ion-item class="item-divider"></ion-item>
+<!--              <ion-item class="item-icon-left item-icon-right" ng-click="contactUs();"> -->
+<!--                 <i class="icon ion-magnet"></i> -->
+<!--                 	联系我们 -->
+<!--                 <i class="icon ion-ios-arrow-right item-note"></i> -->
+<!--             </ion-item>        -->
+        </ion-list>
+    </ion-content>
+</ion-view>
+<script>
+	function relocation() {
+		window.location = "/user/gamecenterfill";
+	}
+</script>

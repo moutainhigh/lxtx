@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="synch">
+    
+	<typeAlias alias="duohSync" type="com.jxt.synch.pojo.DuohSync"/>
+	
+   <insert id="DuohSync.insert" parameterClass="duohSync">
+		insert into DuohSync (Weima,LinkId,Channel,ChannelCode,MobileTaskId,CreateDay) 
+		values(#weima#,#linkId#,#channel#,#channelCode#,#mobileTaskId#,#createDay#)
+		<selectKey keyProperty="id" resultClass="java.lang.Long">
+		  select LAST_INSERT_ID() as id
+		</selectKey>
+   </insert>
+	
+</sqlMap>

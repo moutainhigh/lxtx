@@ -1,0 +1,309 @@
+﻿{wc:templates "index","header"}
+<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_STYLE}/css/LotteryDetail.css"/>
+<script type="text/javascript" src="{G_TEMPLATES_JS}/page.js"></script>
+	<div class="dir">
+		<div class="dir_cont">
+			<a href="{WEB_PATH}">首页</a> &gt; 
+			<a href="{WEB_PATH}/goods_list/{wc:$item['cateid']}">{wc:$category['name']}</a>  &gt; 
+			<a href="{WEB_PATH}/goods_list/{wc:$item['cateid']}e{wc:$item['brandid']}">{wc:$brand['name']}</a> &gt; 
+			<span class="txt-red">奖品详情</span>
+		</div>
+	</div>
+	<div class="index_body">
+    <div class="detail_main"> 
+		<div class="kj_main_l">
+			<div class="kj_main_l_pic">
+				<img width="324" height="314" src="{G_UPLOAD_PATH}/{wc:$item['thumb']}" /> 
+			</div>
+			<div class="kj_main_l_haoma">
+				<div class="kj_main_l_haoma_title"><span style="font-weight:normal">(第{wc:$item['qishu']}期)</span> {wc:$item['title']} <span class="txt-red" title="{wc:$item['title2']}"> {wc:$item['title2']} </span></div>
+				<div class="kj_main_l_haoma_kjbg">
+					<div class="kj_main_l_haoma_djs">
+						<div> 
+							 {wc:loop $q_user_code_arr  $q_code_num}<b class="w-num w-num-{wc:$q_code_num}">{wc:$q_code_num}</b>{wc:loop:end}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="kj_main_l_cont">
+				<div class="kj_main_l_cont_pic">
+					<img width="100" height="100" src="{G_UPLOAD_PATH}/{wc:fun:get_img($item['q_uid'])}" />
+				</div>
+				<p class="kj_main_l_cont_name">恭喜 <a href="{WEB_PATH}/uname/{wc:fun:idjia($item['q_uid'])}" title="{wc:fun:get_user_name($item['q_uid'])}(ID:{wc:$item['q_uid']})" class="txt-red">{wc:fun:get_user_name($item['q_uid'])}</a> 获得了本期奖品</p>
+				<p class="kj_main_l_cont_id"><b>用户ID：{wc:$item['q_uid']}</b> (ID为用户唯一不变标识)</p>
+				<p>揭晓时间：{wc:fun:date("Y-m-d H:i:s",$item['q_end_time'])}</p>
+				<p>夺宝时间：{wc:fun:date("Y-m-d H:i:s",$user_shop_time)}</p>
+			</div>
+			<div class="kj_main_l_cy">
+				<p style="margin-bottom:5px;color:#3c3c3c">奖品获得者本期总共参与了<b class="txt-red">{wc:$user_shop_number}</b>人次</p>
+				<p><span>Ta的号码:</span>{wc:fun:yunmas($user_shop_codes,"span","7")}</p>
+				<a href="javascript:void(0)" class="m-detail-main-codes-viewWinnerCodesBtn">TA的所有号码>></a>
+			</div>
+		</div>
+		<div class="kj_main_r">
+			<div class="kj_main_r_zxyq"><img src="{G_TEMPLATES_STYLE}/images/kj_main_r_zxyq.jpg" /></div>
+			<div class="kj_main_r_cont">
+				{wc:if $zx_shop['qishu']==$zx_shop['maxqishu']}
+				
+				<div class="kj_main_r_spxj">
+					<img width="240" height="210" src="{G_UPLOAD_PATH}/{wc:$item['thumb']}" /> 
+					<div class="kj_main_r_spyxj">
+						<img src="{G_TEMPLATES_STYLE}/images/kj_main_r_spyxj.png" />
+					</div>
+				</div>
+				<div class="kj_main_r_spxj_title"><b title="{wc:$item['title']}{wc:$item['title2']}">{wc:$item['title']} <span class="txt-red">{wc:$item['title2']}</span></b></div>
+				<div class="kj_main_r_spxj_p">该商品已售完，给您带来不便敬请谅解！我们一直致力于改善服务体验，云购物感谢您的支持！更多新品敬请期待！</div>
+				{wc:else}
+				<div class="kj_qgjp_img"><a href="{WEB_PATH}/goods/{wc:$zx_shop['id']}" title="{wc:$zx_shop['title']}" target="_blank"><img alt="{wc:$zx_shop['title']}" src="{G_UPLOAD_PATH}/{wc:$zx_shop['thumb']}"/></a></div>
+				<p class="kj_qgjp_title"><a href="{WEB_PATH}/goods/{wc:$zx_shop['id']}" title="{wc:$zx_shop['title']}" target="_blank">(第{wc:$zx_shop['qishu']}期) {wc:$zx_shop['title']}</a></p>
+				<p class="kj_qgjp_price">总需：{wc:$zx_shop['zongrenshu']}人次</p>
+				<div class="progressBar">
+					{wc:php:start}
+					 $p_width=round($zx_shop['canyurenshu']/$zx_shop['zongrenshu']*100);
+					 {wc:php:end}
+					<p class="progressBar_wrap"><span class="progressBar_bar" style="width:{wc:$p_width}%;"></span></p>
+					<ul class="progressBar_txt">
+						<li class="progressBar_txt_l">
+							<p><b>{wc:$zx_shop['canyurenshu']}</b></p>
+							<p>已参与人次</p>
+						</li>
+						<li class="progressBar_txt_r">
+							<p><b>{wc:$zx_shop['zongrenshu']-$zx_shop['canyurenshu']}</b></p>
+							<p>剩余人次</p>
+						</li>
+					</ul>
+				</div>
+				<div class="kj_body_zrjp_Button">
+					<a href="{WEB_PATH}/goods/{wc:$zx_shop['id']}">立即抢购 ></a>
+				</div>
+				{wc:if:end} 
+			</div>
+		</div>
+		<div class="clear"></div>
+		
+	</div>
+        <div class="kj_main_b">
+			<div class="m-detail-main-rule">
+				<ul class="txt">
+					<li>
+						<span class="title"><img src="{G_TEMPLATES_STYLE}/images/kj_main_b_jsgs.png" /></span>
+						<div class="formula">
+							<div class="box red-box"><b class="txt-red">{wc:$item['q_user_code']}</b><br/><b class="txt-red" style="font-size:12px">本期幸运号码</b></div><div class="operator">=</div>
+							<div class="box gray-box"><b class="txt-red">{wc:$item['q_counttime']}</b><br/>该商品最后购买时间前，网站所有商品最后100条夺宝时间
+								<div class="more-box">
+									<i class="ico ico-arrow ico-arrow-yellow"></i>
+									<div class="yellow-box f-breakword">
+										该商品最后购买时间前， 网站所有商品最后100条夺宝时间<span><a href="javascript:void(0)" class="time-detail-main-codes-viewWinnerCodesBtn">点击查看</a></span>
+									</div>
+								</div>
+							</div>
+							<div class="operator" title="取余">%</div><div class="box"><b class="txt-red">{wc:$item['zongrenshu']}</b><br/>该奖品总需人次</div><div class="operator" title="相加">+</div><div class="box"><b class="txt-red">10000001</b><br/>原始数</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+        
+       
+        <div class="detail_tab" style="z-index:1">
+			<div class="detail_tab_nav">
+				<ul>
+					<li id="resultTab" class="detail_tab_navli detail_tab_navs">奖品详情</li>
+					<li id="recordTab" class="detail_tab_navli">所有参与记录</li>
+					<li id="pastTab" class="detail_tab_navli">往期云购</li>
+					<li id="shareTab" class="detail_tab_navli">晒单</li>
+				</ul>
+			</div>
+			<div class="detail_tab_cont">
+				<div id="resultPanel" class="detail_tab_cont_panel detail_tab_cont_result" >
+					<div class="m-detail-mainTab-calcRule">
+						<h4><i class="ico ico-text"></i><br/>幸运号码<br/>计算规则</h4>
+						<div class="ruleWrap">
+			            <ol class="ruleList">
+			                <li><span class="index">1</span>取该商品最后购买时间前网站所有商品的最后100条夺宝时间记录之和；</li>
+			                <li><span class="index">2</span>按时、分、秒、毫秒排列取值之和，除以该商品总参与人次后取余数；</li>
+			                <li><span class="index">3</span>余数加上10000001 即为“幸运夺宝码”，拥有该幸运号码者，直接获得该奖品。</li>
+			                <li class="txt-red">注：完全参照用户夺宝时间数据获取幸运号无人为技术操作可能性，余数结果加上10000001的计算方式让每一个幸运号码都有中奖可能，不必担心购买时机。</li>
+			            </ol>
+			        </div>
+					</div>
+					<table class="m-detail-mainTab-resultList" cellpadding="0" cellspacing="0">
+			       
+			        <tbody>
+			              
+			
+			                <tr class="resultRow">
+			                    <td colspan="5">
+			                        <h4>计算结果<a name="calcResult"></a></h4>
+			                        <ol>
+			                            <li><span class="index">1、</span>
+			                                                                                取该商品最后购买时间前网站所有商品的最后100条夺宝时间记录之和：{wc:$item['q_counttime']}
+			                                        <a href="javascript:void(0)" class="time-detail-main-codes-viewWinnerCodesBtn">查询详情>></a>
+			                            </li>
+			                            <li><span class="index">2、</span> 求余：{wc:$item['q_counttime']} % {wc:$item['zongrenshu']} (奖品所需人次) = 
+			                                <b class="">{wc:$yu}</b>
+										(余数) <i data-func="remainder" class="ico ico-questionMark"></i>
+			                            </li>
+			                            <li><span class="index">3、</span>
+			                               <b class="">{wc:$yu}</b>
+			 							(余数) + 10000001 = 
+			 								{wc:loop $q_user_code_arr  $q_code_num}<b class="square">{wc:$q_code_num}</b>{wc:loop:end}				
+			                            </li>
+			                        </ol>
+			                        <span class="resultCode">幸运号码：{wc:$item['q_user_code']}</span>
+			                    </td>
+			                </tr>
+			 
+			        </tbody>
+			    </table>
+		   		</div>
+				<!--所有参与记录-->
+			   <div id="recordPanel" class="detail_tab_cont_panel detail_tab_cont_record" style="display:none"> 
+					
+						
+			   </div>
+				<!--所有参与记录 end-->
+				<!--往期云够-->
+				<div id="pastPanel" class="detail_tab_cont_panel detail_tab_cont_past" style="display:none">
+					
+				</div>
+				<!--往期云够 end-->
+				<!--晒单-->
+				<div id="sharePanel" class="detail_tab_cont_panel detail_tab_cont_share" style="display:none"> 
+					<div class="detail_tab_cont_share_empty"> 
+						<iframe id="ifmdt" src="{WEB_PATH}/go/shaidan/itmeifram/{wc:$itemid}" frameborder="0" marginheight="0" marginwidth="0" frameborder="0" scrolling="no" width="100%" name="ifmdt"></iframe>
+						<!--<p class="status-empty"><i class="littleU littleU-cry"></i>&nbsp;&nbsp;暂时还没有任何晒单</p>  -->
+					</div> 
+			    </div>
+				<!--晒单 end-->
+			</div>
+        </div>
+        
+        
+      
+        
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function(){
+	$.post("{WEB_PATH}/go/index/jxfy/{wc:$item[id]}/",{"times":Math.random()},function(sdata){
+		if(sdata){$("#recordPanel").html(sdata);}
+	});
+	
+	$.post("{WEB_PATH}/go/index/wqfy/{wc:$item[id]}/",{"times":Math.random()},function(sdata){
+		if(sdata){$("#pastPanel").html(sdata);}
+	});
+
+})	
+
+</script>
+
+<script>
+$(function(){
+	var fouli=$(".detail_tab_navli");
+	fouli.click(function(){
+		var add=fouli.index(this);
+		fouli.removeClass("detail_tab_navs").eq(add).addClass("detail_tab_navs");
+		var tname=$(this).attr('id').replace('Tab','Panel');
+		$(".detail_tab_cont_panel").hide();
+		$("#"+tname).show();
+	});
+
+	$(".m-detail-main-codes-viewWinnerCodesBtn").click(function(){
+		var pro_width=($(window).width()-500)/2;
+		var pro_height=($(window).height()-620)/2;
+		if(pro_width<0) pro_width=0;
+		if(pro_height<0) pro_height=0;
+		$("#pro-view-84").css({"left":pro_width+"px","top":pro_height+"px"});
+	  	$("#pro-view-85").show();
+		$("#pro-view-84").show();  
+	});
+	$(".w-msgbox-close").click(function(){
+		$("#pro-view-85").hide();
+		$("#pro-view-84").hide();
+	});
+	$(".time-detail-main-codes-viewWinnerCodesBtn").click(function(){
+		var pro_width=$(window).width()-100;
+		var pro_height=($(window).height()-620)/2;
+		if(pro_width<0) pro_width=0;
+		if(pro_height<0) pro_height=0;
+		$("#pro-view-86").css({"left":"50px","top":pro_height+"px","width":pro_width+"px"});
+	  	$("#pro-view-87").show();
+		$("#pro-view-86").show();  
+	});
+	$(".w-msgbox-close").click(function(){
+		$("#pro-view-87").hide();
+		$("#pro-view-86").hide();
+	});
+});
+
+</script>
+{wc:templates "index","footer"}			
+ <div id="pro-view-85" class="w-mask" style="display:none">
+   <iframe style="position:absolute;top:0;left:0;z-index:-1;filter:Alpha(Opacity=0);width:100%;height:100%" scrolling="no" frameborder="0"></iframe>
+  </div>
+  <div style="display:none;" id="pro-view-84" class="w-msgbox m-detail-codesDetail"> 
+   <a data-pro="close" href="javascript:void(0);" class="w-msgbox-close">&times;</a> 
+   <div class="w-msgbox-hd" data-pro="header"></div> 
+   <div class="w-msgbox-bd" data-pro="entry">
+    <div class="m-detail-codesDetail-bd">
+     <h3>奖品获得者本期总共参与了<span class="txt-red">{wc:$user_shop_number}</span>人次</h3>
+     <div class="m-detail-codesDetail-wrap">
+      <dl class="m-detail-codesDetail-list f-clear">
+		<dt>{wc:fun:date('Y-m-d H:i:s',$user_shop_time)}</dt>
+        {wc:fun:yunma($user_shop_codes,"dd")}
+                       
+
+     </div>
+    </div>
+   </div> 
+  </div> 
+ <div id="pro-view-87" class="w-mask" style="display:none">
+   <iframe style="position:absolute;top:0;left:0;z-index:-1;filter:Alpha(Opacity=0);width:100%;height:100%" scrolling="no" frameborder="0"></iframe>
+  </div>
+  <div style="display:none;" id="pro-view-86" class="w-msgbox m-detail-codesDetail"> 
+   <a data-pro="close" href="javascript:void(0);" class="w-msgbox-close">&times;</a> 
+   <div class="w-msgbox-hd" data-pro="header"></div> 
+   <div class="w-msgbox-bd" data-pro="entry">
+    <div class="m-detail-codesDetail-bd">
+     <h3>奖品获得者本期总共参与了<span class="txt-red">{wc:$user_shop_number}</span>人次</h3>
+     <div class="m-detail-codesDetail-wrap" style="width:100%">
+      <dl class="m-detail-codesDetail-list f-clear">
+		<dt>本商品最后夺宝时间：{wc:fun:date('Y-m-d H:i:s',$user_shop_time)}</dt>
+		 <ul class="Record_content bb_pink" style="color: #999;height: 39px;line-height: 39px;text-align: center;">
+		  <li class="time" style="width: 18%;color: #f60;font-weight: bold;font-size: 14px;text-align: center;padding-left: 0px;float:left"> <b style="margin-right: 0px;">夺宝时间</b>
+                    </li>
+                    <li class="timeVal" style="width: 15%;color: #f60;font-weight: bold;font-size: 14px;text-align: center;padding-left: 0px;float:left">转换数据</li>
+                    <li class="nem" style="width: 10%;color: #f60;font-weight: bold;font-size: 14px;text-align: center;padding-left: 0px;float:left">
+                        会员账号
+                    </li>
+                    <li class="much" style="width: 10%;color: #f60;font-weight: bold;font-size: 14px;text-align: center;padding-left: 0px;float:left">夺宝人次</li>
+                    <li class="name" style="width: 45%;color: #f60;font-weight: bold;font-size: 14px;text-align: center;padding-left: 0px;float:left">
+                        商品名称
+                    </li>
+		  </ul>
+       {wc:loop $item['q_content'] $record} {wc:php:start} $record_time = explode(".",$record['time']); $record['time'] = $record_time[0]; {wc:php:end}
+                <ul class="Record_content bb_pink" style="color: #999;height: 39px;line-height: 39px;text-align: center;">
+                    <li class="time" style="width: 18%;overflow: hidden;height: 39px;line-height: 39px;float:left"> <b style="margin-right: 0px;">{wc:fun:date("Y-m-d",$record['time'])}</b> {wc:fun:date("H:i:s",$record['time'])}.{wc:$record_time[1]}
+                    </li>
+                    <li class="timeVal" style="width: 15%;color: #f60;font-weight: bold;font-size: 14px;text-align: center;padding-left: 0px;float:left">{wc:$record['timeadd']}</li>
+                    <li class="nem" style="width: 10%;text-align: center;float:left">
+                        <a style="font-size: 14px;" class="gray02" href="{WEB_PATH}/uname/{wc:fun:idjia($record['uid'])}" target="_blank">{wc:fun:get_user_name_open($record['uid'])}
+
+						</a>
+                    </li>
+                    <li class="much" style="width: 10%;text-align: center;font-size: 14px;float:left">{wc:$record['gonumber']}人次</li>
+                    <li class="name" style="width: 45%;text-align: left;padding-left: 20px;float:left">
+                        <a style="font-size: 14px;" class="gray02" href="{WEB_PATH}/goods/{wc:$record['shopid']}" target="_blank">
+					(&nbsp第{wc:$record['shopqishu']}期&nbsp){wc:$record['shopname']}
+				</a>
+                    </li>
+                </ul>
+                {wc:loop:end}
+                       
+
+     </div>
+    </div>
+   </div> 
+  </div> 

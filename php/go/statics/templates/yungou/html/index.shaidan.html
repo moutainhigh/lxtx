@@ -1,0 +1,66 @@
+{wc:templates "index","header"}
+<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_STYLE}/css/share.css"/>
+<script type="text/javascript" src="{G_TEMPLATES_JS}/liu.js"></script>
+ <div class="g-body"> 
+   <div class="m-share"> 
+    <div class="m-share-slogan"> 
+     <div class="g-wrap">
+      <img src="{G_TEMPLATES_STYLE}/img/share_slogan_dec.png" class="m-share-slogan-dec" />
+     </div> 
+     <div class="m-share-slogan-border"></div> 
+    </div> 
+    <div class="g-wrap f-clear"> 
+     <div class="index_body_title"> 
+      <img src="{G_TEMPLATES_STYLE}/images/index_body_shaidan_title.png" /> 
+     </div> 
+     <div id="waterfall">
+	 	{wc:loop $shaidan $sd}	
+		  {wc:getone sql="select * from `@#_shoplist` where `id` = '$sd[sd_shopid]'" return="shop"}
+		  {wc:getone:end}
+			<div class="cell">
+				<div class="pic">
+			         <a target="_blank" href="{WEB_PATH}/go/shaidan/detail/{wc:$sd['sd_id']}" title="{wc:$sd['sd_title']}"><img class="sky_pic" src="{G_UPLOAD_PATH}/{wc:$sd['sd_thumbs']}" alt="{wc:$sd['sd_title']}" /></a>
+		        </div> 
+		        <div class="name">
+		         	<a target="_blank" href="{WEB_PATH}/goods/{wc:$shop['id']}">(第{wc:$shop['qishu']}期) {wc:$shop['title']}</a>
+		        </div> 
+		        <div class="code">
+		        	 幸运号码：<strong class="txt-impt">{wc:$shop['q_user_code']}</strong>
+		        </div> 
+		        <div class="post"> 
+			         <div class="title">
+			          	<a target="_blank" href="{WEB_PATH}/go/shaidan/detail/{wc:$sd['sd_id']}"><strong>{wc:$sd['sd_title']}</strong></a>
+			         </div> 
+			         <div class="author">
+				          <a target="_blank" href="{WEB_PATH}/uname/{wc:fun:idjia($sd['sd_userid'])}" title="{wc:fun:get_user_name($sd['sd_userid'],'username')}(ID:{wc:$sd['sd_userid']})">{wc:fun:get_user_name($sd['sd_userid'],'username')}</a>
+				          <span class="time">{wc:fun:date("Y-m-d H:i",$sd['sd_time'])}</span>
+			         </div> 
+			         <div class="abbr">{wc:fun:_strcut($sd['sd_content'],50)}</div> 
+		        </div> 
+			</div>
+		{wc:loop:end} 
+	</div> 
+    </div> 
+   </div> 
+  </div> 
+<script>
+var opt={
+  getResource:function(index,render){//index为已加载次数,render为渲染接口函数,接受一个dom集合或jquery对象作为参数。通过ajax等异步方法得到的数据可以传入该接口进行渲染，如 render(elem)
+	  if(index>=10000) index=index%7+1;
+	  var html='';
+	  for(var i=20*(index-1);i<20*(index-1)+20;i++){
+		 var k='';
+		 for(var ii=0;ii<3-i.toString().length;ii++){
+	        k+='0';
+		 }
+		 k+=i;
+	     
+	  }
+	  return $(html);
+  },
+  auto_imgHeight:true,
+  insert_type:1
+}
+$('#waterfall').waterfall(opt);
+</script>
+{wc:templates "index","footer"}

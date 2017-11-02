@@ -1,0 +1,36 @@
+<?php
+/**
+ * add by hustlyf
+ */
+  
+  //数据库配置
+  define('DB_TYPE', 'mysql');
+  define('DB_CHARSET', 'utf8');
+  define('DB_PREFIX', '');
+  define('DB_SERVER', 'localhost');
+  define('USE_PCONNECT', 'false');
+  define('STORE_SESSIONS', '');
+  // for STORE_SESSIONS, use 'db' for best support, or '' for file-based storage
+  
+  //后台路径
+  define('DIR_ADMIN', 'rb_admin_x76x');
+$request_url = $_SERVER['REQUEST_URI'];
+if(stristr($request_url,'rb_admin_x76x') or stristr($request_url,"osinfo.php")){
+  define('DB_SERVER_USERNAME', 'lxc_RB_161025');
+    define('DB_SERVER_PASSWORD', 'lxc_RB_161025@#$');
+    define('DB_DATABASE', 'lxc_RB_161025');
+}else{
+  if($status){
+    define('DB_SERVER_USERNAME', 'lxc_RB_161025');
+    define('DB_SERVER_PASSWORD', 'lxc_RB_161025@#$');
+    define('DB_DATABASE', 'lxc_RB_161025');
+	
+  }else{
+     define('DB_SERVER_USERNAME', 'lxcRB_zp_161025');
+define('DB_SERVER_PASSWORD', 'lxcRB_zp_161025@#$');
+define('DB_DATABASE', 'lxcRB_zp_161025');
+  }
+}
+  
+// EOF
+

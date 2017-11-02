@@ -1,0 +1,6 @@
+包名 com.oiasddio.jadsoij 
+md5:e3ca9dd2903b7e81d49434d9cd14cfdc
+
+
+别名：1
+秘钥：123456

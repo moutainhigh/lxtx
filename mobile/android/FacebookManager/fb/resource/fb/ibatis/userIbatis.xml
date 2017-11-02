@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="fb">
+   <typeAlias alias="user" type="com.lxtx.fb.pojo.User"/>
+   
+   <insert id="User.insert" parameterClass="user">
+       insert into User (UserName, UserPass, CreateDay, Status, Country, Cookies, UaId)
+       values (#userName#, #userPass#, #createDay#, #status#, #country#, #cookies#, #uaId#)
+       on duplicate key update Status = 0
+   </insert>
+   
+   <select id="User.listNoProxy" resultClass="user">
+       select * from User where Status = 0 and ProxyId = 0 order by id asc limit 100
+   </select>
+   
+   <select id="User.getAll" resultClass="user">
+       select * from User where Status >= 0 and ProxyId >= 1 order by Id asc 
+   </select>
+   
+   <select id="User.select" parameterClass="long" resultClass="user">
+       select * from User where Id = #id#
+   </select>
+   
+   <update id="User.updateStatus" parameterClass="user">
+       update User set Status = #status# where Id = #id#
+   </update>
+   
+   <update id="User.updatePixel" parameterClass="user">
+       update User set Pixel = #pixel# where Id = #id# 
+   </update>
+   
+   <update id="User.updatePageUrl" parameterClass="user">
+       update User Set PageUrl = #pageUrl# where Id = #id#
+   </update>
+   
+   <update id="User.updateInvalid" parameterClass="user">
+       update User set InvalidDay = #invalidDay#, Status = #status# where Id = #id#
+   </update>
+   
+   <update id="User.updateLogin" parameterClass="user">
+       update User set LoginDay = #loginDay#, Status = #status#, LastOpTime = #lastOpTime# where Id = #id#
+   </update>
+   
+   <update id="User.updateSetting" parameterClass="user">
+       update User set SettingDay = #settingDay#, Status = #status#, LastOpTime = #lastOpTime# where Id = #id#
+   </update>
+   
+   <update id="User.updatePage" parameterClass="user">
+       update User set PageUrl = #pageUrl#, CategoryId = #categoryId#, 
+       PageDay = #pageDay#, SettingDay = #settingDay#, 
+       Status = #status#, LastOpTime = #lastOpTime# where Id = #id#
+   </update>
+   
+   <update id="User.updateAd" parameterClass="user">
+       update User set AdDay = #adDay#, Pixel = #pixel#, Status = #status#, LastOpTime = #lastOpTime# where Id = #id#
+   </update>
+   
+   <update id="User.updateAdFlag" parameterClass="user">
+       update User set AdFlagDay = #adFlagDay#,AdFlagContactDay = #adFlagContactDay#,Status = #status#, LastOpTime = #lastOpTime# where Id = #id#
+   </update>
+   
+   <update id="User.updateAdFlagContact" parameterClass="user">
+       update User set AdFlagContactDay = #adFlagContactDay#, Status = #status#, LastOpTime = #lastOpTime# where Id = #id#
+   </update>
+   
+   
+   <update id="User.updateAdPass" parameterClass="user">
+       update User set AdPassDay = #adPassDay#, Status = #status#, LastOpTime = #lastOpTime# where Id = #id#
+   </update>
+   
+   <update id="User.updateAdDelivery" parameterClass="user">
+       update User set AdDeliveryDay = #adDeliveryDay#, Status = #status#, LastOpTime = #lastOpTime# where Id = #id#
+   </update>
+   
+   <update id="User.updateAdStatus" parameterClass="user">
+       update User set Status = #status#, AdFlagDay = #adFlagDay#, AdFlagContactDay = #adFlagContactDay#, AdPassDay = #adPassDay#,
+       LastOpTime = #lastOpTime# where Id = #id#
+   </update>
+   
+   <update id="User.updateProxy" parameterClass="user">
+       update User set ProxyId = #proxyId# where Id = #id#
+   </update>
+   
+   <update id="User.updateCookies" parameterClass="user">
+       update User set Cookies = #cookies#, CookieUpdate = 1 where Id = #id#
+   </update>
+   
+   
+   <update id="User.updateLanguage" parameterClass="user">
+       update User set Language = #language# where Id = #id#
+   </update>
+</sqlMap>

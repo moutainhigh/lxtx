@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="fb">
+   <typeAlias alias="ipTime" type="com.lxtx.fb.pojo.IpTime"/>
+   
+   <select id="IpTime.getOne" parameterClass="string" resultClass="ipTime">
+       select * from IpTime where Section = #section#
+   </select>
+   
+   <update id="IpTime.updateOne" parameterClass="IpTime">
+       update IpTime set LastTime = #lastTime1# where Id = #id# and LastTime = #lastTime#
+   </update>
+   
+   <insert id="IpTime.insert" parameterClass="IpTime">
+       insert into IpTime( Section, LastTime)
+       values (#section#, #lastTime#)
+       on duplicate key update LastTime = #lastTime#
+   </insert>
+</sqlMap>

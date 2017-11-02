@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<configuration>
+	<!-- ch.qos.logback.core.ConsoleAppender 控制台输出 -->
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>[%-5level] %d{HH:mm:ss.SSS} [%thread] %logger{36} - %msg%n
+			</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+	<!-- ch.qos.logback.core.rolling.RollingFileAppender 文件日志输出 -->
+	<appender name="gameRobotAppender"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<Encoding>UTF-8</Encoding>
+		<File>logs/gameRobot.log</File>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>logs/gameRobot-%d{yyyy-MM-dd-HH}.log
+			</FileNamePattern>
+			<MaxHistory>10</MaxHistory>
+			<TimeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<MaxFileSize>100MB</MaxFileSize>
+			</TimeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>[%-5level] %d{HH:mm:ss.SSS} [%thread] %logger{36} - %msg%n
+			</pattern>
+			<charset>UTF-8</charset>
+		</layout>
+	</appender>
+
+	<logger name="com.ibatis" level="DEBUG" />
+	<logger name="com.ibatis.common.jdbc.SimpleDataSource" level="DEBUG" />
+	<logger name="com.ibatis.common.jdbc.ScriptRunner" level="DEBUG" />
+	<logger name="com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate"
+		level="DEBUG" />
+	<logger name="java.sql.Connection" level="DEBUG" />
+	<logger name="java.sql.Statement" level="DEBUG" />
+	<logger name="java.sql.PreparedStatement" level="DEBUG" />
+	<!-- 日志级别 -->
+
+	<root>
+		<!-- 定义了ERROR和INFO级别的日志，分别在FILE文件和控制台输出 -->
+		<level value="error" />
+		<level value="info" />
+		<appender-ref ref="console" />
+		<appender-ref ref="gameRobotAppender" />
+	</root>
+</configuration>

@@ -1,0 +1,33 @@
+<ion-view view-title="充值及兑卡记录">
+    <ion-nav-bar class="bar-positive bar-header-black" align-title="center">
+        <ion-nav-back-button>返回</ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+        <ion-refresher pulling-text="下拉刷新列表..." on-refresh="doRefresh()">
+        </ion-refresher>
+        <ion-list>
+            <div ng-if="records.length==0" style="margin: 10px;color: grey">
+                没有任何记录.
+            </div>
+            <div class="item rec-history" ng-repeat="r in records">
+                <div class="row clearfix">
+                    <div class="left" ng-show="r.otype==1" style="color:green;">{{r.type}}</div>
+                    <div class="left" ng-show="r.otype==2" style="color:orangered;">{{r.type}}</div>
+                    <div class="right" style="color: rgba(128, 128, 128, 0.51);">{{r.time}}</div>
+                </div>
+                <div class="row time" ng-show="r.otype==1">
+                    <span>充值元宝：</span>
+                    <span style="color:red">{{r.money.toFixed(2)}}</span>
+                </div>
+                <div class="row time" ng-show="r.otype==2">
+                    <span>兑换房卡：</span>
+                    <span style="color:red">{{r.num}} 张</span>
+                    <span class="right">消耗元宝： <span style="color:red">{{r.money.toFixed(2)}}</span></span>
+                   
+                </div>
+            </div>
+        </ion-list>
+        <ion-infinite-scroll on-infinite="loadMore()" ng-if="!noMoreItemsAvailable">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

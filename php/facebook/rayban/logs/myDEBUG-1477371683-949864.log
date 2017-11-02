@@ -1,0 +1,6 @@
+[25-Oct-2016 07:01:23 Europe/Paris] PHP Warning:  Illegal string offset 'cost' in D:\wamp\www\rayban1021\includes\classes\order.php on line 372
+[25-Oct-2016 07:01:23 Europe/Paris] PHP Stack trace:
+[25-Oct-2016 07:01:23 Europe/Paris] PHP   1. {main}() D:\wamp\www\rayban1021\index.php:0
+[25-Oct-2016 07:01:23 Europe/Paris] PHP   2. require() D:\wamp\www\rayban1021\index.php:36
+[25-Oct-2016 07:01:23 Europe/Paris] PHP   3. order->order() D:\wamp\www\rayban1021\includes\modules\pages\checkout\header_php.php:27
+[25-Oct-2016 07:01:23 Europe/Paris] PHP   4. order->cart() D:\wamp\www\rayban1021\includes\classes\order.php:34

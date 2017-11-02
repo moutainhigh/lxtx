@@ -1,0 +1,66 @@
+
+#stickey_footer { /* This will make your footer stay where it is */
+
+	bottom: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	height: 50px;
+	margin: 0 auto 0 0px;
+	padding: 0 10px;
+	position: fixed;
+	width: 100%;
+}
+/* border curves */
+
+/* hover effect */
+
+/* shadow for the footer*/
+#stickey_footer {
+	background:url("http://yungw.com/kuaileyungou/statics/templates/yungou/images/mobile/app_36.png")
+
+}
+#footer_menu {
+            padding: 0;
+            margin: 0 auto;
+			display:table;margin:0 auto;
+}
+#footer_menu li {
+	text-align: center;
+	list-style: none;
+    display: inline;
+}
+#footer_menu .imgmenu {
+
+	padding:5px 15px 3px 14px;
+	cursor:pointer;
+	width:40px;
+	height:40px;
+}
+#footer_menu .imgmenu2 {
+	padding:5px 15px 3px 14px;
+	cursor:pointer;
+	width:40px;
+	height:40px;
+
+}
+#footer_menu .imgmenu3 {
+
+	padding:5px 15px 3px 14px;
+	cursor:pointer;
+	width:40px;
+	height:40px;
+
+}
+#footer_menu .imgmenu4 {
+	padding:5px 15px 3px 14px;
+	cursor:pointer;
+	width:40px;
+	height:40px;
+
+}
+#footer_menu .imgmenu5 {
+	padding:5px 15px 3px 14px;
+	cursor:pointer;
+	width:40px;
+	height:40px;
+
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<organ name="technology company">
+    <properties>
+        <p name="address">#1000 xxx RD</p>
+        <p name="telephone">400-xxx-xxxx</p>
+        <p name="system">后台管理系统</p>
+        <p name="version">V1.0</p>
+        <p name="company">XX公司</p>
+        <p name="email">example@xyz.com</p>
+    </properties>
+    <installedApps>
+        <app id="app.lottery"/>
+        <app id="app.system"/>
+    </installedApps>
+    <unit id="default" name="管理团队">
+
+    </unit>
+</organ>

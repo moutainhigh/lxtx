@@ -1,0 +1,6 @@
+包名：com.fobfoutwat.joiuexbout
+md5：07695650968910f7d9ac6a40eb8420b9
+
+签名密码：KOEI123456lll
+别名：android.keystore
+别名密码：KOEI123456lll

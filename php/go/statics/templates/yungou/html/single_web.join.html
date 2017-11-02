@@ -1,0 +1,73 @@
+<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_STYLE}/css/newbie.css"/>
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.6.4/jquery.min.js"></script>
+<script>
+$(function(){
+	$(".join_sub").click(function(){
+		if(!$("#join_name").val()){
+			alert("请填写姓名！");
+			return false;
+		}
+		if(!$("#join_mobile").val()){
+			alert("请填写手机或电话号码！");
+			return false;
+		}
+		var join_form=$(".join_form").serialize();		
+ 		$.ajax({ 
+			async:false, 
+			url:"http://www.yungw.com/index.php/member/home/join?"+join_form,
+			type: "GET", 
+			dataType: 'jsonp', 
+			jsonp: 'jsoncallback', 
+			timeout: 5000, 
+			success: function (json) {
+				if(json>0){
+					alert("提交成功！");
+				}else{
+					alert("提交失败！");
+				}	
+			}		
+		});
+		alert("提交成功！"); 
+	})
+	$(".join_form").submit(function () {
+		return false;
+	});
+})
+</script>
+<script type="text/javascript"> var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ffbeb662bf3b743a1100d9ed6a7bba334' type='text/javascript'%3E%3C/script%3E")) </script>
+<div class="joinContent">
+
+		<div class="joinbor clearfix">
+
+			<div class="join-Separate">
+				<img src="{G_UPLOAD_PATH}/newbie/000001.jpg" border="0" alt="">
+			</div> 
+			<div class="join-Separate">
+				<img src="{G_UPLOAD_PATH}/newbie/000002.jpg" border="0" alt="">
+			</div> 
+			<div class="join-Separate">
+				<img src="{G_UPLOAD_PATH}/newbie/000003.jpg" border="0" alt="">
+			</div> 
+			<div class="join-Separate" style="width:1200px;height:1382px;background:url({G_UPLOAD_PATH}/newbie/000004.jpg) no-repeat;">
+				<div style="padding-top:900px;padding-left:100px;">			
+ 					<object data="http://www.yungw.com/111/res/b0159zzlex6.mp4" height="372px" width="550px" >
+ 						<param name="PlayCount" value="0">
+ 					</object>
+				</div>
+			</div> 
+			<div class="join-Separate" style="width:1200px;height:541px;padding-top:77px;background:url({G_UPLOAD_PATH}/newbie/000005.jpg) no-repeat;">
+				<form method="post" action="" class="join_form">
+					<div style="margin-left:602px;width:278px;height:311px;">
+						<input name="namecheck" id="join_name" class="join_ipt" type="text" value="" />
+						<input name="mobilecheck" id="join_mobile" class="join_ipt" type="text" value="" />
+						<input name="qqcheck" class="join_ipt" type="text" value="" />
+						<textarea name="textcheck" class="join_tta"></textarea>
+						<input class="join_sub" id="btnSubmit" type="submit" class="bluebut" value="" >
+					</div>
+				</form>
+			</div> 
+
+		</div>
+
+
+</div>

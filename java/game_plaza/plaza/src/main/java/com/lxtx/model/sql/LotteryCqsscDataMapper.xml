@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.lxtx.dao.LotteryCqsscDataMapper">
+	<resultMap id="BaseResultMap" type="com.lxtx.model.LotteryCqsscData">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="date" property="date" jdbcType="INTEGER" />
+		<result column="serial_number" property="serialNumber" jdbcType="INTEGER" />
+		<result column="open_code" property="openCode" jdbcType="VARCHAR" />
+		<result column="open_time" property="openTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, date, serial_number, open_code, open_time
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from lottery_cqssc_data
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from
+		lottery_cqssc_data
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+	<select id="selectByDateAndSn" resultMap="BaseResultMap"
+		parameterType="map">
+		select
+		<include refid="Base_Column_List" />
+		from lottery_cqssc_data
+		where date=#{date,jdbcType=INTEGER} and serial_number=#{sn,jdbcType=INTEGER}
+	</select>
+	<select id="selectByDate" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from lottery_cqssc_data
+		where date=#{date,jdbcType=INTEGER} order by serial_number desc
+	</select>
+	<select id="getLatestLotteryData" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from lottery_cqssc_data
+		where date=#{date,jdbcType=INTEGER} order by serial_number desc limit 1	
+	</select>
+</mapper>

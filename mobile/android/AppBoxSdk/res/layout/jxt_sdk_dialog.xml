@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_sm_sky_pay_fl"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:id="@+id/main_sky_pay_ll"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/main_sky_pay_rl"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/jxt_sm_pay_bg"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/main_sky_pay_inside_ll"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/main_sky_pay_top_rl"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5.0dip"
+                    android:orientation="horizontal" >
+
+                    
+                    <TextView
+                        android:id="@+id/jxt_sdk_dialog_cancel_btn"
+                        android:layout_width="15.0dip"
+                        android:layout_height="15.0dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginRight="10.0dip"
+                        android:layout_marginTop="12.0dip"
+                        android:background="@drawable/jxt_sm_close_btn"
+                        android:clickable="true"
+                        android:scaleType="fitCenter" 
+                        android:visibility="visible"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/main_sky_pay_middle_rl"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <ScrollView
+                        android:id="@+id/main_sky_pay_sv"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" >
+
+                        <LinearLayout
+                            android:id="@+id/main_sky_pay_sv_ll"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical" >
+
+                            <RelativeLayout
+                                android:id="@+id/main_sky_pay_middle_inside_rl"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal" >
+
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/jxt_tv_hint"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="12.0dip"
+                                android:layout_marginRight="12.0dip"
+                                android:layout_marginTop="7.0dip"
+                                android:lineSpacingExtra="3.0dip"
+                                android:textColor="#ff5b6e7c"
+                                android:textSize="13.0sp"
+                                 android:text=""
+                                 />
+
+                        </LinearLayout>
+                    </ScrollView>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/main_sky_pay_button_rl"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10.0dip" >
+
+                    <LinearLayout
+                        android:id="@+id/main_sky_pay_button_ll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10.0dip"
+                        android:gravity="center"
+                        android:orientation="horizontal" >
+
+                        <Button
+                            android:id="@+id/jxt_sdk_dialog_comfirm_btn"
+                            android:layout_width="110.66998dip"
+                            android:layout_height="40.0dip"
+                            android:background="@drawable/jxt_sm_pay_comfirm_button"
+                            android:text="确 定"
+                            android:textColor="#ff317510" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</FrameLayout>

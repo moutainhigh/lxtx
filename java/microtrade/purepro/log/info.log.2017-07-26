@@ -1,0 +1,20 @@
+[2017-07-26 15:19:19:630] in show guest page.
+ [2017-07-26 15:19:20:087] in showguestpage, step1
+ [2017-07-26 15:19:20:093] in showguestpage, step2
+ [2017-07-26 15:19:20:241] Recommend to use `net.rubyeye.xmemcached.impl.RandomMemcachedSessionLocaltor` as session locator for kestrel protocol.
+ [2017-07-26 15:19:20:254] XMemcachedClient use Kestrel protocol
+ [2017-07-26 15:19:20:316] Creating 8 reactors...
+ [2017-07-26 15:19:20:329] The Controller started at localhost/127.0.0.1:0 ...
+ [2017-07-26 15:19:20:332] You are using connection pool for xmemcached client,it's not recommended unless you have test it that it could increase performance in your app.
+ [2017-07-26 15:19:20:428] Add a session: 119.29.98.103:22134
+ [2017-07-26 15:19:20:511] Add a session: 119.29.98.103:22134
+ [2017-07-26 15:19:20:511] Disable merge get commands
+ [2017-07-26 15:19:20:511] Disable merge get commands
+ [2017-07-26 15:19:20:577] in showguestpage, step3
+ [2017-07-26 15:19:23:366] seconds values is:0 in /user/listOrder
+ [2017-07-26 15:19:30:318] seconds values is:0 in /user/listOrder
+ [2017-07-26 15:42:51:188] Session(119.29.98.103:22134) heartbeat fail 4 times,close session and try to heal it
+ [2017-07-26 15:42:51:222] Remove a session: 119.29.98.103:22134
+ [2017-07-26 15:42:53:223] Trying to connect to 119.29.98.103:22134 for 1 times
+ [2017-07-26 15:42:53:311] Add a session: 119.29.98.103:22134
+ 

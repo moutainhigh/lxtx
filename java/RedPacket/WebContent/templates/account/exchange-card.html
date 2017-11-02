@@ -1,0 +1,32 @@
+<ion-view view-title="兑换房卡">
+	<ion-nav-bar class="bar-positive bar-header-black" align-title="center">
+        <ion-nav-back-button>返回</ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-header-bar align-title="center" class="bar-positive bar-header-black">
+        <h1 class="title">兑换房卡</h1>
+        <div class="buttons"><!--
+            <a class="button button-icon icon ion-ios-telephone-outline" href="http://www.baidu.com"></a>-->
+        </div>
+    </ion-header-bar>
+    <ion-content>
+<!--         <div class="padding" style="background-color: #F1E9CF;color:#8E7525;margin: 1px;"> -->
+<!--            	<span ng-bind="price">{{price}}</span>元宝兑换一张房卡 -->
+<!--         </div> -->
+        <div class="list list-inset">
+            <label class="item item-input">
+               <span class="input-label">我的元宝</span>
+               <span class="act-balance"><strong style="color:darkorange">{{money}}</strong></span>
+            </label>
+            <span class="input-label" style="color:#8E7525;width: 100%;max-width: 400px;text-align: right;">{{price}} 元宝兑换一张房卡，您最多可兑换{{maxExchage}}张</span>
+            <br>	
+            <label class="item item-input">
+                <span class="input-label">兑换房卡数</span>
+                <input type="text" placeholder="请输入房卡数" maxlength="3" ng-model="cardnum"/>
+            </label>
+            <br>
+            <button class="button button-block button-positive button-green" ng-click="applyExchangeCard(cardnum)">
+                	提交申请
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

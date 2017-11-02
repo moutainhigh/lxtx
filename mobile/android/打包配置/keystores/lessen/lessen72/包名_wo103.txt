@@ -1,0 +1,6 @@
+包名：com.lskjnessess.zhcjfmp
+md5：74bca6e8d407c28bf9d04d91ef710da7
+
+签名密码：Lskj123456789
+别名：android.keystore
+别名密码：Lskj123456789

@@ -1,0 +1,2 @@
+<span style="font-family: arial; font-weight: bold;"><p><strong>404 Error : </strong><br /><br />The requested URL <i><?php echo $_SERVER['REQUEST_URI'];?></i> was not found on this server!</p>
+<p><b>This is our site map which can help you find the URL you need. </b></p></span>

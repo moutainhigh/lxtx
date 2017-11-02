@@ -1,0 +1,158 @@
+.bellows {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 95%;
+	margin: 0 auto;
+}
+.bellows__header {
+  background: #026eb7 none repeat scroll 0 0;*
+  /*background: #629701 none repeat scroll 0 0;*/
+  border-image: none;
+  border-style: solid;
+  border-width: 0 0 1px;
+  color: white;
+  padding: 15px 20px;
+  position: relative;
+}
+.bellows__header:active {
+	background: #2980b9;
+}
+.bellows__header:hover{/*background:#EE0033;*/}
+.bellows__header::before, .bellows__header::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	z-index: 2;
+	display: block;
+	width: 16px;
+	height: 4px;
+	margin-top: -2px;
+	background: white;
+	pointer-events: none;
+	-webkit-transition: -webkit-transform 0.25s ease-in-out;
+	transition: transform 0.25s ease-in-out;
+}
+.bellows__header::before {
+	content: '';
+	-webkit-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	transform: rotate(0deg);
+}
+.bellows__header::after {
+	-webkit-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+.bellows__item.bellows--is-open > .bellows__header::before, .bellows__item.bellows--is-opening > .bellows__header::before {
+	-webkit-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+.bellows__item {
+	margin-bottom: 5px;
+}
+.bellows__item.bellows--is-open > .bellows__header::after, .bellows__item.bellows--is-opening > .bellows__header::after {
+	-webkit-transform: rotate(360deg);
+	-ms-transform: rotate(360deg);
+	transform: rotate(360deg);
+}
+.bellows__item:last-child > .bellows__header {
+	border-bottom: 0;
+}
+.bellows__header h1,  .bellows__header h2,  .bellows__header h3,  .bellows__header h4 {
+	margin: 0;
+}
+.bellows__content {
+	padding: 10px;
+	border: 1px solid #ecf0f1;
+}
+.ratingRow > input, textarea {
+  border: 1px solid #cfcfcf;
+}
+
+div.bellows__content p {
+  line-height: 20px;
+}
+.bellows__content span {
+  display: inline-block;
+  line-height: 20px;
+}
+
+.bellows__content .bellows {
+	margin-top: 20px;
+}
+/*ÁíÍâÒ»¸öCSS*/
+
+.bellows__item:not(.bellows--is-open) > .bellows__content {
+	display: none;
+}
+.bellows__item.bellows--is-open > .bellows__content-wrapper,  .bellows__item.bellows--is-closing > .bellows__content-wrapper {
+	display: block;
+}
+.bellows__content-wrapper {
+	display: none;
+}
+.shipping.message .free {
+  font-family: "Akkurat","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+.upper {
+	text-transform: uppercase;
+}
+.shipping.message {
+	font-family: "Tiempos", "Times New Roman", Times, serif;
+	font-size: 0.9em;
+	padding: 5px 0 25px;
+	text-align: center;
+	width: auto;
+}
+
+/*--------------------------------------------------------*/
+
+.product-blurb {
+  /*border-top: 1px solid #ccc;*/
+  font-size: 12px;
+  line-height: 18px;
+  position: relative;
+  padding: 10px 0px 0px 50px;
+}
+.product-blurb > .delivery-truck {
+  left: 15px;
+  position: absolute;
+  top: 15px;
+}
+.sprite.delivery-truck {
+  background-image: url("/includes/templates/jersey_mobile/images/small-ic.png");
+  background-position: 0 -68px;
+  display: inline-block;
+  height: 16px;
+  width: 20px;
+}
+.product-blurb p {
+  margin-bottom: 0;
+}
+.product-blurb strong {
+  color: #686868;
+}
+.product-blurb a {
+  color: #999999;
+  text-decoration: underline;
+}
+#product-detail-page a {
+  color: #f58a21;
+  text-decoration: none;
+}
+.info {
+  background-image: url("/img/info_icon.png");
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  display: inline-block;
+  height: 16px;
+  text-indent: -9999px;
+  vertical-align: middle;
+  width: 16px;
+}
+

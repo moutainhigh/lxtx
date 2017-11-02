@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.lxtx.dao.CloudNoticeMapper" >
+  <resultMap id="BaseResultMap" type="com.lxtx.model.CloudNotice" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="content" property="content" jdbcType="VARCHAR" />
+    <result column="day" property="day" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, title, content, `day`
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from cloud_notice
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from cloud_notice
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.lxtx.model.CloudNotice" useGeneratedKeys="true" keyProperty="id" >
+    insert into cloud_notice (title, content, `day`
+      )
+    values (#{title,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, #{day,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lxtx.model.CloudNotice" useGeneratedKeys="true" keyProperty="id" >
+    insert into cloud_notice
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      title,
+      content,
+      `day`,
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      #{title,jdbcType=VARCHAR},
+      #{content,jdbcType=VARCHAR},
+      #{day,jdbcType=DATE},
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lxtx.model.CloudNotice" >
+    update cloud_notice
+    <set >
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="day != null" >
+        `day` = #{day,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lxtx.model.CloudNotice" >
+    update cloud_notice
+    set title = #{title,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      `day` = #{day,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="queryNoticeByDay" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from cloud_notice
+    where `day` = #{day,jdbcType=VARCHAR} 
+  </select>
+</mapper>

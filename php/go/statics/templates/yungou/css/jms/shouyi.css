@@ -1,0 +1,117 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+	margin: 0;
+	padding: 0;
+}
+.shouyi_container {
+	width: 1670px;
+	height: 687px;
+	border: 1px solid #C66;
+}
+.shouyi_left {
+	width: 830px;
+	height: 687px;
+	border: 1px solid #C66;
+	float: left;
+}
+.shouyi_left1 {
+	width: 830px;
+	height: 100px;
+	border: 1px solid #C66;
+	float: left;
+}
+.hello {
+	color: #000;
+	font-family: '黑体';
+	font-size: 24px;
+	font-weight: bold;
+}
+.jmsadmin {
+	color: #4C95B6;
+	font-family: '黑体';
+	font-size: 24px;
+	font-weight: bold;
+}
+.huanying {
+	color: #E71C46;
+	font-family: '黑体';
+	font-size: 24px;
+	font-weight: bold;
+}
+.jmsadmininfo {
+	color: #999999;
+	font-size: 12px;
+}
+.shouyi_left2 {
+	width: 830px;
+	height: 200px;
+	border: 1px solid #C66;
+	float: left;
+}
+.shouyi_left3 {
+	width: 830px;
+	height: 383px;
+	border: 1px solid #C66;
+	float: left;
+}
+.shouyi_data1 {
+	width: 257px;
+	height: 383px;
+	border: 1px solid #C66;
+	float: left;
+}
+.title {
+	height: 40px;
+	width: 100%;
+	border: 1px solid #C36;
+	
+	float: left;
+	font-size:20px;
+	font-weight:bold;
+}
+.data {
+	height: 340px;
+	width: 100%;
+	border: 1px solid #C36;
+	
+	float: left;
+}
+.data table {
+	height: 340px;
+	width: 100%;
+	border:0;
+	font-size:14px;
+	color:#383838;
+}
+.shouyi_data2 {
+	width: 278px;
+	height: 383px;
+	border: 1px solid #C66;
+	float: left;
+}
+.shouyi_data3 {
+	width: 280px;
+	height: 383px;
+	border: 1px solid #C66;
+	float: left;
+}
+.shouyi_right {
+	width: 590px;
+	height: 687px;
+	border: 1px solid #C66;
+	float: left;
+}
+.shouyi_right1 {
+	width: 590px;
+	height: 300px;
+	border: 1px solid #C66;
+	float: left;
+}
+.shouyi_right2 {
+	width: 590px;
+	height: 384px;
+	border: 1px solid #C66;
+	float: left;
+}
+

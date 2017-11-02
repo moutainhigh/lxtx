@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>userList</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>Signin</title>
+    <link rel="stylesheet" th:href="@{/css/ie10-viewport.css}"></link>
+	<link rel="stylesheet" th:href="@{/css/signin.css}"></link>
+  </head>
+  <body>
+    <div class="container">
+      <form class="form-signin" th:action="@{/user/signin}" method="post">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="username" class="sr-only">Username</label>
+        <input id="username" name="username" class="form-control" placeholder="User Name" required="true" autofocus="true" />
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" name="password" id="password" class="form-control" placeholder="Password" required="true" />
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <label class="has_error" th:text="${message}"></label>
+      </form>
+    </div>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script th:src="@{/js/ie10-viewport.js}"></script>
+  </body>
+</html>

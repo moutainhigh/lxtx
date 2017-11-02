@@ -1,0 +1,16 @@
+应用包名： com.wjdz.rmhbnn
+签名密码： android
+密钥别名： rm1.keystore
+签名MD5 ： 16B7C306D526CC5C0F3C84AC9F20CF00
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,14 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="billing" namespace="/" extends="struts-default">
+
+		<action name="dynamicTask" class="dynamicTaskAction">
+		</action>
+		
+		<action name="htwxDynamic" class="htwxDynamicAction"></action>
+	</package>
+
+</struts>

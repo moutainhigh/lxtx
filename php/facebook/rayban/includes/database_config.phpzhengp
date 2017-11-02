@@ -1,0 +1,23 @@
+<?php
+/**
+ * add by hustlyf
+ */
+  
+  //数据库配置
+  define('DB_TYPE', 'mysql');
+  define('DB_CHARSET', 'utf8');
+  define('DB_PREFIX', '');
+  define('DB_SERVER', 'localhost');
+  define('USE_PCONNECT', 'false');
+  define('STORE_SESSIONS', '');
+  // for STORE_SESSIONS, use 'db' for best support, or '' for file-based storage
+  
+  //后台路径
+  define('DIR_ADMIN', 'rb_admin_x76x');
+
+     define('DB_SERVER_USERNAME', 'lxcRB_zp_161025');
+define('DB_SERVER_PASSWORD', 'lxcRB_zp_161025@#$');
+define('DB_DATABASE', 'lxcRB_zp_161025');
+ 
+// EOF
+

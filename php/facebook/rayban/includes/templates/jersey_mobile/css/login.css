@@ -1,0 +1,53 @@
+/**
+ * Login CSS Stylesheet
+ *
+ * @package easy signup and login
+ * @copyright Copyright 2007 Numinix Technology http://www.numinix.com
+ * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
+ * @version $Id: login.css 62 2009-07-12 21:43:34Z numinix $
+ */
+#easySignUp { color: #555; font: 12px/17px Arial, Helvetica, sans-serif; clear: both; overflow: hidden; }
+#easySignUp fieldset { margin: 10px 0; padding: 8px; border: 1px solid #CCC; }
+#easySignUp h2 { color: #000; font: bold 16px/28px Verdana, Geneva, sans-serif; margin: 0 0 5px; padding: 0; border-bottom: 1px solid #DDD; }
+#easySignUp h3 { color: #333; font: normal 14px/26px Arial, Helvetica, sans-serif; margin: 8px 0; padding: 0; border-bottom: 1px solid #DDD; }
+#easySignUp #zoneDiv, #easySignUp #stDiv { clear: both; }
+#easySignUp .visibleDiv { display: block; }
+#easySignUp .hiddenDiv { display: none; }
+div#easySignUp #login-password {
+  margin-left: 0px;
+  }
+
+div#easySignUp #login-email-address {
+  margin-left: 0px;
+  }
+
+div#easySignUp #loginColumnLeft{
+  width: 99%;
+  }
+
+div#easySignUp #loginColumnRight{
+  width: 99%;
+  }
+  
+div#easySignUp .buttonRow {
+  padding-top: 5px;
+}
+
+/*div#easySignUp fieldset {
+  border: 1px solid #cccccc;
+  padding: 6px;
+}
+div#easySignUp legend {
+  border: 1px solid #4A4A4A;
+  background-color: #F0FFF0;
+  color: #4A4A4A;
+}*/
+div#easySignUp hr {
+  border-style:none;
+  border-top: 2px dotted #CCCCCC;
+  border-bottom: 2px solid white;
+  height: 4px;
+}
+div#easySignUp .checkboxLabel {
+  margin-bottom: 10px;
+}

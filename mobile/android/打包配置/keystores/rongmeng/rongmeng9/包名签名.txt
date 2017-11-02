@@ -1,0 +1,20 @@
+应用包名： com.epmy.hltp
+签名密码： android
+密钥别名： rm1.keystore
+签名MD5 ： D05903F3B4863240B4AAF3CDAC1FE60E
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+

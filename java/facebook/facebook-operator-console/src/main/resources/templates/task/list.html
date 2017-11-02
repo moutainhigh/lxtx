@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>userList</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
+</head>
+<body class="container">
+<br/>
+<h1>任务列表</h1>
+<br/><br/>
+<div class="with:80%">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Type</th>
+            <th>Country</th>
+            <th>MachineId</th>
+            <th>MachineUser</th>
+            <th>Execute</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr  th:each="task : ${tasks}">
+            <th scope="row" th:text="${task.id}">1</th>
+            <td th:text="${task.taskType}">neo</td>
+            <td th:text="${task.Country}">Otto</td>
+            <td th:text="${task.fbUser.machine.ip}">6</td>
+            <td th:text="${task.fbUser.machineUser.name}">6</td>
+            <td><a th:href="@{/task/toExec(taskId=${task.id})}">执行任务</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="form-group">
+    <div class="col-sm-2 control-label">
+    </div>
+</div>
+
+</body>
+</html>

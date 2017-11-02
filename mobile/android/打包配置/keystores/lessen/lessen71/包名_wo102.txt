@@ -1,0 +1,6 @@
+包名：com.feiyada.wouxutqpt
+md5：274bb9817fe73b471fe007f7b11701c1
+
+签名密码：Qq18702719225
+别名：android.keystore
+别名密码：Qq18702719225

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title>招商加盟 - {wc:$webname}触屏版</title>
+<meta content="app-id=518966501" name="apple-itunes-app" />
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="user-scalable=no, width=device-width" />  
+<link href="{G_TEMPLATES_CSS}/mobile/comm.css" rel="stylesheet" type="text/css" />
+<style>
+.join_form_div{width:100%;height:300px;}
+.join_form_div ul{width:100%;}
+.join_form_div ul li{width:100%;height:30px;margin-top:10px;}
+.join_form_div ul li span{float:left;width:20%;height:27px;display:block;text-align:center;line-height:27px;font-weight:bold;}
+.join_form_div ul li input{float:left;width:70%;border-radius:5px; }
+.join_ipt{height:27px;border:1px solid #333;color:#666;padding-left:3px;}
+.join_tta{width:70%;height:65px;border:1px solid #333;color:#666;border-radius:5px;padding-left:3px;}
+.join_sub{width:50%;height:30px;background:#ff4747;border:1px solid #ff4747;cursor:pointer;border-radius:5px; margin-left:25%; color:#fff;}
+
+</style>
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.6.4/jquery.min.js"></script>
+<script>
+$(function(){
+	$(".join_sub").click(function(){
+		if(!$("#join_name").val()){
+			alert("请填写姓名！");
+			return false;
+		}
+		if(!$("#join_mobile").val()){
+			alert("请填写手机或电话号码！");
+			return false;
+		}
+		var join_form=$(".join_form").serialize();		
+ 		$.ajax({ 
+			async:false, 
+			url:"http://www.yungw.com/join.php?"+join_form,
+			type: "GET", 
+			dataType: 'jsonp', 
+			jsonp: 'jsoncallback', 
+			timeout: 5000, 
+			success: function (json) {
+				if(json>0){
+					alert("提交成功！");
+				}else{
+					alert("提交失败！");
+				}	
+			}		
+		});
+		alert("提交成功！"); 
+	})
+	$(".join_form").submit(function () {
+		return false;
+	});
+})
+</script>
+<script type="text/javascript"> var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F472f0ef41aaa6d0eeca53beaf14f44ee' type='text/javascript'%3E%3C/script%3E")) </script></head>
+<body>
+<div class="h5-1yyg-v11" style="width:100%;height:5000px;background:url('{G_TEMPLATES_STYLE}/img/index_join_01.jpg') no-repeat;background-size:100% 100%;"></div>
+<div class="h5-1yyg-v11" style="width:100%;height:601px;background:url('{G_TEMPLATES_STYLE}/img/index_join_02.jpg') no-repeat;background-size:100% 100%;">
+	<div style="padding-top:160px;padding-left:41px;">
+	
+ 		<video controls="controls" autoplay="autoplay" width="250px" height="160px">
+          <source src="http://www.yungw.com/111/res/b0159zzlex6.mp4" type="video/mp4" />
+        </video>
+	</div>
+</div>
+<div class="h5-1yyg-v11 join-Separate" style="width:100%;height:520px;background:#fff;">
+	<div><img src="{G_TEMPLATES_STYLE}/img/join_01.jpg" style="width:140px;height:30px;margin:10px;" alt=""></div>
+	<form method="post" action="" class="join_form">
+		<div class="join_form_div">
+			<ul>
+				<li><span>姓名：</span><input id="join_name" name="namecheck" class="join_ipt" type="text" value="" /></li>
+				<li><span>手机：</span><input id="join_mobile" name="mobilecheck" class="join_ipt" type="text" value="" /></li>
+				<li><span>QQ：</span><input name="qqcheck" class="join_ipt" type="text" value="" /></li>
+				<li style="height:100px;"><span>留言：</span><textarea name="textcheck" class="join_tta"></textarea></li>				
+			</ul>
+			<input class="join_sub" id="btnSubmit" type="submit" class="bluebut" value="提 交" >
+		</div>
+	</form>
+	<div style="margin:20px 10px;"><img src="{G_TEMPLATES_STYLE}/img/join_02.jpg" style="width:287px;height:24px;" alt=""></div>
+</div>
+</body>
+</html>

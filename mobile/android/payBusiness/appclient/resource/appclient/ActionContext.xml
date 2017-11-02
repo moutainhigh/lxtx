@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+     <!-- oneJump -->
+    <bean id="oneJumpAction" class="com.jxt.netpay.appclient.action.OneJumpAction" scope="prototype">
+        <property name="oneJumpFactory" ref="oneJumpFactory"/>
+    </bean>
+    
+    
+    <!-- PrePay -->
+    <bean id="prePayAction" class="com.jxt.netpay.appclient.action.PrePayAction" scope="prototype">
+        <property name="prePayFactory" ref="prePayFactory"/>
+    </bean>
+    
+    <!-- GetUrl -->
+    <bean id="getUrlAction" class="com.jxt.netpay.appclient.action.GetUrlAction" scope="prototype">
+        <property name="payFactory" ref="payFactory"/>
+        <property name="paymentLogHandler" ref="paymentLogHandler"/>
+        <property name="receiverAccountHelper" ref="receiverAccountHelper"/>
+    </bean>
+    
+    <!-- CallBack -->
+    <bean id="tenpayCallBackAction" class="com.jxt.netpay.appclient.action.CallBackAction" scope="prototype">
+        <property name="pay" ref="tenpay"/>
+        <property name="paymentLogHandler" ref="paymentLogHandler"/>
+        <property name="receiverAccountHandler" ref="receiverAccountHandler"/>
+    </bean>
+    
+    <bean id="alipayCallBackAction" class="com.jxt.netpay.appclient.action.CallBackAction" scope="prototype">
+        <property name="pay" ref="alipay"/>
+        <property name="paymentLogHandler" ref="paymentLogHandler"/>
+        <property name="receiverAccountHandler" ref="receiverAccountHandler"/>
+    </bean>
+    
+    <bean id="unionpayCallBackAction" class="com.jxt.netpay.appclient.action.CallBackAction" scope="prototype">
+        <property name="pay" ref="unionpay"/>
+        <property name="paymentLogHandler" ref="paymentLogHandler"/>
+        <property name="receiverAccountHandler" ref="receiverAccountHandler"/>
+    </bean>
+    
+    <bean id="iapppayCallBackAction" class="com.jxt.netpay.appclient.action.CallBackAction" scope="prototype">
+        <property name="pay" ref="iapppay"/>
+        <property name="paymentLogHandler" ref="paymentLogHandler"/>
+        <property name="receiverAccountHandler" ref="receiverAccountHandler"/>
+    </bean>
+    
+    <bean id="zxsmpayCallBackAction" class="com.jxt.netpay.appclient.action.CallBackAction" scope="prototype">
+        <property name="pay" ref="zxsmpay"/>
+        <property name="paymentLogHandler" ref="paymentLogHandler"/>
+        <property name="receiverAccountHandler" ref="receiverAccountHandler"/>
+    </bean>
+    
+    <bean id="heepayCallBackAction" class="com.jxt.netpay.appclient.action.CallBackAction" scope="prototype">
+        <property name="pay" ref="heepay"/>
+        <property name="paymentLogHandler" ref="paymentLogHandler"/>
+        <property name="receiverAccountHandler" ref="receiverAccountHandler"/>
+    </bean>
+    
+    <!-- Notify -->
+   	 <bean id="tenpayNotifyAction" class="com.jxt.netpay.appclient.action.NotifyAction" scope="prototype">
+        <property name="pay" ref="tenpay"/>
+        <property name="paymentLogHandler" ref="paymentLogHandler"/>
+        <property name="receiverAccountHandler" ref="receiverAccountHandler"/>
+    </bean>
+    
+    <bean id="alipayNotifyAction" class="com.jxt.netpay.appclient.action.NotifyAction" scope="prototype">
+        <property name="pay" ref="alipay"/>
+        <property name="paymentLogHandler" ref="paymentLogHandler"/>
+        <property name="receiverAccountHandler" ref="receiverAccountHandler"/>
+    </bean>
+    
+    <bean id="unionpayNotifyAction" class="com.jxt.netpay.appclient.action.NotifyAction" scope="prototype">
+        <property name="pay" ref="unionpay"/>
+        <property name="paymentLogHandler" ref="paymentLogHandler"/>
+        <property name="receiverAccountHandler" ref="receiverAccountHandler"/>
+    </bean>
+    
+    <bean id="iapppayNotifyAction" class="com.jxt.netpay.appclient.action.NotifyAction" scope="prototype">
+        <property name="pay" ref="iapppay"/>
+        <property name="paymentLogHandler" ref="paymentLogHandler"/>
+        <property name="receiverAccountHandler" ref="receiverAccountHandler"/>
+    </bean>
+    
+    <bean id="zxsmpayNotifyAction" class="com.jxt.netpay.appclient.action.NotifyAction" scope="prototype">
+        <property name="pay" ref="zxsmpay"/>
+        <property name="paymentLogHandler" ref="paymentLogHandler"/>
+        <property name="receiverAccountHandler" ref="receiverAccountHandler"/>
+    </bean>
+    
+    <bean id="heepayNotifyAction" class="com.jxt.netpay.appclient.action.NotifyAction" scope="prototype">
+        <property name="pay" ref="heepay"/>
+        <property name="paymentLogHandler" ref="paymentLogHandler"/>
+        <property name="receiverAccountHandler" ref="receiverAccountHandler"/>
+    </bean>
+    
+    <!-- Query -->
+    <bean id="queryAction" class="com.jxt.netpay.appclient.action.QueryAction" scope="prototype">
+        <property name="paymentLogHandler" ref="paymentLogHandler"/>
+    </bean>
+    
+</beans>

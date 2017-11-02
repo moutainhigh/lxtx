@@ -1,0 +1,29 @@
+<ion-view view-title="我的房间" need-login>
+    <ion-nav-bar class="bar-positive bar-header-black" align-title="center">
+        <ion-nav-back-button>返回</ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+        <div class="padding no-room-tip" ng-if="!rooms || !rooms.length">
+            还没有房间，想要拥有自己的房间吗？<a ui-sref="tab.createshort" class="create">戳这里</a>
+        </div>
+        <div class="padding no-room-tip" ng-if="rooms && rooms.length">
+          	  自建房间一周后过期，届时房间状态显示为已锁定
+        </div>
+        <ion-refresher pulling-text="下拉加载更多房间..." on-refresh="doRefresh()"></ion-refresher>
+        <ion-list>
+            <ion-item ng-repeat="room in rooms" class="item-thumbnail-left" ui-sref="tab.account-room-props({roomId:room.id})">
+                <img ng-src="img/{{room.roomimg}}">
+                <h3 class="room-name" style="color:black;float:left;text-align:left;">{{room.name}}&nbsp;&nbsp;&nbsp;房间密码:{{room.psw}}</h3>
+                <br/>
+                <p>
+                    <span>{{room.statusText}}</span>({{room.position}}/{{room.limitNum}}人在线)
+                </p>
+<!--                 <p> -->
+<!--                     佣金累计 <strong style="color:red">{{room.sumFee}}</strong> , 奖池累计 <strong style="color:green">{{room.sumPool}}</strong><br> -->
+<!--                 </p> -->
+
+                <p>{{room.description}}</p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

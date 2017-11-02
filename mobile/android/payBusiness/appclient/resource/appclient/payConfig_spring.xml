@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+    <!-- 支付宝 -->
+    <bean id="aliPayImplIPay" class="com.jxt.netpay.appclient.service.impl.AliPayImplIPay"></bean>
+	<!-- 财付通 -->
+	<bean id="tenPayImplIPay" class="com.jxt.netpay.appclient.service.impl.TenPayImplIPay"></bean>
+	
+	
+</beans>

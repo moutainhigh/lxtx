@@ -1,0 +1,182 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>注册 - {wc:$webname}触屏版</title>
+    <meta content="app-id=518966501" name="apple-itunes-app" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    
+    <link href="{G_TEMPLATES_CSS}/mobile/comm.css" rel="stylesheet" type="text/css" />
+	<link href="{G_TEMPLATES_CSS}/mobile/login.css" rel="stylesheet" type="text/css" />
+	<script src="{G_TEMPLATES_JS}/mobile/jquery190.js" language="javascript" type="text/javascript"></script>
+	<script src="{G_TEMPLATES_JS}/jquery.md5.js" language="javascript" type="text/javascript"></script>
+	<script id="pageJS" data="{G_TEMPLATES_JS}/mobile/Register.js" language="javascript" type="text/javascript"></script>
+	<style type="text/css">
+	.message{
+     display:none;
+     position:absolute; left:20px; top:230px;
+     width:300px;height:30px;
+     background:rgba(0,0,0,0.5);
+     color:#fff;
+     font-size:16px;
+     font-weight:bold;
+     border-radius:10px;
+      padding-left:10px;
+     padding-top:5px;
+    }
+    #btnNext:hover{
+       cursor:pointer;
+    }
+	</style>
+</head>
+<body>
+    <div class="h5-1yyg-v1" id="content">
+        
+<!-- 栏目页面顶部 -->
+<div class='message'>
+</div>
+
+<!-- 内页顶部 -->
+<img src="{G_TEMPLATES_STYLE}/images/mobile/app-users.gif" width="100%" height="250">
+
+        <section>
+        <div class="registerCon">
+	        <ul>
+    	        <li><input id="account" type="tel" placeholder="请输入您的手机号码" class="rText"><s class="rs1"></s>
+				</li>
+				<li><input type="password" id="txtPassword" placeholder="密码" class="rText"><s class="rs3"></s>
+				</li>
+				<li><input type="text" id="checkcode" style="width:30%;"/> <img src="{WEB_PATH}/api/checkcode/image/80_27/" alt="" style="vertical-align: middle;width:20%;height:2em;"/> <a href="#" style="margin: 0 auto;float:right;line-height: 350%;color:#bbb;">返回首页</a></li>
+                <li><a id="btnNext" class="nextBtn  orgBtn">注 册</a></li>
+                <li><span id="isCheck"><em></em>我已阅读并同意</span><a href="{WEB_PATH}/mobile/mobile/terms" style="float:right;width:50%;margin: 0;">{wc:$webname}用户服务协议</a></li>
+            </ul>
+        </div>
+        </section>
+        
+{wc:templates "mobile/index","footer"}
+<script language="javascript" type="text/javascript">
+/*
+  var Path = new Object();
+  Path.Skin="{G_WEB_PATH}/statics/templates/yungou";  
+  Path.Webpath = "{WEB_PATH}";
+  
+var Base={head:document.getElementsByTagName("head")[0]||document.documentElement,Myload:function(B,A){this.done=false;B.onload=B.onreadystatechange=function(){if(!this.done&&(!this.readyState||this.readyState==="loaded"||this.readyState==="complete")){this.done=true;A();B.onload=B.onreadystatechange=null;if(this.head&&B.parentNode){this.head.removeChild(B)}}}},getScript:function(A,C){var B=function(){};if(C!=undefined){B=C}var D=document.createElement("script");D.setAttribute("language","javascript");D.setAttribute("type","text/javascript");D.setAttribute("src",A);this.head.appendChild(D);this.Myload(D,B)},getStyle:function(A,B){var B=function(){};if(callBack!=undefined){B=callBack}var C=document.createElement("link");C.setAttribute("type","text/css");C.setAttribute("rel","stylesheet");C.setAttribute("href",A);this.head.appendChild(C);this.Myload(C,B)}}
+function GetVerNum(){var D=new Date();return D.getFullYear().toString().substring(2,4)+'.'+(D.getMonth()+1)+'.'+D.getDate()+'.'+D.getHours()+'.'+(D.getMinutes()<10?'0':D.getMinutes().toString().substring(0,1))}
+Base.getScript('{G_TEMPLATES_JS}/mobile/Bottom.js');
+*/
+$().ready(function(){
+	function showmessage(msg){
+		$('.message').text(msg);
+		$('.message').css('display','block').show(300).delay(3000).hide(300);
+	}
+	//检测手机
+	function checkPhone(mobile){  
+	    var reg = /(^1\d{10}$)/g ;  
+	    if(reg.test(mobile)){  
+	        return true; 
+	    }else{  
+	        return false;  
+	    }  
+	}
+	$('#btnNext').bind('click',function(){
+		
+		var z=$('#checkcode').val();
+		z=z.toUpperCase();
+		//alert('a1____'+$.md5(z));
+		//alert('a2____'+getcookie('checkcode'));
+		if(z==''){
+			showmessage('验证码不能为空！');
+			$('#checkcode').focus();
+			exit;
+		}
+		if($.md5(z)!=getcookie('checkcode')){
+			showmessage('验证码不正确！');
+			$('#checkcode').focus();
+			exit;
+		}
+		function getcookie(a){
+		    var arr=document.cookie.split("; ");
+		    for(var i=0;i<arr.length;i++){
+		          var brr=arr[i].split("=");
+		          if(brr[0]==a){
+		              return brr[1];
+		          }
+		    }
+		}
+		//手机校验
+		if($('#account').val()==''){
+			showmessage('账号不能为空！');
+			$('#account').focus();
+			exit;
+		}
+		/*
+		if(!checkPhone($('#userMobile').val())){
+			alert('手机号不正确！');
+			$('#userMobile').focus();
+			exit;
+		}
+		*/
+		if($('#txtPassword').val()==''){
+			showmessage('密码不能为空！');
+			$('#txtPassword').focus();
+			exit;
+		}
+		var data={
+				account:$('#account').val(),
+				password:$('#txtPassword').val()
+		}
+		//开始往数据库member表中插入一条未经验证的用户记录
+		$.post("{WEB_PATH}/mobile/user/insertMember",data,function(msg){
+			if(msg==1){//mobile为空
+				showmessage('账号不能为空!');
+			}else if(msg==2){
+				showmessage('该账户已经存在，即将跳转到登录页面！');
+				window.setTimeout(function(){
+					location.href="{WEB_PATH}/mobile/user/login";//跳转到登录页面
+				},3000);
+			}else if(msg==3){
+				showmessage('该手机号已经注册，但未验证成功！将跳转到验证页');
+				window.setTimeout(function(){
+					location.href="{WEB_PATH}/mobile/user/mobilecode/"+$('#account').val();//跳转到收验证码界面
+				},3000);
+			}else if(msg==4){
+				//可以插入数据
+				showmessage('注册验证码已经发送到您的手机，请注意查收！');
+				window.setTimeout(function(){
+					location.href="{WEB_PATH}/mobile/user/mobilecode/"+$('#account').val();//跳转到收验证码界面
+				},3000);
+			}else if(msg==5){
+				showmessage('该邮箱号已经成功注册！');
+				window.setTimeout(function(){
+					location.href="{WEB_PATH}/mobile/user/login";//跳转到登录页面
+				},3000);
+			}else if(msg==6){
+				showmessage('该邮箱已经注册，但未验证成功！即将跳转到验证页,输入您邮箱中输入的验证码');
+				window.setTimeout(function(){
+					location.href="{WEB_PATH}/mobile/user/mobilecode/"+$('#account').val();//跳转到收验证码界面
+				},3000);
+			}else if(msg==7){
+				//可以插入数据
+				showmessage('注册验证码已经发送到您的邮箱，请注意查收！');
+				window.setTimeout(function(){
+					location.href="{WEB_PATH}/mobile/user/mobilecode/"+$('#account').val();//跳转到收验证码界面
+				},3000);
+			}else if(msg==8){
+				showmessage('请填写正确的手机号或邮箱做账号！');
+				$('#account').focus();
+			}
+		});
+		
+	});
+	
+});
+</script>
+ 
+    </div>
+</body>
+</html>

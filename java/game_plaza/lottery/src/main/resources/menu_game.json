@@ -1,0 +1,44 @@
+{
+    "button": [
+    	 {
+            "name": "开始赚钱",
+            "type": "view",
+            "key": "rselfmenu_0_0",
+            "url": "http://yun.nolnca.com/yun/wx/redirect/gh_607fe1c7d97b/%s"
+         },
+         {
+		    "name": "九州娱乐",
+		    "sub_button": [
+		     	{
+		        	"name": "游戏大厅",
+		            "type": "view",
+		            "key": "rselfmenu_1_0",
+		            "url": "http://game.juzizou.com/plaza/wx/gameCenterRedirect/gh_0b3753382329/%s"
+		        },
+		        {
+		            "type": "view",
+		            "name": "云购",
+		            "key": "rselfmenu_1_1",
+		            "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxad262d141e839b2c&redirect_uri=http://game.juzizou.com/plaza/wx/goredirect/gh_0b3753382329/%s&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect"
+		        },
+		        {
+		            "type": "view",
+		            "name": "寄售宝",
+		            "key": "rselfmenu_1_2",
+		            "url": "http://jishou.sino518.com/sale/exchange/default"
+		        }
+		    ]
+		},
+		{
+		    "name": "服务中心",
+		    "sub_button": [
+		        {
+		            "type": "view",
+		            "name": "帮助文档",
+		            "key": "rselfmenu_2_4",
+		        	"url": "http://game.juzizou.com/plaza/help.html?t=0.141215"                
+		        }
+		    ]
+		}
+    ]
+}

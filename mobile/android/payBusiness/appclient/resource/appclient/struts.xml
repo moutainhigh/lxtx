@@ -1,0 +1,48 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    
+<struts>
+	
+	<package name="pay" namespace="/appclient" extends="struts-default">
+	    
+	    <!-- oneJump -->
+	     <action name="oneJump" class="oneJumpAction">
+	         <result name="input">input.jsp</result>
+	     </action>
+	     
+	    <!-- query -->
+	     <action name="query" class="queryAction">
+	         <result name="input">input.jsp</result>
+	     </action>
+	     
+	    
+	    <!-- prePay -->
+	     <action name="prePay" class="prePayAction">
+	         <result name="input">input.jsp</result>
+	     </action>
+	     
+	    
+	    <!-- getUrl -->
+	     <action name="getUrl" class="getUrlAction">
+	         <result name="input">input.jsp</result>
+	     </action>
+	     
+	     <!-- callback -->
+	     <action name="tenpayCallBack" class="tenpayCallBackAction"></action>
+	     <action name="alipayCallBack" class="alipayCallBackAction"></action>
+	     <action name="unionpayCallBack" class="unionpayCallBackAction"></action>
+	     <action name="iapppayCallBack" class="iapppayCallBackAction"></action>
+	     <action name="zxsmpayCallBack" class="zxsmpayCallBackAction"></action>
+	     <action name="heepayCallBack" class="heepayCallBackAction"></action>
+	     
+	     <!-- notify -->
+	     <action name="tenpayNotify" class="tenpayNotifyAction"></action>
+	     <action name="alipayNotify" class="alipayNotifyAction"></action>
+	     <action name="unionpayNotify" class="unionpayNotifyAction"></action>
+	     <action name="iapppayNotify" class="iapppayNotifyAction"></action>
+	     <action name="zxsmpayNotify" class="zxsmpayNotifyAction"></action>
+	     <action name="heepayNotify" class="heepayNotifyAction"></action>
+	     
+	</package>
+</struts>

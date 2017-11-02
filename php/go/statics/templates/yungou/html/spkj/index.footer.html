@@ -1,0 +1,132 @@
+  <div class="clear"></div>  
+  <div class="index_foot">
+    <div class="index_foot_top"> <img src="{G_TEMPLATES_STYLE}/img/index_foot_top.gif" /> </div>
+    <div class="index_foot_cont">
+      <ul class="index_foot_list">
+      	{wc:getlist sql="select * from `@#_category` where `parentid`='1'" return="category"}
+		{wc:loop $category $help}
+  		<li>
+          <ul class="index_foot_sublist">
+  			<span>{wc:$help['name']}</span>
+			{wc:getlist sql="select * from `@#_article` where `cateid`='$help[cateid]'" return="article"}
+			{wc:php:start}
+				foreach($article as $art){
+					echo "<li><a href='".WEB_PATH.'/help/'.$art['id']."' target='_blank'>".$art['title'].'</a></li>';
+				}
+			{wc:php:end}
+							
+  		</ul></li>  			
+		{wc:loop:end}
+        {wc:getlist:end}
+        
+ 
+        <li>
+          <ul class="index_foot_sublist">
+            <span>服务热线</span>
+            <li class="index_foot_dh">{wc:fun:_cfg('cell')}</li>
+            <li class="index_foot_kf"><a href="http://wpa.qq.com/msgrd?v=3&uin=390648538&site=qq&menu=yes" target="_blank"><img src="{G_TEMPLATES_STYLE}/img/index_foot_kf.gif" /></a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="index_foot_nav">
+      <ul>
+      	{wc:fun:Getheader('foot')}
+      </ul>
+    </div>
+    <div class="index_foot_copy">
+      <ul>
+        <li><a href="http://www.whga.gov.cn" target="_blank"><img src="{G_TEMPLATES_STYLE}/img/index_foot_ga.gif" /></a></li>
+        <li><a href="http://www.beianbeian.com/search/yungw.com" target="_blank"><img src="{G_TEMPLATES_STYLE}/img/index_foot_ba.gif" /></a></li>
+        <li><a href="http://www.12377.cn" target="_blank"><img src="{G_TEMPLATES_STYLE}/img/index_foot_jb.gif" /></a></li>
+        <li><a href="http://www.isc.org.cn" target="_blank"><img src="{G_TEMPLATES_STYLE}/img/index_foot_xh.gif" /></a></li>
+        <li><a href="http://www.cyberpolice.cn" target="_blank"><img src="{G_TEMPLATES_STYLE}/img/index_foot_bj.gif" /></a></li>
+      </ul>
+      <p>{wc:fun:_cfg('web_copyright')}</p>
+    </div>
+  </div>
+</div>
+
+</body>
+<script>
+
+
+$(function(){
+	$("#btnFavorite,#addSiteFavorite").click(function(){
+		var ctrl=(navigator.userAgent.toLowerCase()).indexOf('mac')!=-1?'Command/Cmd': 'CTRL';
+		if(document.all){
+			window.external.addFavorite('{G_WEB_PATH}','{wc:fun:_cfg("web_name")}');
+		}
+		else if(window.sidebar){
+		   window.sidebar.addPanel('{wc:fun:_cfg("web_name")}','{G_WEB_PATH}', "");
+		}else{ 
+			alert('您可以通过快捷键' + ctrl + ' + D 加入到收藏夹');
+		}
+    });
+
+});
+	//云购基金
+	$.ajax({
+		url:"{WEB_PATH}/api/fund/get",
+		success:function(msg){
+			$("#spanFundTotal").text(msg);
+		}
+	});
+</script>
+
+<div id="divRighTool" class="quickBack">
+	
+	<dl class="quick_But">
+		
+		<dd class="quick_cart" style=""><a id="btnMyCart" href="{WEB_PATH}/member/cart/cartlist" target="_blank" class="quick_cartA"><b>购物车</b><s></s><em>1</em></a>
+			<div style="display: none;" id="rCartlist" class="Roll_mycart">
+				<ul style="display: none;"></ul>
+				<div class="quick_goods_loding" id="rCartLoading" style="display: none;"><img border="0" alt="" src="{G_TEMPLATES_STYLE}/images/goods_loading.gif">正在加载......</div>
+				<p id="p1" style="display: none;">共计<span id="rCartTotal2">0</span> 件商品 金额总计：<span class="rmbgray" id="rCartTotalM">0</span></p>
+				<h3 style="display: none;"><input type="button" value="去购物车结算" id="rGotoCart"></h3>
+			</div>
+		</dd>
+		<dd class="quick_service"><a id="btnRigQQ" href="http://wpa.qq.com/msgrd?v=3&uin={wc:fun:_cfg("qq")}&site=qq&menu=yes" target="_blank" class="quick_serviceA"><b>在线客服</b><s></s></a></dd>
+		<dd class="quick_Collection"><a id="btnFavorite" href="javascript:;" class="quick_CollectionA"><b>收藏本站</b><s></s></a></dd>
+		<dd class="quick_Return"><a id="btnGotoTop" href="javascript:;" class="quick_ReturnA"><b>返回顶部</b><s></s></a></dd>
+	</dl>
+	
+	
+</div>
+<script>
+
+$("#divRighTool").show(); 
+var wids=($(window).width()-1200)/2-70;
+if(wids>0){
+	$("#divRighTool").css("right",wids);
+}else{
+	$("#divRighTool").css("right",10);
+}
+$(function(){
+
+	$("#btnGotoTop").click(function(){
+		$("html,body").animate({scrollTop:0},500);
+	});
+	$("#btnFavorite,#addSiteFavorite").click(function(){
+		var ctrl=(navigator.userAgent.toLowerCase()).indexOf('mac')!=-1?'Command/Cmd': 'CTRL';
+		if(document.all){
+			window.external.addFavorite('{G_WEB_PATH}','{wc:fun:_cfg("web_name")}');
+		}
+		else if(window.sidebar){
+		   window.sidebar.addPanel('{wc:fun:_cfg("web_name")}','{G_WEB_PATH}', "");
+		}else{ 
+			alert('您可以通过快捷键' + ctrl + ' + D 加入到收藏夹');
+		}
+    });
+	$("#divRighTool a").hover(		
+		function(){
+			$(this).addClass("Current");
+		},
+		function(){
+			$(this).removeClass("Current");
+		}
+	)
+});
+
+</script>
+</html>

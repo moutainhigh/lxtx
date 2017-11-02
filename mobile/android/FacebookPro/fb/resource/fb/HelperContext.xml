@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <bean id="activeHelper" class="com.lxtx.fb.helper.ActiveHelper">
+	    <property name="activeHandler" ref="activeHandler"/>
+	</bean>
+    
+    <bean id="adHelper" class="com.lxtx.fb.helper.AdHelper">
+	    <property name="adHandler" ref="adHandler"/>
+	</bean>
+    
+    <bean id="adminHelper" class="com.lxtx.fb.helper.AdminHelper">
+	    <property name="adminHandler" ref="adminHandler"/>
+	</bean>
+    
+	<bean id="adSetHelper" class="com.lxtx.fb.helper.AdSetHelper">
+	    <property name="adSetHandler" ref="adSetHandler"/>
+	</bean>
+	
+	<bean id="alipayAccountHelper" class="com.lxtx.fb.helper.AlipayAccountHelper">
+	    <property name="alipayAccountHandler" ref="alipayAccountHandler"/>
+	</bean>
+	
+	<bean id="categoryHelper" class="com.lxtx.fb.helper.CategoryHelper">
+	    <property name="categoryHandler" ref="categoryHandler"/>
+	</bean>
+	
+	<bean id="flagContactHelper" class="com.lxtx.fb.helper.FlagContactHelper">
+	    <property name="flagContactHandler" ref="flagContactHandler"/>
+	</bean>
+	
+	<bean id="filterWordsHelper" class="com.lxtx.fb.helper.FilterWordsHelper">
+	    <property name="filterWordsHandler" ref="filterWordsHandler"/>
+	</bean>
+	
+	<bean id="languagesHelper" class="com.lxtx.fb.helper.LanguagesHelper">
+	    <property name="languagesHandler" ref="languagesHandler"/>
+	</bean>
+	
+	<bean id="pageHelper" class="com.lxtx.fb.helper.PageHelper">
+	    <property name="pageHandler" ref="pageHandler"/>
+	</bean>
+	
+	<bean id="proxyHelper" class="com.lxtx.fb.helper.ProxyHelper">
+	    <property name="proxyHandler" ref="proxyHandler"/>
+	</bean>
+	
+	<bean id="uaHelper" class="com.lxtx.fb.helper.UaHelper">
+	    <property name="uaHandler" ref="uaHandler"/>
+	</bean>
+	
+	<bean id="userHelper" class="com.lxtx.fb.helper.UserHelper">
+	    <property name="userHandler" ref="userHandler"/>
+	</bean>
+</beans>

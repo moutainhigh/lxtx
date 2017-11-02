@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMapConfig
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+    <!--settings
+        cacheModelsEnabled="true"
+        enhancementEnabled="true"
+        lazyLoadingEnabled="true"
+        maxRequests="512"
+        maxSessions="128"
+        maxTransactions="32"
+        useStatementNamespaces="false"
+    /-->
+
+	<sqlMap resource="resource/fb/ibatis/activeIbatis.xml"/>
+    <sqlMap resource="resource/fb/ibatis/adIbatis.xml"/>
+    <sqlMap resource="resource/fb/ibatis/adminIbatis.xml"/>
+    <sqlMap resource="resource/fb/ibatis/adSetIbatis.xml"/>
+	<sqlMap resource="resource/fb/ibatis/alipayAccountIbatis.xml"/>
+	<sqlMap resource="resource/fb/ibatis/categoryIbatis.xml"/>
+	<sqlMap resource="resource/fb/ibatis/filterWordsIbatis.xml"/>
+	<sqlMap resource="resource/fb/ibatis/flagContactIbatis.xml"/>
+	<sqlMap resource="resource/fb/ibatis/ipTimeIbatis.xml"/>
+	<sqlMap resource="resource/fb/ibatis/languagesIbatis.xml"/>
+	<sqlMap resource="resource/fb/ibatis/pageIbatis.xml"/>
+	<sqlMap resource="resource/fb/ibatis/proxyIbatis.xml"/>
+	<sqlMap resource="resource/fb/ibatis/taskIbatis.xml"/>
+	<sqlMap resource="resource/fb/ibatis/uaIbatis.xml"/>
+	<sqlMap resource="resource/fb/ibatis/userIbatis.xml"/>
+</sqlMapConfig>

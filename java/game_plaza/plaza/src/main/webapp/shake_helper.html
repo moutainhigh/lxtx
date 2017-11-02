@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+</head>
+<body>
+	<p>
+	<span style="color:#00D5FF;"><strong>一、游戏玩法说明</strong></span>
+</p>
+<p>
+	<span style="color:#CCCCCC;">1.	每局游戏的投注时间为25秒，玩家在投注时间内首先选择自己要投的金币，然后点击要投注的区域进行投注，在投注时间外，不可进行投注</span>
+</p>
+<p>
+	<span style="color:#CCCCCC;">2.	在一局游戏中，玩家选择不同的金币进行投注，当玩家金币不足时，无法投注，请及时充值补充金币</span>
+</p>
+<p>
+	<span style="color:#CCCCCC;">3.	投注区域一共有两屏，玩家可在两屏之间进行切换，每个投注区域上方写明了该投注区域的名称和赔率（奖励），当玩家投注了某个区域后，该区域下方显示玩家在该区域所投注的金币总数</span>
+</p>
+<p>
+	<span style="color:#CCCCCC;">4.	在屏幕的右下角有续压投注按钮，点击续压上一局所下的所有投注记录，当金币不足时，则续压无效</span>
+</p>
+<p>
+	<span style="color:#CCCCCC;">5.	投注时间结束后，进入开奖时间，在此时间内，玩家等待开奖，不可投注也不可撤消投注</span>
+</p>
+<p>
+	<span style="color:#CCCCCC;">6.	开奖结果，当动画停止后，显示本个骰子的点数，即为本局游戏的开奖结果，与开奖结果匹配的高亮框显示 ，投注区域上则有亮框显示。</span>
+</p>
+<p>
+	<span style="color:#CCCCCC;">7.	开奖时间结束后，进入结息时间，系统会根据开奖结果，返还中奖者的投注金币和相应的奖励金币。至此，一局游戏结束，进入下一局游戏。</span>
+</p>
+<p>
+	<span style="color:#CCCCCC;">8.	左上区域显示上期开奖结果，点击后显示近期的开奖结果。</span>
+</p>
+<p>
+	<span style="color:#CCCCCC;">9.	如需查看历史投注记录，可在右上角菜单-投注记录中查询。</span>
+</p>
+<p>
+	<span style="color:#CCCCCC;">10. 如果玩家身上携帶的金币超过 50000000(5000万),可申请成为游戏庄家，成为庄家后，可最多连庄20局。</span>
+</p>
+<p>
+	<span style="color:#00D5FF;"><strong>二、投注区域及赔率说明</strong></span>
+</p>
+<p>
+	<span style="color:#CCCCCC;">1.	小：三个骰子点数之和为4-10，赔率为1赔1.96，如果开奖结果为三个相同，则玩家不中奖</span>
+</p>
+<p>
+	<span style="color:#CCCCCC;">2.	大：三个骰子点数之和为11-17，赔率为1赔1.96，如果开奖结果为三个相同，则玩家不中奖</span>
+</p>
+<p>
+	<span style="color:#CCCCCC;">3.	豹子通选：三个骰子点数相同，赔率为1赔36</span>
+</p>
+<p>
+	<span style="color:#CCCCCC;">4.	豹子单选：三个骰子点数相同，赔率为1赔200</span>
+</p>
+<p>
+	<span style="color:#CCCCCC;">5.	对子单选：三个骰子中至少有两个相同且为某一点数，豹子包含对子，赔率1赔10</span>
+</p>
+<p>
+	<span style="color:#CCCCCC;">6.	和值单选：三个骰子点数之和为4-17中的某一数字，赔率从1赔6到1赔50不等</span>
+</p>
+<p>
+	<span style="color:#CCCCCC;">7.	单骰：三个骰子中有且公有一个骰子与投注区域匹配，赔率为1赔2</span>
+</p>
+<p>
+	<span style="color:#CCCCCC;">8.	双骰：三鼐骰子中有且公有两个骰子与所投注区域匹配，赔率为1赔3</span>
+</p>
+<p>
+	<span style="color:#CCCCCC;">9.	三骰：三个骰子中一至且与抽投注区域匹配，赔率为1赔4</span>
+</p>
+<p>
+	<span style="color:#CCCCCC;">10.	赔率解释：1赔2，即玩家投入1，若中奖，则返还玩家两倍投注金额的金币（包本金），例如：用户投注1000金币，赔率为1赔2，若中奖，用户将获得2000金币的回报，以此类推</span>
+</p>
+<p>
+	<span style="color:#00D5FF;"><strong>三、投注选项及赔率</strong></span>
+</p>
+<p>
+	<table style="width:200px;height:500px;background-color:#337FE5;" cellpadding="2" cellspacing="0" border="1" bordercolor="#00D5FF">
+		<tbody>
+			<tr>
+				<td style="background-color:#00D5FF;">
+					<span>投注选项</span><br />
+				</td>
+				<td colspan="2" style="background-color:#00D5FF;">
+					<span>赔率</span><br />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span style="color:#FFFFFF;">大、小</span>
+				</td>
+				<td colspan="2">
+					<span style="color:#FFFFFF;"></span><span style="color:#FFFFFF;">1赔1.96</span><span style="color:#FFFFFF;"></span><br />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span style="color:#FFFFFF;">豹子通选</span><span style="color:#FFFFFF;"></span><br />
+				</td>
+				<td colspan="2">
+					<span style="color:#FFFFFF;"></span><span style="color:#FFFFFF;">1赔36</span><span style="color:#FFFFFF;"></span><br />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span style="color:#FFFFFF;">豹子单选</span><span style="color:#FFFFFF;"></span><br />
+				</td>
+				<td colspan="2">
+					<span style="color:#FFFFFF;"></span><span style="color:#FFFFFF;">1赔200</span><span style="color:#FFFFFF;"></span><br />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span style="color:#FFFFFF;">对子单选</span><span style="color:#FFFFFF;"></span><br />
+				</td>
+				<td colspan="2">
+					<span style="color:#FFFFFF;"></span><span style="color:#FFFFFF;">1赔10</span><span style="color:#FFFFFF;"></span><br />
+				</td>
+			</tr>
+			<tr>
+				<td rowspan="7">
+					<span style="color:#FFFFFF;"></span><span style="color:#FFFFFF;">和值单选</span><span style="color:#FFFFFF;"></span><br />
+				</td>
+				<td>
+					<span style="color:#FFFFFF;">4，17</span><span style="color:#FFFFFF;"></span><br />
+				</td>
+				<td>
+					<span style="color:#FFFFFF;">1赔50</span><span style="color:#FFFFFF;"></span><br />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span style="color:#FFFFFF;">5，16</span><span style="color:#FFFFFF;"></span><br />
+				</td>
+				<td>
+					<span style="color:#FFFFFF;">1赔18</span><span style="color:#FFFFFF;"></span><br />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span style="color:#FFFFFF;">6，15</span><span style="color:#FFFFFF;"></span><br />
+				</td>
+				<td>
+					<span style="color:#FFFFFF;">1赔14</span><span style="color:#FFFFFF;"></span><br />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span style="color:#FFFFFF;">7，14</span><span style="color:#FFFFFF;"></span><br />
+				</td>
+				<td>
+					<span style="color:#FFFFFF;">1赔12</span><span style="color:#FFFFFF;"></span><br />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span style="color:#FFFFFF;">8，13</span><span style="color:#FFFFFF;"></span><br />
+				</td>
+				<td>
+					<span style="color:#FFFFFF;">1赔8</span><span style="color:#FFFFFF;"></span><br />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span style="color:#FFFFFF;">9，12</span><span style="color:#FFFFFF;"></span><br />
+				</td>
+				<td>
+					<span style="color:#FFFFFF;">1赔6</span><span style="color:#FFFFFF;"></span><br />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span style="color:#FFFFFF;">10，11</span><span style="color:#FFFFFF;"></span><br />
+				</td>
+				<td>
+					<span style="color:#FFFFFF;">1赔6</span><span style="color:#FFFFFF;"></span><br />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span style="color:#FFFFFF;">单骰</span><span style="color:#FFFFFF;"></span><br />
+				</td>
+				<td colspan="2">
+					<span style="color:#FFFFFF;"></span><span style="color:#FFFFFF;">1赔1</span><span style="color:#FFFFFF;"></span><br />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span style="color:#FFFFFF;">双骰</span><span style="color:#FFFFFF;"></span><br />
+				</td>
+				<td colspan="2">
+					<span style="color:#FFFFFF;"></span><span style="color:#FFFFFF;">1赔2</span><span style="color:#FFFFFF;"></span><br />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span style="color:#FFFFFF;">三骰</span><span style="color:#FFFFFF;"></span><br />
+				</td>
+				<td colspan="2">
+					<span style="color:#FFFFFF;"></span><span style="color:#FFFFFF;">1赔3</span>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</p>
+</body>
+</html>
+

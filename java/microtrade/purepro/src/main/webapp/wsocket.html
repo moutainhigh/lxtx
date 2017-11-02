@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="expires" content="2678400" />
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta name="keywords" content="点微科技手机版软件,银·行家,点微科技,手机炒银,贵金属" />
+		<meta name="description" content="纵览行情，明确策略，实时专家互动，知晓天下财经" />
+		<title>云平台-协议</title>
+		<link href="styles/main.css" type="text/css" rel="stylesheet" />
+		<link href="styles/protocol.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="protocol-box">
+			<div class="protocol-content">
+				<div class="title">风险揭示书</div>
+				<div class="content"></div>
+			</div>
+			<div class="protocol-bottom">
+				<!-- <label>
+					<input type="checkbox" name="tipsprotocol"/>
+					<span>不再进行提示</span>
+				</label> -->
+				<div class="sure-btn-wrap">
+                    <div class="table">
+                        <div class="table-cell cancel"> <label>不同意</label></div>
+                        <div class="table-cell determine"> <label>同意</label></div>
+                    </div>
+                </div>
+			</div>
+		</div>
+
+		<script>
+		$(document).ready(function() {
+			var b =new WebSocket("Ws://"+this.ServerAddr); 
+			var a = this;
+			//a.ResText="",a.ResBuffer=new ArrayBuffer(0),
+			b.onopen=function(){
+				b.binaryType="arraybuffer",a.IsConnected=!0,a.FirstConnect=!1,console.log("开始连接"),
+				//a.SocketOpen.call(a)
+			},
+			b.onclose=function(){a.StockWs=null,a.ResText="",a.ResBuffer=new ArrayBuffer(0),a.IsConnected=!1,a.FirstConnect?(a.FirstConnect=!1,a.SocketClose(!0)):a.SocketClose(),console.log("关闭连接")},
+			b.onerror=function(){a.ResText="",a.ResBuffer=new ArrayBuffer(0),a.SocketError(),console.log("发生错误")},
+			b.onmessage=function(b){
+				if(a.GloableComFlag="string"==typeof b.data,!a.IsFirst)return a.IsFirst=!0,void 0;
+				var c=null;c=a.GloableComFlag?window.NetCommon.SdecodeArrayBuffer(b.data):b.data,a.ResBuffer=a.ResBuffer.zUnion(c),c=null,a.ProcessRecData()
+			},
+			a.ProcessRecData = function() {
+				var a=this,b=new HqRes,c=window.NetCommon.GetRealDataView(a.ResBuffer);
+				a.ResText=new TextDecoder("utf-8").decode(c);
+				console.log(a.ServerAddr);
+				console.log(a.ResText);
+			}
+		});
+		</script>
+
+		<script src="scripts/crawler.js" type="text/javascript"></script>
+		<script src="scripts/jquery.js" type="text/javascript"></script>
+    </body>
+</html>

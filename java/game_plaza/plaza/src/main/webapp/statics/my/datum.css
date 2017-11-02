@@ -1,0 +1,273 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/*2016.05.18 index*/
+section .message{
+	padding:270px 0 0 0;
+}
+/*first*/
+section .message .exchange{
+	width:603.5px;
+	height:190px;
+	margin:0 auto;
+	border-radius:10px;
+	overflow:hidden;
+	background:rgba(246,246,246,1);
+}
+section .message .exchange .peripherals{
+	width:607px;
+}
+section .message .exchange .peripherals a{
+	background:rgba(255,255,255,1);
+}
+section .message .exchange a.exchange_box{
+	position:relative;
+	height:185px;
+	float:left;
+	border-right:3px solid #f6f6f6;
+}
+section .message .exchange a.exchange_box img{
+	position:absolute;
+	right:0;
+	bottom:0;
+}
+section .message .exchange a.exchange_box hgroup{
+	margin:14px 0 0 0;
+}
+section .message .exchange a.exchange_box hgroup h2{
+	font-size:25px;
+	line-height:32px;
+	font-weight:normal;
+}
+section .message .exchange a.exchange_box hgroup h3{
+	color:#908f8f;
+	font-size:20px;
+	line-height:28px;
+	font-weight:normal;
+}
+section .message .exchange a.exchange_left{
+	width:237px;
+	-moz-box-shadow:-90px -2px 25px #888888;
+	box-shadow:-90px -2px 25px #888888;
+}
+section .message .exchange a.exchange_left hgroup{
+	margin-left:13px;
+}
+section .message .exchange a.exchange_left hgroup h2{
+	color:#ed5665;
+}
+section .message .exchange a.exchange_middle{
+	width:182px;
+}
+section .message .exchange a.exchange_middle hgroup{
+	margin-left:4px;
+}
+section .message .exchange a.exchange_middle hgroup h2{
+	color:#b7ce62;
+}
+section .message .exchange a.exchange_right{
+	width:179px;
+	-moz-box-shadow:28px -6px 25px #888888;
+	box-shadow:28px -6px 25px #888888;
+}
+section .message .exchange a.exchange_right hgroup{
+	margin-left:4px;
+}
+section .message .exchange a.exchange_right hgroup h2{
+	color:#b7ce62 ;
+}
+
+/*second*/
+section .message .quiz{
+	width:613px;
+	margin:18px auto 0;
+}
+section .message .quiz h3{
+	line-height:52px;
+	color:#7b7b7b;
+	font-size:25px;
+	font-weight:normal;
+}
+section .message .quiz h3 img{
+	margin:14px 6px 14px 18px;
+	float:left;
+}
+section .message .quiz ul{
+	width:100%;
+	overflow:hidden;
+	border-radius:10px;
+	background:rgba(255,255,255,1);
+}
+section .message .quiz ul li{
+	width:100%;
+	height:116px;
+	overflow:hidden;
+	border-bottom:2px solid #f6f6f6;
+}
+section .message .quiz ul li a{
+	width:306.5px;
+	float:left;
+}
+section .message .quiz ul li a img{
+	margin:19px 19px 16px 32px;
+	float:left;
+}
+section .message .quiz ul li a hgroup{
+	float:left;
+	margin:21px 0 0 0;
+}
+section .message .quiz ul li a hgroup h3{
+	font-size:25px;
+	color:#000000;
+	line-height:37px;
+}
+section .message .quiz ul li a hgroup p{
+	font-size:20px;
+	line-height:32px;
+	color:#929292;
+}
+
+/*2016.05.19 my*/
+section .account{
+	width:100%; 
+}
+section .account .information{
+	background-color:#ffb136;
+
+}
+section .account .information .install{
+	border-bottom:1px solid #ffac19;
+	-moz-box-shadow:0px 1px 0px #ff6000;
+	box-shadow:0px 3px 0px #ffac19;
+	height:103px;
+}
+section .account .information .install .install_l{
+	float:left; 
+}
+section .account .information .install .install_l img{
+	float:left;
+	margin:14px 12px 12px 14px;
+}
+section .account .information .install .install_l hgroup{
+	float:left;
+	margin:14px 0 0 0;
+}
+section .account .information .install .install_l hgroup h3{
+	color:#772910;
+	font-size:28px;
+	line-height:34px;
+	font-weight:normal;
+}
+section .account .information .install .install_l hgroup p{
+	color:#f9a175;
+	font-size:28px;
+	line-height:40px;
+}
+section .account .information .install span{
+	float:right;
+}
+section .account .information .install span a{
+	margin:34px 33px 26px 0;
+	float:left;
+}
+
+/*information*/
+section .account .information .wealth{
+	width:100%;
+	overflow:hidden;
+}
+section .account .information .wealth a{
+	width:320px;
+	float:left;
+	text-align:center;
+	padding:45px 0 48px 0;
+}
+section .account .information .wealth a span{
+	display:block;
+	width:100%;
+}
+section .account .information .wealth a:first-child span{
+	-moz-box-shadow:1px 0px 0px #ff6000;
+	box-shadow:1px 0px 0px #f4a932;
+	border-right:1px solid #ffa800;
+}
+section .account .information .wealth a p.attribute{
+	vertical-align:middle;
+	font-size:25px;
+	color:#50515a;
+	line-height:40px;
+}
+section .account .information .wealth a p.attribute img{
+	vertical-align:middle;
+	margin:0 4px 0 0;
+}
+section .account .information .wealth a .amount{
+	font-size:36px;
+	color:#772910;
+	line-height:45px;
+	vertical-align:middle;
+}
+section .account .information .wealth a .amount img{
+	margin:0 0 0 8px;
+}
+/*save*/
+section .account .save{
+	background:#ff9036;
+	overflow:hidden;
+}
+section .account .save a{
+	width:320px;
+	float:left;
+	text-align:center;
+	padding:13px 0 16px 0;
+}
+section .account .save a p{
+	vertical-align:middle;
+	font-size:36px;
+	color:#ffffff;
+	line-height:64px;
+	
+}
+section .account .save a:first-child p{
+	border-right:1px solid #e87c24;
+	-moz-box-shadow:1px 0px 0px #ff6000;
+	box-shadow:1px 0px 0px #ff7e22;
+}
+section .account .save a p img{
+	vertical-align:middle;
+	margin:0 16px 0 0;
+}
+
+section .detailed{
+	width:100%;
+}
+section .detailed a{
+	vertical-align:middle;
+	font-size:26px;
+	color:#fff;
+	line-height:78px;
+	background:#3f414a;
+	display:block;
+	padding:0 59px 0 0;
+	position:relative;
+	border-bottom:#24262e solid 1px;
+}
+section .detailed a .detailed_logo{
+	width:102px;
+	float:left;
+}
+section .detailed ul li{
+	margin:0 0 13px 0;
+}
+section .detailed ul li a img{
+	vertical-align:middle;
+	margin:0 0 0 28px;
+}
+section .detailed ul li a span{
+	position:absolute;
+	right:38px;
+}
+section .detailed ul li a span img{
+	margin:auto;
+}

@@ -1,0 +1,953 @@
+<?php
+
+
+
+
+
+
+
+/**
+
+
+
+
+
+
+
+* Template designed by 12leaves.com
+
+
+
+
+
+
+
+* 12leaves.com - Free ecommerce templates and design services
+
+
+
+
+
+
+
+*
+
+
+
+
+
+
+
+ * Page Template
+
+
+
+
+
+
+
+ *
+
+
+
+
+
+
+
+ * Main index page<br />
+
+
+
+
+
+
+
+ * Displays greetings, welcome text (define-page content), and various centerboxes depending on switch settings in Admin<br />
+
+
+
+
+
+
+
+ * Centerboxes are called as necessary
+
+
+
+
+
+
+
+ *
+
+
+
+
+
+
+
+ * @package templateSystem
+
+
+
+
+
+
+
+ * @copyright Copyright 2003-2006 Zen Cart Development Team
+
+
+
+
+
+
+
+ * @copyright Portions Copyright 2003 osCommerce
+
+
+
+
+
+
+
+ * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
+
+
+
+
+
+
+
+ * @version $Id: tpl_index_default.php 3464 2006-04-19 00:07:26Z ajeh $
+
+
+
+
+
+
+
+ */
+
+
+
+
+
+
+
+?>
+
+
+
+
+
+
+
+<div class="centerColumn" id="indexDefault">
+
+
+
+
+
+
+
+<!--
+
+
+
+
+
+
+
+<h1 id="indexDefaultHeading"><?php echo HEADING_TITLE; ?></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php if (SHOW_CUSTOMER_GREETING == 1) { ?>
+
+
+
+
+
+
+
+<?php echo zen_customer_greeting(); ?>
+
+
+
+
+
+
+
+<?php } ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php if (TEXT_MAIN) { ?>
+
+
+
+
+
+
+
+<div id="" class="content"><?php echo TEXT_MAIN; ?></div>
+
+
+
+
+
+
+
+<?php } ?>
+
+
+
+
+
+
+
+-->
+
+
+
+
+
+
+
+<!-- deprecated - to use uncomment this section
+
+
+
+
+
+
+
+<?php if (TEXT_INFORMATION) { ?>
+
+
+
+
+
+
+
+<div id="" class="content"><?php echo TEXT_INFORMATION; ?></div>
+
+
+
+
+
+
+
+<?php } ?>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php if (DEFINE_MAIN_PAGE_STATUS >= 1 and DEFINE_MAIN_PAGE_STATUS <= 2) { ?>
+
+
+
+
+
+
+
+<?php
+
+
+
+
+
+
+
+/**
+
+
+
+
+
+
+
+ * get the Define Main Page Text
+
+
+
+
+
+
+
+ */
+
+
+
+
+
+
+
+?>
+
+
+
+<!--输出幻灯片-->
+
+
+
+<div id="indexDefaultMainContent" class="content"><?php require($define_page); ?></div>
+
+
+
+
+
+<!--幻灯片下面图片菜单开始-->
+
+<div class="hpcTiles" id="hpcTiles">
+
+    <a id="HPC-college" href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>new-nfl-jersey-c-1994.html"></a>
+
+    <a id="HPC-nfl" href="<?PHP echo HTTP_SERVER.DIR_WS_CATALOG;?>nike-nfl-jerseys-c-313.html"></a>
+
+<!--    <a id="HPC-mlb" href="/league/mlb?ab=FanMob-HP-LeagueBlock-MLB-3.18"></a>
+
+    <a id="HPC-nba" href="/league/NBA?ab=FanMob-HP-LeagueBlock-NBA-3.18"></a>
+
+    <a id="HPC-nhl" href="/league/NHL?ab=FanMob-HP-LeagueBlock-NHL-3.18"></a>
+
+    <a id="HPC-soccer" href="/pages/soccer?ab=FanMob-HP-LeagueBlock-Soccer-3.18"></a>
+
+    <a id="HPC-nascar" href="/league/nascar?ab=FanMob-HP-LeagueBlock-Nascar-3.18"></a>
+
+    <a id="HPC-olympics" href="/league/olympics?ab=FanMob-HP-LeagueBlock-Olympics-B-9.5"></a>
+
+    <a id="HPC-sale" href="/On_Sale/Yes?ab=FanMob-HP-LeagueBlock-Sales-B-9.5" class="hpcWideTile"></a>
+
+    <br>
+
+    <a id="HPC-mma" href="/league/mma?ab=FanMob-HP-LeagueBlock-MMA-B-9.5"></a>
+
+    <a id="HPC-golf" href="/Golf_PGA?ab=FanMob-HP-LeagueBlock-Golf-B-9.5"></a>
+
+    <a id="HPC-afl" href="/league/afl?ab=FanMob-HP-LeagueBlock-AFL-B-9.5"></a>
+
+    <a id="HPC-ufc" href="/MMA_UFC?ab=FanMob-HP-LeagueBlock-UFC-B-9.5"></a>
+
+    <a id="HPC-lacrosse" href="/league/nll?ab=FanMob-HP-LeagueBlock-NLL-B-9.5"></a>
+
+    <a id="HPC-wnba" href="/wnba?ab=FanMob-HP-LeagueBlock-WNBA-B-9.5"></a>
+-->
+</div>
+
+<!--幻灯片下面图片菜单结束-->
+
+<!--另外一个版本开始-->
+<div class="clear"></div>
+<div id="HPC-tiles">
+    <div class="mccLarge nflRedesign" style="display: inline-table;">
+        <div id="ARI" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>nba-jerseys-c-119.html" id="HPC-Cardinals"></a>
+        </div>
+        <div id="ATL" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>nhl-jerseys-c-267.html" id="HPC-Falcons"></a>
+        </div>
+        <div id="BAL" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>baseball-jerseys-c-1.html" id="HPC-Ravens"></a>
+        </div>
+        <div id="BUF" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>ncaa-jerseys-c-169.html" id="HPC-Bills"></a>
+        </div>
+        <div id="CAR" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>women-jerseys-c-447.html" id="HPC-Panthers"></a>
+        </div>
+        <div id="CHI" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>youth-jerseys-c-460.html" id="HPC-Bears"></a></div>
+        <div id="CIN" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>soccer-jerseys-c-383.html" id="HPC-Bengals"></a>
+        </div>
+        <div id="CLE" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>hats-c-107.html" id="HPC-Browns"></a>
+        </div>
+        <div id="DAL" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>glasses-c-1919.html" id="HPC-Cowboys"></a>
+        </div>
+        <div id="DEN" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>sports-accessory-c-397.html" id="HPC-Broncos"></a>
+        </div>
+        <div id="DET" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>custom-jersey-c-51.html" id="HPC-Lions"></a>
+        </div>
+        <div id="GB" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>green-bay-packers-jersey-c-313_329.html" id="HPC-Packers"></a>
+        </div>
+        
+       <!-- <div id="HOU" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>houston-texans-jersey-c-313_331.html" id="HPC-Texans"></a>
+        </div>
+        <div id="IND" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>indianapolis-colts-jersey-c-313_332.html" id="HPC-Colts"></a>
+        </div>
+        <div id="JAC" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>jacksonville-jaguars-jersey-c-313_334.html" id="HPC-Jaguars"></a>
+        </div>
+        <div id="KC" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>kansas-city-chiefs-jersey-c-313_335.html" id="HPC-Chiefs"></a>
+        </div>
+        <div id="MIA" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>miami-dolphins-jersey-c-313_337.html" id="HPC-Dolphins"></a>
+        </div>
+        <div id="MIN" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>minnesota-vikings-jersey-c-313_338.html" id="HPC-Vikings"></a>
+        </div>
+        <div id="NE" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>new-england-patriots-jersey-c-313_339.html" id="HPC-Patriots"></a>
+        </div>
+        <div id="NO" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>new-orleans-saints-jersey-c-313_340.html" id="HPC-Saints"></a>
+        </div>
+        <div id="NY" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>new-york-giants-jersey-c-313_341.html" id="HPC-Giants"></a>
+        </div>
+        <div id="NYJ" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>new-york-jets-jersey-c-313_342.html" id="HPC-Jets"></a>
+        </div>
+        <div id="OAK" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>oakland-raiders-jersey-c-313_349.html" id="HPC-Raiders"></a>
+        </div>
+        <div id="PHI" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>philadelphia-eagles-jersey-c-313_350.html" id="HPC-Eagles"></a>
+        </div>
+        <div id="PIT" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>pittsburgh-steelers-jersey-c-313_351.html" id="HPC-Steelers"></a>
+        </div>
+        <div id="SD" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>san-diego-chargers-jersey-c-313_352.html" id="HPC-Chargers"></a>
+        </div>
+        <div id="SF" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>san-francisco-49ers-jersey-c-313_353.html" id="HPC-49ers"></a>
+        </div>
+        <div id="SEA" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>seattle-seahawks-jersey-c-313_354.html" id="HPC-Seahawks"></a>
+        </div>
+        <div id="STL" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>stlouis-rams-jersey-c-313_355.html" id="HPC-Rams"></a>
+        </div> 
+        <div id="TB" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>tampa-bay-buccaneers-jersey-c-313_356.html" id="HPC-Buccaneers"></a>
+        </div>
+        <div id="TEN" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>tennessee-titans-jersey-c-313_357.html" id="HPC-Titans"></a>
+        </div>
+        <div id="WAS" class="mcc">
+        <a href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>san-francisco-49ers-jersey-c-313_353.html" id="HPC-Redskins"></a>
+        </div>-->
+    </div><!-- END mccLarge -->
+    </div>
+<!--另外一个版本结束-->
+
+
+
+
+
+<!--输出幻灯片下面的文字开始
+
+<div class="hero-content text-center">
+
+	<h1>Get Out There.</h1>
+
+	<p>Life’s too short for overpriced sunglasses. Enjoy the view in shades that look good, protect your eyes, and don’t break the bank.</p>
+
+</div>
+
+输出幻灯片下面的文字结束-->
+
+
+
+<!--中间按钮菜单开始-->
+
+<div class="center_menus">
+
+	<div class="center_menus_1">
+
+    	<a class="center_menus_men" href="#top_index">Fast return</a>
+
+        <a class="center_menus_women" href="<?php echo HTTP_SERVER.DIR_WS_CATALOG; ?>shopping_cart.html">shopping cart</a>
+
+        <div class="clear"></div>
+
+    </div>
+
+    
+
+    	<div class="center_menus_2">
+
+    	<a class="center_menus_men center_menus_margin_top" href="<?php echo HTTP_SERVER.DIR_WS_CATALOG; ?>login.html">My account</a>
+
+        <a class="center_menus_women center_menus_margin_top" href="<?php echo HTTP_SERVER.DIR_WS_CATALOG; ?>contact_us.html">Contact us </a>
+
+        <div class="clear"></div>
+
+    </div>
+
+    
+
+</div>
+
+<!--中间菜单按钮结束-->
+
+
+
+<!--中间菜单按钮下面的菜单开始
+
+<ul class="cat-links no-bullet margin-sides-1">
+
+	<li>
+
+
+
+	
+
+<div class="button">
+
+	<a onclick="ga('send', 'event', 'homepage', 'shop', 'Polarized');" href="<?php HTTP_SERVER.DIR_WS_CATALOG;?>armani-c-1919_1920.html">
+		<span class="btn-inner">Armani glasses</span>
+	</a>
+</div>	
+
+</li>
+
+	<li>
+<div class="button">
+
+	<a onclick="ga('send', 'event', 'homepage', 'shop', 'Classics');" href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>ray-ban-c-1919_104.html">
+		<span class="btn-inner">Ray Ban glasses</span>
+	</a>
+
+</div>	
+
+</li>
+
+	<li>
+
+<div class="button">
+	<a onclick="ga('send', 'event', 'homepage', 'shop', 'Sport');" href="<?php echo HTTP_SERVER.DIR_WS_CATALOG; ?>burberry-c-1919_1921.html">
+		<span class="btn-inner">Burberry glasses</span>
+	</a>
+
+</div>	
+</li>
+	<li>
+
+<div class="button">
+	<a onclick="ga('send', 'event', 'homepage', 'shop', 'Road__Biking');" href="<?php echo HTTP_SERVER.DIR_WS_CATALOG; ?>cartier-c-1919_1922.html">
+		<span class="btn-inner">Cartier glasses</span></a>
+
+</div>	
+</li>
+	<li>
+
+<div class="button">
+
+	<a onclick="ga('send', 'event', 'homepage', 'shop', 'Driving');" href="<?php echo HTTP_SERVER.DIR_WS_CATALOG; ?>chanel-c-1919_1923.html">
+
+		<span class="btn-inner">Chanel glasses</span></a>
+
+</div>	
+
+</li>
+
+	<li class="last">
+
+
+
+	
+
+<div class="button">
+
+	<a onclick="ga('send', 'event', 'homepage', 'shop', 'Reading');" href="<?php echo HTTP_SERVER.DIR_WS_CATALOG;?>glasses-c-1919.html">
+
+		<span class="btn-inner">
+			To see more
+		</span>
+
+	</a>
+
+</div>	
+
+</li>
+
+</ul>
+
+中间菜单按钮下面的菜单结束-->
+
+
+
+<?php } ?>
+
+
+
+
+
+
+
+<?php require(DIR_WS_MODULES . 'sideboxes/' . $template_dir . '/categories_top_tree.php'); ?>
+
+
+
+
+
+
+
+<?php
+
+
+
+
+
+
+
+  $show_display_category = $db->Execute(SQL_SHOW_PRODUCT_INFO_MAIN);
+
+
+
+
+
+
+
+  while (!$show_display_category->EOF) {
+
+
+
+
+
+
+
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php if ($show_display_category->fields['configuration_key'] == 'SHOW_PRODUCT_INFO_MAIN_FEATURED_PRODUCTS') { ?>
+
+
+
+
+
+
+
+<?php
+
+
+
+
+
+
+
+/**
+
+
+
+
+
+
+
+ * display the Featured Products Center Box
+
+
+
+
+
+
+
+ */
+
+
+
+
+
+
+
+?>
+
+
+
+
+
+
+
+<?php require($template->get_template_dir('tpl_modules_featured_products.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_featured_products.php'); ?>
+
+
+
+
+
+
+
+<?php } ?>
+
+
+
+
+
+
+
+<?php if ($show_display_category->fields['configuration_key'] == 'SHOW_PRODUCT_INFO_MAIN_SPECIALS_PRODUCTS') { ?>
+
+
+
+
+
+
+
+<?php
+
+
+
+
+
+
+
+/**
+
+
+
+
+
+
+
+ * display the Special Products Center Box
+
+
+
+
+
+
+
+ */
+
+
+
+
+
+
+
+?>
+
+
+
+
+
+
+
+<?php require($template->get_template_dir('tpl_modules_specials_default.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_specials_default.php'); ?>
+
+
+
+
+
+
+
+<?php } ?>
+
+
+
+
+
+
+
+<?php if ($show_display_category->fields['configuration_key'] == 'SHOW_PRODUCT_INFO_MAIN_NEW_PRODUCTS') { ?>
+
+
+
+
+
+
+
+<?php
+
+
+
+
+
+
+
+/**
+
+
+
+
+
+
+
+ * display the New Products Center Box
+
+
+
+
+
+
+
+ */
+
+
+
+
+
+
+
+?>
+
+
+
+
+
+
+
+<?php require($template->get_template_dir('tpl_modules_whats_new.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_whats_new.php'); ?>
+
+
+
+
+
+
+
+<?php } ?>
+
+
+
+
+
+
+
+<?php if ($show_display_category->fields['configuration_key'] == 'SHOW_PRODUCT_INFO_MAIN_UPCOMING') { ?>
+
+
+
+
+
+
+
+<?php
+
+
+
+
+
+
+
+/**
+
+
+
+
+
+
+
+ * display the Upcoming Products Center Box
+
+
+
+
+
+
+
+ */
+
+
+
+
+
+
+
+?>
+
+
+
+
+
+
+
+<?php include(DIR_WS_MODULES . zen_get_module_directory(FILENAME_UPCOMING_PRODUCTS)); ?><?php } ?>
+
+
+
+
+
+
+
+<?php
+
+
+
+
+
+
+
+  $show_display_category->MoveNext();
+
+
+
+
+
+
+
+} // !EOF
+
+
+
+
+
+
+
+?>
+
+</div>
+
+<div class="clearer"></div>
+
+
+
+<!--<?php require($template->get_template_dir('tpl_modules_also_like.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_also_like.php'); ?>-->
+

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>电话卡兑现方式确认 - 触屏版</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0"/>
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta content="telephone=no" name="format-detection" />
+
+<script id="pageJS" data="{G_TEMPLATES_JS}/js/mobile/recharge.js" language="javascript" type="text/javascript"></script>
+<link href="{G_TEMPLATES_CSS}/mobile/comm.css?v=130715" rel="stylesheet" type="text/css" />
+<link href="{G_TEMPLATES_CSS}/mobile/member.css?v=130726" rel="stylesheet" type="text/css" />
+<link href="{G_TEMPLATES_CSS}/mobile/invite.css?v=130715" rel="stylesheet" type="text/css" />
+<script src="{G_TEMPLATES_JS}/mobile/jquery190.js" language="javascript" type="text/javascript"></script>
+
+</head>
+<body>
+<div class="h5-1yyg-v1" id="loadingPicBlock">
+    
+<!-- 栏目页面顶部 -->
+
+
+<!-- 内页顶部 -->
+
+    <header class="header" style="position: fixed;width: 100%;z-index: 99999999;">
+
+    <h1 style="width: 100%;text-align: center;float: none;top: 0px;left: 0px;font-size: 25px;" class="fl">
+        <span style="display: block;height: 49px;line-height: 49px;">
+            <a style="font-size: 20px;line-height: 49px;" href="{WEB_PATH}/mobile/mobile">
+                电话卡兑换
+            </a>
+        </span>
+        <!--<img src="{G_UPLOAD_PATH}/{wc:fun:Getlogo()}"/>
+        -->
+        <!--<img src="/statics/templates/yungou/images/sjlogo.png"/>
+        -->
+    </h1>
+    <a id="fanhui" class="cefenlei" onclick="history.go(-1)" href="javascript:;">
+        <img width="30" height="30" src="/statics/templates/yungou/images/mobile/fanhui.png">
+    </a>
+        <!--<a href="{WEB_PATH}/mobile/user/login" class="z-Member"></a>-->
+    <a href="{WEB_PATH}/mobile/home/cardexchangetasks" class="z-shop" style="background:none;color:#fff;position: absolute;right: 0px;top:18px;font-size: 16px;width: 70px;">兑换历史</a>
+</header>
+
+ <div class="R-content" style="padding-top: 55px;">
+	<div id="divSQTX" class="Apply-con">
+	  <form name="form1" action="" method="post">
+      <input type="hidden" name="mobile" id="mobile" value="{wc:$mobile}" />
+      <input type="hidden" name="day" id="day" value="{wc:$day}" />
+      <input type="hidden" name="token" id="token" value="{wc:$token}" />
+    <dl>
+      <dt>充值卡说明：</dt>
+      <dd>
+        1000云购币兑换1000元面值的充值卡。<br/>
+        500元云购币兑换500元充值卡。<br/>
+        100元云购币兑换100元充值卡。<br/>
+        50元云购币兑换50元充值卡。
+      </dd>
+    </dl>
+		<dl>
+			<dt>云购币数量：</dt>
+			<dd><span id="spanBrokerage" class="orange">{wc:$totalvalue}</span>&nbsp;</dd>
+		</dl>
+      <dl>
+      <dt>充值卡面值：</dt>
+      <dd><span id="spanBrokerage" class="orange">{wc:$realvalue}元</span>&nbsp;</dd>
+    </dl>
+        <dl style="padding:10px;margin:20px;">
+            <span style="padding:10px;margin:10px;">
+                  请选择是否由客服将金额直接充到您的手机(尾号{wc:$phoneend})或者是跳转到寄售宝网站，将金额汇入您的支付宝帐户
+            </span>
+        </dl>	
+		<div style="text-align:center;">
+       </br>    
+           <a href="#" id="humanoper" class="fr z-Recharge-btn" style="float:left;margin-left:10%;font-size:20px;">人工充值到手机</a>
+           <a href="#" id="thirdparty" class="fr z-Recharge-btn" style="float:left;margin-left:10%;font-size:20px;">到寄售宝网站</a></div>
+        </br>
+       </br>
+       </br>
+       <!-- 
+            <a href="#" id="gohome" class="fr z-Recharge-btn" style="float:left;clear:both;margin-left:30%;font-size:20px;background-color:grey;">暂时不兑换</a>-->
+    </div>
+	 </form>
+	</div>
+	<style>
+   #divSQTX span{color:#D93955};
+</style>
+</div>
+</div>
+<div style="width:100%;height:20px;border:1px grey dotted;position:fixed;bottom:49px;padding-left:40px;color:blue;">
+客服联系方式&nbsp;&nbsp;微信:jzwy_kefu&nbsp;&nbsp;&nbsp;QQ:3467586457
+</div>
+<div style="height:70px;"></div>
+
+{wc:templates "mobile/index","footer"}
+
+<script language="javascript" type="text/javascript">
+  var Path = new Object();
+  Path.Skin="{G_TEMPLATES_STYLE}";
+  Path.Webpath = "{WEB_PATH}";
+var Base={head:document.getElementsByTagName("head")[0]||document.documentElement,Myload:function(B,A){this.done=false;B.onload=B.onreadystatechange=function(){if(!this.done&&(!this.readyState||this.readyState==="loaded"||this.readyState==="complete")){this.done=true;A();B.onload=B.onreadystatechange=null;if(this.head&&B.parentNode){this.head.removeChild(B)}}}},getScript:function(A,C){var B=function(){};if(C!=undefined){B=C}var D=document.createElement("script");D.setAttribute("language","javascript");D.setAttribute("type","text/javascript");D.setAttribute("src",A);this.head.appendChild(D);this.Myload(D,B)},getStyle:function(A,B){var B=function(){};if(callBack!=undefined){B=callBack}var C=document.createElement("link");C.setAttribute("type","text/css");C.setAttribute("rel","stylesheet");C.setAttribute("href",A);this.head.appendChild(C);this.Myload(C,B)}}
+function GetVerNum(){var D=new Date();return D.getFullYear().toString().substring(2,4)+'.'+(D.getMonth()+1)+'.'+D.getDate()+'.'+D.getHours()+'.'+(D.getMinutes()<10?'0':D.getMinutes().toString().substring(0,1))}
+Base.getScript('{G_TEMPLATES_JS}/js/mobile/Bottom.js?v='+GetVerNum());
+</script>
+<script>
+    $(document).ready(function() {
+        //$.post("{WEB_PATH}/mobile/user/mobilecheckband",post,function(s){
+        $("#humanoper").click(function() {
+            $.post("{WEB_PATH}/mobile/home/createrechargetask?tasktype=mobile",{},function(s){
+                if (s == '1') {
+                  window.location = "{WEB_PATH}/mobile/home/cardexchangetasks";  
+                } else {
+                  alert("没有需要兑换的电话卡");
+                }
+            });
+        });
+
+        $("#thirdparty").click(function() {
+            $.post("{WEB_PATH}/mobile/home/createrechargetask?tasktype=alipay",{},function(s){
+                console.log(s);
+                //if (s == '1') {
+                  //window.location = "{WEB_PATH}/mobile/home/cardexchangetasks";
+                  var mobile = $("#mobile").val();
+                  var day = $("#day").val();
+                  var token = $("#token").val();
+                  window.location = "http://jishou.sino518.com/sale/exchange/apply?mobile="+mobile+"&day="+day+"&token="+token;                                 
+                //} else {
+                 // alert("没有需要兑换的电话卡");
+                //}
+
+            });
+        });
+
+        $("#gohome").click(function(){
+            window.location = "{WEB_PATH}/mobile/home";
+        });
+    });
+</script>
+
+
+
+</div>
+</body>
+</html>

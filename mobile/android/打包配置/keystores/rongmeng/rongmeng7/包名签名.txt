@@ -1,0 +1,12 @@
+应用包名： com.ympe.newmt
+签名密码： android
+密钥别名： rm1.keystore
+签名MD5 ： EDEC9DDBBE4C03C65A9E197F28FD6C20
+
+
+
+
+
+
+
+

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.lxtx.dao.CloudDayCensusMapper">
+	<resultMap id="BaseResultMap" type="com.lxtx.model.CloudDayCensus">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="order_date" property="orderDate" jdbcType="DATE" />
+		<result column="sub1_sum" property="sub1Sum" jdbcType="INTEGER" />
+		<result column="sub2_sum" property="sub2Sum" jdbcType="INTEGER" />
+		<result column="sub3_sum" property="sub3Sum" jdbcType="INTEGER" />
+		<result column="sub4_sum" property="sub4Sum" jdbcType="INTEGER" />
+		<result column="all_sum" property="allSum" jdbcType="INTEGER" />
+		<result column="profit" property="profit" jdbcType="DECIMAL" />
+		<result column="commission_profit" property="commissionProfit"
+			jdbcType="DECIMAL" />
+		<result column="chn_commission" property="chnCommission"
+			jdbcType="DECIMAL" />
+		<result column="loss" property="loss" jdbcType="DECIMAL" />
+		<result column="profit_loss" property="profitLoss" jdbcType="DECIMAL" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, order_date, sub1_sum, sub2_sum, sub3_sum, sub4_sum, all_sum, profit,
+		commission_profit,
+		loss, profit_loss,chn_commission
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from cloud_day_census
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from cloud_day_census
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" parameterType="com.lxtx.model.CloudDayCensus"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into cloud_day_census (order_date, sub1_sum, sub2_sum,
+		sub3_sum, sub4_sum, all_sum,
+		profit, commission_profit, loss,
+		profit_loss,chn_commission)
+		values (#{orderDate,jdbcType=DATE}, #{sub1Sum,jdbcType=INTEGER},
+		#{sub2Sum,jdbcType=INTEGER},
+		#{sub3Sum,jdbcType=INTEGER}, #{sub4Sum,jdbcType=INTEGER}, #{allSum,jdbcType=INTEGER},
+		#{profit,jdbcType=DECIMAL}, #{commissionProfit,jdbcType=DECIMAL},
+		#{loss,jdbcType=DECIMAL},
+		#{profitLoss,jdbcType=DECIMAL},#{chnCommission,jdbcType=DECIMAL})
+	</insert>
+	<insert id="insertSelective" parameterType="com.lxtx.model.CloudDayCensus"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into cloud_day_census
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			order_date,
+			sub1_sum,
+			sub2_sum,
+			sub3_sum,
+			sub4_sum,
+			all_sum,
+			profit,
+			commission_profit,
+			loss,
+			profit_loss,
+			chn_commission,
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			#{orderDate,jdbcType=DATE},
+			#{sub1Sum,jdbcType=INTEGER},
+			#{sub2Sum,jdbcType=INTEGER},
+			#{sub3Sum,jdbcType=INTEGER},
+			#{sub4Sum,jdbcType=INTEGER},
+			#{allSum,jdbcType=INTEGER},
+			#{profit,jdbcType=DECIMAL},
+			#{commissionProfit,jdbcType=DECIMAL},
+			#{loss,jdbcType=DECIMAL},
+			#{profitLoss,jdbcType=DECIMAL},
+			#{chnCommission,jdbcType=DECIMAL},
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.lxtx.model.CloudDayCensus">
+		update cloud_day_census
+		<set>
+			<if test="orderDate != null">
+				order_date = #{orderDate,jdbcType=DATE},
+			</if>
+			<if test="sub1Sum != null">
+				sub1_sum = #{sub1Sum,jdbcType=INTEGER},
+			</if>
+			<if test="sub2Sum != null">
+				sub2_sum = #{sub2Sum,jdbcType=INTEGER},
+			</if>
+			<if test="sub3Sum != null">
+				sub3_sum = #{sub3Sum,jdbcType=INTEGER},
+			</if>
+			<if test="sub4Sum != null">
+				sub4_sum = #{sub4Sum,jdbcType=INTEGER},
+			</if>
+			<if test="allSum != null">
+				all_sum = #{allSum,jdbcType=INTEGER},
+			</if>
+			<if test="profit != null">
+				profit = #{profit,jdbcType=DECIMAL},
+			</if>
+			<if test="commissionProfit != null">
+				commission_profit = #{commissionProfit,jdbcType=DECIMAL},
+			</if>
+			<if test="loss != null">
+				loss = #{loss,jdbcType=DECIMAL},
+			</if>
+			<if test="profitLoss != null">
+				profit_loss = #{profitLoss,jdbcType=DECIMAL},
+			</if>
+			<if test="chnCommission != null">
+				chn_commission = #{chnCommission,jdbcType=DECIMAL},
+			</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.lxtx.model.CloudDayCensus">
+		update cloud_day_census
+		set order_date = #{orderDate,jdbcType=DATE},
+		sub1_sum = #{sub1Sum,jdbcType=INTEGER},
+		sub2_sum = #{sub2Sum,jdbcType=INTEGER},
+		sub3_sum = #{sub3Sum,jdbcType=INTEGER},
+		sub4_sum = #{sub4Sum,jdbcType=INTEGER},
+		all_sum = #{allSum,jdbcType=INTEGER},
+		profit = #{profit,jdbcType=DECIMAL},
+		commission_profit = #{commissionProfit,jdbcType=DECIMAL},
+		loss = #{loss,jdbcType=DECIMAL},
+		profit_loss = #{profitLoss,jdbcType=DECIMAL},
+		chn_commission = #{chnCommission,jdbcType=DECIMAL}
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+</mapper>

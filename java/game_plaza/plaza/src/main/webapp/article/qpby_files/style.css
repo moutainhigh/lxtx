@@ -1,0 +1,103 @@
+/* CSS Document */
+* { margin:0; padding:0;}
+body{font-family: "微软雅黑"; font-size:12px;}
+ul,li{list-style-type:none;}
+a{text-decoration:none; color: #7e7d2d;}
+img{
+	display:block;
+}
+.wrap{
+	background-color:#f3f2f6;
+}
+.down{width:100%;}
+.down a{display:block;}
+.tuijian ul li{
+	float:left;
+	width:25%;
+}
+
+/* tab切换 */
+
+.news1{
+	width:100%;
+	background-color:#fff;
+}
+#news1-title li{
+	float:left;
+	width:50%;
+	text-align:center;
+	height:42px;
+	line-height:42px;
+	background-size:100% 100%;
+	border-bottom:1px solid #ccc;
+	font-size:16px;
+	font-weight:600;
+	color:#7c7c7c;
+}
+#news1-title{
+	height:42px;
+	line-height:42px;
+}
+#news1-nr{
+	width:90%;
+	margin:10px auto;
+	color:#908f8f;
+	font-size:13px;
+	line-height:23px;
+}
+/*#news1-nr div img{
+	width:100%;
+	margin-bottom:10px;
+}*/
+.news1 ul li.cur{
+	color:#65bb0a;
+	border:none;
+	background-size:100% 100%;
+}
+.xs{ display:block;}
+.yc{ display:none;}
+
+
+
+/*  底部  */
+footer{background:#2d2f41; margin-top:10px;font: 12px/1.42 "Microsoft YaHei",Tahoma,Arial,Helvetica,Geneva,sans-serif;color: #fff;}
+footer p{padding-top:1.5%; text-align:center; width:95%; margin:0 auto;}
+footer a{font-size:1.2em;color:#fff!important}
+footer span{vertical-align:top}
+footer div{padding-bottom:1.5%;color:#454c82}
+
+
+
+
+
+/* 本例子css -------------------------------------- */
+	.focus{ width:100%;margin:0 auto; position:relative; overflow:hidden;   }
+	.focus .hd{ width:100%; height:11px;  position:absolute; z-index:1; bottom:5px; text-align:center;  }
+	.focus .hd ul{ display:inline-block; height:5px; padding:3px 5px; 
+		-webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; font-size:0; vertical-align:top;
+	}
+	.focus .hd ul li{ display:inline-block; width:5px; height:5px; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; background:#8C8C8C; margin:0 5px;  vertical-align:top; overflow:hidden;   }
+	.focus .hd ul .on{ background:#FE6C9C;  }
+
+	.focus .bd{ position:relative; z-index:0; }
+	.focus .bd li img{ width:100%; background:url(images/loading.gif) center center no-repeat;  }
+	.focus .bd li a{ -webkit-tap-highlight-color:rgba(0, 0, 0, 0); /* 取消链接高亮 */  }
+	
+	
+	
+.swipe {
+
+  overflow:hidden;
+  position:relative;
+  width:100%;
+}
+.swipe ul{
+    overflow:hidden;
+}
+.swipe li img{
+	max-width:100%;
+}
+#slider1 li{
+	width:240px;
+	padding-right:10px;
+}

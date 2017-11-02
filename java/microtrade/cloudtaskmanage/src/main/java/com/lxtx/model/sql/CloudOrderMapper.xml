@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.lxtx.dao.CloudOrderMapper">
+	<resultMap id="BaseResultMap" type="com.lxtx.model.CloudOrder">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="uid" property="uid" jdbcType="INTEGER" />
+		<result column="subject_id" property="subjectId" jdbcType="INTEGER" />
+		<result column="subject" property="subject" jdbcType="VARCHAR" />
+		<result column="direction" property="direction" jdbcType="INTEGER" />
+		<result column="money" property="money" jdbcType="DECIMAL" />
+		<result column="amount" property="amount" jdbcType="INTEGER" />
+		<result column="contract_money" property="contractMoney"
+			jdbcType="INTEGER" />
+		<result column="limit" property="limit" jdbcType="INTEGER" />
+		<result column="cleared" property="cleared" jdbcType="INTEGER" />
+		<result column="order_time" property="orderTime" jdbcType="TIMESTAMP" />
+		<result column="clear_time" property="clearTime" jdbcType="TIMESTAMP" />
+		<result column="order_index" property="orderIndex" jdbcType="INTEGER" />
+		<result column="clear_index" property="clearIndex" jdbcType="INTEGER" />
+		<result column="commission" property="commission" jdbcType="DECIMAL" />
+		<result column="status" property="status" jdbcType="INTEGER" />
+		<result column="clear_upper_limit" property="clearUpperLimit"
+			jdbcType="INTEGER" />
+		<result column="clear_down_limit" property="clearDownLimit"
+			jdbcType="INTEGER" />
+		<result column="coupon_commission" property="couponCommission"
+			jdbcType="DECIMAL" />
+		<result column="cash" property="cash" jdbcType="DECIMAL" />
+		<result column="sys_profit" property="sysProfit" jdbcType="DECIMAL" />
+		<result column="sys_loss" property="sysLoss" jdbcType="DECIMAL" />
+		<result column="f_profit" property="fProfit" jdbcType="DECIMAL" />
+		<result column="coupou_money" property="coupouMoney" jdbcType="DECIMAL" />
+		<result column="human" property="human" jdbcType="INTEGER" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, `uid`, subject_id, subject, direction, money, amount,
+		contract_money,
+		`limit`, cleared,
+		order_time, clear_time, order_index,
+		clear_index, commission, `status`,
+		clear_upper_limit,
+		clear_down_limit,
+		coupon_commission, cash, sys_profit, sys_loss,
+		f_profit, coupou_money,human
+	</sql>
+	<select id="countNewOrder" parameterType="map" resultType="java.lang.Integer">
+		select count(*) from cloud_order where uid= #{uid,jdbcType=INTEGER}
+		and subject = #{subject, jdbcType=VARCHAR} and status = 0
+	</select>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from cloud_order
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	<select id="selectByLimit" resultMap="BaseResultMap"
+		parameterType="com.lxtx.model.CloudOrder">
+		select
+		<include refid="Base_Column_List" />
+		from cloud_order
+		where <![CDATA[ (clear_upper_limit <= #{orderIndex,jdbcType=INTEGER} or clear_down_limit >= #{orderIndex,jdbcType=INTEGER}) and subject = #{subject, jdbcType=VARCHAR} and status = 0]]>
+	</select>
+	<select id="selectByUpperLimit" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from cloud_order
+		where <![CDATA[clear_upper_limit <= #{indexValue,jdbcType=INTEGER} and status = 0]]>
+	</select>
+	<select id="selectByDownLimit" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from cloud_order
+		where <![CDATA[clear_down_limit >= #{indexValue,jdbcType=INTEGER} and status = 0]]>
+	</select>
+	<select id="selectByStatus" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from cloud_order
+		where <![CDATA[status = #{status,jdbcType=INTEGER}]]>
+		limit 150
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from
+		cloud_order
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" parameterType="com.lxtx.model.CloudOrder"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into cloud_order (`uid`,
+		subject_id, direction,
+		money, amount, contract_money,
+		`limit`, cleared,
+		order_time,
+		clear_time, order_index, clear_index,
+		commission, `status`,
+		clear_upper_limit,
+		clear_down_limit,
+		coupon_commission, cash,
+		sys_profit,
+		sys_loss, f_profit, coupou_money)
+		values
+		(#{uid,jdbcType=INTEGER},
+		#{subjectId,jdbcType=INTEGER},
+		#{subject,jdbcType=VARCHAR},
+		#{direction,jdbcType=INTEGER},
+		#{money,jdbcType=DECIMAL},
+		#{amount,jdbcType=INTEGER},
+		#{contractMoney,jdbcType=INTEGER},
+		#{limit,jdbcType=INTEGER},
+		#{cleared,jdbcType=INTEGER},
+		#{orderTime,jdbcType=TIMESTAMP},
+		#{clearTime,jdbcType=TIMESTAMP},
+		#{orderIndex,jdbcType=INTEGER},
+		#{clearIndex,jdbcType=INTEGER},
+		#{commission,jdbcType=DECIMAL},
+		#{status,jdbcType=INTEGER},
+		#{clearUpperLimit,jdbcType=INTEGER},
+		#{clearDownLimit,jdbcType=INTEGER},
+		#{couponCommission,jdbcType=DECIMAL}, #{cash,jdbcType=DECIMAL},
+		#{sysProfit,jdbcType=DECIMAL},
+		#{sysLoss,jdbcType=DECIMAL},
+		#{fProfit,jdbcType=DECIMAL}, #{coupouMoney,jdbcType=DECIMAL})
+	</insert>
+	<insert id="insertSelective" parameterType="com.lxtx.model.CloudOrder"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into cloud_order
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			`uid`,
+			subject_id,
+			subject,
+			direction,
+			money,
+			amount,
+			contract_money,
+			`limit`,
+			cleared,
+			order_time,
+			clear_time,
+			order_index,
+			clear_index,
+			commission,
+			`status`,
+			clear_upper_limit,
+			clear_down_limit,
+			coupon_commission,
+			cash,
+			sys_profit,
+			sys_loss,
+			f_profit,
+			coupou_money,
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			#{uid,jdbcType=INTEGER},
+			#{subjectId,jdbcType=INTEGER},
+			#{subject,jdbcType=VARCHAR},
+			#{direction,jdbcType=INTEGER},
+			#{money,jdbcType=DECIMAL},
+			#{amount,jdbcType=INTEGER},
+			#{contractMoney,jdbcType=INTEGER},
+			#{limit,jdbcType=INTEGER},
+			#{cleared,jdbcType=INTEGER},
+			#{orderTime,jdbcType=TIMESTAMP},
+			#{clearTime,jdbcType=TIMESTAMP},
+			#{orderIndex,jdbcType=INTEGER},
+			#{clearIndex,jdbcType=INTEGER},
+			#{commission,jdbcType=DECIMAL},
+			#{status,jdbcType=INTEGER},
+			#{clearUpperLimit,jdbcType=INTEGER},
+			#{clearDownLimit,jdbcType=INTEGER},
+			#{couponCommission,jdbcType=DECIMAL},
+			#{cash,jdbcType=DECIMAL},
+			#{sysProfit,jdbcType=DECIMAL},
+			#{sysLoss,jdbcType=DECIMAL},
+			#{fProfit,jdbcType=DECIMAL},
+			#{coupouMoney,jdbcType=DECIMAL},
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.lxtx.model.CloudOrder">
+		update cloud_order
+		<set>
+			<if test="uid != null">
+				`uid` = #{uid,jdbcType=INTEGER},
+			</if>
+			<if test="subjectId != null">
+				subject_id = #{subjectId,jdbcType=INTEGER},
+			</if>
+			<if test="direction != null">
+				direction = #{direction,jdbcType=INTEGER},
+			</if>
+			<if test="money != null">
+				money = #{money,jdbcType=DECIMAL},
+			</if>
+			<if test="amount != null">
+				amount = #{amount,jdbcType=INTEGER},
+			</if>
+			<if test="contractMoney != null">
+				contract_money = #{contractMoney,jdbcType=INTEGER},
+			</if>
+			<if test="limit != null">
+				`limit` = #{limit,jdbcType=INTEGER},
+			</if>
+			<if test="cleared != null">
+				cleared = #{cleared,jdbcType=INTEGER},
+			</if>
+			<if test="orderTime != null">
+				order_time = #{orderTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="clearTime != null">
+				clear_time = #{clearTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="orderIndex != null">
+				order_index = #{orderIndex,jdbcType=INTEGER},
+			</if>
+			<if test="clearIndex != null">
+				clear_index = #{clearIndex,jdbcType=INTEGER},
+			</if>
+			<if test="commission != null">
+				commission = #{commission,jdbcType=DECIMAL},
+			</if>
+			<if test="status != null">
+				`status` = #{status,jdbcType=INTEGER},
+			</if>
+			<if test="clearUpperLimit != null">
+				clear_upper_limit = #{clearUpperLimit,jdbcType=INTEGER},
+			</if>
+			<if test="clearDownLimit != null">
+				clear_down_limit = #{clearDownLimit,jdbcType=INTEGER},
+			</if>
+			<if test="couponCommission != null">
+				coupon_commission = #{couponCommission,jdbcType=DECIMAL},
+			</if>
+			<if test="cash != null">
+				cash = #{cash,jdbcType=DECIMAL},
+			</if>
+			<if test="sysProfit != null">
+				sys_profit = #{sysProfit,jdbcType=DECIMAL},
+			</if>
+			<if test="sysLoss != null">
+				sys_loss = #{sysLoss,jdbcType=DECIMAL},
+			</if>
+			<if test="fProfit != null">
+				f_profit = #{fProfit,jdbcType=DECIMAL},
+			</if>
+			<if test="coupouMoney != null">
+				coupou_money = #{coupouMoney,jdbcType=DECIMAL},
+			</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.lxtx.model.CloudOrder">
+		update cloud_order
+		set `uid` = #{uid,jdbcType=INTEGER},
+		subject_id =
+		#{subjectId,jdbcType=INTEGER},
+		direction =
+		#{direction,jdbcType=INTEGER},
+		money = #{money,jdbcType=DECIMAL},
+		amount = #{amount,jdbcType=INTEGER},
+		contract_money =
+		#{contractMoney,jdbcType=INTEGER},
+		`limit` = #{limit,jdbcType=INTEGER},
+		cleared = #{cleared,jdbcType=INTEGER},
+		order_time =
+		#{orderTime,jdbcType=TIMESTAMP},
+		clear_time =
+		#{clearTime,jdbcType=TIMESTAMP},
+		order_index =
+		#{orderIndex,jdbcType=INTEGER},
+		clear_index =
+		#{clearIndex,jdbcType=INTEGER},
+		commission =
+		#{commission,jdbcType=DECIMAL},
+		`status` = #{status,jdbcType=INTEGER},
+		clear_upper_limit = #{clearUpperLimit,jdbcType=INTEGER},
+		clear_down_limit = #{clearDownLimit,jdbcType=INTEGER},
+		coupon_commission = #{couponCommission,jdbcType=DECIMAL},
+		cash =
+		#{cash,jdbcType=DECIMAL},
+		sys_profit = #{sysProfit,jdbcType=DECIMAL},
+		sys_loss = #{sysLoss,jdbcType=DECIMAL},
+		f_profit =
+		#{fProfit,jdbcType=DECIMAL},
+		coupou_money =
+		#{coupouMoney,jdbcType=DECIMAL}
+		where id =
+		#{id,jdbcType=INTEGER}
+	</update>
+	<select id="selectAllOrderByUIdOrSubject" resultType="com.lxtx.model.CloudOrder"
+		parameterType="map">
+		select
+		a.id, a.`uid`, a.subject_id as subjectId, a.subject,
+		a.direction, a.money,
+		a.amount, a.contract_money as contractMoney,
+		a.`limit`, a.cleared,
+		a.order_time
+		as orderTime, a.clear_time as
+		clearTime, a.order_index as orderIndex,
+		a.clear_index as clearIndex,
+		a.commission, a.`status`,
+		a.clear_upper_limit as clearUpperLimit,
+		a.clear_down_limit as
+		clearDownLimit,b.cname
+		from cloud_order a left
+		join cloud_target b on
+		a.subject = b.name
+		where a.`uid` =
+		#{uid,jdbcType=INTEGER}
+		<if test="subject != null and subject != ''">
+			and a.subject = #{subject,jdbcType=VARCHAR}
+		</if>
+		order by a.id desc
+	</select>
+	<select id="selectAllOrderByUId" resultType="com.lxtx.model.CloudOrder"
+		parameterType="map">
+		select
+		a.id, a.`uid`, a.subject_id as subjectId, a.subject,
+		a.direction, a.money,
+		a.amount, a.contract_money as contractMoney,
+		a.`limit`, a.cleared,
+		a.order_time
+		as orderTime, a.clear_time as
+		clearTime, a.order_index as orderIndex,
+		a.clear_index as clearIndex,
+		a.commission, a.`status`,
+		a.clear_upper_limit as clearUpperLimit,
+		a.clear_down_limit as
+		clearDownLimit,b.cname
+		from cloud_order a left
+		join cloud_target b on
+		a.subject = b.name
+		where a.`uid` =
+		#{uid,jdbcType=INTEGER}
+		<if test="id != null and id != 0">
+			and a.id &lt; #{id,jdbcType=INTEGER}
+		</if>
+		order by a.order_time desc limit 0,10
+	</select>
+	<select id="selectAllOrderByUIdAndStatus" resultType="com.lxtx.model.CloudOrder"
+		parameterType="map">
+		select
+		a.id, a.`uid`, a.subject_id as subjectId,
+		a.subject, a.direction, a.money,
+		a.amount, a.contract_money as
+		contractMoney,
+		a.`limit`, a.cleared,
+		a.order_time
+		as orderTime,
+		a.clear_time as clearTime, a.order_index as orderIndex,
+		a.clear_index
+		as clearIndex, a.commission, a.`status`,
+		a.clear_upper_limit as
+		clearUpperLimit,
+		a.clear_down_limit as
+		clearDownLimit,b.cname
+		from
+		cloud_order a left join cloud_target b on
+		a.subject = b.name
+		where
+		a.`uid` = #{uid,jdbcType=INTEGER} and
+		a.`subject` =
+		#{subject,jdbcType=VARCHAR} and a.`status` =
+		#{status,jdbcType=INTEGER}
+		order by a.order_time desc limit 0,10
+	</select>
+
+
+	<update id="markOrderInProcess" parameterType="map">
+		update cloud_order set status = 1, clear_index =
+		#{index,jdbcType=INTEGER}
+		where <![CDATA[ (clear_upper_limit <= #{index,jdbcType=INTEGER} or clear_down_limit >= #{index,jdbcType=INTEGER}) and subject = #{subject, jdbcType=VARCHAR} and status = 0]]>
+	</update>
+
+	<select id="selectNeedDayClearOrder" resultMap="BaseResultMap"
+		parameterType="map">
+		select
+		<include refid="Base_Column_List" />
+		from cloud_order
+		where 1=1
+		and `status` = #{status,jdbcType=INTEGER}
+		and
+		order_time &gt; #{begin,jdbcType=VARCHAR}
+		and order_time &lt;=
+		#{end,jdbcType=VARCHAR}
+	</select>
+
+
+	<update id="updateStateById" parameterType="com.lxtx.model.CloudOrder">
+		update cloud_order
+		set
+		`status` = #{status,jdbcType=INTEGER},
+		cleared =
+		#{cleared,jdbcType=INTEGER},
+		clear_time =
+		#{clearTime,jdbcType=TIMESTAMP}
+		where id =
+		#{id,jdbcType=INTEGER}
+	</update>
+
+	<select id="queryDayProfit" resultType="java.math.BigDecimal"
+		parameterType="map">
+		select
+		IFNULL(sum(f_profit),0.00) as profit
+		from
+		cloud_order
+		where 1=1
+		and `status` = #{status,jdbcType=INTEGER}
+		and
+		order_time &gt; #{begin,jdbcType=VARCHAR}
+		and order_time &lt;=
+		#{end,jdbcType=VARCHAR}
+	</select>
+
+	<select id="queryDayLoss" resultType="java.math.BigDecimal"
+		parameterType="map">
+		select
+		IFNULL(sum(f_profit),0) as loss
+		from cloud_order
+		where 1=1
+		and `status` = #{status,jdbcType=INTEGER}
+		and
+		order_time &gt;
+		#{begin,jdbcType=VARCHAR}
+		and order_time &lt;=
+		#{end,jdbcType=VARCHAR}
+	</select>
+
+	<select id="queryDaySum" resultType="com.lxtx.model.vo.SubjectDaySumVo"
+		parameterType="map">
+		select
+		subject,count(1) as
+		count,DATE_FORMAT(order_time,'%Y-%m-%d') as date
+		from cloud_order
+		where
+		1=1
+		and order_time &gt; #{begin,jdbcType=VARCHAR}
+		and order_time &lt;=
+		#{end,jdbcType=VARCHAR} and `status` != 9
+		group by subject;
+	</select>
+	<select id="queryChnDayCommission" resultType="java.math.BigDecimal"
+		parameterType="map">
+		select
+		IFNULL(sum(commission-coupon_commission),0) as chnCommission
+		from cloud_order
+		where 1=1
+		and (`status` = 2 or `status` = 3)
+		and
+		order_time &gt;
+		#{begin,jdbcType=VARCHAR}
+		and order_time &lt;=
+		#{end,jdbcType=VARCHAR}
+	</select>
+	<select id="queryPerHalfHourProfitGroupByChn" resultType="com.lxtx.model.CloudPerHalfHourProfit"
+		parameterType="map">
+		select a.chnno,IFNULL(b.profit,0) as
+		profit,IFNULL(c.loss,0) as loss,IFNULL(d.commission,0) as
+		commission,IFNULL(d.couponCommission,0) as
+		couponCommission,IFNULL(d.chnCommission,0)
+		as
+		chnCommission,IFNULL(e.addUser,0) as addUser,IFNULL(d.orderCount,0) as
+		orderCount
+		from cloud_chn_code a
+		left join
+		(select
+		chnno,SUM(f_profit)
+		as
+		profit from cloud_order where
+		`status`=3
+		and clear_time &gt;
+		#{begin,jdbcType=VARCHAR} and clear_time
+		&lt;=
+		#{end,jdbcType=VARCHAR}
+		group by chnno ) b on a.chnno = b.chnno
+		left
+		join (select
+		chnno,SUM(f_profit) as loss from
+		cloud_order where
+		`status`=2 and
+		clear_time &gt;
+		#{begin,jdbcType=VARCHAR} and
+		clear_time
+		&lt;=
+		#{end,jdbcType=VARCHAR}
+		group by chnno ) c on a.chnno
+		=
+		c.chnno
+		left
+		join
+		(select
+		chnno,SUM(commission) as commission,sum(coupon_commission)
+		as
+		couponCommission,sum(commission-coupon_commission) as
+		chnCommission,count(1) as
+		orderCount
+		from
+		cloud_order where clear_time
+		&gt;
+		#{begin,jdbcType=VARCHAR} and
+		clear_time &lt;=
+		#{end,jdbcType=VARCHAR} and (`status`=2 or `status`=3)
+		group by chnno ) d on a.chnno
+		=
+		d.chnno
+		left
+		join
+		(select chnno,count(1) as addUser from cloud_user where
+		crt_tm
+		&gt;
+		#{begin,jdbcType=VARCHAR} and crt_tm &lt;= #{end,jdbcType=VARCHAR}
+		group by chnno
+		) e on
+		a.chnno= e.chnno;
+	</select>
+</mapper>

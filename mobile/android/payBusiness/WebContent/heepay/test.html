@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>支付测试</title>
+</head>
+
+<body>
+<form action="http://localhost:8080/pay/netpay/appclient/getUrl.do" method="post">
+	订单参数：<br/>
+	订单号：<input type="text" name="baseOrder.orderId" value="107Q01-100-31214143141"/><br/>
+	价格：<input type="text" name="baseOrder.price" value="1.00"/><br/>
+	计费方式：<input type="text" name="baseOrder.paymentMethodId" value="4"/><br/><br/>
+	
+	同步地址：<input type="text" name="notifyUrl" value="http://115.28.52.43:9020/pay/synch/netpay/heepayNotify.do"/><br/>
+	回跳地址：<input type="text" name="callbackUrl" value="http://localhost:8080/pay/netpay/callback.jsp"/>
+	<input type="submit" value="确定"/>
+</form>
+</body>
+</html>

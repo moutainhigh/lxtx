@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <bean id="wxImplIPrePay" class="com.jxt.netpay.appclient.service.impl.WxImplIPrePay">
+   	    <property name="appId" value="wxdb14619259b870ec"/>
+   	    <property name="mchId" value="1367426002"/>
+   	    <property name="key" value="e997a95bd10da33b8b970d610f53a587"/>
+   	    <property name="notifyUrl" value="http://115.28.52.43:9020/pay/synch/netpayphp/wxNotifyPhp.do"/>
+   	</bean>
+   	
+    <bean id="wxImplIPrePay1" class="com.jxt.netpay.appclient.service.impl.WxImplIPrePay">
+   	    <property name="appId" value="wx734641b73d1621ef"/>
+   	    <property name="mchId" value="1368329802"/>
+   	    <property name="key" value="7b280dfda6062095b24459a23879a3c4"/>
+   	    <property name="notifyUrl" value="http://115.28.52.43:9020/pay/synch/netpayphp/wxNotifyPhp.do"/>
+   	</bean>
+    
+    <bean id="wxImplIPrePay2" class="com.jxt.netpay.appclient.service.impl.WxImplIPrePay">
+   	    <property name="appId" value="wx734641b73d1621ef"/>
+   	    <property name="postfix" value="_tcxa"/>
+   	    <property name="mchId" value="1368329802"/>
+   	    <property name="key" value="7b280dfda6062095b24459a23879a3c4"/>
+   	    <property name="notifyUrl" value="http://115.28.52.43:9020/pay/synch/netpay/wxNotify.do"/>
+   	</bean>
+    
+    <bean id="haiTunPayImplIPrePay" class="com.jxt.netpay.appclient.service.impl.HaiTunPayImplIPrePay">
+   	    <property name="appId" value="10710"/>
+   	    <property name="appKey" value="76885da4b54348d4ca7a86b1529656c8"/>
+   	</bean>
+    
+	<bean id="prePayFactory" class="com.jxt.netpay.appclient.util.PrePayFactory">
+	    <property name="list">
+	    	<list>
+	    	    <ref local="wxImplIPrePay"/>
+	    	    <ref local="wxImplIPrePay1"/>
+	    	    <ref local="wxImplIPrePay2"/>
+				<ref local="haiTunPayImplIPrePay"/>
+				
+	    	</list>
+	    </property>
+	    
+	</bean>
+	
+</beans>

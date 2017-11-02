@@ -1,0 +1,92 @@
+/**
+ * Login CSS Stylesheet
+ *
+ * @package easy signup and login
+ * @copyright Copyright 2007 Numinix Technology http://www.numinix.com
+ * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
+ * @version $Id: login.css 62 2009-07-12 21:43:34Z numinix $
+ */
+ 
+ 
+#cartSubTotal {
+    border-top: 2px solid #000000;
+    color: #000000;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: right;
+}
+LABEL.inputLabel {
+    float: left;
+    width: 11em;
+}
+LABEL.checkboxLabel, LABEL.radioButtonLabel {
+    margin: 0.5em 0.3em;
+}
+LABEL {
+    line-height: 23px;
+    padding: 0.2em;
+}
+
+.alert{color:#FF0000}
+div#easySignUp #login-password {
+  margin-left: 0px;
+  }
+div#easySignUp #login-email-address {
+  margin-left: 0px;
+  }
+div#easySignUp #loginColumnLeft{
+  width: 60%;
+  float: left;
+  }
+div#easySignUp #loginColumnRight{
+  width: 38%;
+  float: right;
+  }
+div#easySignUp .buttonRow {
+  padding-top: 5px;
+}
+div#easySignUp hr {
+  border-style:none;
+  border-top: 2px dotted #CCCCCC;
+  border-bottom: 2px solid white;
+  height: 4px;
+}
+div#easySignUp .checkboxLabel {
+  margin-bottom: 10px;
+}
+/* quick shopping */
+.clear { clear: both; overflow: hidden; }
+#quickbuy .content { padding: 0px; }
+#quickbuy .visibleDiv { display: block; }
+#quickbuy .hiddenDiv { display: none; }
+#quickbuy input[type="text"] { width: 80%; }
+#quickbuy input[type="password"] { width: 80%; }
+#quickbuy select { width: 80%; }
+#quickbuy a { text-decoration: underline; }
+#quickbuy a:hover { text-decoration: none; }
+#Secure_checkout { color:#000; font:bold 24px Arial, Helvetica, sans-serif; background:url(../images/secure_checkout_icon.gif) no-repeat 10px center; padding:5px 0 5px 39px; }
+.checkHeading { font: bold 18px/30px Arial, Helvetica, sans-serif; background: url(../images/gradient_below_nav.jpg) repeat-x center top transparent; margin-bottom: 5px; padding: 5px 0 0 10px; }
+.box { background: url(../images/blue_gradient_bottom_968x15.jpg) no-repeat center bottom transparent; margin-bottom: 14px; padding: 0 0 10px; border: 1px solid #CCC; }
+#shoppingCartDefault fieldset, #easySignUp fieldset { border: none; }
+#signup_info { width: 99%; }
+.AddTitle { line-height: 24px; background: #EEE; overflow: hidden; }
+#billingField h3, #shippingField h3 { color: #333; font: bold 13px/24px Arial, Helvetica, sans-serif; margin: 0; padding: 0; float: left; }
+#withOutAccount { background: url(../images/no_account_bg.gif) no-repeat left top transparent; width: 268px; margin-top: 40px; padding: 15px 30px 10px 15px; float: right; }
+#withOutAccount h2 { font-size: 15px !important; margin: 0 0 5px !important; padding: 5px 0 !important; border: none !important; }
+#withOutAccount .verisign img { vertical-align: middle; }
+#checkoutShipTo, #checkoutBillto {}
+#checkoutShipTo .buttonRow, #checkoutBillto .buttonRow { margin: 5px 0; }
+#discount, #shippingbox { height: 100px; }
+.payment_col { }
+#checkout_bot h1 { background: none !important; margin: 0 !important; padding: 0 !important; border: none !important; }
+#checkout_bot .content { background: url(../images/gradient_below_nav.jpg) repeat-x center top transparent; padding-top: 5px; }
+.confirmOrder { text-align: right; margin-bottom: 10px; clear: both; }
+#CustShowPrice { margin: 5px 0 0; }
+#CustShowPrice th, #CustShowPrice td { font-weight: bold; }
+#CustShowPrice th { text-align: right; padding-right: 15px; }
+#CustShowPrice thead th { font-size: 18px; text-align: left; }
+#CustShowPrice td.loading { text-align: right; }
+.msg_box { background: #FFECE8 url(../images/icons/icon_status_yellow.gif) no-repeat 3px 8px; margin: 5px 0 0 113px; padding: 5px 5px 5px 20px; border: 1px solid #f60; }
+.loadImg { background: url(../images/ajax-loader.gif) no-repeat; width: 16px; height: 16px; display: block; }
+#mainWrapper #leftCol, #mainWrapper #rightCol { display: none; }
+#cartContentsDisplay{text-align:center;}

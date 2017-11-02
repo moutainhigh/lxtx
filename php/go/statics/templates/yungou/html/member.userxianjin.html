@@ -1,0 +1,59 @@
+{wc:templates "index","header"}
+<div class="main-content clearfix">
+{wc:templates "member","left"}
+<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_STYLE}/css/layout-recharge.css"/>
+<div class="R-content">
+	<div class="member-t"><h2>账户现金券</h2></div>
+	<div class="last">
+		<ul>
+			<li><h3>可用现金券：</h3><b class="orange">{wc:$zongshu}</b><h3>张</h3></li>
+		</ul>
+	</div>
+	<div id="divList0" class="list-tab recordList">
+	<ul class="listTitle">
+		<li class="">获得时间</li>
+		<li class="">到期时间</li>
+		<li class="">渠道</li>
+		<li class="">最低使用金额</li>
+		<li class="">现金券</li>
+	</ul>
+	{wc:loop $account $at}
+	{wc:php:start}
+		$yx_time=$at[dq_time]-time();
+		$d_time=floor($yx_time/3600/24);
+		$h_time=floor($yx_time/3600);
+		if($d_time>0){
+			$sy_time='还有'.$d_time.'天过期';
+		}else{
+			if($h_time>0){
+				$sy_time='还有'.$h_time.'小时过期';
+			}else{
+				$sy_time='即将过期';
+			}
+		}
+	{wc:php:end}
+	<ul>
+		<li class="">{wc:fun:date("Y-m-d H:i:s",$at['hd_time'])}</li>
+		<li class="">{wc:$sy_time}</li>
+		<li class="">{wc:$at['content']}</li>
+		<li class="">{wc:$at['zd_je']}</li>
+		<li class="">{wc:$at['xj_name']}</li>
+	</ul>
+	{wc:loop:end}
+	</div>
+          <style>
+			#divPageNav{ padding-top:10px;text-align:right}
+			#divPageNav li a{ padding:5px;}
+		</style>
+		<div id="divPageNav" class="page_nav">
+        	{wc:page:one} <li>共 {wc:$total} 条</li>
+        </div>
+	<div id="divPageNav0" class="page_nav" style="display: none;"></div>
+	<div id="divList1" class="list-tab recordList" style="display:none;"></div>
+	<div id="divPageNav1" class="page_nav" style="display:none;"></div>
+	<div id="divDetailInfo" class="count" style="display:none;"></div>
+	<div id="divbuyDetail" class="list-tab recordList buyDetail" style="display:none;"></div>
+</div>
+
+</div>
+{wc:templates "index","footer"}

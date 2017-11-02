@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+encoding//src/log4j.properties=utf-8
+encoding//src/main/java=UTF-8
+encoding//src/main/profiles/dev=UTF-8
+encoding//src/main/profiles/dev/config/message.properties=UTF-8
+encoding//src/main/profiles/qa=UTF-8
+encoding//src/main/profiles/qa/config/message.properties=UTF-8
+encoding//src/main/resources=UTF-8
+encoding//src/main/resources/configbak/message.properties=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/login.jsp=UTF-8
+encoding//src/mybatis-3-config.dtd=utf-8
+encoding//src/test/java=UTF-8
+encoding/<project>=UTF-8

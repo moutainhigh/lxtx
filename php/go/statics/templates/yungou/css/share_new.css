@@ -1,0 +1,37 @@
+*{margin:0; padding:0; }
+body{font-family: Verdana, Arial, sans-serif; background-color: #fff; }
+div{margin:0 auto; }
+:focus{outline: 0; }
+img{border:0; display: block; }
+a{color: #333; text-decoration: none; }
+a:active{star:expression(this.onFocus=this.blur()); }
+
+#share_up{width:1200px; height: 570px; background:url(../images/YQ_bg.jpg) no-repeat center; }
+#share_dowm{width:1200px; margin-top:30px; }
+#share_dowm_head{margin-bottom:30px; height:70px; }
+#share_dowm_head>ul{list-style: none; }
+#share_dowm_head>ul>li{float: left; }
+#share_dowm_head>ul>li>div{ width:750px; height:50px; border:1px solid #F8C616; background: #FEF0CB; padding-top:10px; margin: 0px 0px 0px 120px; text-align: center; color:#7F7F7F; line-height:20px; }
+#share_dowm_head>ul>li>p{border:none; cursor: pointer; margin:8px 0 0 15px; }
+#share_dowm_foot{width:1200px; height:420px; margin-top:10px; }
+#share_dowm_foot_left{width:250px; height:256px; background:url(../images/YQ_hongbao.png) no-repeat; float: left; margin:0 230px; padding-top:110px; }
+#share_dowm_foot_left>h2{ width:250px; text-align:center; height:30px; line-height:30px; color:#fff; font-size:20px; }
+#share_dowm_foot_left>h1{ width:250px; text-align:center; height:30px; line-height:30px; color:#fff; font-size:24px;}
+#share_dowm_foot_left>div{font-size: 14px; text-align: center; color:#FCE2D0; margin-top:20px; font-weight: bold; }
+#share_dowm_foot_left>a{font-size: 16px; position: relative; top:34px; color:#FEFBF4; }
+#share_dowm_foot_left>a>div{width:150px; height:20px; text-align: center; padding:5px; border-radius: 20px; background-color: #FDAB2B; font-weight: bold; font-family:Arial; }
+#share_dowm_foot_right{width:250px; height:256px; background:url(../images/YQ_hongbao.png) no-repeat; float: left;  padding-top:110px;}
+#share_dowm_foot_right>h2{ width:250px; text-align:center; height:30px; line-height:30px; color:#fff; font-size:20px; padding-bottom:28px; }
+#share_dowm_foot_right>div{font-size: 14px; text-align: center; color:#FCE2D0; margin-top:20px; font-weight: bold; }
+#share_dowm_foot_right>a{font-size: 16px; position: relative; top:37px; color:#FEFBF4; }
+#share_dowm_foot_right>a>div{width:150px; height:20px; text-align: center; padding:5px; border-radius: 20px; background-color: #FDAB2B; font-weight: bold; font-family:Arial; }
+#share_footer{width:1000px; height:50px; text-align: center; font-weight: bold; font-size: 19px; color:#3D3D3D; }
+#share_footer>b,a{color:#E71C46; }
+#share_footer>a{text-decoration:underline; }
+#share_caption{position: relative; float : left; top:-350px; left:472px; width:200px;}
+
+.login_button {	text-align:center;}
+.login_button a,.login_button a:visited { text-decoration:none;	width:196px; height:45px; text-align:center; font-size:14px; background-position:-118px 0; line-height:45px; color:#fff;	font-weight:bold; display:inline-block; background:url(../images/referrals_bg.png) no-repeat -118px 0;}
+.login_button a:hover {	color:#fff;}
+.reg-txt { text-align:center; height:40px; line-height:40px; margin-top:10px; font-size:14px; color:#333;}
+.reg-txt a {	color:#E51D44;	text-decoration:underline;}

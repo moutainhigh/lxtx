@@ -1,0 +1,53 @@
+[2017-08-03 15:50:40:807] before creating the order.
+ [2017-08-03 15:50:42:548] affected row equals 0
+ [2017-08-03 15:50:42:549] invalid order
+ [2017-08-03 15:50:42:677] create order fail here.com.lxtx.util.BizException: invalid order
+ [2017-08-03 15:51:11:169] before creating the order.
+ [2017-08-03 15:51:11:568] 1
+ [2017-08-03 15:52:51:421] before creating the order.
+ [2017-08-03 15:53:44:671] affected row equals 0
+ [2017-08-03 15:53:44:672] invalid order
+ [2017-08-03 15:53:44:796] create order fail here.com.lxtx.util.BizException: invalid order
+ [2017-08-03 15:55:42:503] before creating the order.
+ [2017-08-03 15:55:49:510] 0
+ [2017-08-03 15:57:54:721] before creating the order.
+ [2017-08-03 15:57:56:513] 0
+ [2017-08-03 15:57:56:875] before creating the order.
+ [2017-08-03 15:57:57:053] before creating the order.
+ [2017-08-03 15:57:57:109] before creating the order.
+ [2017-08-03 15:57:57:161] 1
+ [2017-08-03 15:57:57:342] 1
+ [2017-08-03 15:57:57:385] 1
+ [2017-08-03 15:57:57:462] before creating the order.
+ [2017-08-03 15:57:57:674] before creating the order.
+ [2017-08-03 15:57:57:685] before creating the order.
+ [2017-08-03 15:57:57:731] 1
+ [2017-08-03 15:57:57:930] 1
+ [2017-08-03 15:57:57:969] 1
+ [2017-08-03 15:57:58:050] before creating the order.
+ [2017-08-03 15:57:58:197] before creating the order.
+ [2017-08-03 15:57:58:266] before creating the order.
+ [2017-08-03 15:57:58:348] 1
+ [2017-08-03 15:57:58:478] 1
+ [2017-08-03 15:57:58:573] 1
+ [2017-08-03 15:57:58:641] before creating the order.
+ [2017-08-03 15:57:58:796] before creating the order.
+ [2017-08-03 15:57:58:869] before creating the order.
+ [2017-08-03 15:57:58:914] 1
+ [2017-08-03 15:57:59:038] 1
+ [2017-08-03 15:57:59:149] 1
+ [2017-08-03 15:57:59:244] before creating the order.
+ [2017-08-03 15:57:59:315] before creating the order.
+ [2017-08-03 15:57:59:495] before creating the order.
+ [2017-08-03 15:57:59:515] 1
+ [2017-08-03 15:57:59:683] 1
+ [2017-08-03 15:57:59:862] 1
+ [2017-08-03 15:57:59:918] before creating the order.
+ [2017-08-03 15:58:00:017] before creating the order.
+ [2017-08-03 15:58:00:190] 1
+ [2017-08-03 15:58:00:191] before creating the order.
+ [2017-08-03 15:58:00:310] 1
+ [2017-08-03 15:58:00:526] before creating the order.
+ [2017-08-03 15:58:00:547] 1
+ [2017-08-03 15:58:00:798] 1
+ 

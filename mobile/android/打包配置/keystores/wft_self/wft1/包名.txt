@@ -1,0 +1,4 @@
+com.baidu.yfdlg
+签名文件文件名:yfdlg.keystore
+密码:111111
+别名:yfdlg

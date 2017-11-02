@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties>
+		<!-- 根据自己的需要，设定数据库类型，目前暂时只支持：mysql、oracle，默认为mysql -->
+		<property name="dialect" value="mysql" />
+		<!-- 指定分页拦截器拦截的sqlid，使用正则表达式处理，默认为select开头的id -->
+		<property name="pageSqlId" value="queryForPage.*" />
+	</properties>
+	<settings>
+		<setting name="cacheEnabled" value="false" />
+	</settings>
+</configuration>

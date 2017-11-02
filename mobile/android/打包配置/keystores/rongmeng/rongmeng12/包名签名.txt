@@ -1,0 +1,17 @@
+应用包名：com.zfsy.newmfds
+签名密码： android
+密钥别名： rm1.keystore
+签名MD5 ： BC1BE917F2E6B9E1B347B792A008C8F2
+
+
+
+
+
+
+
+
+
+
+
+
+

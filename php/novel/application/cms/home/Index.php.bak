@@ -1,0 +1,142 @@
+<?php
+// +----------------------------------------------------------------------
+// | 浩森PHP框架 [ IeasynetPHP ]
+// +----------------------------------------------------------------------
+// | 版权所有 2017~2018 北京浩森宇特互联科技有限公司 [ http://www.ieasynet.com ]
+// +----------------------------------------------------------------------
+// | 官方网站：http://ieasynet.com
+// +----------------------------------------------------------------------
+// | 开源协议 ( http://www.apache.org/licenses/LICENSE-2.0 )
+// +----------------------------------------------------------------------
+// | 作者: 拼搏 <378184@qq.com>
+// +----------------------------------------------------------------------
+
+namespace app\cms\home;
+use think\Db;
+use util\Tree;
+use think\Session;
+/**
+ * 前台首页控制器
+ * @package app\cms\admin
+ */
+class Index extends Common
+{
+    /**
+     * 首页
+     * @author 拼搏 <378184@qq.com>
+     * @return mixed
+     */
+    public function index($agent=null,$t=null)
+    {
+		session_start();
+        $_SESSION['target_url'] = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+        $redirect_url=explode("?",$_SESSION['target_url']);
+        $_SESSION['redirect_url'] = $redirect_url[0];
+        preg_match('/^http:\/\/t(\d+)\./', $_SESSION['target_url'], $tid);
+		//添加点击数
+		if($t!="")
+		{
+		DB::table('ien_agent')->where('id',$t)->setInc('click');
+		}
+
+        if(empty($_SESSION['wechat_user']) || ($_SESSION['tid'] != $tid[1])){
+            $this->redirect('oauth/oauth');
+            //$this-> checklogin();
+        }
+
+        //更新读者推广ID
+        $urla['1']="";   
+        if(strpos($_SESSION['target_url'],"?"))
+        {
+            $url=explode("?",$_SESSION['target_url']);
+            $urla=explode("=", $url[1]);
+        }
+        if(!empty($urla['1']))
+        {
+          $sxid=DB::table('ien_agent')->where('id',$urla['1'])->find();
+          if(empty($sxid))
+          {
+            $sxid['uid']=0;
+          }
+        }
+        else{$sxid['uid']=0;}
+        if($sxid['uid']!=0 && $sxid['uid']!="" && $urla['1']!="")
+        {
+            $dataagent=['uid'=>$sxid['uid'],'tgid'=>$urla['1']];
+            DB::table('ien_admin_user')->where('openid', $_SESSION['wechat_user']['original']['openid'])->update($dataagent);
+        }
+        //更新读者推广ID结束
+
+
+        //$this->oauth($agent,'http://'.$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"]); 
+        //$this->getCode("wxfcc9e317d7e4279d","8af792a6ed7ada0e26bd30c212638f49");
+		$banner_list = Db::view('ien_book','id,title,image,desc,zhishu,model')
+				->view('ien_chapter','id as zid','ien_book.id=ien_chapter.bid')
+				->where('ien_chapter.idx=1')
+				->where("FIND_IN_SET( '0', ien_book.tj)")
+                ->order('ien_book.zhishu asc')
+                ->select();
+        $zhubian_list = Db::view('ien_book','id,title,image,desc,zhishu,model')
+				->view('ien_chapter','id as zid','ien_book.id=ien_chapter.bid')
+				->where('ien_chapter.idx=1')
+				->where("FIND_IN_SET( '1', ien_book.tj)")
+                ->order('ien_book.zhishu asc')
+                ->select();
+        $girl_list_1 = Db::view('ien_book','id,title,image,desc,zhishu,model')
+				->view('ien_chapter','id as zid','ien_book.id=ien_chapter.bid')
+				->where('ien_chapter.idx=1')
+				->where("FIND_IN_SET( '2', ien_book.tj)")
+                ->order('ien_book.zhishu asc')
+                ->select();
+        $girl_list_2 = Db::view('ien_book','id,title,image,desc,zhishu,model')
+				->view('ien_chapter','id as zid','ien_book.id=ien_chapter.bid')
+				->where('ien_chapter.idx=1')
+				->where("FIND_IN_SET( '3', ien_book.tj)")
+                ->order('ien_book.zhishu asc')
+                ->select();
+        $boy_list_1 = Db::view('ien_book','id,title,image,desc,zhishu,model')
+				->view('ien_chapter','id as zid','ien_book.id=ien_chapter.bid')
+				->where('ien_chapter.idx=1')
+				->where("FIND_IN_SET( '4', ien_book.tj)")
+                ->order('ien_book.zhishu asc')
+                ->select();
+        $boy_list_2 = Db::view('ien_book','id,title,image,desc,zhishu,model')
+				->view('ien_chapter','id as zid','ien_book.id=ien_chapter.bid')
+				->where('ien_chapter.idx=1')
+				->where("FIND_IN_SET( '5', ien_book.tj)")
+                ->order('ien_book.zhishu asc')
+                ->select();
+                
+        $this->assign('banner_list', $banner_list);        
+        $this->assign('zhubian_list', $zhubian_list);        
+        $this->assign('girl_list_1', $girl_list_1);        
+        $this->assign('girl_list_2', $girl_list_2);
+        $this->assign('boy_list_1', $boy_list_1);
+        $this->assign('boy_list_2', $boy_list_2);
+       
+
+
+        return $this->fetch(); // 渲染模板
+    }
+     public function footer()
+    {
+    	return $this->fetch(); // 渲染模板
+    }
+     public function header()
+    {
+    	return $this->fetch(); // 渲染模板
+    }
+     public function booklibrary()
+    {   
+        $type=parse_attr(module_config('agent.agent_novel_type'));
+       
+        $i=0;
+        foreach ($type as $key => $value) {
+            $type1[$i]['id']=$key;
+            $type1[$i]['title']=$value;
+            $i++;
+        }
+        $this->assign('type', $type1);
+    	return $this->fetch(); // 渲染模板
+    }
+}

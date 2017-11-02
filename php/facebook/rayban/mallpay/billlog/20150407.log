@@ -1,0 +1,95 @@
+01:26:39 S2S array (
+  '_sn' => '245150407008',
+  '_checkcode' => '9b8e06847ff4b8dfc8e95cb21161005b',
+  '_currency' => 'USD',
+  '_amount' => '61',
+  '_status' => 'declined',
+  '_transactionno' => '15070419014681374V',
+  'local_sign' => '9b8e06847ff4b8dfc8e95cb21161005b',
+)
+01:26:40 S2B array (
+  'main_page' => 'checkout_process',
+  'amount' => '61',
+  'checkcode' => '9b8e06847ff4b8dfc8e95cb21161005b',
+  'siteno' => '193736180',
+  'sn' => '245150407008',
+  'status' => 'declined',
+  'transactionno' => '15070419014681374V',
+  'local_sign' => '9b8e06847ff4b8dfc8e95cb21161005b',
+)
+01:40:43 S2S array (
+  '_sn' => '245150407009',
+  '_checkcode' => '3e1d8f139dca975cb4129f0a92c2c3b3',
+  '_currency' => 'USD',
+  '_amount' => '47.5',
+  '_status' => 'approved',
+  '_transactionno' => '15070419014685155Y',
+  'local_sign' => '3e1d8f139dca975cb4129f0a92c2c3b3',
+)
+01:40:45 S2B array (
+  'main_page' => 'checkout_process',
+  'amount' => '47.5',
+  'checkcode' => '3e1d8f139dca975cb4129f0a92c2c3b3',
+  'siteno' => '193736180',
+  'sn' => '245150407009',
+  'status' => 'approved',
+  'transactionno' => '15070419014685155Y',
+  'local_sign' => '3e1d8f139dca975cb4129f0a92c2c3b3',
+)
+02:46:30 S2S array (
+  '_sn' => '245150407011',
+  '_checkcode' => '848350cfb0832b3350f6c15befff8af5',
+  '_currency' => 'USD',
+  '_amount' => '59.5',
+  '_status' => 'declined',
+  '_transactionno' => '15070419014693718C',
+  'local_sign' => '848350cfb0832b3350f6c15befff8af5',
+)
+02:46:31 S2B array (
+  'main_page' => 'checkout_process',
+  'amount' => '59.5',
+  'checkcode' => '848350cfb0832b3350f6c15befff8af5',
+  'siteno' => '193736180',
+  'sn' => '245150407011',
+  'status' => 'declined',
+  'transactionno' => '15070419014693718C',
+  'local_sign' => '848350cfb0832b3350f6c15befff8af5',
+)
+05:34:51 S2S array (
+  '_sn' => '245150407018',
+  '_checkcode' => 'c32801d66ae6812294a2cb74b2a316d0',
+  '_currency' => 'USD',
+  '_amount' => '62.5',
+  '_status' => 'declined',
+  '_transactionno' => '15070419014712141H',
+  'local_sign' => 'c32801d66ae6812294a2cb74b2a316d0',
+)
+05:34:54 S2B array (
+  'main_page' => 'checkout_process',
+  'amount' => '62.5',
+  'checkcode' => 'c32801d66ae6812294a2cb74b2a316d0',
+  'siteno' => '193736180',
+  'sn' => '245150407018',
+  'status' => 'declined',
+  'transactionno' => '15070419014712141H',
+  'local_sign' => 'c32801d66ae6812294a2cb74b2a316d0',
+)
+06:35:29 S2S array (
+  '_sn' => '245150407023',
+  '_checkcode' => '57529e64b32acab304a80ab5774d1cd8',
+  '_currency' => 'USD',
+  '_amount' => '105',
+  '_status' => 'declined',
+  '_transactionno' => '15070419014713985K',
+  'local_sign' => '57529e64b32acab304a80ab5774d1cd8',
+)
+06:35:31 S2B array (
+  'main_page' => 'checkout_process',
+  'amount' => '105',
+  'checkcode' => '57529e64b32acab304a80ab5774d1cd8',
+  'siteno' => '193736180',
+  'sn' => '245150407023',
+  'status' => 'declined',
+  'transactionno' => '15070419014713985K',
+  'local_sign' => '57529e64b32acab304a80ab5774d1cd8',
+)

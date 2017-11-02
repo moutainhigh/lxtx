@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <bean id="fb_SqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation" value="classpath:resource/fb/sqlMapConfig.xml"/>
+		<property name="dataSource" ref="fb_dataSource"/>
+	</bean>
+	
+	<bean id="fb_SqlMapClientTemplate" class="com.qlzf.commons.factory.SqlMapClientTemplate">
+		<property name="sqlMapClient" ref="fb_SqlMapClient"/>
+	</bean>
+	
+	<!-- handler -->
+	<bean id="activeHandler" class="com.lxtx.fb.handler.ActiveHandler">
+	    <property name="sqlMapClientTemplate" ref="fb_SqlMapClientTemplate"/>
+	</bean>
+	
+	<bean id="adHandler" class="com.lxtx.fb.handler.AdHandler">
+	    <property name="sqlMapClientTemplate" ref="fb_SqlMapClientTemplate"/>
+	</bean>
+	
+	<bean id="adminHandler" class="com.lxtx.fb.handler.AdminHandler">
+	    <property name="sqlMapClientTemplate" ref="fb_SqlMapClientTemplate"/>
+	</bean>
+	
+	<bean id="adSetHandler" class="com.lxtx.fb.handler.AdSetHandler">
+	    <property name="sqlMapClientTemplate" ref="fb_SqlMapClientTemplate"/>
+	</bean>
+	
+	<bean id="categoryHandler" class="com.lxtx.fb.handler.CategoryHandler">
+	    <property name="sqlMapClientTemplate" ref="fb_SqlMapClientTemplate"/>
+	</bean>
+	
+	<bean id="alipayAccountHandler" class="com.lxtx.fb.handler.AlipayAccountHandler">
+	    <property name="sqlMapClientTemplate" ref="fb_SqlMapClientTemplate"/>
+	</bean>
+   
+	<bean id="filterWordsHandler" class="com.lxtx.fb.handler.FilterWordsHandler">
+	    <property name="sqlMapClientTemplate" ref="fb_SqlMapClientTemplate"/>
+	</bean>
+	
+	<bean id="flagContactHandler" class="com.lxtx.fb.handler.FlagContactHandler">
+	    <property name="sqlMapClientTemplate" ref="fb_SqlMapClientTemplate"/>
+	</bean>
+	
+	<bean id="ipTimeHandler" class="com.lxtx.fb.handler.IpTimeHandler">
+	    <property name="sqlMapClientTemplate" ref="fb_SqlMapClientTemplate"/>
+	</bean>
+	
+	<bean id="languagesHandler" class="com.lxtx.fb.handler.LanguagesHandler">
+	    <property name="sqlMapClientTemplate" ref="fb_SqlMapClientTemplate"/>
+	</bean>
+	
+	<bean id="pageHandler" class="com.lxtx.fb.handler.PageHandler">
+	    <property name="sqlMapClientTemplate" ref="fb_SqlMapClientTemplate"/>
+	</bean>
+	
+	<bean id="proxyHandler" class="com.lxtx.fb.handler.ProxyHandler">
+	    <property name="sqlMapClientTemplate" ref="fb_SqlMapClientTemplate"/>
+	</bean>
+	
+	<bean id="taskHandler" class="com.lxtx.fb.handler.TaskHandler">
+	    <property name="sqlMapClientTemplate" ref="fb_SqlMapClientTemplate"/>
+	</bean>
+	
+	<bean id="uaHandler" class="com.lxtx.fb.handler.UaHandler">
+	    <property name="sqlMapClientTemplate" ref="fb_SqlMapClientTemplate"/>
+	</bean>
+	
+	<bean id="userHandler" class="com.lxtx.fb.handler.UserHandler">
+	    <property name="sqlMapClientTemplate" ref="fb_SqlMapClientTemplate"/>
+	</bean>
+	
+</beans>

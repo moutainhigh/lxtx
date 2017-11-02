@@ -1,0 +1,32 @@
+{
+    "button": [
+    	{
+        	"name": "开始游戏",
+            "type": "view",
+            "key": "rselfmenu_0_0",
+            "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxad262d141e839b2c&redirect_uri=http://%s/plaza/wx/redirectforredfull/%s/%s&response_type=code&scope=snsapi_userinfo&state=123"
+        },
+        {
+            "name": "服务中心",
+            "sub_button": [
+		        {
+		            "type": "view",
+		            "name": "寄售宝",
+		            "key": "rselfmenu_1_0",
+		            "url": "http://jishou.sino518.com/sale/exchange/default"
+		        },
+		        {
+                    "type": "view",
+                    "name": "帮助文档",
+                    "key": "rselfmenu_1_1",
+              		"url": "http://game.lijiuye.com/plaza/help.html?t=0.141218"
+                },
+		        {
+                    "type": "view",
+                    "name": "常见问题",
+                    "key": "rselfmenu_1_2",
+              		"url": "http://game.lijiuye.com/plaza/common_problem.html?t=0.141218"
+                }
+            ]
+        }
+}

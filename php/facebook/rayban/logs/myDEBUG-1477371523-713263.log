@@ -1,0 +1,10 @@
+[25-Oct-2016 07:03:47 Europe/Paris] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in D:\wamp\www\rayban1021\includes\modules\payment\securepay.php on line 830
+[25-Oct-2016 07:03:47 Europe/Paris] PHP Stack trace:
+[25-Oct-2016 07:03:47 Europe/Paris] PHP   1. {main}() D:\wamp\www\rayban1021\index.php:0
+[25-Oct-2016 07:03:47 Europe/Paris] PHP   2. require() D:\wamp\www\rayban1021\index.php:97
+[25-Oct-2016 07:03:47 Europe/Paris] PHP   3. require() D:\wamp\www\rayban1021\includes\templates\jersey\common\tpl_main_page.php:135
+[25-Oct-2016 07:03:47 Europe/Paris] PHP   4. payment->payment() D:\wamp\www\rayban1021\includes\templates\jersey\templates\tpl_shopping_cart_default.php:295
+[25-Oct-2016 07:03:47 Europe/Paris] PHP   5. SecurePay->SecurePay() D:\wamp\www\rayban1021\includes\classes\payment.php:74
+[25-Oct-2016 07:03:47 Europe/Paris] PHP   6. SecurePay->getSecurePayConfig() D:\wamp\www\rayban1021\includes\modules\payment\securepay.php:70
+[25-Oct-2016 07:03:47 Europe/Paris] PHP   7. SecurePay->http_response() D:\wamp\www\rayban1021\includes\modules\payment\securepay.php:888
+[25-Oct-2016 07:03:47 Europe/Paris] PHP   8. SecurePay->curl_redir_exec() D:\wamp\www\rayban1021\includes\modules\payment\securepay.php:872

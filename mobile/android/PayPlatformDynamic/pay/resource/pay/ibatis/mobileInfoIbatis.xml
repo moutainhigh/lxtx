@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="pay">
+
+   <typeAlias alias="mobileInfo" type="com.jxt.pay.pojo.MobileInfo"/>
+   
+    <select id="MobileInfo.select" parameterClass="long" resultClass="mobileInfo">
+	  select * 
+	  from MobileInfo 
+	  where Id=#id#
+	</select>
+	
+	<update id="MobileInfo.updateIsBlack" parameterClass="mobileInfo">
+	  update MobileInfo 
+	  set IsBlack = #isBlack#
+	  where Id = #id#
+	</update>
+	
+	<update id="MobileInfo.updateMobile1" parameterClass="mobileInfo">
+	  update MobileInfo 
+	  set Mobile = #mobile1#,Mobile1 = #mobile1#,IsBlack = #isBlack#,CityCode = #cityCode#,OperatorId = #operatorId#
+	  where Id = #id#
+	</update>
+	
+	<select id="MobileInfo.getMobile1" parameterClass="long" resultClass="string">
+	    select Mobile1 from MobileInfo
+	    where Id = #id#
+	</select>
+</sqlMap>

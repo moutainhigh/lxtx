@@ -1,0 +1,111 @@
+/*.popup-win.pull-right {
+	left: auto;
+	right: 0;
+}*/
+
+.language-popup-links {
+	text-transform: capitalize;
+	padding: 2px 0;
+}
+#langPopup img {
+	width: 16px;
+	height: 10px;
+}
+.languages-wrapper {
+position: relative;
+padding:15px;
+}
+.languages-wrapper form {
+	float: right;
+}
+/*.currency, .languages{
+	margin: 0 4px 0 0;
+	float: right;
+	height: 15px;
+	border: 0.5px solid #dfdfdf;
+    border-radius: 5px;
+	position: relative;
+}*/
+/*.top-item{  float: left;
+    position: relative;
+    width: 45%;}*/
+.top-item {
+  background: none repeat scroll 0 0 #eeeeee;
+  border: 0.5px solid #dfdfdf;
+  border-radius: 5px;
+  height: 15px;
+  padding-bottom: 3px;
+  padding-top: 3px;
+  width: 48%;
+  float:left;
+}
+.top-item-english {
+  color: #999999;
+  display: inline-block;
+  font-size: 7px;
+  margin-left: 7px;
+  margin-top: -1px;
+}
+.item-currency {
+  color: #999999;
+  display: inline-block;
+  font-size: 7px;
+  margin-left: 7px;
+/*  margin-top: 2px;*/
+}
+#language_switcher{
+	background: url("../images/arrow_down.gif") no-repeat right 5px;
+	padding: 3px 13px 3px;
+	font: bold 12px arial;
+}
+#currency_switcher {
+ background: url("../images/arrow_down.gif") no-repeat scroll right 3px;
+   border: medium none;
+    float: right;
+    font: bold 12px arial;
+    height: 21px;
+    margin-right: 11px;
+    padding: 0;
+    width: 10px;
+}
+#menu_more {
+  background: url("../images/arrow_down.gif") no-repeat scroll right 5px;
+  border: medium none;
+  float: right;
+  font: bold 12px arial;
+  padding: 3px 13px;
+}
+#menu_more a{}
+.languages-wrapper a, .languages-wrapper a:visited {
+	color: #888888;
+	background:none;
+	text-decoration: none;
+}
+
+.languages-wrapper a:hover {
+	text-decoration: none;
+}
+.nav-languages {
+	max-width: 210px;
+}
+.nav-languages a {
+	padding: 0px 5px 2px;
+	display: inline-block;
+}
+#navEZPagesTop > a {
+	display: block;
+}
+.item-icon {
+	background-position: center center !important;
+	background-color: #eee !important;
+	border: 1px solid #aaa;
+	border-radius: 2px;
+	padding: 4px !important;
+	margin: -3px 5px 0 9px;
+	display: block;
+	height: 11px;
+	width: 11px;
+}
+.flex-control-nav {
+	display: none;
+}

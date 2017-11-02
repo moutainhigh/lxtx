@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.lxtx.dao.CloudWxServiceProviderMapper">
+	<resultMap id="BaseResultMap" type="com.lxtx.model.CloudWxServiceProvider">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="origin" property="origin" jdbcType="VARCHAR" />
+		<result column="email" property="email" jdbcType="VARCHAR" />
+		<result column="mch_id" property="mchId" jdbcType="VARCHAR" />
+		<result column="app_id" property="appId" jdbcType="VARCHAR" />
+		<result column="app_secret" property="appSecret" jdbcType="VARCHAR" />
+		<result column="cert_file" property="certFile" jdbcType="VARCHAR" />
+		<result column="entry_token" property="entryToken" jdbcType="VARCHAR" />
+		<result column="key" property="key" jdbcType="VARCHAR" />
+		<result column="is_active" property="isActive" jdbcType="INTEGER" />
+		<result column="domain" property="domain" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, name,origin, email, mch_id, `app_id`,
+		app_secret,cert_file,entry_token, `key`, is_active, domain
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from cloud_wx_service_provider
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	<select id="getActiveProvider" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from cloud_wx_service_provider
+		where is_active = 1 limit 1
+	</select>
+	<select id="selectByOrigin" resultMap="BaseResultMap" parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from cloud_wx_service_provider
+		where origin = #{origin,jdbcType=VARCHAR}
+	</select>
+</mapper>

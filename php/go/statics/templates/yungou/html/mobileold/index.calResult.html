@@ -1,0 +1,65 @@
+
+
+<!DOCTYPE html>
+<html>
+<head><meta content="text/html; charset=utf-8" http-equiv="Content-Type" /><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0" />
+<title>
+	计算结果 - {wc:$webname}触屏版
+</title>
+<meta content="app-id=518966501" name="apple-itunes-app" /><meta content="yes" name="apple-mobile-web-app-capable" /><meta content="black" name="apple-mobile-web-app-status-bar-style" /><meta content="telephone=no" name="format-detection" />
+<link href="{G_TEMPLATES_CSS}/mobile/comm.css" rel="stylesheet" type="text/css" />
+<link href="{G_TEMPLATES_CSS}/mobile/lottery.css" rel="stylesheet" type="text/css" />
+<script src="{G_TEMPLATES_JS}/mobile/jquery190.js" language="javascript" type="text/javascript"></script>
+<script id="pageJS" data="{G_TEMPLATES_JS}/mobile/CalResult.js" language="javascript" type="text/javascript"></script></head>
+<body>
+<div class="h5-1yyg-v1">
+    
+<!-- 栏目页面顶部 -->
+
+
+<!-- 内页顶部 -->
+
+
+    <input name="hidCodeID" type="hidden" id="hidCodeID" value="{wc:$item['id']}" />
+    <input name="hidRaffleTime" type="hidden" id="hidRaffleTime" value="{wc:fun:microt($item['q_end_time'])}" />
+    <input name="hidBaseNum" type="hidden" id="hidBaseNum" value="{wc:$user_shop_time_add}" />
+    <input name="hidCodeQuantity" type="hidden" id="hidCodeQuantity" value="{wc:$item['canyurenshu']}" />
+    <input name="hidYuShu" type="hidden" id="hidYuShu" value="{wc:$user_shop_fmod}" />
+    <input name="hidCodeRno" type="hidden" id="hidCodeRno" value="{wc:$item['q_user_code']}" />
+	
+	<section id="calResult" class="z-minheight">
+	<div class="infoCount">
+		<div class="infoCount2">
+			<ul>
+				<li style="text-align:center;border:0 none;">商品开奖计算结果</li>
+				<li>1、第{wc:$item['cp_qh']} 期“pk10”开奖号码：{wc:loop $cp_user_code_arr $cp_code_num}<b class="ball">{wc:$cp_code_num} </b>{wc:loop:end}
+			      <a href="http://baidu.lecai.com/lottery/draw/view/557" target="_blank"> 开奖查询>></a></li>
+				<li>
+				<p>
+					2、求余：{wc:loop $cp_user_code_arr $cp_code_num}<b class="ball">{wc:$cp_code_num}</b>{wc:loop:end} (彩票开奖数) % {wc:$item['zongrenshu']} (奖品所需人次) = 
+			        {wc:loop $cp_ys_arr $cp_ys}<b class="square">{wc:$cp_ys}</b>{wc:loop:end}(余数)
+				</p>
+				</li>
+				<li>3、{wc:loop $cp_ys_arr $cp_ys}<b class="square">{wc:$cp_ys}</b>{wc:loop:end}
+			 		(余数) + 10000001 (系统固定数) = {wc:loop $q_user_code_arr  $q_code_num}<b class="square">{wc:$q_code_num}</b>{wc:loop:end}	
+				<p>
+				</p>
+				</li>
+				<li>
+				<p style="text-indent:-6.6em; padding-left:80px;">
+					4、最终结果：{wc:$item['q_user_code']} 为幸运云购码
+				</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	</section>
+	
+
+    
+{wc:templates "mobile/index","footer"}
+
+
+</div>
+</body>
+</html>

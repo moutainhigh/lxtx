@@ -1,0 +1,6 @@
+包名 com.sjdhdfiuwe.dhdei 
+md5:753fd0066ce358899215584d5c7c54c1
+
+
+别名：1
+秘钥：123456

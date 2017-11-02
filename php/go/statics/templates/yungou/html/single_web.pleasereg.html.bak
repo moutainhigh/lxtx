@@ -1,0 +1,57 @@
+{wc:templates "index","header"}
+<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_STYLE}/css/share_new.css"/>
+<script type="text/javascript" src="{G_TEMPLATES_STYLE}/js/clipboard.min.js"></script>
+{wc:php:start}
+	$uid = _encrypt(get_user_uid());
+{wc:php:end}
+<div class="index_body">
+    <div id="share_up"></div>
+    <div id="share_dowm">
+		{wc:if !uidcookie('uid')}
+			<div class="login_button">
+				<a href="{WEB_PATH}/member/user/login">立即登录，邀请好友 &gt;&gt;</a>
+			</div>
+			<div class="reg-txt">
+				还没有{wc:fun:_cfg('web_name_two')}帐号？<a href="{WEB_PATH}/register"><b>立即注册</b></a>
+			</div>
+		{wc:else}
+        <div id="share_dowm_head">
+            <ul>
+                <li><div id="target">我刚刚发现一个很好玩的网站,1元就能买IPhone 6哦，快去看看吧！<br/>{WEB_PATH}/register/{wc:$uid}</div></li>
+                <li><p class="btn-copy" data-clipboard-target="#target"><img src="{G_TEMPLATES_STYLE}/images/YQ_fuzhi.jpg"/></p></li>
+                <li><p id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"><img src="{G_TEMPLATES_STYLE}/images/YQ_fenxiang.jpg" class="bds_more"/></p></li>
+            </ul>
+        </div>
+		{wc:if:end}
+        <div id="share_dowm_foot">
+            <div id="share_dowm_foot_left">
+                <h2>云购物代金券</h2>
+                <h1>50元</h1>
+                <div>分享好友领取 <br/>可得50元代金券，可抵现金哦</div>
+                <a><div>分享送红包</div></a>
+            </div>
+            <div id="share_dowm_foot_right">
+                <h2>6%现金提成</h2>
+                <div>分享好友领取 <br/>6%现金提成，且永久有效</div>
+                <a><div>分享送红包</div></a>
+            </div>
+        </div>
+        <div id="share_footer">
+            <b>注：</b><span>成为黄金代理员还有更多惊喜大礼哟！</span><b>（</b><a href="{WEB_PATH}/reg">加入</a><b>）</b>
+        </div>
+        <div id="share_caption">
+            <img src="{G_TEMPLATES_STYLE}/images/YQ_lg.png" alt=""/>
+        </div>
+    </div>
+</div>
+    <script>
+        var clip=new Clipboard('.btn-copy');
+    </script>
+    <script type="text/javascript" id="bdshare_js" data="type=tools" ></script>
+    <script type="text/javascript" id="bdshell_js"></script>
+    <script type="text/javascript">
+        document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+    </script>
+
+
+{wc:templates "index","footer"}

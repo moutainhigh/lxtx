@@ -1,0 +1,48 @@
+.tm-search {
+ 	position: relative;
+}
+
+
+/* search popup */
+
+.searchContent {
+	width: 82% !important;
+	border: none !important;
+	padding: 15px 20px !important;
+	z-index: 6000;	
+	position: absolute;
+}
+
+#search_popup form{
+	
+	}
+#search_popup form input[type="text"]{
+	   background: none repeat scroll 0 0 #fff;
+    border: 1px solid #434343;
+    width: 50%;
+	}
+#search_popup form input[type="submit"]{
+ background: none repeat scroll 0 0 #404040;
+    border: medium none;
+    color: #fff;
+    font-family: arial;
+    font-size: 12px;
+    height: 18px;
+    width:30%;
+	}
+	
+#advSearchDefault form input[type="text"]{
+	   background: none repeat scroll 0 0 #fff;
+    border: 1px solid #434343;
+    width: 50%;
+	}
+#advSearchDefault form input[type="submit"]{
+ background: none repeat scroll 0 0 #404040;
+    border: medium none;
+    color: #fff;
+    font-family: arial;
+    font-size: 12px;
+    height: 18px;
+    width:30%;
+	}
+/* /search popup*/

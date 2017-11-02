@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="fb">
+   <typeAlias alias="csUser" type="com.lxtx.fb.pojo.CsUser"/>
+   
+   <insert id="CsUser.insert" parameterClass="csUser">
+       insert into CsUser (UserName, UserPass, UserNick, Status, AdminType)
+       values (#userName#, #userPass#, #userNick#, #status#, #adminType#)
+       <selectKey keyProperty="id" resultClass="int">
+			select LAST_INSERT_ID() as id
+		</selectKey>
+   </insert>
+   
+   <select id="CsUser.getByName" parameterClass="string" resultClass="csUser">
+       select * from CsUser where UserName = #userName#
+   </select>
+   
+   <update id="CsUser.updateTime" parameterClass="csUser">
+       update CsUser set LastLoginTime = #lastLoginTime# where Id = #id#
+   </update>
+   
+   <update id="CsUser.updatePassword" parameterClass="csUser">
+       update CsUser set UserPass = #userPass# where Id = #id#
+   </update>
+   
+   <update id="CsUser.updateStatus" parameterClass="csUser">
+       update CsUser set Status = #status# where Id = #id#
+   </update>
+   
+   <select id="CsUser.cntSearch" parameterClass="map" remapResults="int">
+       select count(*) from CsUser
+       where 1 = 1
+       <isNotEmpty property="status" prepend="and">
+           Status = #status#
+       </isNotEmpty>
+       <isNotEmpty property="adminType" prepend="and">
+           AdminType = #adminType#
+       </isNotEmpty>
+   </select>
+   
+   <select id="CsUser.pageSearch" parameterClass="map" resultClass="csUser">
+       select * from CsUser
+       where 1 = 1
+       <isNotEmpty property="status" prepend="and">
+           Status = #status#
+       </isNotEmpty>
+       <isNotEmpty property="adminType" prepend="and">
+           AdminType = #adminType#
+       </isNotEmpty>
+       order by Id asc limit $fromRow$, $fetchNum$ 
+   </select>
+</sqlMap>

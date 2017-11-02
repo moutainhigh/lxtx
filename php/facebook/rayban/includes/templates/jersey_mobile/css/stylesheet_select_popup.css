@@ -1,0 +1,169 @@
+/**
+
+ * Main CSS Stylesheet
+
+ *
+
+ * @package templateSystem
+
+ * @copyright Copyright 2003-2007 Zen Cart Development Team
+
+ * @copyright Portions Copyright 2003 osCommerce
+
+ * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
+
+ * @version $Id: stylesheet.css 5952 2007-03-03 06:18:46Z wel $
+
+ */
+
+.block{
+
+    display: block;
+
+}
+
+html > body #currPopup, html > body #langPopup {
+
+	right: 0;
+
+}
+
+.popup-win {
+  background: none repeat scroll 0 0 #ffffff;
+  margin-top: -163px;
+  padding: 7px 15px 7px 14px;
+  position: absolute;
+  width: 34.6%;
+  z-index: 3000;
+/*  border: 1px solid #cecece;
+  border-radius: 5px;
+  box-shadow: 1px 2px 5px #555555;
+  -moz-box-shadow: 1px 2px 5px #555555;
+  -webkit-box-shadow: 1px 2px 5px #555555;
+  box-shadow: 1px 2px 5px #555555;*/
+}                          
+.popup-win-currPopup {
+  background: none repeat scroll 0 0 #ffffff;
+  border: 1px solid #cecece;
+  border-radius: 5px;
+  box-shadow: 1px 2px 5px #555555;
+  margin-top: -510px;
+  padding: 7px 15px 7px 14px;
+  position: absolute;
+  width: 83.6%;
+  z-index: 3000;
+}
+.popup-win a, .popup-win a:link, .popup-win a:visited, .popup-win a:active {
+
+	line-height: 25px;
+
+	padding: 2px 3px;
+
+	color: #828282;
+
+}
+
+ .popup-win a:hover {
+
+	text-decoration: none !important;
+
+} 
+
+.languages {
+
+    position: relative;
+	float:right;
+
+}
+.currency {
+  background: none repeat scroll 0 0 #eeeeee;
+  border: 0.5px solid #dfdfdf;
+  border-radius: 5px;
+  float: right;
+  height: 15px;
+  padding-bottom: 3px;
+  padding-top: 3px;
+  position: relative;
+  width: 48%;
+}
+
+.close-pic {
+
+	cursor: pointer;
+
+	margin: 0px -9px 0 0;
+
+	height: 22px !important;
+
+	width: 22px !important;
+
+}
+
+#currPopup, #langPopup, #categoriesPopup,#search_popup {
+    position: absolute;
+	z-index: 3000;
+	top:211px;
+
+}
+.hidden { 
+
+	display: none; 
+
+}
+
+.list-popup {
+
+	display: block;
+
+    list-style-type:none;
+
+    margin: 0px;
+
+    padding: 0px;
+
+}
+.list-popup li a {
+  color: #828282;
+  display: block;
+  font-size: 14px;
+  overflow: hidden;
+  padding: 6px 0 14px 6px;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.list-popup li {
+
+	white-space: nowrap;
+
+	line-height: 26px;
+
+}
+
+#top_nav {
+
+	position: relative;
+
+}
+
+#categoriesPopup {
+  border: medium none;
+  padding: 0 0 10px !important;
+  width: 70%;
+}
+
+a.category-top {
+
+    background: url("../images/arrow.gif") no-repeat scroll 0 4px transparent !important;
+
+    color: #2d2926 !important;
+
+    font: bold 12px arial;
+
+    padding: 0 0 0 13px !important;
+
+    text-decoration: none;
+
+}

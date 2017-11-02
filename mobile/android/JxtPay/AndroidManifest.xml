@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.jxtpay"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" 
+        android:name=".App">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.baidu.third.jxt.sdk.PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:theme="@style/Jxt_PaymentActTheme" />
+        
+        <activity
+            android:name="com.baidu.third.jxt.sdk.WebPayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar"/>
+        
+        
+        <meta-data android:name="JXT_APP_ID" android:value="100001"/>
+        <meta-data android:name="JXT_APP_KEY" android:value="9d85e686031b1c1ae4f13ae22b3cb36f"/>
+       
+    </application>
+
+</manifest>

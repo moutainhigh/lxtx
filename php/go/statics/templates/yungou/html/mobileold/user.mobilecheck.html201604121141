@@ -1,0 +1,237 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>验证身份 - {wc:$webname}触屏版</title>
+    <meta content="app-id=518966501" name="apple-itunes-app" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <link href="{G_TEMPLATES_CSS}/mobile/comm.css" rel="stylesheet" type="text/css" />
+	<link href="{G_TEMPLATES_CSS}/mobile/login.css" rel="stylesheet" type="text/css" />
+	<script src="{G_TEMPLATES_JS}/mobile/jquery190.js" language="javascript" type="text/javascript"></script>
+<script type="text/javascript" src="{G_TEMPLATES_STYLE}/js/jquery.md5.js"></script>
+	<!--  
+	<script id="pageJS" data="{G_TEMPLATES_JS}/mobile/MobileCheck.js" language="javascript" type="text/javascript"></script>
+	-->
+	<style type="text/css">
+	.redbt{
+	        background: #E71C46;
+            border: 1px solid #E71C46;
+	}
+	#btnGetCode:hover{
+	       cursor:pointer;
+	}
+	#cf2{
+	      display:none;
+	 }
+	 #cf3{
+	      cursor:pointer;
+	 }
+	</style>
+</head>
+<body>
+    <div class="h5-1yyg-v1" id="content">
+        
+<!-- 栏目页面顶部 -->
+
+
+<!-- 内页顶部 -->
+
+
+        <section>
+	        <div class="registerCon">
+	            <input type="text" id="inpAccount" value="{wc:$accountname}" />
+    	        <ul>
+        	        <li><input type="text" id="code" placeholder="请输入验证码" /><s class="rs2"></s></li>
+                    <li><a href="javascript:void(0);" id="btnPostCode" class="nextBtn  orgBtn">确认，下一步</a></li>
+                    <!-- 
+                    <li><a id="btnGetCode" class="orgBtn">重新发送短信验证码</a></li>
+                     -->
+                    <!-- 
+                     <li style="font-size:12px;">如未收到验证短信，请在120秒后点击重新发送。</li>
+                     <li><a id="btnGetCode" class="resendBtn grayBtn">重新发送<span id='ms'>120</span></a></li>
+                     -->
+                </ul>
+                
+                <!-- 
+                    <div id='cf2'>
+                     <input type="test"  style="text-transform:uppercase;" name="yzm" id='yzm' class="inputxt" maxlength="6"/></dd>
+                    <img id="checkcode" src="{wc:WEB_PATH}/api/checkcode/image/80_27/" onclick="this.src='{wc:WEB_PATH}/api/checkcode/image/80_27/&'+Math.random()"/>
+                    <span id='cf3'>确定</span>
+                    </div>
+                     -->
+	        </div>
+        </section>
+        
+{wc:templates "mobile/index","footer"}
+
+<script language="javascript" type="text/javascript">
+/*
+ 
+var Path = new Object();
+Path.Skin = "{G_WEB_PATH}/statics/templates/yungou";
+Path.Webpath = "{WEB_PATH}";
+
+var Base = {
+    head: document.getElementsByTagName("head")[0] || document.documentElement,
+    Myload: function(B, A) {
+        this.done = false;
+        B.onload = B.onreadystatechange = function() {
+            if (!this.done && (!this.readyState || this.readyState === "loaded" || this.readyState === "complete")) {
+                this.done = true;
+                A();
+                B.onload = B.onreadystatechange = null;
+                if (this.head && B.parentNode) {
+                    this.head.removeChild(B)
+                }
+            }
+        }
+    },
+    getScript: function(A, C) {
+        var B = function() {};
+        if (C != undefined) {
+            B = C
+        }
+        var D = document.createElement("script");
+        D.setAttribute("language", "javascript");
+        D.setAttribute("type", "text/javascript");
+        D.setAttribute("src", A);
+        this.head.appendChild(D);
+        this.Myload(D, B)
+    },
+    getStyle: function(A, B) {
+        var B = function() {};
+        if (callBack != undefined) {
+            B = callBack
+        }
+        var C = document.createElement("link");
+        C.setAttribute("type", "text/css");
+        C.setAttribute("rel", "stylesheet");
+        C.setAttribute("href", A);
+        this.head.appendChild(C);
+        this.Myload(C, B)
+    }
+}
+function GetVerNum() {
+    var D = new Date();
+    return D.getFullYear().toString().substring(2, 4) + '.' + (D.getMonth() + 1) + '.' + D.getDate() + '.' + D.getHours() + '.' + (D.getMinutes() < 10 ? '0': D.getMinutes().toString().substring(0, 1))
+}
+Base.getScript('{G_TEMPLATES_JS}/mobile/Bottom.js');
+*/
+$().ready(function(){
+	//页面加载，"重新发送"颜色为
+	/*
+	var ms=120;
+	setInterval(function(){
+		ms-=1;
+		if(ms!=0){
+			$('#ms').text(ms);
+		}else{
+			$('#btnGetCode').addclass('redbt');
+			//重新发送短信验证码
+			var data={
+					
+			};
+		}
+	},1000);
+	*/
+	/*
+	$('#btnGetCode').bind('click',function(){
+		$('#cf2').css('display','block');
+	});
+	//点击确定
+	$('#cf3').bind('click',function(){
+		var z=$('#yzm').val();
+		z=z.toUpperCase();
+		//alert('a1____'+z);
+		//alert('a2____'+getcookie('checkcode'));
+		if(z==''){
+			alert('验证码不能为空！');
+			$('#yzm').focus();
+			exit;
+		}
+		//alert($.md5(z));
+		//alert(getcookie('checkcode'));
+		if($.md5(z)!=getcookie('checkcode')){
+			alert('验证码不正确！');
+			$('#yzm').focus();
+			exit;
+		}else{
+			//通过验证，重新给用户发送短信
+			var data={
+					mobile:$('#inpMobile').val()
+			};
+			$.post('{WEB_PATH}/mobile/user/resendcode',data,function(){
+				  if(msg=='1'){
+					  alert('短信验证码已经发送到您的手机，请注意查收！');
+				  }else{
+					  alert('参数错误！');
+				  }
+			});
+		}
+	});
+	
+	function getcookie(a){
+	    var arr=document.cookie.split("; ");
+	    for(var i=0;i<arr.length;i++){
+	          var brr=arr[i].split("=");
+	          if(brr[0]==a){
+	              return brr[1];
+	          }
+	    }
+	}
+	*/
+	//点击下一步按钮
+	$('#btnPostCode').bind('click',function(){
+		if($('#inpAccount').val()==''){
+			alert('参数错误！');
+			history.go(-1);
+			exit;
+		}
+		if($('#code').val()==''){
+			alert('请输入您收到的验证码！');
+			$('#code').focus();
+			exit;
+		}
+		var data={
+				account:$('#inpAccount').val(),
+				code:$('#code').val()
+		}
+		//alert($('#inpAccount').val());
+		//alert($('#code').val());
+		$.post('{WEB_PATH}/mobile/user/checkyzm',data,function(msg){
+			//alert('checkyzm='+msg);
+			
+			if(msg=='1'){
+				alert('手机验证成功！');
+				location.href='{WEB_PATH}/mobile/user/login';
+			}else if(msg=='2'){
+				alert('手机验证失败！即将调到重新注册页');
+				location.href='{WEB_PATH}/mobile/user/register';
+				/*
+				var a=comfirm('手机验证失败，是否重置密码？');
+				if(a==true){
+					location.href='{WEB_PATH}/mobile/user/resetpassword'+;
+				}
+				*/
+			}else if(msg=='3'){
+				alert('邮箱验证成功！');
+				location.href='{WEB_PATH}/mobile/user/login';
+			}else if(msg=='4'){
+				alert('邮箱验证失败！即将调到重新注册页');
+				location.href='{WEB_PATH}/mobile/user/register';
+			}
+		});
+	});
+	
+});
+
+</script>
+
+    </div>
+</body>
+</html>

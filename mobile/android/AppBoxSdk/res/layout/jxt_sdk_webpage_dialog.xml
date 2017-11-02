@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_sm_sky_pay_fl"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:id="@+id/main_sky_pay_ll"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/main_sky_pay_rl"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/jxt_sm_pay_bg"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/main_sky_pay_inside_ll"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/main_sky_pay_middle_rl"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <ScrollView
+                        android:id="@+id/main_sky_pay_sv"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" >
+
+                        <LinearLayout
+                            android:id="@+id/main_sky_pay_sv_ll"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical" >
+                            <TextView
+                                android:id="@+id/jxt_tv_hint_ok"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                               android:layout_marginTop="20dp"
+                                android:layout_marginRight="12.0dip"
+                               
+                                android:layout_weight="37"
+                                android:lineSpacingExtra="3.0dip"
+                                android:text="支付没有完成!确定要退出支付?"
+                               
+                                android:layout_marginLeft="20.0dip"
+                                android:textColor="#ff5b6e7c"
+                                 />
+                        </LinearLayout>
+
+                    </ScrollView>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/main_sky_pay_button_rl"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10.0dip" >
+
+                    <LinearLayout
+                        android:id="@+id/main_sky_pay_button_ll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10.0dip"
+                        android:orientation="horizontal" >
+
+                        <Button
+                            android:id="@+id/jxt_sdk_webpage_dialog_btn_ok"
+                            android:layout_width="110.66998dip"
+                            android:layout_height="40.0dip"
+                            android:background="@drawable/jxt_sm_pay_comfirm_button"
+                            android:text="确定"
+                             android:layout_marginLeft="21dp"
+                            android:textColor="#ff317510" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/jxt_sdk_webpage_dialog_btn_cancle"
+                        android:layout_width="110.66998dip"
+                        android:layout_height="40.0dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignTop="@+id/main_sky_pay_button_ll"
+                        android:layout_marginRight="21dp"
+                        android:background="@drawable/jxt_sm_pay_comfirm_button"
+                        android:text="我点错了"
+                        android:textColor="#ff317510" />
+
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,51 @@
+{
+    "button": [
+        {
+            "name": "开始赚钱",
+            "type": "view",
+            "key": "rselfmenu_0_0",
+            "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb0ee2119ffabb89e&redirect_uri=http://yun.kaleshua.com/yun/wx/wxredirect/gh_f132218754c5&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect"
+        },
+        {
+            "name": "服务中心",
+            "sub_button": [
+                {
+                    "type": "view",
+                    "name": "常见问题",
+                    "key": "rselfmenu_1_0",
+                    "url": "http://yun.jyqhs.com/yun/common_problem.html?t=0.141215"
+                },
+                {
+                    "type": "view",
+                    "name": "操作规则",
+                    "key": "rselfmenu_1_1",
+                    "url": "http://yun.jyqhs.com/yun/tran_rule.html?t=0.141215"
+                },
+                {
+                    "type": "view",
+                    "name": "产品种类",
+                    "key": "rselfmenu_1_2",
+                    "url": "http://yun.jyqhs.com/yun/tran_type.html?t=0.141215"
+                },
+                {
+                    "type": "view",
+                    "name": "新手指南",
+                    "key": "rselfmenu_1_3",
+                    "url": "http://yun.jyqhs.com/yun/newbie_guide.html?t=0.141215"
+                },
+                {
+                    "type": "view",
+                    "name": "联系我们",
+                    "key": "rselfmenu_1_4",
+                    "url": "http://yun.jyqhs.com/yun/contact_us.html?t=0.141215"
+                }
+            ]
+        },
+{
+            "name": "云购九州",
+            "type": "view",
+            "key": "rselfmenu_2_0",
+                    "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb0ee2119ffabb89e&redirect_uri=http://yun.kaleshua.com/yun/wx/goredirect/ gh_f132218754c5&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect"
+        }
+    ]
+}

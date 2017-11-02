@@ -1,0 +1,35 @@
+<ion-view view-title="创建游戏房间">
+    <ion-header-bar align-title="center" class="bar-positive bar-header-black">
+        <h1 class="title">创建游戏房间</h1>
+        <div class="buttons"><!--
+            <a class="button button-icon icon ion-ios-telephone-outline" href="http://www.baidu.com"></a>-->
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div class="padding" style="background-color: #F1E9CF;color:#8E7525;margin: 1px;">
+           	系统会为新建的房间分配密码，您的朋友可凭此密码进入房间。
+        </div>
+        <div class="list list-inset">
+            <label class="item item-input">
+                <span class="input-label">房间类型</span>
+                <select class="item-select" id="type" name="type" ng-model="data.type">
+                	<option ng-repeat="r in roomtypes" value="{{r.type}}">{{r.name}}</option>
+                </select>
+            </label>
+            <br>    
+            <label class="item item-input">
+                <span class="input-label">金额</span>
+                <input type="text" placeholder="{{money_desc}}" ng-model="data.money">
+            </label>
+            <br>
+            <label class="item item-input">
+                <span class="input-label">红包个数</span>
+                <input type="text" placeholder="最多20个" ng-model="data.number">
+            </label>
+            <br>
+            <button class="button button-block button-positive button-green" ng-click="applyRoomShort()">
+                	提交申请
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

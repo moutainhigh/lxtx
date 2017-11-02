@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="synch_SqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation" value="classpath:resource/synch/sqlMapConfig.xml"/>
+		<property name="dataSource" ref="synch_dataSource"/>
+	</bean>
+
+	<bean id="synch_SqlMapClientTemplate" class="com.qlzf.commons.factory.SqlMapClientTemplate">
+		<property name="sqlMapClient" ref="synch_SqlMapClient"/>
+	</bean>
+	
+     <bean id="duohSyncHandler" class="com.jxt.synch.handler.DuohSyncHandler"> 
+       <property name="sqlMapClientTemplate" ref="synch_SqlMapClientTemplate"/>
+    </bean> 
+</beans>

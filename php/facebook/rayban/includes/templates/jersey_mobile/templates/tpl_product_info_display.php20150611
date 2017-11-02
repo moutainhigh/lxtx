@@ -1,0 +1,352 @@
+<?php
+/**
+ * Page Template
+ *
+ * Loaded automatically by index.php?main_page=product_info.<br />
+ * Displays details of a typical product
+ *
+ * @package templateSystem
+ * @copyright Copyright 2003-2011 Zen Cart Development Team
+ * @copyright Portions Copyright 2003 osCommerce
+ * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
+ * @version $Id: tpl_product_info_display.php 19690 2011-10-04 16:41:45Z drbyte $
+ */
+ //require(DIR_WS_MODULES . '/debug_blocks/product_info_prices.php');
+?>
+<div class="centerColumn" id="productGeneral">
+<!--bof Product Name-->
+<h1 id="productName" class="productGeneral"><?php echo $products_name; ?></h1>
+<!--eof Product Name-->
+<?php echo zen_draw_form('cart_quantity', zen_href_link(zen_get_info_page($_GET['products_id']), zen_get_all_get_params(array('action')) . 'action=add_product', $request_type), 'post', 'enctype="multipart/form-data"') . "\n"; ?>
+<?php if ($messageStack->size('product_info') > 0) echo $messageStack->output('product_info'); ?>
+<?php if ($module_show_categories != 0) {?>
+<?php
+/**
+ * display the category icons
+ */
+require($template->get_template_dir('/tpl_modules_category_icon_display.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_category_icon_display.php'); ?>
+<?php } ?>
+<?php if (PRODUCT_INFO_PREVIOUS_NEXT == 1 or PRODUCT_INFO_PREVIOUS_NEXT == 3) { ?>
+<?php
+/**
+ * display the product previous/next helper
+ */
+require($template->get_template_dir('/tpl_products_next_previous.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_products_next_previous.php'); ?>
+<?php } ?>
+<table class="product-detail-table" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td>
+<!--bof Main Product Image -->
+<?php
+  if (zen_not_null($products_image)) {
+  ?>
+<?php
+/**
+ * display the main product image
+ */
+   require($template->get_template_dir('/tpl_modules_main_product_image.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_main_product_image.php'); ?>
+<?php
+  }
+?>
+<!--eof Main Product Image-->
+<div class="kucun"><span>test</span>Availability:In Stock - Ships In 24 To 48Hours</div>
+<!--<div class="product-blurb">
+
+          <div class="sprite delivery-truck"></div>
+      <p>
+        <strong>Availability:In Stock - Ships In 24 To 48Hours</strong>
+        <a class="info launch-modal" rel="nofollow" href="http://m.dickssportinggoods.com/helpdesk/popup.jsp?display=ship&amp;subdisplay=process&amp;ab=Product_PageElement_HelpDeskAvailability">i</a>
+      </p>
+    
+          <p>
+        <span>Standard Ground Service Available (<span class="text-red text-bold text-upper">Free</span>)</span>
+        <a class="info launch-modal" rel="nofollow" href="http://m.dickssportinggoods.com/helpdesk/popup.jsp?display=ship&amp;subdisplay=shipMethods&amp;ab=Product_PageElement_ShippingInformation">i</a>
+      </p>
+    
+    
+  </div>-->
+
+<?php if ( (($flag_show_product_info_model == 1 and $products_model != '') or ($flag_show_product_info_weight == 1 and $products_weight !=0) or ($flag_show_product_info_quantity == 1) or ($flag_show_product_info_manufacturer == 1 and !empty($manufacturers_name))) ) { ?>
+<!--<ul id="productDetailsList" class="floatingBox back">
+	输出产品库存量
+  <?php echo (($flag_show_product_info_model == 1 and $products_model !='') ? '<li><span class="product-info-label">' . TEXT_PRODUCT_MODEL . '</span>' . $products_model . '</li>' : '') . "\n"; ?>
+  <?php echo (($flag_show_product_info_weight == 1 and $products_weight !=0) ? '<li><span class="product-info-label">' . TEXT_PRODUCT_WEIGHT . '</span>' .  $products_weight . TEXT_PRODUCT_WEIGHT_UNIT . '</li>'  : '') . "\n"; ?>
+  <?php echo (($flag_show_product_info_quantity == 1) ? '<li><span class="product-info-label">'. TEXT_PRODUCT_QUANTITY . ': </span>'  . $products_quantity  . '</li>'  : '') . "\n"; ?>
+  <?php echo (($flag_show_product_info_manufacturer == 1 and !empty($manufacturers_name)) ? '<li><span class="product-info-label">' . TEXT_PRODUCT_MANUFACTURER . '</span>' . $manufacturers_name . '</li>' : '') . "\n"; ?>
+  
+</ul>-->
+<br class="clearBoth" />
+<div class="mobile100">sdfsdf</div>
+<?php
+  }
+?>
+<!--<h2 id="productPrices" class="productGeneral">
+原来输出价格
+<?php
+// base price
+  if ($show_onetime_charges_description == 'true') {
+    $one_time = '<span >' . TEXT_ONETIME_CHARGE_SYMBOL . TEXT_ONETIME_CHARGE_DESCRIPTION . '</span><br />';
+  } else {
+    $one_time = '';
+  }
+  echo $one_time . ((zen_has_product_attributes_values((int)$_GET['products_id']) and $flag_show_product_info_starting_at == 1) ? TEXT_BASE_PRICE : '') . zen_get_products_display_price((int)$_GET['products_id']);
+?></h2>-->
+
+<?php if(zen_get_product_is_always_free_shipping($products_id_current) && $flag_show_product_info_free_shipping) { ?>
+<div id="freeShippingIcon"><?php echo TEXT_PRODUCT_FREE_SHIPPING_ICON; ?></div>
+<?php } ?>
+<?php
+  if ($pr_attr->fields['total'] > 0) {
+?>
+<?php
+/**
+ * display the product atributes
+ */
+  require($template->get_template_dir('/tpl_modules_attributes.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_attributes.php'); ?>
+<?php
+  }
+?>
+<?php
+  if ($products_discount_type != 0) { ?>
+<?php
+/**
+ * display the products quantity discount
+ */
+ require($template->get_template_dir('/tpl_modules_products_quantity_discounts.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_products_quantity_discounts.php'); ?>
+<?php
+  }
+?>
+<?php
+if (CUSTOMERS_APPROVAL == 3 and TEXT_LOGIN_FOR_PRICE_BUTTON_REPLACE_SHOWROOM == '') {
+  // do nothing
+} else {
+?>
+            <?php
+  if ($show_onetime_charges_description == 'true') {
+    $one_time = '<span >' . TEXT_ONETIME_CHARGE_SYMBOL . TEXT_ONETIME_CHARGE_DESCRIPTION . '</span><br />';
+  } else {
+    $one_time = '';
+  }
+  $display_price = $one_time . ((zen_has_product_attributes_values((int)$_GET['products_id']) and $flag_show_product_info_starting_at == 1) ? TEXT_BASE_PRICE : '') . zen_get_products_display_price((int)$_GET['products_id']);
+	
+	   $display_qty = (($flag_show_product_info_in_cart_qty == 1 and $_SESSION['cart']->in_cart($_GET['products_id'])) ? '<p>' . PRODUCTS_ORDER_QTY_TEXT_IN_CART . $_SESSION['cart']->get_quantity($_GET['products_id']) . '</p>' : '');
+            if ($products_qty_box_status == 0 or $products_quantity_order_max== 1) {
+              // hide the quantity box and default to 1
+              $the_button = '<input type="hidden" name="cart_quantity" value="1" />'.$display_price . zen_draw_hidden_field('products_id', (int)$_GET['products_id']) . zen_image_submit(BUTTON_IMAGE_IN_CART, BUTTON_IN_CART_ALT);
+            } else {
+              // show the quantity box
+    $the_button = PRODUCTS_ORDER_QTY_TEXT . '<input type="text" name="cart_quantity" value="' . (zen_get_buy_now_qty($_GET['products_id'])) . '" maxlength="6" size="4" />'.$display_price.'<span class="prices_stars">test</span>'.'<br />' . zen_get_products_quantity_min_units_display((int)$_GET['products_id']) . '<br />' . zen_draw_hidden_field('products_id', (int)$_GET['products_id']) . '<div class="cartAdd2"><input type="submit" value="Add to Cart" name="cart_add"></div>';
+            }
+/****************************************************
+/* Absolute-Solutions.co.uk Edit
+/*
+/* Attributes Grid format
+/* 1 of 1
+/****************************************************/
+	if (isset($attrib_grid)) {
+	  $the_button = $display_price.'<span class="prices_stars"></span>'.'<div class="cartAdd2"><input type="submit" value="Add to Cart" name="cart_add"></div>';
+    }
+/****************************************************
+/* Absolute-Solutions.co.uk Edit
+/*
+/* Attributes Grid format
+/* END OF 1 of 1
+/****************************************************/
+    $display_button = zen_get_buy_now_button($_GET['products_id'], $the_button);
+  ?>
+ 
+  <?php if ($display_qty != '' or $display_button != '') { ?>
+    <div id="cartAdd">
+    <?php
+      echo $display_qty;
+      echo $display_button;
+            ?>
+          </div>
+  <?php } // display qty and button ?>
+<?php } // CUSTOMERS_APPROVAL == 3 ?>
+<br class="clearBoth" />
+<!--div class="cartAdd2">
+<input type="submit" value="Add to Cart" name="cart_add">
+</div-->
+
+<div class="twelve columns shipping message">
+			<span class="upper free">free shipping</span> <em>on U.S. orders over $99</em> 
+</div>
+
+<!-- 代码 开始 -->
+<div class="bellows single">
+	<div class="bellows__item">
+		<div class="bellows__header">
+			<h3>Product Detail</h3>
+		</div>
+		<div class="bellows__content">
+		<h3>Description:</h3>
+		<p>* For your whole order. if 1pcs,should add 25$ Shipping fee;</p>
+		<p>* if 2-4 pcs,should add 20$ Shipping fee;</p>
+		<p>* if 5-9 pcs,should add 15$ Shipping fee;</p>
+		<p>* if reach to 10 pcs,free shipping,UPS/FedexDHL(more order 45pcs) 3-5 days;</p>
+		<p>* USPS(1-40 pcs) 4-7 days . The shipment fee is just suitable for USA,Canada .For other countries,</p>
+		<p>* it need add 5$ in above.</p>
+
+<!--bof Product description -->
+<div id="tab-inside">
+<?php echo stripslashes($products_description); ?></div>
+<!--eof Product description -->
+<br class="clearBoth" />
+
+		</div>
+	</div>
+	<div class="bellows__item">
+		<div class="bellows__header">
+			<h3>Shipping & Return</h3>
+		</div>
+		<div class="bellows__content">
+        	<p style="text-indent:2em;">
+            	IF you order more than 10pcs, the shipping is FREE. If you pay your order by Western Union or MoneyGram, we will give you 10% discount and free gift! Easy 60-Day Returns. We're committed to your total satisfaction. If, for any reason, you're not completely happy with your purchase, you can get a full refund of the product price, within sixty (60) business days of receipt of the item(s). To receive either a credit toward an exchange or a credit on your charge account, please note that all returns and exchanges must be in new, unused or unworn condition with the original tags and stickers attached. Items deemed worn, used, dirty or missing tags will be returned to purchaser at their expense and no refund will be issued. Women's swimwear is eligible for return only if the sanitary liner is place. Customized and personalized items are not returnable. Since lost return shipments are the responsibility of the customer, be sure to obtain a tracking number from the courier for the return shipment. International Shipping We are proud to use UPS/DHL/Fedex/TNT/USPS as our primary carrier. They ships packages Monday thru Friday and in most areas will deliver ground shipments on Saturday. Remember, some of our items are made to order and ship from alternate warehouses. Make sure to check the product detail page to check if your item has a lead time.
+            </p>
+		</div>
+	</div>
+	<div class="bellows__item">
+		<div class="bellows__header">
+			<h3>Reviews</h3>
+		</div>
+		<div class="bellows__content">
+<?php echo zen_draw_form('product_reviews_write', zen_href_link(FILENAME_PRODUCT_REVIEWS_WRITE, 'action=process&products_id=' . $_GET['products_id'], 'SSL'), 'post', 'onsubmit="return checkForm(product_reviews_write);"'); ?>
+<div id="reviewsWriteReviewsRate"><?php echo 'Escoge un ranking para este artículo. 1 estrella es el peor y 5 estrellas es el mejor.'; ?></div>
+
+<input type="hidden" id="rating" value="4" name="rating" />
+<div class="ratingRow">Clasificación:
+<span class="rating_active ratings"></span>
+<span class="rating_active ratings"></span>
+<span class="rating_active ratings"></span>
+<span class="rating_active ratings"></span>
+<span class="ratings"></span>
+<script type="text/javascript">
+$(this).ready(function() {
+	$(".ratings").click(function() {
+		$(".ratings").removeClass("rating_active");
+		$(this).addClass("rating_active");
+		$(this).prevAll().addClass("rating_active");
+		$("#rating").attr("value", $(this).index()+1);
+	});
+});
+</script>	
+<div class="clearBoth"></div>
+<?php if ($_SESSION['customer_id']) {?> 
+<h3 id="reviewsWriteReviewer">
+<?php echo SUB_TITLE_FROM, zen_output_string_protected($customer->fields['customers_firstname'] . ' ' . $customer->fields['customers_lastname']); ?>
+</h3>
+<?php } else { ?>
+<label id="textAreaName" for="review-name"><?php echo TEXT_REVIEW_NAME; ?></label>
+<br />
+<input type="text" name="review-name" size = "33" maxlength = "62" id="review-name" />
+<?php 
+// BOF Captcha
+if(is_object($captcha)) {
+?>
+<br class="clearBoth" />
+<?php echo $captcha->img(); ?>
+<?php echo $captcha->redraw_button(BUTTON_IMAGE_CAPTCHA_REDRAW, BUTTON_IMAGE_CAPTCHA_REDRAW_ALT); ?>
+<br class="clearBoth" />
+<label for="captcha"><?php echo TITLE_CAPTCHA; ?></label>
+<?php echo $captcha->input_field('captcha', 'id="captcha"') . '&nbsp;<span class="alert">' . TEXT_CAPTCHA . '</span>'; ?>
+<br class="clearBoth" />
+<?php
+}
+// BOF Captcha
+?>
+<div class="clearBoth"></div>
+
+<label id="textAreaReviews" for="review-text"><?php echo SUB_TITLE_REVIEW; ?></label>
+<?php echo zen_draw_textarea_field('review_text', 60, 5, '', 'id="review-text"'); ?>
+<div class="buttonRow forward"><?php echo zen_image_submit(BUTTON_IMAGE_SUBMIT, BUTTON_SUBMIT_ALT); ?></div>
+<div id="reviewsWriteReviewsNotice" class="notice"><?php echo '<strong>NOTE:</strong> HTML tags are not allowed.' . (REVIEWS_APPROVAL == '1' ? '<br />' . '<strong>NOTE:</strong> Reviews require prior approval before they will be displayed': ''); ?></div>
+</form>
+</div>
+<?php if ($flag_show_product_info_reviews == 1) { ?>
+<!--bof Reviews button and count-->
+<?php
+// if more than 0 reviews, then show reviews button; otherwise, show the "write review" button
+if ($reviews->fields['count'] > 0 ) { ?>
+<p class="reviewCount"><?php echo ($flag_show_product_info_reviews_count == 1 ? TEXT_CURRENT_REVIEWS . ' ' . $reviews->fields['count'] : ''); ?></p>
+<br class="clearBoth" />
+<?php } ?>
+<!--eof Reviews button and count -->
+<?php } ?>
+<!-- eof write a review -->
+		</div>
+	</div>
+</div>
+<!-- Include dependencies -->
+<script src="js/jquery.min.js"></script>
+<script src="js/velocity.min.js"></script>
+<!-- Include bellows.js -->
+<script src="js/bellows.min.js"></script>
+<!-- Construct Bellows -->
+<script>$('.bellows').bellows({
+	  singleItemOpen: true,
+	  easing: 'ease-in-out',
+	   duration: 200
+})</script>
+<!-- 代码 结束 -->
+
+
+<?php } ?>
+<br class="clearBoth" />
+<?php
+/**
+ * display the products additional images
+ */
+  require($template->get_template_dir('/tpl_modules_additional_images.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_additional_images.php'); ?>
+	</td>
+</tr>
+</table>
+<?php if (PRODUCT_INFO_PREVIOUS_NEXT == 2 or PRODUCT_INFO_PREVIOUS_NEXT == 3) { ?>
+<?php
+/**
+ * display the product previous/next helper
+ */
+ require($template->get_template_dir('/tpl_products_next_previous.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_products_next_previous.php'); ?>
+<?php } ?>
+<?php
+  if ($flag_show_product_info_reviews == 1) {
+    // if more than 0 reviews, then show reviews button; otherwise, show the "write review" button
+    if ($reviews->fields['count'] > 0 ) { ?>
+<div id="productReviewLink" class="buttonRow back"><?php echo '<a href="' . zen_href_link(FILENAME_PRODUCT_REVIEWS, zen_get_all_get_params()) . '">' . zen_image_button(BUTTON_IMAGE_REVIEWS, BUTTON_REVIEWS_ALT) . '</a>'; ?></div>
+<br class="clearBoth" />
+<p class="reviewCount"><?php echo ($flag_show_product_info_reviews_count == 1 ? TEXT_CURRENT_REVIEWS . ' ' . $reviews->fields['count'] : ''); ?></p>
+<?php } else { ?>
+<div id="productReviewLink" class="buttonRow back"><?php echo '<a href="' . zen_href_link(FILENAME_PRODUCT_REVIEWS_WRITE, zen_get_all_get_params(array())) . '">' . zen_image_button(BUTTON_IMAGE_WRITE_REVIEW, BUTTON_WRITE_REVIEW_ALT) . '</a>'; ?></div>
+<br class="clearBoth" />
+<?php
+  }
+}
+?>
+<?php
+  if ($products_date_available > date('Y-m-d H:i:s')) {
+    if ($flag_show_product_info_date_available == 1) {
+?>
+  <p id="productDateAvailable" class="productGeneral centeredContent"><?php echo sprintf(TEXT_DATE_AVAILABLE, zen_date_long($products_date_available)); ?></p>
+<?php
+    }
+  } else {
+    if ($flag_show_product_info_date_added == 1) {
+?>
+      <p id="productDateAdded" class="productGeneral centeredContent"><?php echo sprintf(TEXT_DATE_ADDED, zen_date_long($products_date_added)); ?></p>
+<?php
+    } // $flag_show_product_info_date_added
+  }
+?>
+<?php
+  if (zen_not_null($products_url)) {
+    if ($flag_show_product_info_url == 1) {
+?>
+    <p id="productInfoLink" class="productGeneral centeredContent"><?php echo sprintf(TEXT_MORE_INFORMATION, zen_href_link(FILENAME_REDIRECT, 'action=url&goto=' . urlencode($products_url), 'NONSSL', true, false)); ?></p>
+<?php
+    } // $flag_show_product_info_url
+  }
+?>
+<?php require($template->get_template_dir('tpl_modules_also_purchased_products.php', DIR_WS_TEMPLATE, $current_page_base,'templates'). '/' . 'tpl_modules_also_purchased_products.php');?>
+</form>
+</div>
+<?php require($template->get_template_dir('tpl_modules_also_like.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_also_like.php'); ?>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>余额兑换[夺宝币兑换电话卡] - 触屏版</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0"/>
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta content="telephone=no" name="format-detection" />
+
+<script id="pageJS" data="{G_TEMPLATES_JS}/js/mobile/recharge.js" language="javascript" type="text/javascript"></script>
+<link href="{G_TEMPLATES_CSS}/mobile/comm.css?v=130715" rel="stylesheet" type="text/css" />
+<link href="{G_TEMPLATES_CSS}/mobile/member.css?v=130726" rel="stylesheet" type="text/css" />
+<link href="{G_TEMPLATES_CSS}/mobile/invite.css?v=130715" rel="stylesheet" type="text/css" />
+<script src="{G_TEMPLATES_JS}/mobile/jquery190.js" language="javascript" type="text/javascript"></script>
+
+</head>
+<body>
+<div class="h5-1yyg-v1" id="loadingPicBlock">
+    
+<!-- 栏目页面顶部 -->
+
+
+<!-- 内页顶部 -->
+
+    <header class="header" style="position: fixed;width: 100%;z-index: 99999999;">
+
+    <h1 style="width: 100%;text-align: center;float: none;top: 0px;left: 0px;font-size: 25px;" class="fl">
+        <span style="display: block;height: 49px;line-height: 49px;">
+            <a style="font-size: 20px;line-height: 49px;" href="{WEB_PATH}/mobile/mobile">
+                夺宝帐户余额兑换电话卡
+            </a>
+        </span>
+
+        <!--<img src="{G_UPLOAD_PATH}/{wc:fun:Getlogo()}"/>
+        -->
+        <!--<img src="/statics/templates/yungou/images/sjlogo.png"/>
+        -->
+            <a href="{WEB_PATH}/mobile/home/usercards" class="z-shop" style="background:none;color:#fff;position: absolute;right: 0px;top:18px;font-size: 16px;width: 100px;">我的电话卡</a>
+    </h1>
+
+    <a id="fanhui" class="cefenlei" onclick="history.go(-1)" href="javascript:;">
+        
+        <img width="30" height="30" src="/statics/templates/yungou/images/mobile/fanhui.png">
+    </a>
+
+  
+
+        <!--<a href="{WEB_PATH}/mobile/user/login" class="z-Member"></a>-->
+    
+</header>
+
+ <div class="R-content" style="padding-top: 55px;">
+	<div class="subMenu">
+		<a id="linkApply" class="current">云购币兑换电话卡</a>	
+	</div>
+ 
+	<div id="divSQTX" class="Apply-con">
+	  <form name="form1" action="" method="post">
+		<dl>
+			<dt>夺宝帐户余额：</dt>
+			<dd><span id="spanBrokerage" class="orange">{wc:$balance}</span> 枚夺宝币&nbsp;</dd>
+		</dl>
+        <dl>
+            <dt>兑换数量:</dt>
+            <dd>
+                <input type="text" name="amount" id="amount" size="6" value="{wc:$suggested}" onkeyup="value=value.replace(/\D/g,'')" />
+            </dd>
+        </dl>
+		<dl>
+            <dt>说明:</dt>
+            <dd>
+                为了方便客户，我们提供了购物直通车方便客户使用夺宝币购买热销的电话充值卡。<br/>
+                而云购系统和第三方的寄售宝网站的连通则进一步方便客户出售电话卡。<br/>
+                我们提供了50/100/500/1000元面值的电话充值卡。</br>
+                充值卡和夺宝币的兑换关系如下；</br>
+                1000云购币可购得1000元面值的充值卡。<br/>
+                500云购币可购得500元面值的充值卡。<br/>
+                100云购币可购得100元面值的充值卡。<br/>
+                50云购币可购得50元面值的充值卡。
+                请在兑换数量中输入50的倍数。</br>
+
+            </dd>
+        </dl>
+		<div class="Apply-button">
+			<input style="padding: 10px 25px;" type="submit" name="submit1" id="btnSQTX" class="bluebut" title="确认兑换" value="确认兑换">
+            <input style="padding: 10px 25px;margin-left:20px;" type="button" name="checkexchange" id="checkexchange" class="greenbut" title="查看兑现历史" value="查看电话卡兑现记录">
+		</div>
+	 </form>
+	</div>
+	<style>
+   #divSQTX span{color:#D93955};
+</style>
+
+</div>
+</div>
+<div style="width:100%;height:20px;border:1px grey dotted;position:fixed;bottom:49px;padding-left:40px;color:blue;">
+客服联系方式&nbsp;&nbsp;微信:jzwy_kefu&nbsp;&nbsp;&nbsp;QQ:3467586457
+</div>
+<div style="height:70px;"></div>
+
+{wc:templates "mobile/index","footer"}
+
+<script language="javascript" type="text/javascript">
+  var Path = new Object();
+  Path.Skin="{G_TEMPLATES_STYLE}";
+  Path.Webpath = "{WEB_PATH}";
+var Base={head:document.getElementsByTagName("head")[0]||document.documentElement,Myload:function(B,A){this.done=false;B.onload=B.onreadystatechange=function(){if(!this.done&&(!this.readyState||this.readyState==="loaded"||this.readyState==="complete")){this.done=true;A();B.onload=B.onreadystatechange=null;if(this.head&&B.parentNode){this.head.removeChild(B)}}}},getScript:function(A,C){var B=function(){};if(C!=undefined){B=C}var D=document.createElement("script");D.setAttribute("language","javascript");D.setAttribute("type","text/javascript");D.setAttribute("src",A);this.head.appendChild(D);this.Myload(D,B)},getStyle:function(A,B){var B=function(){};if(callBack!=undefined){B=callBack}var C=document.createElement("link");C.setAttribute("type","text/css");C.setAttribute("rel","stylesheet");C.setAttribute("href",A);this.head.appendChild(C);this.Myload(C,B)}}
+function GetVerNum(){var D=new Date();return D.getFullYear().toString().substring(2,4)+'.'+(D.getMonth()+1)+'.'+D.getDate()+'.'+D.getHours()+'.'+(D.getMinutes()<10?'0':D.getMinutes().toString().substring(0,1))}
+Base.getScript('{G_TEMPLATES_JS}/js/mobile/Bottom.js?v='+GetVerNum());
+
+$("#checkexchange").click(function() {
+     window.location = "{WEB_PATH}/mobile/home/cardexchangetasks";     
+});
+
+</script>
+ 
+</div>
+</body>
+</html>
